@@ -1,21 +1,16 @@
 package net.mydreamy.mlpharmaceutics.oraldisintegratingtablet;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Properties;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.PropertyConfigurator;
+
 import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.csv.CSVRecordReader;
 import org.datavec.api.split.FileSplit;
 import org.datavec.api.util.ClassPathResource;
 import org.deeplearning4j.datasets.datavec.RecordReaderDataSetIterator;
-import org.deeplearning4j.eval.Evaluation;
 import org.deeplearning4j.eval.RegressionEvaluation;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
-import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.Updater;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
@@ -36,7 +31,6 @@ import org.slf4j.LoggerFactory;
 
 public class TrainningDisintegrationTime {
 
-	private static Logger log = LoggerFactory.getLogger(TrainningDisintegrationTime.class);
 	
 	//Random number generator seed, for reproducability
     public static final int seed = 12345;
@@ -58,7 +52,7 @@ public class TrainningDisintegrationTime {
     public static final int numHiddenNodes = 50;
     	
 	public static void main(String[] args) {
-		
+		Logger log = LoggerFactory.getLogger(TrainningDisintegrationTime.class);
 		
 		//First: get the dataset using the record reader. CSVRecordReader handles loading/parsing
         int numLinesToSkip = 0;
@@ -125,7 +119,7 @@ public class TrainningDisintegrationTime {
                 .pretrain(false).backprop(true).build()
         );
         net.init();
-   //     net.setListeners(new ScoreIterationListener(1));
+        net.setListeners(new ScoreIterationListener(1));
         
         //Train the network on the full data set, and evaluate in periodically
         for( int i=0; i<nEpochs; i++ ){
@@ -140,7 +134,7 @@ public class TrainningDisintegrationTime {
         INDArray PredictionTrain = net.output(featuresTrain);
         evalTrain.eval(lablesTrain, PredictionTrain);	  
         
-       // log.info("training set R is: " + evalTrain.correlationR2(0));
+        log.info("training set R is: " + evalTrain.correlationR2(0));
         
         RegressionEvaluation evalTest = new RegressionEvaluation(1);
         
@@ -150,7 +144,7 @@ public class TrainningDisintegrationTime {
         INDArray PredictionTest = net.output(featuresTest);
         evalTest.eval(lablesTest, PredictionTest);	  
         
-     //   log.info("testing set R is: " + evalTest.correlationR2(0));
+       log.info("testing set R is: " + evalTest.correlationR2(0));
 	}
 
 
