@@ -3,6 +3,8 @@ package net.mydreamy.mlpharmaceutics.oraldisintegratingtablet;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.datavec.api.records.reader.RecordReader;
@@ -14,8 +16,11 @@ import org.deeplearning4j.earlystopping.EarlyStoppingConfiguration;
 import org.deeplearning4j.earlystopping.EarlyStoppingResult;
 import org.deeplearning4j.earlystopping.saver.LocalFileModelSaver;
 import org.deeplearning4j.earlystopping.scorecalc.DataSetLossCalculator;
+import org.deeplearning4j.earlystopping.termination.BestScoreEpochTerminationCondition;
+import org.deeplearning4j.earlystopping.termination.EpochTerminationCondition;
 import org.deeplearning4j.earlystopping.termination.MaxEpochsTerminationCondition;
 import org.deeplearning4j.earlystopping.termination.MaxTimeIterationTerminationCondition;
+import org.deeplearning4j.earlystopping.termination.ScoreImprovementEpochTerminationCondition;
 import org.deeplearning4j.earlystopping.trainer.EarlyStoppingTrainer;
 import org.deeplearning4j.eval.RegressionEvaluation;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
@@ -41,28 +46,29 @@ import org.slf4j.LoggerFactory;
 
 public class TrainningDisintegrationTime {
 
-	
+	public static Logger log = LoggerFactory.getLogger(TrainningDisintegrationTime.class);
+
 	//Random number generator seed, for reproducability
-    public static final int seed = 12345;
+    public static final int seed = 1234567890;
     
     //Number of iterations per minibatch
     public static final int iterations = 1;
     
     //Number of epochs (full passes of the data)
-    public static final int nEpochs = 1000;
+    public static final int nEpochs = 200;
 
     //Batch size: i.e., each epoch has nSamples/batchSize parameter updates
-    public static final int batchSize = 143;
+    public static final int batchSize = 134;
+    public static final int testsetsize = 15;
     
     //Network learning rate
-    public static final double learningRate = 0.01;
+    public static final double learningRate = 0.003;
     
     public static final int numInputs = 27;
     public static final int numOutputs = 1;
-    public static final int numHiddenNodes = 200;
+    public static final int numHiddenNodes = 400;
     	
 	public static void main(String[] args) {
-		Logger log = LoggerFactory.getLogger(TrainningDisintegrationTime.class);
 		
 		//First: get the dataset using the record reader. CSVRecordReader handles loading/parsing
         int numLinesToSkip = 0;
@@ -100,16 +106,23 @@ public class TrainningDisintegrationTime {
 			e.printStackTrace();
 		}
 
-        DataSetIterator iteratortest = new RecordReaderDataSetIterator(recordReadertest,20,27,27,true);
+        DataSetIterator iteratortest = new RecordReaderDataSetIterator(recordReadertest,testsetsize,27,27,true);
 
  //       log.info("testData set:" + testData.toString());
         
 //        // Normalization
-//        NormalizerStandardize normalizer = new NormalizerStandardize();
-//   
-//        normalizer.fitLabel(true);
+        NormalizerStandardize normalizer = new NormalizerStandardize();
+   
+        DataSet trainningData = iteratortrain.next();
+        DataSet testData = iteratortest.next();
+
+        
+//        normalizer.fitLabel(false);
 //        normalizer.fit(trainningData); 
 //        normalizer.transform(trainningData); 
+//        normalizer.transform(testData); 
+        iteratortrain.reset();
+        iteratortest.reset();
 //        log.info("training data features:\n" + trainningData.getFeatureMatrix().toString());
 //        log.info("training data label:\n" + trainningData.getLabels().toString());
 //        normalizer.transform(testData); 
@@ -121,28 +134,28 @@ public class TrainningDisintegrationTime {
                 .seed(seed)
                 .iterations(iterations)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-                .learningRate(learningRate)
-                .weightInit(WeightInit.RELU)
+             //   .learningRate(learningRate)
+                .weightInit(WeightInit.DISTRIBUTION)
                 .regularization(true).l2(1e-3)
-               // .gradientNormalization(GradientNormalization.RenormalizeL2PerParamType)
+                .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
               //  .dropOut(0.5)
-               // .updater(Updater.NESTEROVS).momentum(0.9)
+                //.updater(Updater.NESTEROVS).momentum(0.8)
                 .updater(Updater.ADAM)
                 .list()
                 .layer(0, new DenseLayer.Builder().nIn(numInputs).nOut(numHiddenNodes)
-                        .activation("leakyrelu")
+                        .activation("sigmoid")
                         .build())
                 .layer(1, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("leakyrelu")
+                        .activation("sigmoid")
                         .build())
                 .layer(2, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("leakyrelu")
+                        .activation("sigmoid")
                         .build())
                 .layer(3, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("leakyrelu")
+                        .activation("sigmoid")
                         .build())
                 .layer(4, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("leakyrelu")
+                        .activation("sigmoid")
                         .build())
                 .layer(5, new OutputLayer.Builder(LossFunctions.LossFunction.MSE)
                         .activation("identity")
@@ -150,13 +163,19 @@ public class TrainningDisintegrationTime {
                 .pretrain(false).backprop(true).build()
         );
         net.init();
-        net.setListeners(new ScoreIterationListener(1));
+        net.setListeners(new ScoreIterationListener(10));
         
-        EarlyStoppingConfiguration esConf = new EarlyStoppingConfiguration.Builder()
-        		.epochTerminationConditions(new MaxEpochsTerminationCondition(100))
-        		//.iterationTerminationConditions(new MaxTimeIterationTerminationCondition(20, TimeUnit.MINUTES))
+        
+        List<EpochTerminationCondition> terminationconditions = new LinkedList<EpochTerminationCondition>();
+  //      terminationconditions.add(new ScoreImprovementEpochTerminationCondition(10, 1E-10));
+        terminationconditions.add(new BestScoreEpochTerminationCondition(100));
+        terminationconditions.add(new MaxEpochsTerminationCondition(500));
+
+        EarlyStoppingConfiguration<MultiLayerNetwork> esConf = new EarlyStoppingConfiguration.Builder<MultiLayerNetwork>()
+        		.epochTerminationConditions(terminationconditions)
         		.scoreCalculator(new DataSetLossCalculator(iteratortest, true))
-                .evaluateEveryNEpochs(1)
+                .evaluateEveryNEpochs(10)
+                .saveLastModel(true)
         		.modelSaver(new LocalFileModelSaver("src/main/resources"))
         		.build();
         
@@ -167,17 +186,31 @@ public class TrainningDisintegrationTime {
         //Conduct early stopping training:
         EarlyStoppingResult<MultiLayerNetwork> result = trainer.fit();
 
-       //Print out the results:
-        System.out.println("Termination reason: " + result.getTerminationReason());
-        System.out.println("Termination details: " + result.getTerminationDetails());
-        System.out.println("Total epochs: " + result.getTotalEpochs());
-        System.out.println("Best epoch number: " + result.getBestModelEpoch());
-        System.out.println("Score at best epoch: " + result.getBestModelScore());
+       
 
+       //Print out the results:
+        log.info("Termination reason: " + result.getTerminationReason());
+        log.info("Termination details: " + result.getTerminationDetails());
+        log.info("Total epochs: " + result.getTotalEpochs());
+        log.info("Best epoch number: " + result.getBestModelEpoch());
+        log.info("Score at best epoch: " + result.getBestModelScore());
+        
         
         MultiLayerNetwork bestModel = null;
+ //   	bestModel = result.getBestModel();
+//
         try {
         	bestModel = ModelSerializer.restoreMultiLayerNetwork(new File("src/main/resources/bestModel.bin"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        MultiLayerNetwork latestModel = null;
+    //	bestModel = result.getBestModel();
+
+        try {
+        	latestModel = ModelSerializer.restoreMultiLayerNetwork(new File("src/main/resources/latestModel.bin"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -192,24 +225,38 @@ public class TrainningDisintegrationTime {
 //            iteratortrain.reset();
 //        }
         
-        iteratortrain.reset();
-        DataSet trainningData = iteratortrain.next();
+//        iteratortrain.reset();
+ //       DataSet trainningData = iteratortrain.next();
         
-        // evaluation training set
+ //       iteratortest.reset();
+  //      DataSet testData = iteratortest.next();
+        
+        log.info("========================== testing =========================");
+        log.info("========================== latest model =========================");
+        //test on latest model
+        testOnDiffModel(latestModel, trainningData, testData);
+        
+        log.info("========================== best model =========================");
+        //test on best model
+        testOnDiffModel(bestModel, trainningData, testData);
+ 
+	}
+
+	public static void testOnDiffModel(MultiLayerNetwork net, DataSet trainningData,  DataSet testData)
+	{
+	       // evaluation training set
         RegressionEvaluation evalTrain = new RegressionEvaluation(1);
         
         INDArray featuresTrain = trainningData.getFeatureMatrix();
         INDArray lablesTrain = trainningData.getLabels();
         
-        INDArray PredictionTrain = bestModel.output(featuresTrain);
+        INDArray PredictionTrain = net.output(featuresTrain);
         log.info("train label set:\n" + lablesTrain.toString());
         log.info("train prediction set:\n" + PredictionTrain.toString());
         evalTrain.eval(lablesTrain, PredictionTrain);	  
         
+        log.info("training set MSE is:" + String.format("%.10f", evalTrain.meanSquaredError(0)));
         log.info("training set R is:" + String.format("%.4f", evalTrain.correlationR2(0)));
-        
-        iteratortest.reset();
-        DataSet testData = iteratortest.next();
         
         // evluation test set
         RegressionEvaluation evalTest = new RegressionEvaluation(1);
@@ -222,15 +269,14 @@ public class TrainningDisintegrationTime {
         
         
 //        log.info(evalTest.stats());
-        INDArray PredictionTest = bestModel.output(featuresTest);
+        INDArray PredictionTest = net.output(featuresTest);
         
        log.info("test label value: \n" + lablesTest.toString());
         log.info("test prediction value: \n" + PredictionTest.toString());
 
         evalTest.eval(lablesTest, PredictionTest);	  
         
+       log.info("testing set MSE is: " + String.format("%.10f", evalTest.meanSquaredError(0))); 
        log.info("testing set R is: " + String.format("%.4f", evalTest.correlationR2(0)));
 	}
-
-
 }

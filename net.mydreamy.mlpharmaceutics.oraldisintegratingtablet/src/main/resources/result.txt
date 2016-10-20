@@ -179,3 +179,167 @@
 [main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test prediction value: 
 [ -7.16,  40.76,  94.57,  53.43,  35.59, 348.48,  47.29,  11.77,   8.37,  20.41,  20.87,  56.70,  77.78,   9.49,  30.00,  16.81,  69.69,  19.54,  24.86,  33.80]
 [main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set R is: 0.5054
+
+
+	//Random number generator seed, for reproducability
+    public static final int seed = 12345;
+    
+    //Number of iterations per minibatch
+    public static final int iterations = 1;
+    
+    //Number of epochs (full passes of the data)
+    public static final int nEpochs = 200;
+
+    //Batch size: i.e., each epoch has nSamples/batchSize parameter updates
+    public static final int batchSize = 143;
+    
+    //Network learning rate
+    public static final double learningRate = 0.01;
+    
+    public static final int numInputs = 27;
+    public static final int numOutputs = 1;
+    public static final int numHiddenNodes = 200;
+    
+            MultiLayerNetwork net = new MultiLayerNetwork(new NeuralNetConfiguration.Builder()
+               // .seed(seed)
+                .iterations(iterations)
+                .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
+                .learningRate(learningRate)
+                .weightInit(WeightInit.XAVIER)
+                .regularization(true).l2(1e-6)
+               // .gradientNormalization(GradientNormalization.RenormalizeL2PerParamType)
+              //  .dropOut(0.5)
+               // .updater(Updater.NESTEROVS).momentum(0.9)
+                .updater(Updater.ADAM)
+                .list()
+                .layer(0, new DenseLayer.Builder().nIn(numInputs).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(1, new OutputLayer.Builder(LossFunctions.LossFunction.MSE)
+                        .activation("identity")
+                        .nIn(numHiddenNodes).nOut(numOutputs).build())
+
+Termination reason: EpochTerminationCondition
+Termination details: ScoreImprovementEpochTerminationCondition(maxEpochsWithNoImprovement=100, minImprovement=0.0)
+Total epochs: 2132
+Best epoch number: 2031
+Score at best epoch: 157.49891434610555
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - train label set:
+[111.00,  31.00,  90.00,  24.00,  10.00,  21.00,  58.00,  40.00,  91.00, 135.00,  67.00,  22.91,  11.69,  14.63,  30.27,  12.48,  11.42,  47.25,  52.21,  33.00,  35.00,  24.00,  42.33,  29.00,  37.00,  51.00,  53.33,  27.00,  25.00,  20.00,  25.00,  25.00,  15.00,  55.00,  26.00,  28.00,  21.00,  22.00,  27.00,  68.00,  45.33,  24.66,  49.33,  55.66,  57.33,  59.33,  61.66,  69.33,   7.40,   7.30,   7.40,   7.30, 350.00, 350.00,  40.00,  35.00,  18.00,  27.00,  13.80,  14.83,  12.97,   2.99,   4.39,  15.91,   1.68,   2.19,   8.01,   3.93,   6.56,   2.41,   2.61,   2.81,  35.00,  30.00,  32.00,  28.00,  28.00,  22.00,  25.00,  25.00,  30.00,  30.00,  40.00,   8.00,  35.00,  22.00,   5.00,  14.00,  10.00,  19.80,  36.00,  30.00,  90.00,  71.00,  79.00,  38.00,  73.00,  17.21,  12.33,   3.72,   4.04,   3.47,   8.00,   5.85,  10.50,   6.15,   8.10,   7.50,   6.12,   3.99,   8.10,  15.30, 232.00, 218.00, 182.00, 110.00,  98.00,  72.00,  61.00,  47.00,  34.00,  25.00,  25.00,  26.00,  27.00,  26.00,  27.00,   8.53,  10.17,   7.33,   6.00,  11.17,   7.17,   7.00,  18.50,  28.50,  16.33,  26.00,  33.00,  21.17,  15.33,  15.67,  13.67]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - train prediction set:
+[26.03, 26.74, 26.74, 25.03, 26.25, 23.77, 21.67, 21.67, 21.67, 21.67, 21.67, 24.78, 24.79, 23.41, 24.96, 23.40, 25.36, 25.42, 24.24, 21.28, 21.23, 21.23, 21.28, 21.25, 21.24, 21.29, 21.27, 26.53, 26.48, 26.42, 26.67, 26.66, 26.64, 26.64, 26.60, 26.67, 26.66, 26.64, 26.66, 26.64, 27.73, 27.73, 27.73, 27.72, 27.73, 27.72, 27.73, 27.73, 25.72, 25.68, 25.87, 14.99, 26.44, 26.43, 26.51, 26.55, 26.27, 23.45, 23.45, 19.59, 19.60, 19.60, 19.60, 19.59, 19.60, 19.60, 19.59, 19.60, 19.59, 19.60, 19.60, 19.60, 26.23, 26.20, 26.21, 26.17, 26.18, 26.14, 26.92, 27.14, 25.80, 25.89, 25.20, 22.41, 24.05, 22.95, 22.77, 22.81, 22.75, 24.95, 26.63, 26.47, 26.47, 26.84, 27.10, 26.77, 27.06, 23.45, 23.41, 23.41, 23.43, 23.43, 23.70, 23.42, 23.43, 23.41, 23.43, 23.45, 23.43, 23.45, 23.43, 22.22, 27.30, 27.30, 27.29, 27.30, 27.30, 27.29, 27.30, 27.29, 27.29, 26.26, 26.19, 26.12, 26.11, 26.11, 26.10, 22.58, 22.52, 22.47, 22.58, 22.52, 22.47, 22.58, 22.47, 22.58, 22.52, 22.47, 22.68, 22.63, 22.58, 22.58, 22.54]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - training set R is:0.3464
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test label value: 
+[28.00, 30.00, 37.00, 52.33, 31.00, 46.17, 35.00,  7.11,  9.17, 10.00, 15.00, 11.00, 15.00, 17.17, 26.00, 12.67,  8.50, 14.60, 17.19, 21.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test prediction value: 
+[26.60, 25.19, 21.67, 21.26, 26.67, 26.39, 26.10, 19.59, 19.60, 23.60, 22.75, 26.04, 26.78, 23.43, 26.23, 22.52, 24.30, 23.71, 24.92, 26.66]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set R is: 0.2156
+
+numHiddenNodes = 300;
+
+
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - Score at best epoch: 135.2181511814068
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - ========================== testing =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - ========================== latest model =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - train label set:
+[31.00, 90.00, 24.00, 10.00, 21.00, 58.00, 40.00, 91.00, 67.00, 22.91, 11.69, 14.63, 30.27, 12.48, 11.42, 47.25, 52.21, 33.00, 35.00, 24.00, 42.33, 29.00, 37.00, 51.00, 53.33, 27.00, 25.00, 20.00, 25.00, 25.00, 15.00, 55.00, 26.00, 28.00, 21.00, 22.00, 27.00, 68.00, 45.33, 24.66, 49.33, 55.66, 57.33, 59.33, 61.66, 69.33,  7.40,  7.30,  7.40,  7.30, 40.00, 35.00, 18.00, 27.00, 13.80, 14.83, 12.97,  2.99,  4.39, 15.91,  1.68,  2.19,  8.01,  3.93,  6.56,  2.41,  2.61,  2.81, 35.00, 30.00, 32.00, 28.00, 28.00, 22.00, 25.00, 25.00, 30.00, 30.00, 40.00,  8.00, 35.00, 22.00,  5.00, 14.00, 10.00, 19.80, 36.00, 30.00, 90.00, 11.00, 15.00,  7.11, 11.00, 38.00, 73.00, 17.21, 12.33,  3.72,  4.04,  3.47,  8.00,  5.85, 10.50,  6.15,  8.10,  7.50,  6.12,  3.99,  8.10, 15.30, 98.00, 72.00, 61.00, 47.00, 34.00, 25.00, 25.00, 26.00, 27.00, 26.00, 27.00,  8.53, 10.17,  7.33,  6.00, 11.17,  7.17,  7.00, 18.50, 28.50, 16.33, 26.00, 33.00, 21.17, 15.33, 15.67, 13.67, 52.33,  7.11, 17.19, 37.00, 21.00, 30.00, 26.00, 10.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - train prediction set:
+[49.32, 49.99, 41.08, 25.87, 17.67, 54.97, 54.92, 54.91, 54.92, 20.09, 20.06, 18.21, 19.99, 17.98, 20.10, 20.08, 18.61, 42.13, 41.10, 40.58, 42.03, 40.51, 41.09, 44.08, 41.72, 29.81, 29.09, 28.38, 33.36, 32.65, 31.95, 34.33, 33.91, 33.36, 32.65, 31.95, 32.65, 31.95, 50.16, 49.07, 50.34, 50.27, 50.34, 50.27, 50.16, 49.12, 14.69, 14.36, 14.28, 28.72, 34.37, 36.13, 32.38, 20.77, 20.77,  5.83,  5.83,  5.83,  5.83,  5.81,  5.84,  5.84,  5.83,  5.83,  5.81,  5.82,  5.82,  5.82, 32.78, 32.10, 32.86, 32.33, 33.14, 32.74, 34.53, 46.85, 26.10, 26.49, 23.31, 14.22, 21.85, 20.26, 17.07, 19.74, 17.76, 18.39, 38.03, 36.66, 42.91, 29.46, 37.57, 25.62, 34.60, 33.47, 41.03,  9.49,  9.34,  9.34,  9.40,  9.42,  9.91,  9.35,  9.42,  9.33,  9.41,  9.47,  9.41,  9.48,  9.41, 20.51, 51.29, 51.05, 51.14, 50.85, 50.36, 33.61, 31.04, 29.57, 29.57, 29.48, 29.37, 18.23, 16.91, 16.00, 18.23, 16.91, 16.00, 18.23, 16.00, 18.23, 16.91, 16.00, 19.57, 18.87, 18.23, 18.23, 17.51, 42.72,  5.81, 20.02, 54.91, 32.65, 41.41, 32.51, 17.23]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - training set MSE is:165.6514816810
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - training set R is:0.7794
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test label value: 
+[28.00, 31.00, 46.17, 35.00,  9.17, 15.00, 17.17, 12.67,  8.50, 14.60]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test prediction value: 
+[48.49, 33.36, 13.95, 30.84,  5.81, 18.69,  9.40, 16.91, 31.19, 31.21]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set MSE is: 237.4792480469
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set R is: 0.2234
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - ========================== best model =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - train label set:
+[31.00, 90.00, 24.00, 10.00, 21.00, 58.00, 40.00, 91.00, 67.00, 22.91, 11.69, 14.63, 30.27, 12.48, 11.42, 47.25, 52.21, 33.00, 35.00, 24.00, 42.33, 29.00, 37.00, 51.00, 53.33, 27.00, 25.00, 20.00, 25.00, 25.00, 15.00, 55.00, 26.00, 28.00, 21.00, 22.00, 27.00, 68.00, 45.33, 24.66, 49.33, 55.66, 57.33, 59.33, 61.66, 69.33,  7.40,  7.30,  7.40,  7.30, 40.00, 35.00, 18.00, 27.00, 13.80, 14.83, 12.97,  2.99,  4.39, 15.91,  1.68,  2.19,  8.01,  3.93,  6.56,  2.41,  2.61,  2.81, 35.00, 30.00, 32.00, 28.00, 28.00, 22.00, 25.00, 25.00, 30.00, 30.00, 40.00,  8.00, 35.00, 22.00,  5.00, 14.00, 10.00, 19.80, 36.00, 30.00, 90.00, 11.00, 15.00,  7.11, 11.00, 38.00, 73.00, 17.21, 12.33,  3.72,  4.04,  3.47,  8.00,  5.85, 10.50,  6.15,  8.10,  7.50,  6.12,  3.99,  8.10, 15.30, 98.00, 72.00, 61.00, 47.00, 34.00, 25.00, 25.00, 26.00, 27.00, 26.00, 27.00,  8.53, 10.17,  7.33,  6.00, 11.17,  7.17,  7.00, 18.50, 28.50, 16.33, 26.00, 33.00, 21.17, 15.33, 15.67, 13.67, 52.33,  7.11, 17.19, 37.00, 21.00, 30.00, 26.00, 10.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - train prediction set:
+[30.19, 30.17, 29.30, 25.77, 21.79, 31.98, 31.97, 31.98, 31.97, 22.55, 22.51, 21.07, 22.53, 20.92, 22.61, 22.56, 21.43, 31.02, 30.97, 30.97, 31.03, 30.97, 30.98, 31.05, 31.01, 25.81, 25.69, 25.56, 26.23, 26.16, 26.08, 26.28, 26.23, 26.23, 26.16, 26.08, 26.16, 26.08, 30.05, 30.01, 30.03, 29.99, 30.03, 29.99, 30.05, 30.01, 21.57, 21.55, 21.57, 25.15, 27.06, 27.76, 27.00, 21.46, 21.46, 19.51, 19.50, 19.50, 19.51, 19.50, 19.50, 19.50, 19.50, 19.50, 19.50, 19.50, 19.50, 19.50, 26.70, 26.45, 26.78, 26.66, 26.73, 26.61, 28.24, 30.57, 26.19, 26.40, 22.45, 21.68, 23.21, 22.82, 21.92, 22.58, 22.10, 21.11, 27.27, 27.37, 28.13, 26.77, 28.35, 26.81, 28.23, 27.68, 28.79, 20.76, 20.65, 20.65, 20.69, 20.71, 21.07, 20.66, 20.71, 20.64, 20.70, 20.74, 20.70, 20.74, 20.70, 22.87, 30.53, 30.52, 30.53, 30.51, 30.49, 27.89, 27.63, 27.44, 27.44, 27.43, 27.41, 20.68, 20.50, 20.41, 20.68, 20.50, 20.41, 20.68, 20.41, 20.68, 20.50, 20.41, 20.91, 20.78, 20.68, 20.68, 20.57, 30.96, 19.50, 22.57, 31.98, 26.16, 29.33, 27.76, 22.27]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - training set MSE is:313.6265625000
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - training set R is:0.7143
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test label value: 
+[28.00, 31.00, 46.17, 35.00,  9.17, 15.00, 17.17, 12.67,  8.50, 14.60]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test prediction value: 
+[29.61, 26.23, 20.89, 26.88, 19.50, 22.31, 20.69, 20.50, 24.86, 25.56]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set MSE is: 135.2181396484
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set R is: 0.2868
+
+
+
+10.20 remove great 90
+
+    public static final int numHiddenNodes = 400;
+
+    //Batch size: i.e., each epoch has nSamples/batchSize parameter updates
+    public static final int batchSize = 134;
+    public static final int testsetsize = 15;
+    
+            // Network Configuration
+        MultiLayerNetwork net = new MultiLayerNetwork(new NeuralNetConfiguration.Builder()
+                .seed(seed)
+                .iterations(iterations)
+                .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
+             //   .learningRate(learningRate)
+                .weightInit(WeightInit.DISTRIBUTION)
+                .regularization(true).l2(1e-3)
+                .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
+              //  .dropOut(0.5)
+                //.updater(Updater.NESTEROVS).momentum(0.8)
+                .updater(Updater.ADAM)
+                .list()
+                .layer(0, new DenseLayer.Builder().nIn(numInputs).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(1, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(2, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(3, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(4, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                        
+                .layer(5, new OutputLayer.Builder(LossFunctions.LossFunction.MSE)
+                        .activation("identity")
+                        .nIn(numHiddenNodes).nOut(numOutputs).build())
+                .pretrain(false).backprop(true).build()
+        );
+        net.init();
+        net.setListeners(new ScoreIterationListener(10));
+        
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - ========================== testing =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - ========================== latest model =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - train label set:
+[ 31.00,  24.00,  10.00,  21.00,  58.00,  40.00,  67.00,  22.91,  11.69,  14.63,  30.27,  12.48,  11.42,  47.25,  52.21,  33.00,  35.00,  24.00,  42.33,  29.00,  37.00,  51.00,  53.33,  27.00,  25.00,  20.00,  25.00,  25.00,  15.00,  55.00,  26.00,  28.00,  21.00,  22.00,  27.00,  68.00,  45.33,  24.66,  49.33,  55.66,  57.33,  59.33,  61.66,  69.33,   7.40,   7.30,   7.40,   7.30, 350.00, 350.00,  40.00,  35.00,  18.00,  27.00,  13.80,  14.83,  12.97,   2.99,   4.39,  15.91,   1.68,   2.19,   8.01,   3.93,   6.56,   2.41,   2.61,   2.81,  35.00,  30.00,  32.00,  28.00,  28.00,  22.00,  25.00,  25.00,  30.00,  30.00,  40.00,   8.00,  35.00,  22.00,   5.00,  14.00,  10.00,  19.80,  36.00,  30.00,  90.00,  71.00,  79.00,  38.00,  73.00,  17.21,  12.33,   3.72,   4.04,   3.47,   8.00,   5.85,  10.50,   6.15,   8.10,   7.50,   6.12,   3.99,   8.10,  15.30,  72.00,  61.00,  47.00,  34.00,  25.00,  25.00,  26.00,  27.00,  26.00,  27.00,   8.53,  10.17,   7.33,   6.00,  11.17,   7.17,   7.00,  18.50,  28.50,  16.33,  26.00,  33.00,  21.17,  15.33,  15.67,  13.67]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - train prediction set:
+[ 41.68,  22.72,  12.92,  30.75,  55.97,  65.61,  65.61,  23.50,  23.26,  18.10,  23.43,  12.31,  31.03,  30.86,  48.46,  44.04,  25.87,  28.08,  48.27,  28.12,  25.89,  50.13,  50.35,  28.87,  21.38,  21.38,  31.01,  30.76,  39.51,  44.50,  16.13,  31.01,  30.76,  39.51,  30.76,  39.51,  53.37,  47.21,  53.84,  56.21,  53.84,  56.21,  56.78,  47.21,   7.37,   8.12,   8.22,   9.03, 261.31, 266.17,  40.52,  33.41,  14.37,  20.26,  20.26,   3.88,  13.05,   4.06,   3.84,   3.84,   4.37,   4.37,   4.27,  13.05,   4.64,   7.91,   7.91,   7.91,  31.39,  27.84,  31.33,  23.30,  31.39,  22.11,  36.40,  27.15,  35.17,  27.59,  40.06,   7.88,  31.51,  12.42,   5.44,  12.42,   8.20,  23.46,  31.43,  28.69,  92.12,  72.28,  73.07,  37.75,  69.08,  14.30,  16.69,  16.69,  16.77,  16.75,   4.99,  16.75,  16.75,  16.44,  16.76,  16.49,  16.76,  16.52,  16.76,  13.22,  67.69,  58.15,  40.00,  39.99,  30.14,  30.30,  25.36,  25.37,  25.37,  25.32,  18.96,  12.51,  18.42,  18.96,  12.51,  18.42,  18.96,  18.42,  18.96,  12.51,  18.42,  19.02,  19.04,  18.96,  18.96,  12.38]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - training set MSE is:177.8426714086
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - training set R is:0.9749
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test label value: 
+[28.00, 30.00, 37.00, 52.33, 31.00, 46.17, 35.00,  7.11,  9.17, 10.00, 15.00, 11.00, 15.00, 17.17, 26.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test prediction value: 
+[25.37, 38.57, 45.91, 31.93, 31.01, 86.53, 12.85,  4.64,  3.84, 11.69, 12.42, 33.36, 37.57, 16.77, 30.14]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set MSE is: 251.0434895833
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set R is: 0.6369
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - ========================== best model =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - train label set:
+[ 31.00,  24.00,  10.00,  21.00,  58.00,  40.00,  67.00,  22.91,  11.69,  14.63,  30.27,  12.48,  11.42,  47.25,  52.21,  33.00,  35.00,  24.00,  42.33,  29.00,  37.00,  51.00,  53.33,  27.00,  25.00,  20.00,  25.00,  25.00,  15.00,  55.00,  26.00,  28.00,  21.00,  22.00,  27.00,  68.00,  45.33,  24.66,  49.33,  55.66,  57.33,  59.33,  61.66,  69.33,   7.40,   7.30,   7.40,   7.30, 350.00, 350.00,  40.00,  35.00,  18.00,  27.00,  13.80,  14.83,  12.97,   2.99,   4.39,  15.91,   1.68,   2.19,   8.01,   3.93,   6.56,   2.41,   2.61,   2.81,  35.00,  30.00,  32.00,  28.00,  28.00,  22.00,  25.00,  25.00,  30.00,  30.00,  40.00,   8.00,  35.00,  22.00,   5.00,  14.00,  10.00,  19.80,  36.00,  30.00,  90.00,  71.00,  79.00,  38.00,  73.00,  17.21,  12.33,   3.72,   4.04,   3.47,   8.00,   5.85,  10.50,   6.15,   8.10,   7.50,   6.12,   3.99,   8.10,  15.30,  72.00,  61.00,  47.00,  34.00,  25.00,  25.00,  26.00,  27.00,  26.00,  27.00,   8.53,  10.17,   7.33,   6.00,  11.17,   7.17,   7.00,  18.50,  28.50,  16.33,  26.00,  33.00,  21.17,  15.33,  15.67,  13.67]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - train prediction set:
+[ 38.74,  22.84,   5.36,  18.60,  59.26,  51.03,  51.03,  22.46,   8.82,  18.05,  22.78,  14.74,  30.62,  30.60,  47.77,  28.47,  36.08,  27.11,  23.02,  37.13,  33.51,  60.58,  52.02,  25.68,  25.25,  27.58,  19.37,  20.09,  33.14,  38.85,  38.81,  19.37,  20.09,  33.14,  20.09,  33.14,  52.70,  47.82,  56.49,  60.58,  56.49,  60.58,  60.61,  47.83,  17.26,  16.11,  16.58,   5.94, 229.93, 229.20,  34.00,  37.64,  17.23,  17.24,  17.24,   7.62,   6.88,   7.62,   7.62,   7.62,   7.01,   7.01,   7.61,   6.88,   7.62,   6.59,   6.59,   6.59,  31.08,  28.99,  31.15,  20.94,  31.08,  29.54,  27.07,  30.94,  31.57,  32.09,  48.51,   8.89,  26.98,  11.27,   7.56,  11.43,  13.63,  21.44,  28.89,  29.67,  91.76,  74.14,  80.57,  33.51,  76.39,   7.73,   7.76,   7.76,   7.83,   7.83,  10.62,   7.81,   7.83,   7.60,   7.83,   7.82,   7.83,   7.82,   7.83,  17.97,  75.22,  60.57,  50.15,  33.22,  23.40,  23.40,  29.88,  29.84,  29.82,  29.83,  14.41,   9.55,  17.14,  14.41,   9.55,  17.14,  14.41,  17.14,  14.41,   9.55,  17.14,  26.93,  27.50,  14.41,  14.41,  17.87]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - training set MSE is:273.0717117537
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - training set R is:0.9621
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test label value: 
+[28.00, 30.00, 37.00, 52.33, 31.00, 46.17, 35.00,  7.11,  9.17, 10.00, 15.00, 11.00, 15.00, 17.17, 26.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test prediction value: 
+[ 8.89, 55.52, 23.14, 46.99, 19.37, 69.07, 29.73,  7.62,  7.61, 10.45, 11.44,  5.79, 56.14,  7.83, 23.40]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set MSE is: 250.2502278646
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set R is: 0.6380
+
+
