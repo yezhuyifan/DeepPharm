@@ -33,6 +33,7 @@ import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.nn.weights.WeightInit;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.deeplearning4j.util.ModelSerializer;
+//import org.nd4j.jita.conf.CudaEnvironment;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
@@ -58,24 +59,38 @@ public class TrainningDisintegrationTime {
     public static final int nEpochs = 200;
 
     //Batch size: i.e., each epoch has nSamples/batchSize parameter updates
-    public static final int batchSize = 134;
+    public static final int batchSize = 137;
     public static final int testsetsize = 15;
     
     //Network learning rate
-    public static final double learningRate = 0.003;
+    public static final double learningRate = 0.01;
     
+    //with api properties
     public static final int numInputs = 27;
+    //
+    //public static final int numInputs = 18;
     public static final int numOutputs = 1;
-    public static final int numHiddenNodes = 400;
+    public static final int numHiddenNodes = 200;
     	
 	public static void main(String[] args) {
+		
+		
+//        CudaEnvironment.getInstance().getConfiguration()
+//        // key option enabled
+//        .allowMultiGPU(true)
+//
+//        // we're allowing larger memory caches
+//        .setMaximumDeviceCache(2L * 1024L * 1024L * 1024L)
+//
+//        // cross-device access is used for faster model averaging over pcie
+//        .allowCrossDeviceAccess(true);
 		
 		//First: get the dataset using the record reader. CSVRecordReader handles loading/parsing
         int numLinesToSkip = 0;
         String delimiter = ",";
         RecordReader recordReadertrain = new CSVRecordReader(numLinesToSkip,delimiter);
         try {
-        	recordReadertrain.initialize(new FileSplit(new ClassPathResource("trainset.csv").getFile()));
+        	recordReadertrain.initialize(new FileSplit(new ClassPathResource("trainsetapiparams.csv").getFile()));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -87,14 +102,14 @@ public class TrainningDisintegrationTime {
 			e.printStackTrace();
 		}
 
-        DataSetIterator iteratortrain = new RecordReaderDataSetIterator(recordReadertrain,batchSize,27,27,true);
+        DataSetIterator iteratortrain = new RecordReaderDataSetIterator(recordReadertrain,batchSize,numInputs,numInputs,true);
 //        log.info("training set:" + trainningData.getFeatureMatrix().toString());
 //        log.info("training set:" + trainningData.getLabels().toString());
 
         
         RecordReader recordReadertest = new CSVRecordReader(numLinesToSkip,delimiter);
         try {
-        	recordReadertest.initialize(new FileSplit(new ClassPathResource("testset.csv").getFile()));
+        	recordReadertest.initialize(new FileSplit(new ClassPathResource("testsetapiparams.csv").getFile()));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -106,7 +121,7 @@ public class TrainningDisintegrationTime {
 			e.printStackTrace();
 		}
 
-        DataSetIterator iteratortest = new RecordReaderDataSetIterator(recordReadertest,testsetsize,27,27,true);
+        DataSetIterator iteratortest = new RecordReaderDataSetIterator(recordReadertest,testsetsize,numInputs,numInputs,true);
 
  //       log.info("testData set:" + testData.toString());
         
@@ -134,47 +149,51 @@ public class TrainningDisintegrationTime {
                 .seed(seed)
                 .iterations(iterations)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-             //   .learningRate(learningRate)
-                .weightInit(WeightInit.DISTRIBUTION)
-                .regularization(true).l2(1e-3)
+                .learningRate(learningRate)
+                .weightInit(WeightInit.XAVIER)
+                .regularization(true)
+                .l2(1e-3)
                 .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
               //  .dropOut(0.5)
-                //.updater(Updater.NESTEROVS).momentum(0.8)
-                .updater(Updater.ADAM)
+                .updater(Updater.NESTEROVS).momentum(0.8)
+              //  .updater(Updater.ADAM)
                 .list()
                 .layer(0, new DenseLayer.Builder().nIn(numInputs).nOut(numHiddenNodes)
-                        .activation("sigmoid")
+                        .activation("tanh")
                         .build())
                 .layer(1, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("sigmoid")
+                        .activation("tanh")
                         .build())
                 .layer(2, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("sigmoid")
+                        .activation("tanh")
                         .build())
                 .layer(3, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("sigmoid")
+                        .activation("tanh")
                         .build())
                 .layer(4, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("sigmoid")
+                        .activation("tanh")
                         .build())
-                .layer(5, new OutputLayer.Builder(LossFunctions.LossFunction.MSE)
+//                .layer(5, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+//                        .activation("tanh")
+//                        .build())
+                .layer(5, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
                         .activation("identity")
                         .nIn(numHiddenNodes).nOut(numOutputs).build())
                 .pretrain(false).backprop(true).build()
         );
         net.init();
-        net.setListeners(new ScoreIterationListener(10));
+        net.setListeners(new ScoreIterationListener(1000));
         
         
         List<EpochTerminationCondition> terminationconditions = new LinkedList<EpochTerminationCondition>();
   //      terminationconditions.add(new ScoreImprovementEpochTerminationCondition(10, 1E-10));
-        terminationconditions.add(new BestScoreEpochTerminationCondition(100));
-        terminationconditions.add(new MaxEpochsTerminationCondition(500));
+        terminationconditions.add(new BestScoreEpochTerminationCondition(10));
+        terminationconditions.add(new MaxEpochsTerminationCondition(18000));
 
         EarlyStoppingConfiguration<MultiLayerNetwork> esConf = new EarlyStoppingConfiguration.Builder<MultiLayerNetwork>()
         		.epochTerminationConditions(terminationconditions)
         		.scoreCalculator(new DataSetLossCalculator(iteratortest, true))
-                .evaluateEveryNEpochs(10)
+                .evaluateEveryNEpochs(1000)
                 .saveLastModel(true)
         		.modelSaver(new LocalFileModelSaver("src/main/resources"))
         		.build();
