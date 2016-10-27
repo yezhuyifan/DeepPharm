@@ -70,7 +70,7 @@ public class TrainningDisintegrationTime {
     //
     //public static final int numInputs = 18;
     public static final int numOutputs = 1;
-    public static final int numHiddenNodes = 200;
+    public static final int numHiddenNodes = 300;
     	
 	public static void main(String[] args) {
 		
@@ -83,7 +83,7 @@ public class TrainningDisintegrationTime {
 //        .setMaximumDeviceCache(2L * 1024L * 1024L * 1024L)
 //
 //        // cross-device access is used for faster model averaging over pcie
-//        .allowCrossDeviceAccess(true);
+ //       .allowCrossDeviceAccess(true);
 		
 		//First: get the dataset using the record reader. CSVRecordReader handles loading/parsing
         int numLinesToSkip = 2;
@@ -150,7 +150,7 @@ public class TrainningDisintegrationTime {
                 .iterations(iterations)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                 .learningRate(learningRate)
-                .weightInit(WeightInit.XAVIER)
+                .weightInit(WeightInit.RELU)
                 .regularization(true)
                 .l2(1e-3)
                 .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
@@ -176,24 +176,33 @@ public class TrainningDisintegrationTime {
                 .layer(5, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
                         .activation("tanh")
                         .build())
-                .layer(6, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
+                .layer(6, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(7, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(8, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(9, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
                         .activation("identity")
                         .nIn(numHiddenNodes).nOut(numOutputs).build())
                 .pretrain(false).backprop(true).build()
         );
         net.init();
-        net.setListeners(new ScoreIterationListener(100));
+        net.setListeners(new ScoreIterationListener(2000));
         
         
         List<EpochTerminationCondition> terminationconditions = new LinkedList<EpochTerminationCondition>();
   //      terminationconditions.add(new ScoreImprovementEpochTerminationCondition(10, 1E-10));
         terminationconditions.add(new BestScoreEpochTerminationCondition(10));
-        terminationconditions.add(new MaxEpochsTerminationCondition(50000));
+        terminationconditions.add(new MaxEpochsTerminationCondition(20000));
 
         EarlyStoppingConfiguration<MultiLayerNetwork> esConf = new EarlyStoppingConfiguration.Builder<MultiLayerNetwork>()
         		.epochTerminationConditions(terminationconditions)
         		.scoreCalculator(new DataSetLossCalculator(iteratortest, true))
-                .evaluateEveryNEpochs(100)
+                .evaluateEveryNEpochs(2000)
                 .saveLastModel(true)
         		.modelSaver(new LocalFileModelSaver("src/main/resources"))
         		.build();

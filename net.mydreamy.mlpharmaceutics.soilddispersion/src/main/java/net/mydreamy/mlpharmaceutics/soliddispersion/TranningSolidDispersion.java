@@ -57,8 +57,8 @@ public class TranningSolidDispersion {
     public static final int nEpochs = 200;
 
     //Batch size: i.e., each epoch has nSamples/batchSize parameter updates
-    public static final int batchSize = 142;
-    public static final int testsetsize = 15;
+    public static final int batchSize = 145;
+    public static final int testsetsize = 16;
     
     //Network learning rate
     public static final double learningRate = 0.01;
@@ -75,13 +75,13 @@ public class TranningSolidDispersion {
 //		DataTypeUtil.setDTypeForContext(DataBuffer.Type.HALF);
 
 //        CudaEnvironment.getInstance().getConfiguration()
-//            // key option enabled
+////            // key option enabled
 //            .allowMultiGPU(false)
-//
-//            // we're allowing larger memory caches
+////
+////            // we're allowing larger memory caches
 //            .setMaximumDeviceCache(2L * 1024L * 1024L * 1024L)
-//
-//            // cross-device access is used for faster model averaging over pcie
+////
+////            // cross-device access is used for faster model averaging over pcie
 //            .allowCrossDeviceAccess(false);
         
 
@@ -92,6 +92,8 @@ public class TranningSolidDispersion {
         RecordReader recordReadertrain = new CSVRecordReader(numLinesToSkip,delimiter);
         try {
         	recordReadertrain.initialize(new FileSplit(new ClassPathResource("3m-code-tranning.csv").getFile()));
+       // 	recordReadertrain.initialize(new FileSplit(new ClassPathResource("6m-code-training.csv").getFile()));
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -111,6 +113,8 @@ public class TranningSolidDispersion {
         RecordReader recordReadertest = new CSVRecordReader(numLinesToSkip,delimiter);
         try {
         	recordReadertest.initialize(new FileSplit(new ClassPathResource("3m-code-testing.csv").getFile()));
+       // 	recordReadertest.initialize(new FileSplit(new ClassPathResource("6M-code-test.csv").getFile()));
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -176,13 +180,13 @@ public class TranningSolidDispersion {
                 .layer(3, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
                         .activation("tanh")
                         .build())
-                .layer(4, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("tanh")
-                        .build())
+//                .layer(4, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+//                        .activation("tanh")
+//                        .build())
 //                .layer(5, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
 //                        .activation("tanh")
 //                        .build())
-                .layer(5, new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
+                .layer(4, new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
                         .activation("softmax")
                         .nIn(numHiddenNodes).nOut(numOutputs).build())
                 .pretrain(false).backprop(true).build()
@@ -194,7 +198,7 @@ public class TranningSolidDispersion {
         List<EpochTerminationCondition> terminationconditions = new LinkedList<EpochTerminationCondition>();
   //      terminationconditions.add(new ScoreImprovementEpochTerminationCondition(10, 1E-10));
         terminationconditions.add(new BestScoreEpochTerminationCondition(0.01));
-        terminationconditions.add(new MaxEpochsTerminationCondition(5000));
+        terminationconditions.add(new MaxEpochsTerminationCondition(6000));
 
         EarlyStoppingConfiguration<MultiLayerNetwork> esConf = new EarlyStoppingConfiguration.Builder<MultiLayerNetwork>()
         		.epochTerminationConditions(terminationconditions)
