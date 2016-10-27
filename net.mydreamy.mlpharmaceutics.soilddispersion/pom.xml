@@ -95,7 +95,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                 	<mainClass>net.mydreamy.mlpharmaceutics.soliddispersion.TrainningDisintegrationTime</mainClass>
+                 	<mainClass>net.mydreamy.mlpharmaceutics.soliddispersion.TranningSolidDispersion</mainClass>
                 </configuration>
             </plugin>
             
