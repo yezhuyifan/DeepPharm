@@ -1,0 +1,150 @@
+    public static final int numHiddenNodes = 200;   
+   
+        MultiLayerNetwork net = new MultiLayerNetwork(new NeuralNetConfiguration.Builder()
+                .seed(seed)
+                .iterations(iterations)
+                .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
+                .learningRate(learningRate)
+                .weightInit(WeightInit.XAVIER)
+                .regularization(true)
+                .l2(1e-3)
+                .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
+              //  .dropOut(0.5)
+                .updater(Updater.NESTEROVS).momentum(0.8)
+              //  .updater(Updater.ADAM)
+                .list()
+                .layer(0, new DenseLayer.Builder().nIn(numInputs).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(1, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(2, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(3, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(4, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+//                .layer(5, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+//                        .activation("tanh")
+//                        .build())
+                .layer(5, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
+                        .activation("identity")
+                        .nIn(numHiddenNodes).nOut(numOutputs).build())
+                .pretrain(false).backprop(true).build()
+        );
+        net.init();
+        net.setListeners(new ScoreIterationListener(100));
+
+[main] INFO org.deeplearning4j.earlystopping.trainer.BaseEarlyStoppingTrainer - Hit epoch termination condition at epoch 20000. Details: MaxEpochsTerminationCondition(20000)
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - Termination reason: EpochTerminationCondition
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - Termination details: MaxEpochsTerminationCondition(20000)
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - Total epochs: 20001
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - Best epoch number: 20000
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - Score at best epoch: 103.18430783815833
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - ========================== testing =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - ========================== latest model =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - train label set:
+[ 1.00,  3.00,  5.00,  5.00,  7.00,  5.00,  6.00, 11.00,  3.00,  2.00, 10.00,  6.00,  9.00,  6.00,  8.00, 11.00,  6.00,  9.00,  9.00,  7.89, 14.85, 10.48, 16.42, 63.00, 44.00, 39.00, 36.00, 49.00, 30.00, 28.00, 43.00, 23.00, 26.00, 53.00, 53.70, 13.70, 60.00, 48.00, 54.00, 46.00, 33.00, 37.00, 52.00, 40.00, 47.00, 44.00, 42.00, 40.00, 35.00, 46.00, 32.00,  5.52, 15.00, 20.43, 15.00, 40.30, 50.30, 66.00, 89.00, 38.33,  7.70, 10.90, 11.10, 11.40, 14.60,  8.80,  9.50, 10.60, 14.30, 34.50, 33.50, 16.20, 23.70, 59.50, 30.70, 39.00, 30.40, 24.50, 24.80, 27.00, 26.80, 38.80, 48.93, 49.60, 42.78, 53.87, 64.07, 58.50, 60.67, 57.67, 90.00, 62.67, 60.00, 45.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - train prediction set:
+[ 6.80,  6.86,  7.53,  6.20,  6.31,  7.47,  6.95,  6.65,  7.62,  6.66,  7.43,  8.08,  7.93,  8.64,  7.99,  7.29,  8.81,  7.35,  8.46, 18.05,  8.81,  9.12, 19.59, 49.01, 49.02, 49.03, 34.84, 34.84, 33.87, 33.87, 33.87, 32.04, 32.04, 40.16, 40.16, 39.02, 46.60, 46.92, 47.23, 44.98, 45.31, 45.64, 43.29, 43.97, 43.66, 43.95, 44.25, 41.94, 42.19, 40.04, 40.45,  8.32, 14.04, 18.57, 45.77, 43.47, 44.11, 43.20, 60.35, 60.55, 11.78, 13.02, 14.64, 13.22, 15.27, 11.51, 13.42, 11.28, 14.59, 30.99, 30.64, 30.60, 32.27, 34.14, 29.07, 30.85, 31.08, 31.15, 30.60, 32.30, 30.85, 56.34, 56.35, 56.34, 56.35, 56.35, 56.34, 56.34, 55.09, 55.47, 56.22, 56.28, 56.30, 56.28]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - training set MSE is:94.3525078956
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - training set R is:0.8866
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test label value: 
+[ 2.00,  6.00,  6.00, 10.00,  5.00,  6.60, 59.00, 32.00, 20.00, 14.00, 36.00, 46.00, 39.00, 24.00, 64.33, 10.70, 12.90, 44.33, 64.43, 40.78]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test prediction value: 
+[ 7.53,  6.95,  6.22,  7.31,  8.75, 18.66, 49.02, 34.84, 32.04, 39.02, 43.63, 41.69, 40.24, 45.04, 60.55, 11.40, 12.88, 56.28, 56.34, 56.35]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set MSE is: 103.1763305664
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set R is: 0.8969
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - ========================== best model =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - train label set:
+[ 1.00,  3.00,  5.00,  5.00,  7.00,  5.00,  6.00, 11.00,  3.00,  2.00, 10.00,  6.00,  9.00,  6.00,  8.00, 11.00,  6.00,  9.00,  9.00,  7.89, 14.85, 10.48, 16.42, 63.00, 44.00, 39.00, 36.00, 49.00, 30.00, 28.00, 43.00, 23.00, 26.00, 53.00, 53.70, 13.70, 60.00, 48.00, 54.00, 46.00, 33.00, 37.00, 52.00, 40.00, 47.00, 44.00, 42.00, 40.00, 35.00, 46.00, 32.00,  5.52, 15.00, 20.43, 15.00, 40.30, 50.30, 66.00, 89.00, 38.33,  7.70, 10.90, 11.10, 11.40, 14.60,  8.80,  9.50, 10.60, 14.30, 34.50, 33.50, 16.20, 23.70, 59.50, 30.70, 39.00, 30.40, 24.50, 24.80, 27.00, 26.80, 38.80, 48.93, 49.60, 42.78, 53.87, 64.07, 58.50, 60.67, 57.67, 90.00, 62.67, 60.00, 45.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - train prediction set:
+[ 6.80,  6.86,  7.53,  6.20,  6.31,  7.47,  6.95,  6.65,  7.62,  6.66,  7.43,  8.08,  7.93,  8.64,  7.99,  7.29,  8.81,  7.35,  8.46, 18.05,  8.81,  9.12, 19.59, 49.01, 49.02, 49.03, 34.84, 34.84, 33.87, 33.87, 33.87, 32.04, 32.04, 40.16, 40.16, 39.02, 46.60, 46.92, 47.23, 44.98, 45.31, 45.64, 43.29, 43.97, 43.66, 43.95, 44.25, 41.94, 42.19, 40.04, 40.45,  8.32, 14.04, 18.57, 45.77, 43.47, 44.11, 43.20, 60.35, 60.55, 11.78, 13.02, 14.64, 13.22, 15.27, 11.51, 13.42, 11.28, 14.59, 30.99, 30.64, 30.60, 32.27, 34.14, 29.07, 30.85, 31.08, 31.15, 30.60, 32.30, 30.85, 56.34, 56.35, 56.34, 56.35, 56.35, 56.34, 56.34, 55.09, 55.47, 56.22, 56.28, 56.30, 56.28]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - training set MSE is:94.3525078956
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - training set R is:0.8866
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test label value: 
+[ 2.00,  6.00,  6.00, 10.00,  5.00,  6.60, 59.00, 32.00, 20.00, 14.00, 36.00, 46.00, 39.00, 24.00, 64.33, 10.70, 12.90, 44.33, 64.43, 40.78]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test prediction value: 
+[ 7.53,  6.95,  6.22,  7.31,  8.75, 18.66, 49.02, 34.84, 32.04, 39.02, 43.63, 41.69, 40.24, 45.04, 60.55, 11.40, 12.88, 56.28, 56.34, 56.35]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set MSE is: 103.1763305664
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set R is: 0.8969
+
+ain] INFO org.deeplearning4j.optimize.listeners.ScoreIterationListener - Score at iteration 25000 is 94.18523962813283
+[main] INFO org.deeplearning4j.earlystopping.trainer.BaseEarlyStoppingTrainer - Completed training epoch 25000
+[main] INFO org.deeplearning4j.earlystopping.trainer.BaseEarlyStoppingTrainer - New best model: score = 101.25253533875733, epoch = 25000 (previous: score = 101.2823506538958, epoch = 24900)
+[main] INFO org.deeplearning4j.earlystopping.trainer.BaseEarlyStoppingTrainer - Hit epoch termination condition at epoch 25000. Details: MaxEpochsTerminationCondition(25000)
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - Termination reason: EpochTerminationCondition
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - Termination details: MaxEpochsTerminationCondition(25000)
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - Total epochs: 25001
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - Best epoch number: 25000
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - Score at best epoch: 101.25253533875733
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - ========================== testing =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - ========================== latest model =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - train label set:
+[ 1.00,  3.00,  5.00,  5.00,  7.00,  5.00,  6.00, 11.00,  3.00,  2.00, 10.00,  6.00,  9.00,  6.00,  8.00, 11.00,  6.00,  9.00,  9.00,  7.89, 14.85, 10.48, 16.42, 63.00, 44.00, 39.00, 36.00, 49.00, 30.00, 28.00, 43.00, 23.00, 26.00, 53.00, 53.70, 13.70, 60.00, 48.00, 54.00, 46.00, 33.00, 37.00, 52.00, 40.00, 47.00, 44.00, 42.00, 40.00, 35.00, 46.00, 32.00,  5.52, 15.00, 20.43, 15.00, 40.30, 50.30, 66.00, 89.00, 38.33,  7.70, 10.90, 11.10, 11.40, 14.60,  8.80,  9.50, 10.60, 14.30, 34.50, 33.50, 16.20, 23.70, 59.50, 30.70, 39.00, 30.40, 24.50, 24.80, 27.00, 26.80, 38.80, 48.93, 49.60, 42.78, 53.87, 64.07, 58.50, 60.67, 57.67, 90.00, 62.67, 60.00, 45.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - train prediction set:
+[ 6.94,  6.98,  7.60,  6.36,  6.44,  7.56,  7.04,  6.78,  7.66,  6.81,  7.52,  8.12,  8.02,  8.66,  8.06,  7.43,  8.81,  7.46,  8.51, 17.96,  8.71,  9.04, 19.50, 48.93, 48.94, 48.94, 35.27, 35.27, 33.74, 33.74, 33.74, 31.32, 31.32, 40.22, 40.22, 39.10, 46.60, 46.91, 47.21, 44.99, 45.31, 45.64, 43.32, 43.98, 43.64, 43.93, 44.22, 41.88, 42.14, 39.95, 40.36,  8.35, 14.03, 18.55, 45.07, 43.06, 43.41, 42.63, 61.09, 61.26, 11.70, 13.06, 14.88, 13.13, 15.38, 11.28, 13.29, 11.13, 14.83, 30.87, 30.50, 30.46, 32.19, 34.15, 28.89, 30.70, 30.92, 31.01, 30.46, 32.23, 30.70, 56.39, 56.39, 56.38, 56.39, 56.39, 56.39, 56.39, 55.18, 55.50, 56.25, 56.32, 56.34, 56.32]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - training set MSE is:93.7178981051
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - training set R is:0.8874
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test label value: 
+[ 2.00,  6.00,  6.00, 10.00,  5.00,  6.60, 59.00, 32.00, 20.00, 14.00, 36.00, 46.00, 39.00, 24.00, 64.33, 10.70, 12.90, 44.33, 64.43, 40.78]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test prediction value: 
+[ 7.60,  7.04,  6.38,  7.45,  8.75, 18.59, 48.93, 35.27, 31.32, 39.10, 43.65, 41.63, 40.15, 44.43, 61.26, 11.22, 12.86, 56.32, 56.38, 56.39]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set MSE is: 101.2451904297
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set R is: 0.8994
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - ========================== best model =========================
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - train label set:
+[ 1.00,  3.00,  5.00,  5.00,  7.00,  5.00,  6.00, 11.00,  3.00,  2.00, 10.00,  6.00,  9.00,  6.00,  8.00, 11.00,  6.00,  9.00,  9.00,  7.89, 14.85, 10.48, 16.42, 63.00, 44.00, 39.00, 36.00, 49.00, 30.00, 28.00, 43.00, 23.00, 26.00, 53.00, 53.70, 13.70, 60.00, 48.00, 54.00, 46.00, 33.00, 37.00, 52.00, 40.00, 47.00, 44.00, 42.00, 40.00, 35.00, 46.00, 32.00,  5.52, 15.00, 20.43, 15.00, 40.30, 50.30, 66.00, 89.00, 38.33,  7.70, 10.90, 11.10, 11.40, 14.60,  8.80,  9.50, 10.60, 14.30, 34.50, 33.50, 16.20, 23.70, 59.50, 30.70, 39.00, 30.40, 24.50, 24.80, 27.00, 26.80, 38.80, 48.93, 49.60, 42.78, 53.87, 64.07, 58.50, 60.67, 57.67, 90.00, 62.67, 60.00, 45.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - train prediction set:
+[ 6.94,  6.98,  7.60,  6.36,  6.44,  7.56,  7.04,  6.78,  7.66,  6.81,  7.52,  8.12,  8.02,  8.66,  8.06,  7.43,  8.81,  7.46,  8.51, 17.96,  8.71,  9.04, 19.50, 48.93, 48.94, 48.94, 35.27, 35.27, 33.74, 33.74, 33.74, 31.32, 31.32, 40.22, 40.22, 39.10, 46.60, 46.91, 47.21, 44.99, 45.31, 45.64, 43.32, 43.98, 43.64, 43.93, 44.22, 41.88, 42.14, 39.95, 40.36,  8.35, 14.03, 18.55, 45.07, 43.06, 43.41, 42.63, 61.09, 61.26, 11.70, 13.06, 14.88, 13.13, 15.38, 11.28, 13.29, 11.13, 14.83, 30.87, 30.50, 30.46, 32.19, 34.15, 28.89, 30.70, 30.92, 31.01, 30.46, 32.23, 30.70, 56.39, 56.39, 56.38, 56.39, 56.39, 56.39, 56.39, 55.18, 55.50, 56.25, 56.32, 56.34, 56.32]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - training set MSE is:93.7178981051
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - training set R is:0.8874
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test label value: 
+[ 2.00,  6.00,  6.00, 10.00,  5.00,  6.60, 59.00, 32.00, 20.00, 14.00, 36.00, 46.00, 39.00, 24.00, 64.33, 10.70, 12.90, 44.33, 64.43, 40.78]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test prediction value: 
+[ 7.60,  7.04,  6.38,  7.45,  8.75, 18.59, 48.93, 35.27, 31.32, 39.10, 43.65, 41.63, 40.15, 44.43, 61.26, 11.22, 12.86, 56.32, 56.38, 56.39]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set MSE is: 101.2451904297
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set R is: 0.8994
+
+        MultiLayerNetwork net = new MultiLayerNetwork(new NeuralNetConfiguration.Builder()
+                .seed(seed)
+                .iterations(iterations)
+                .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
+                .learningRate(learningRate)
+                .weightInit(WeightInit.XAVIER)
+                .regularization(true)
+                .l2(1e-3)
+                .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
+              //  .dropOut(0.5)
+                .updater(Updater.NESTEROVS).momentum(0.8)
+              //  .updater(Updater.ADAM)
+                .list()
+                .layer(0, new DenseLayer.Builder().nIn(numInputs).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(1, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(2, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(3, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(4, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(5, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(6, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
+                        .activation("identity")
+                        .nIn(numHiddenNodes).nOut(numOutputs).build())
+                .pretrain(false).backprop(true).build()
+        );
+        net.init();
+        net.setListeners(new ScoreIterationListener(100));

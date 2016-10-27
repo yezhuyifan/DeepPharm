@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.mydreamy.mlpharmaceutics</groupId>
-  <artifactId>net.mydreamy.mlpharmaceutics.soliddispersion</artifactId>
+  <artifactId>net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms</artifactId>
   <version>1.0.0</version>
-  <name>Solid Dispersion Prediction</name>
+  <name>Oral Fast Disintegrating Films</name>
   
-  	<properties>
+   	<properties>
   	
         <nd4j.backend>nd4j-native-platform</nd4j.backend>
         
@@ -95,7 +95,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                 	<mainClass>net.mydreamy.mlpharmaceutics.soliddispersion.TrainningDisintegrationTime</mainClass>
+                 	<mainClass>net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime</mainClass>
                 </configuration>
             </plugin>
             
@@ -132,5 +132,5 @@
 
         </plugins>
     </build>
-
+  
 </project>
