@@ -188,7 +188,7 @@ public class TrainningDisintegrationTime {
         List<EpochTerminationCondition> terminationconditions = new LinkedList<EpochTerminationCondition>();
   //      terminationconditions.add(new ScoreImprovementEpochTerminationCondition(10, 1E-10));
         terminationconditions.add(new BestScoreEpochTerminationCondition(10));
-        terminationconditions.add(new MaxEpochsTerminationCondition(30000));
+        terminationconditions.add(new MaxEpochsTerminationCondition(50000));
 
         EarlyStoppingConfiguration<MultiLayerNetwork> esConf = new EarlyStoppingConfiguration.Builder<MultiLayerNetwork>()
         		.epochTerminationConditions(terminationconditions)
