@@ -615,3 +615,35 @@ ain] INFO org.deeplearning4j.optimize.listeners.ScoreIterationListener - Score a
 [ 6.41,  6.31, 11.41,  6.72, 32.63, 12.15, 52.95, 43.25, 21.78, 25.44, 46.12, 46.37, 46.03, 39.11, 48.88,  9.17, 40.17, 56.22, 56.54, 54.70]
 [main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set MSE is: 56.7797607422
 [main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set R is: 0.9267
+
+#initalIndexes <- sample(numbers, 5)
+Selected Indexes are: ,104,84,51,48,85,22,54,33,56,62,60,77,76,107,82,
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test label value: 
+[14.00, 40.78, 32.00, 40.00, 42.78,  6.60, 20.43, 20.00, 24.00, 10.90, 38.33, 30.40, 39.00, 39.00, 38.80]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test prediction value: 
+[25.44, 39.52, 46.03, 46.04, 55.72,  9.21, 20.71, 21.78, 30.01, 10.86, 48.88, 28.81, 28.93, 46.03, 43.32]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set MSE is: 57.6453206380
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set R is: 0.8918
+
+average sampling
+initalIndexes <- c(7,99,103,107,114)
+Selected Indexes are: ,51,105,66,54,23,20,58,35,88,62,80,77,108,85,53,
+[main] INFO org.reflections.Reflections - Reflections took 1174 ms to scan 76 urls, producing 3241 keys and 18590 values 
+[main] INFO org.reflections.Reflections - Reflections took 911 ms to scan 76 urls, producing 3241 keys and 18590 values 
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test label value: 
+[32.00, 36.00,  8.80, 20.43, 16.42,  7.89, 66.00, 53.70, 64.43, 10.90, 27.00, 30.40, 40.30, 42.78,  6.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test prediction value: 
+[46.03, 46.12,  8.95, 20.71,  9.16,  9.20, 52.56, 52.92, 55.03, 10.86, 40.53, 28.81, 39.11, 55.72,  6.43]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set MSE is: 65.2023681641
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set R is: 0.9118
+
+abnormal sampling
+initalIndexes <- c(1,24,59,74,91)
+Selected Indexes are: ,95,49,63,57,78,92,30,34,55,66,77,82,21,35,107,
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test label value: 
+[ 2.00, 35.00, 11.10, 50.30, 24.50, 62.67, 28.00, 53.00, 15.00,  8.80, 30.40, 38.80, 14.85, 53.70, 39.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - test prediction value: 
+[ 6.41, 46.04, 13.62, 48.48, 26.57, 55.36, 34.41, 52.92, 26.25,  8.95, 28.81, 43.32, 12.50, 52.92, 46.03]
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set MSE is: 30.3254109701
+[main] INFO net.mydreamy.mlpharmaceutics.oralfastdisintegratingfilms.TrainningDisintegrationTime - testing set R is: 0.9612
+

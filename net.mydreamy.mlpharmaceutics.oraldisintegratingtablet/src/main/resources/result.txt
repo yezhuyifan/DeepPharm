@@ -1189,3 +1189,42 @@ new data
 [main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set R is: 0.9320
 [main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - ========================== 
 
+initalIndexes <- sample(numbers, 5)
+set.seed(5)
+Selected Indexes are: ,86,143,13,3,4,62,26,138,25,72,74,82,14,132,67,
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test label value: 
+[36.00, 35.00, 47.25, 24.00, 10.00,  2.19, 53.33, 28.00, 51.00, 28.00, 25.00,  5.00, 52.21, 15.33,  2.61]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test prediction value: 
+[36.78, 59.26, 39.10, 25.95,  9.64,  6.14, 52.09, 33.24, 51.65, 29.47, 25.08, 10.44, 52.60, 15.62,  5.93]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set MSE is: 49.8187988281
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set R is: 0.9296
+
+average sampling
+initalIndexes <- c(140,145,146,150,152)
+Selected Indexes are: ,89,138,83,1,19,13,41,27,4,142,77,85,14,15,75,
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test label value: 
+[11.00, 28.00, 10.00, 30.00, 52.33, 47.25, 24.66,  7.30, 10.00, 45.33, 30.00, 19.80, 52.21, 37.00, 25.00]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test prediction value: 
+[ 8.46, 33.24, 10.43, 28.06, 53.68, 39.10, 45.99,  6.05,  9.64, 63.52, 30.39, 18.80, 52.60, 39.09, 24.99]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set MSE is: 59.9540323893
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set R is: 0.9078
+
+abnormal sampling
+ #initalIndexes <- c(4,53,85,88,55)
+ Selected Indexes are: ,133,84,1,23,13,9,46,131,74,26,77,71,56,86,66,
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test label value: 
+[15.67, 10.00, 30.00, 29.00, 47.25, 14.63, 61.66, 21.17, 25.00, 53.33, 30.00, 32.00, 12.97, 36.00,  2.41]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - test prediction value: 
+[15.62, 10.57, 28.06, 30.05, 39.10, 17.57, 63.35, 21.01, 25.08, 52.09, 30.39, 29.42,  6.25, 36.78,  5.93]
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set MSE is: 9.9813710531
+[main] INFO net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.TrainningDisintegrationTime - testing set R is: 0.9811
+
+
+#initalIndexes <- c(4,5,54,55,74,75,76,77,85,135,136,137)
+Selected Indexes are: ,80,126,17,1,11,45,25,131,61,72,13,12,65,82,110,
+ testing set R is: 0.9516
+ 
+
+ 
+
+ 
