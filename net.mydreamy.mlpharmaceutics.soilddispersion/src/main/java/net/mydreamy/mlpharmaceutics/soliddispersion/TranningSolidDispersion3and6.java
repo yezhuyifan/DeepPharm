@@ -23,6 +23,7 @@ import org.deeplearning4j.eval.Evaluation;
 import org.deeplearning4j.eval.RegressionEvaluation;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.GradientNormalization;
+import org.deeplearning4j.nn.conf.LearningRatePolicy;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.Updater;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
@@ -57,8 +58,8 @@ public class TranningSolidDispersion3and6 {
     public static final int nEpochs = 200;
 
     //Batch size: i.e., each epoch has nSamples/batchSize parameter updates
-    public static final int batchSize = 145;
-    public static final int testsetsize = 16;
+    public static final int trainsetsize = 200;
+    public static final int testsetsize = 20;
     
     //Network learning rate
     public static final double learningRate = 0.01;
@@ -68,7 +69,7 @@ public class TranningSolidDispersion3and6 {
     //
     //public static final int numInputs = 18;
     public static final int numOutputs = 2;
-    public static final int numHiddenNodes = 200;
+    public static final int numHiddenNodes = 50;
     	
 	public static void main(String[] args) {
 		
@@ -91,8 +92,7 @@ public class TranningSolidDispersion3and6 {
         String delimiter = ",";
         RecordReader recordReadertrain = new CSVRecordReader(numLinesToSkip,delimiter);
         try {
-        //	recordReadertrain.initialize(new FileSplit(new ClassPathResource("3m-code-tranning.csv").getFile()));
-        	recordReadertrain.initialize(new FileSplit(new ClassPathResource("3m-6m-code.csv").getFile()));
+        	recordReadertrain.initialize(new FileSplit(new ClassPathResource("trainingset.csv").getFile()));
 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -105,51 +105,50 @@ public class TranningSolidDispersion3and6 {
 			e.printStackTrace();
 		}
 
-        DataSetIterator iteratortrain = new RecordReaderDataSetIterator(recordReadertrain,batchSize,numInputs,numInputs+1,true);
-        DataSet trainningData =  iteratortrain.next();
-        log.info("training set:\n" + trainningData.getFeatureMatrix().toString());
-        log.info("training set:\n" + trainningData.getLabels().toString());
-        iteratortrain.reset();
+        DataSetIterator iteratortrain = new RecordReaderDataSetIterator(recordReadertrain,trainsetsize,numInputs,numInputs+1,true);
+ //       DataSet trainningData =  iteratortrain.next();
+ //       log.info("training set:\n" + trainningData.getFeatureMatrix().toString());
+ //       log.info("training set:\n" + trainningData.getLabels().toString());
+ //       iteratortrain.reset();
 
         
-//        RecordReader recordReadertest = new CSVRecordReader(numLinesToSkip,delimiter);
-//        try {
-//        //	recordReadertest.initialize(new FileSplit(new ClassPathResource("3m-code-testing.csv").getFile()));
-//        	recordReadertest.initialize(new FileSplit(new ClassPathResource("6M-code-test.csv").getFile()));
-//
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//
-//        DataSetIterator iteratortest = new RecordReaderDataSetIterator(recordReadertest,testsetsize,numInputs,2);
+        RecordReader recordReadertest = new CSVRecordReader(numLinesToSkip,delimiter);
+        try {
+        	recordReadertest.initialize(new FileSplit(new ClassPathResource("testingset.csv").getFile()));
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+        DataSetIterator iteratortest = new RecordReaderDataSetIterator(recordReadertest,testsetsize,numInputs,numInputs+1,true);
 //
 // //       log.info("testData set:" + testData.toString());
 //        
 ////        // Normalization
 //        NormalizerStandardize normalizer = new NormalizerStandardize();
 //   
-//        DataSet trainningData = iteratortrain.next();
-//        DataSet testData = iteratortest.next();
+        DataSet trainningSet = iteratortrain.next();
+        DataSet testSet = iteratortest.next();
 //
-////        log.info("train set\n" + trainningData.getFeatureMatrix().toString());
-////        log.info("train set\n" + trainningData.getLabels().toString());
-////        log.info("test set\n" + testData.getFeatureMatrix().toString());
-////        log.info("test set\n" + testData.getLabels().toString());
+//        log.info("train set\n" + trainningSet.getFeatureMatrix().toString());
+//        log.info("train set\n" + trainningSet.getLabels().toString());
+//        log.info("test set\n" + testSet.getFeatureMatrix().toString());
+//        log.info("test set\n" + testSet.getLabels().toString());
 //        
 ////        normalizer.fitLabel(false);
 ////        normalizer.fit(trainningData); 
 ////        normalizer.transform(trainningData); 
 ////        normalizer.transform(testData); 
 //        
-//        iteratortrain.reset();
-//        iteratortest.reset();
+        iteratortrain.reset();
+        iteratortest.reset();
 ////        log.info("training data features:\n" + trainningData.getFeatureMatrix().toString());
 ////        log.info("training data label:\n" + trainningData.getLabels().toString());
 ////        normalizer.transform(testData); 
@@ -162,9 +161,12 @@ public class TranningSolidDispersion3and6 {
                 .iterations(iterations)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                 .learningRate(learningRate)
-                .weightInit(WeightInit.XAVIER)
+                .weightInit(WeightInit.RELU)
+//                .learningRateDecayPolicy(LearningRatePolicy.Step)
+//                .lrPolicyDecayRate(0.1)
+//                .lrPolicySteps(100000)
                 .regularization(true)
-                .l2(1e-6)
+                .l2(1e-3)
                 .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
               //  .dropOut(0.5)
                 .updater(Updater.NESTEROVS).momentum(0.8)
@@ -188,8 +190,17 @@ public class TranningSolidDispersion3and6 {
                 .layer(5, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
                         .activation("tanh")
                         .build())
-                .layer(6, new OutputLayer.Builder(LossFunctions.LossFunction.NEGATIVELOGLIKELIHOOD)
-                        .activation("softmax")
+                .layer(6, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(7, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(8, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(9, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
+                        .activation("sigmoid")
                         .nIn(numHiddenNodes).nOut(numOutputs).build())
                 .pretrain(false).backprop(true).build()
         );
@@ -200,11 +211,11 @@ public class TranningSolidDispersion3and6 {
         List<EpochTerminationCondition> terminationconditions = new LinkedList<EpochTerminationCondition>();
   //      terminationconditions.add(new ScoreImprovementEpochTerminationCondition(10, 1E-10));
         terminationconditions.add(new BestScoreEpochTerminationCondition(0.01));
-        terminationconditions.add(new MaxEpochsTerminationCondition(10000));
+        terminationconditions.add(new MaxEpochsTerminationCondition(2000));
 
         EarlyStoppingConfiguration<MultiLayerNetwork> esConf = new EarlyStoppingConfiguration.Builder<MultiLayerNetwork>()
         		.epochTerminationConditions(terminationconditions)
-        		.scoreCalculator(new DataSetLossCalculator(iteratortrain, true))
+        		.scoreCalculator(new DataSetLossCalculator(iteratortest, true))
                 .evaluateEveryNEpochs(100)
                 .saveLastModel(true)
         		.modelSaver(new LocalFileModelSaver("src/main/resources"))
@@ -265,51 +276,65 @@ public class TranningSolidDispersion3and6 {
         log.info("========================== testing =========================");
         log.info("========================== latest model =========================");
         //test on latest model
-        testOnDiffModel(latestModel, trainningData, trainningData);
+         testOnDiffModel(latestModel, trainningSet, testSet);
         
         log.info("========================== best model =========================");
         //test on best model
-        testOnDiffModel(bestModel, trainningData, trainningData);
+      //  testOnDiffModel(bestModel, trainningSet, testSet);
+        testOnDiffModel(bestModel, trainningSet, testSet);
+
  
 	}
 
 	public static void testOnDiffModel(MultiLayerNetwork net, DataSet trainningData,  DataSet testData)
 	{
 
-	       // evaluation training set
-	     Evaluation evalTrain = new Evaluation(2);
+    //     log.info(testData.toString());
 	     
 	     INDArray featuresTrain = trainningData.getFeatureMatrix();
 	     INDArray lablesTrain = trainningData.getLabels();
 	     
 	     INDArray PredictionTrain = net.output(featuresTrain);
-	//     log.info("train label set:\n" + lablesTrain.toString());
-	 //    log.info("train prediction set:\n" + PredictionTrain.toString());
-	     evalTrain.eval(lablesTrain, PredictionTrain);	  
+	    
+	     INDArray trainr = lablesTrain.sub(PredictionTrain);
+	         
+	     int tlen = trainr.size(0);
 	     
-	//     log.info("net score is:" + String.format("%.10f", net.));
-	     
-	     log.info("training set F1 is:" + String.format("%.4f", evalTrain.f1()));
-	     
-	     // evluation test set
-	     Evaluation evalTest = new Evaluation(2);
-	     
+	     double tcorrectnumber = 0;
+	     for (int i = 0; i < tlen; i++)
+	     {
+	    	 if (Math.abs(trainr.getDouble(i, 0)) <= 0.5 && Math.abs(trainr.getDouble(i, 1)) <= 0.5)
+	    	 {
+	    		 tcorrectnumber++;
+	    	 }
+	     }
+
 	     INDArray featuresTest = testData.getFeatureMatrix();
-	 //    log.info("featuresTest" + featuresTest.shapeInfoToString());
-	 //    log.info("\n" + featuresTest.toString());
-	
-	     INDArray lablesTest = testData.getLabels();
+         INDArray lablesTest = testData.getLabels();
 	     
-	     
-	//     log.info(evalTest.stats());
 	     INDArray PredictionTest = net.output(featuresTest);
 	     
 	     log.info("test label value: \n" + lablesTest.toString());
 	     log.info("test prediction value: \n" + PredictionTest.toString());
-	
-	     evalTest.eval(lablesTest, PredictionTest);	  
 	     
-	  //  log.info("testing set MSE is: " + String.format("%.10f", evalTest.accuracy())); 
-	    log.info("testing set F1 is: " + String.format("%.4f", evalTest.f1()));
+	     INDArray testr = lablesTest.sub(PredictionTest);
+         
+	     int testlen = testr.size(0);
+	     
+	     double testcorrectnumber = 0;
+	     for (int i = 0; i < testlen; i++)
+	     {
+	    	 if (Math.abs(testr.getDouble(i, 0)) <= 0.5 && Math.abs(testr.getDouble(i, 1)) <= 0.5)
+	    	 {
+	    		 testcorrectnumber++;
+	    	 }
+	     }
+	     
+	     net.printConfiguration();
+	     log.info("train 3-6 correctness: " +  String.format("%.4f", tcorrectnumber/(double)tlen));
+	     log.info("test 3-6 correctness: " + String.format("%.4f", testcorrectnumber/(double)testlen));
+//	     log.info("testcorrectnumber:" + testcorrectnumber);
+//	     log.info(testr.toString());
+	     
 	}
 }

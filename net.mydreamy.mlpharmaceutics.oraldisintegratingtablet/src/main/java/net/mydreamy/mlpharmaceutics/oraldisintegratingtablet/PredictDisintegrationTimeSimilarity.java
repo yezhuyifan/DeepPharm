@@ -18,6 +18,7 @@ import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
 import org.nd4j.linalg.indexing.NDArrayIndex;
 import org.nd4j.linalg.indexing.SpecifiedIndex;
+import org.nd4j.linalg.ops.transforms.Transforms;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,14 +26,14 @@ public class PredictDisintegrationTimeSimilarity {
 	
 	public static Logger log = LoggerFactory.getLogger(TrainningDisintegrationTime.class);
 	
-    public static final int numInputs = 27;
-    public static final int testsetsize = 151;
+    public static final int numInputs = 26;
+    public static final int testsetsize = 20;
 	
 	public static void main(String[] args) {
 		
 		  RecordReader recordReadertest = new CSVRecordReader(1,",");
 	        try {
-	        	recordReadertest.initialize(new FileSplit(new ClassPathResource("selecteddata.csv").getFile()));
+	        	recordReadertest.initialize(new FileSplit(new ClassPathResource("extrascaledtestset.csv").getFile()));
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -57,8 +58,8 @@ public class PredictDisintegrationTimeSimilarity {
 	        INDArray featuresTest = alldata.getFeatureMatrix();
 
 	        
-	        log.info("featuresTest" + featuresTest.shapeInfoToString());
-	        log.info("\n" + featuresTest.toString());
+	       // log.info("featuresTest" + featuresTest.shapeInfoToString());
+	       // log.info("\n" + featuresTest.toString());
 
 	        INDArray lablesTest = alldata.getLabels();
 	       
@@ -72,7 +73,7 @@ public class PredictDisintegrationTimeSimilarity {
 	        //   	bestModel = result.getBestModel();
 	       //
 	               try {
-	               	bestModel = ModelSerializer.restoreMultiLayerNetwork(new File("src/main/resources/odtapiparams.bin"));
+	               	bestModel = ModelSerializer.restoreMultiLayerNetwork(new File("src/main/resources/bestModel.bin"));
 	       		} catch (IOException e) {
 	       			// TODO Auto-generated catch block
 	       			e.printStackTrace();
@@ -85,10 +86,46 @@ public class PredictDisintegrationTimeSimilarity {
 	        log.info("test label value: \n" + lablesTest.toString());
 	        log.info("test prediction value: \n" + PredictionTest.toString());
 
-	        evalTest.eval(lablesTest, PredictionTest);	  
+	        evalTest.eval(lablesTest,PredictionTest);	  
 	        
-	        log.info("testing set MSE is: " + String.format("%.10f", evalTest.meanSquaredError(0))); 
+	     //   log.info(evalTest.stats());
+	        
+	        log.info("testing set MAE is: " + String.format("%.4f", evalTest.meanAbsoluteError(0))); 
+
 	        log.info("testing set R is: " + String.format("%.4f", evalTest.correlationR2(0)));
-		
+
+	        
+	        Double labelmean = lablesTest.mean(0).getDouble(0);
+	        
+	        
+	        
+	        Double SSE = Transforms.pow(lablesTest.sub(PredictionTest), 2).sum(0).getDouble(0);
+	        Double SST = Transforms.pow(lablesTest.sub(labelmean), 2).sum(0).getDouble(0);
+	        Double SSR = Transforms.pow(PredictionTest.sub(labelmean), 2).sum(0).getDouble(0);
+	        
+	        log.info("label mean: " + labelmean);
+	        
+	        log.info("SSE: " + SSE);
+	        log.info("SST: " + SST);
+
+	        log.info("R square: " + (1 - (SSE/SST)));
+	        log.info("R square: " + (SSR/SST));
+	        
+	        INDArray absErrorMatrix = Transforms.abs(lablesTest.sub(PredictionTest));
+	        int size = absErrorMatrix.size(0);
+	        double correct = 0;
+	        for (int i = 0; i < size; i++)
+	        {
+	        	if (absErrorMatrix.getDouble(i) <= 0.1)
+	        	{
+	        		correct++;
+	        	}
+	        }
+	        log.info("correctness rate < 10s: " + String.format("%.4f", correct/size));
+	        
+	        Evaluation.AccuracyMAE(lablesTest, PredictionTest, 0.10);
+
+	        
+	        
 	}
 }

@@ -40,8 +40,10 @@ import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
 import org.nd4j.linalg.dataset.api.preprocessor.DataNormalization;
 import org.nd4j.linalg.dataset.api.preprocessor.NormalizerStandardize;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
+import org.nd4j.linalg.ops.transforms.Transforms;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 
 
 
@@ -59,14 +61,14 @@ public class TrainningDisintegrationTime {
     public static final int nEpochs = 200;
 
     //Batch size: i.e., each epoch has nSamples/batchSize parameter updates
-    public static final int batchSize = 137;
-    public static final int testsetsize = 15;
+    public static final int batchSize = 200;
+    public static final int testsetsize = 20;
     
     //Network learning rate
     public static final double learningRate = 0.01;
     
     //with api properties
-    public static final int numInputs = 27;
+    public static final int numInputs = 26;
     //
     //public static final int numInputs = 18;
     public static final int numOutputs = 1;
@@ -86,11 +88,11 @@ public class TrainningDisintegrationTime {
 //        .allowCrossDeviceAccess(true);
 		
 		//First: get the dataset using the record reader. CSVRecordReader handles loading/parsing
-        int numLinesToSkip = 0;
+        int numLinesToSkip = 1;
         String delimiter = ",";
         RecordReader recordReadertrain = new CSVRecordReader(numLinesToSkip,delimiter);
         try {
-        	recordReadertrain.initialize(new FileSplit(new ClassPathResource("trainsetapiparams.csv").getFile()));
+        	recordReadertrain.initialize(new FileSplit(new ClassPathResource("trainingset.csv").getFile()));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -109,7 +111,7 @@ public class TrainningDisintegrationTime {
         
         RecordReader recordReadertest = new CSVRecordReader(numLinesToSkip,delimiter);
         try {
-        	recordReadertest.initialize(new FileSplit(new ClassPathResource("testsetapiparams.csv").getFile()));
+        	recordReadertest.initialize(new FileSplit(new ClassPathResource("testingset.csv").getFile()));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -150,7 +152,7 @@ public class TrainningDisintegrationTime {
                 .iterations(iterations)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                 .learningRate(learningRate)
-                .weightInit(WeightInit.XAVIER)
+                .weightInit(WeightInit.RELU)
                 .regularization(true)
                 .l2(1e-3)
                 .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
@@ -173,11 +175,24 @@ public class TrainningDisintegrationTime {
                 .layer(4, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
                         .activation("tanh")
                         .build())
+                .layer(5, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(6, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(7, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(8, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+
 //                .layer(5, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
 //                        .activation("tanh")
 //                        .build())
-                .layer(5, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
-                        .activation("identity")
+                .layer(9, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
+                        .activation("sigmoid")
                         .nIn(numHiddenNodes).nOut(numOutputs).build())
                 .pretrain(false).backprop(true).build()
         );
@@ -187,13 +202,13 @@ public class TrainningDisintegrationTime {
         
         List<EpochTerminationCondition> terminationconditions = new LinkedList<EpochTerminationCondition>();
   //      terminationconditions.add(new ScoreImprovementEpochTerminationCondition(10, 1E-10));
-        terminationconditions.add(new BestScoreEpochTerminationCondition(10));
-        terminationconditions.add(new MaxEpochsTerminationCondition(18000));
+    //    terminationconditions.add(new BestScoreEpochTerminationCondition(10));
+        terminationconditions.add(new MaxEpochsTerminationCondition(1500));
 
         EarlyStoppingConfiguration<MultiLayerNetwork> esConf = new EarlyStoppingConfiguration.Builder<MultiLayerNetwork>()
         		.epochTerminationConditions(terminationconditions)
         		.scoreCalculator(new DataSetLossCalculator(iteratortest, true))
-                .evaluateEveryNEpochs(1000)
+                .evaluateEveryNEpochs(100)
                 .saveLastModel(true)
         		.modelSaver(new LocalFileModelSaver("src/main/resources"))
         		.build();
@@ -274,8 +289,25 @@ public class TrainningDisintegrationTime {
         log.info("train prediction set:\n" + PredictionTrain.toString());
         evalTrain.eval(lablesTrain, PredictionTrain);	  
         
-        log.info("training set MSE is:" + String.format("%.10f", evalTrain.meanSquaredError(0)));
-        log.info("training set R is:" + String.format("%.4f", evalTrain.correlationR2(0)));
+//        log.info("training set MSE is:" + String.format("%.10f", evalTrain.meanSquaredError(0)));
+//        log.info("training set R is:" + String.format("%.4f", evalTrain.correlationR2(0)));
+        log.info("testing set MAE is: " + String.format("%.4f", evalTrain.meanAbsoluteError(0))); 
+        Evaluation.AccuracyMAE(lablesTrain, PredictionTrain, 0.10);
+
+        
+//        INDArray absErrorMatrixT = Transforms.abs(lablesTrain.sub(PredictionTrain));
+//        int sizeT = absErrorMatrixT.size(0);
+//        double correctT = 0;
+//        for (int i = 0; i < sizeT; i++)
+//        {
+//        	if (absErrorMatrixT.getDouble(i) <= 0.1)
+//        	{
+//        		correctT++;
+//        	}
+//        }
+//        log.info("correctness rate < 10s: " + String.format("%.4f", correctT/sizeT));
+        
+
         
         // evluation test set
         RegressionEvaluation evalTest = new RegressionEvaluation(1);
@@ -294,8 +326,24 @@ public class TrainningDisintegrationTime {
         log.info("test prediction value: \n" + PredictionTest.toString());
 
         evalTest.eval(lablesTest, PredictionTest);	  
-        
-       log.info("testing set MSE is: " + String.format("%.10f", evalTest.meanSquaredError(0))); 
-       log.info("testing set R is: " + String.format("%.4f", evalTest.correlationR2(0)));
+        log.info("testing set MAE is: " + String.format("%.4f", evalTest.meanAbsoluteError(0))); 
+        Evaluation.AccuracyMAE(lablesTest, PredictionTest, 0.10);
+
+//       log.info("testing set MSE is: " + String.format("%.10f", evalTest.meanSquaredError(0))); 
+//       log.info("testing set R is: " + String.format("%.4f", evalTest.correlationR2(0)));
+//       
+//       INDArray absErrorMatrix = Transforms.abs(lablesTest.sub(PredictionTest));
+//       int size = absErrorMatrix.size(0);
+//       double correct = 0;
+//       for (int i = 0; i < size; i++)
+//       {
+//       	if (absErrorMatrix.getDouble(i) <= 0.1)
+//       	{
+//       		correct++;
+//       	}
+//       }
+//       log.info("correctness rate < 10s: " + String.format("%.4f", correct/size));
+       
+       
 	}
 }
