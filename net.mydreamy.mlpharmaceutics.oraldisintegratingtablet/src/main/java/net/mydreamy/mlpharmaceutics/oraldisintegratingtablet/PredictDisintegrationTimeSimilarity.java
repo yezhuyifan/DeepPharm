@@ -22,6 +22,9 @@ import org.nd4j.linalg.ops.transforms.Transforms;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.base.EvaluationMCloud;
+import net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.finalcode.TrainningDisintegrationTime;
+
 public class PredictDisintegrationTimeSimilarity {
 	
 	public static Logger log = LoggerFactory.getLogger(TrainningDisintegrationTime.class);
@@ -73,7 +76,7 @@ public class PredictDisintegrationTimeSimilarity {
 	        //   	bestModel = result.getBestModel();
 	       //
 	               try {
-	               	bestModel = ModelSerializer.restoreMultiLayerNetwork(new File("src/main/resources/bestModel.bin"));
+	               	bestModel = ModelSerializer.restoreMultiLayerNetwork(new File("src/main/resources/final/bestModel.bin"));
 	       		} catch (IOException e) {
 	       			// TODO Auto-generated catch block
 	       			e.printStackTrace();
@@ -123,7 +126,7 @@ public class PredictDisintegrationTimeSimilarity {
 	        }
 	        log.info("correctness rate < 10s: " + String.format("%.4f", correct/size));
 	        
-	        Evaluation.AccuracyMAE(lablesTest, PredictionTest, 0.10);
+	        EvaluationMCloud.AccuracyMAE(lablesTest, PredictionTest, 0.10);
 
 	        
 	        

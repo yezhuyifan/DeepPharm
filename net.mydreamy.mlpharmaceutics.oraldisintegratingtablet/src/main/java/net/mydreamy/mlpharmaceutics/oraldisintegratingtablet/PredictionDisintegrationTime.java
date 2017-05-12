@@ -65,13 +65,14 @@ public class PredictionDisintegrationTime {
     	
 	public static void main(String[] args) {
 		Logger log = LoggerFactory.getLogger(PredictionDisintegrationTime.class);
-		
+
+
 		//First: get the dataset using the record reader. CSVRecordReader handles loading/parsing
         int numLinesToSkip = 0;
         String delimiter = ",";
         RecordReader recordReadertrain = new CSVRecordReader(numLinesToSkip,delimiter);
         try {
-        	recordReadertrain.initialize(new FileSplit(new ClassPathResource("trainset.csv").getFile()));
+        	recordReadertrain.initialize(new FileSplit(new ClassPathResource("trainingset.csv").getFile()));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -90,7 +91,7 @@ public class PredictionDisintegrationTime {
         
         RecordReader recordReadertest = new CSVRecordReader(numLinesToSkip,delimiter);
         try {
-        	recordReadertest.initialize(new FileSplit(new ClassPathResource("testset.csv").getFile()));
+        	recordReadertest.initialize(new FileSplit(new ClassPathResource("testingset.csv").getFile()));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -110,9 +111,8 @@ public class PredictionDisintegrationTime {
         MultiLayerNetwork bestModel = null;
 
         try {
-        //	bestModel = ModelSerializer.restoreMultiLayerNetwork(new File("src/main/resources/bestModel.bin"));
-        	bestModel = ModelSerializer.restoreMultiLayerNetwork(new File("src/main/resources/bestModel.bin"));
-
+        	bestModel = ModelSerializer.restoreMultiLayerNetwork(new File("net.mydreamy.mlpharmaceutics.oraldisintegratingtablet\\src\\main\\resources\\bestModel.bin"));
+        //	bestModel = ModelSerializer.restoreMultiLayerNetwork(new File(getClass().getResource("/example.csv").toURI()));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
