@@ -46,6 +46,7 @@ import org.nd4j.linalg.ops.transforms.Transforms;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 import net.mydreamy.mlpharmaceutics.hydrophilicmatrixtablet.base.Evaluation;
 
 
@@ -53,6 +54,8 @@ import net.mydreamy.mlpharmaceutics.hydrophilicmatrixtablet.base.Evaluation;
 public class TrainningDisintegrationTime {
 
 	public static Logger log = LoggerFactory.getLogger(TrainningDisintegrationTime.class);
+	
+
 
 	//Random number generator seed, for reproducability
     public static final int seed = 1234567890;
@@ -74,11 +77,12 @@ public class TrainningDisintegrationTime {
     public static final int numInputs = 18;
     public static final int numOutputs = 4;
     public static final int numHiddenNodes = 30;
+    
     	
 	public static void main(String[] args) {
 		
-		
 
+	
 		
 		//First: get the dataset using the record reader. CSVRecordReader handles loading/parsing
         int numLinesToSkip = 1;

@@ -1,5 +1,6 @@
 package net.mydreamy.mlpharmaceutics.hydrophilicmatrixtablet.base;
 
+import org.deeplearning4j.eval.RegressionEvaluation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.ops.transforms.Transforms;
@@ -62,5 +63,25 @@ public class Evaluation {
         }
         log.info(allAE.toString());
         log.info("AccuracyMAE  <= " + therdsold*100 + "%: " + String.format("%.4f", correct/size));
+	}
+	
+	public static void AverageAccuracyR(INDArray lablesTest, INDArray PredictionTest,  RegressionEvaluation evalTest) {
+
+        
+   
+
+        evalTest.eval(lablesTest, PredictionTest);	  
+        
+        double AverTestR = 0;
+        double AverMAE = 0;
+        for (int i = 0; i < 4; i++) {
+        	AverTestR += evalTest.correlationR2(i);
+        	AverMAE += evalTest.meanAbsoluteError(i);
+        }
+        
+    //    log.info("testing set MSE is: " + String.format("%.10f", (evalTest.meanSquaredError(0)+evalTest.meanSquaredError(1)+evalTest.meanSquaredError(2)+evalTest.meanSquaredError(3))/4)); 
+        log.info("R Score is:  " + String.format("%.4f",  AverTestR/4));
+        log.info("MAE is: " + String.format("%.4f",  AverMAE/4));
+	    
 	}
 }

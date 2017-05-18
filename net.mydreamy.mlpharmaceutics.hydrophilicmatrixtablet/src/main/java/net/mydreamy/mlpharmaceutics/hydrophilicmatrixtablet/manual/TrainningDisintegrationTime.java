@@ -71,7 +71,7 @@ public class TrainningDisintegrationTime {
     //with api properties
     public static final int numInputs = 18;
     public static final int numOutputs = 4;
-    public static final int numHiddenNodes = 120;
+    public static final int numHiddenNodes = 160;
     	
 	public static void main(String[] args) {
 		
@@ -189,10 +189,10 @@ public class TrainningDisintegrationTime {
                 .layer(7, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
                         .activation("tanh")
                         .build())
-//                .layer(8, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-//                        .activation("tanh")
-//                        .build())
-                .layer(8, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
+                .layer(8, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
+                        .activation("tanh")
+                        .build())
+                .layer(9, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
                         .activation("sigmoid")
                         .nIn(numHiddenNodes).nOut(numOutputs).build())
                 .pretrain(false).backprop(true).build()
