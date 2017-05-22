@@ -204,12 +204,12 @@ public class TrainningDisintegrationTime {
         List<EpochTerminationCondition> terminationconditions = new LinkedList<EpochTerminationCondition>();
       //  terminationconditions.add(new ScoreImprovementEpochTerminationCondition(100, 1E-10));
         terminationconditions.add(new BestScoreEpochTerminationCondition(0.01));
-        terminationconditions.add(new MaxEpochsTerminationCondition(1100));
+        terminationconditions.add(new MaxEpochsTerminationCondition(300));
 
         EarlyStoppingConfiguration<MultiLayerNetwork> esConf = new EarlyStoppingConfiguration.Builder<MultiLayerNetwork>()
         		.epochTerminationConditions(terminationconditions)
         		.scoreCalculator(new DataSetLossCalculator(iteratortest, true))
-                .evaluateEveryNEpochs(100)
+                .evaluateEveryNEpochs(10)
                 .saveLastModel(true)
         		.modelSaver(new LocalFileModelSaver("src/main/resources"))
         		.build();
