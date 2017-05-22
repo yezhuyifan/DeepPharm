@@ -55,6 +55,7 @@ public class Prediction {
 	        	case "SRMT":  iteratortest = new RecordReaderDataSetIterator(recordReadertest, size, 18, 21, true);  break;
 	        	case "OFDT":  iteratortest = new RecordReaderDataSetIterator(recordReadertest, size, 26, 26, true);  break;
 	        	case "OFDF":  iteratortest = new RecordReaderDataSetIterator(recordReadertest, size, 18, 18, true);  break;
+	        	case "OFDF-final":  iteratortest = new RecordReaderDataSetIterator(recordReadertest, size, 18, 18, true);  break;
 	        	case "SD":    iteratortest = new RecordReaderDataSetIterator(recordReadertest, size, 18, 18+3, true); break; 
 	        }
 
@@ -87,6 +88,7 @@ public class Prediction {
 	        switch (problem) {
 	        	case "SRMT":  Evaluation.f2(lablesTest, PredictionTest); break;
 	        	case "OFDT":   Evaluation.AccuracyMAE(lablesTest, PredictionTest, 0.10); break;
+	        	case "OFDF-final":  Evaluation.AccuracyMAE(lablesTest, PredictionTest, 0.10); break;
 	        	case "OFDF":  Evaluation.AccuracyR(lablesTest, PredictionTest, new RegressionEvaluation(1));  break;
 	        	case "SD": break;
 	        }

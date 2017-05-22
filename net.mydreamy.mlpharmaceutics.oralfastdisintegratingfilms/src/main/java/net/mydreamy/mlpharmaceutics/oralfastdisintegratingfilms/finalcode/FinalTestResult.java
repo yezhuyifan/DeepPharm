@@ -7,9 +7,9 @@ public class FinalTestResult {
 		
 		Prediction p = new Prediction();
 		//best Model testing
-		p.prediction("OFDF", "final/trainingset.csv", 100, "src/main/resources/final/bestModel.bin", false);
-		p.prediction("OFDF", "final/testingset.csv", 20, "src/main/resources/final/bestModel.bin", false); 
-		p.prediction("OFDF", "final/extrascaledtestset.csv", 20, "src/main/resources/final/bestModel.bin", false); 
+		p.prediction("OFDF-final", "final/trainingset.csv", 100, "src/main/resources/final/bestModel.bin", false);
+		p.prediction("OFDF-final", "final/testingset.csv", 20, "src/main/resources/final/bestModel.bin", false); 
+		p.prediction("OFDF-final", "final/extrascaledtestset.csv", 20, "src/main/resources/final/bestModel.bin", false); 
 		
 	}
 }
