@@ -6,7 +6,7 @@ public class FinalTestResult {
 	
 	public static void main(String[] args) {
 		
-		Prediction.prediction("OFDT-manual", "md/trainingset.csv", 200, "src/main/resources/md/bbestModel.bin", false);
-		Prediction.prediction("OFDT-manual", "md/testingset.csv", 20, "src/main/resources/md/bbestModel.bin", false); 
+		Prediction.prediction("OFDT-manual", "md/trainingset.csv", 200, "src/main/resources/md/bestModel.bin", false);
+		Prediction.prediction("OFDT-manual", "md/testingset.csv", 20, "src/main/resources/md/bestModel.bin", false); 
 	}
 }
