@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.mydreamy.mlpharmaceutics</groupId>
-  <artifactId>net.mydreamy.mlpharmaceutics.oraldisintegratingtablet</artifactId>
+  <artifactId>net.mydreamy.mlpharmaceutics.bcs</artifactId>
   <version>1.0.0</version>
-  <name>Oral Disintegrating Tablet Prediction</name>
+  <name>BCS MultiTask Prediction</name>
   
   	<properties>
   	
-        <nd4j.backend>nd4j-cuda-8.0-platform</nd4j.backend>
+        <nd4j.backend>nd4j-native-platform</nd4j.backend>
         
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <shadedClassifier>all</shadedClassifier>
@@ -34,7 +34,7 @@
             </dependency>
             <dependency>
                 <groupId>org.nd4j</groupId>
-                <artifactId>nd4j-cuda-8.0-platform</artifactId>
+                <artifactId>nd4j-cuda-7.5-platform</artifactId>
                 <version>${nd4j.version}</version>
             </dependency>
         </dependencies>
