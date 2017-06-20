@@ -74,7 +74,7 @@ public class TrainningDisintegrationTime {
     //
     //public static final int numInputs = 18;
     public static final int numOutputs = 1;
-    public static final int numHiddenNodes = 10000;
+    public static final int numHiddenNodes = 200;
     	
 	public static void main(String[] args) {
 		
@@ -154,7 +154,7 @@ public class TrainningDisintegrationTime {
                 .iterations(iterations)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                 .learningRate(learningRate)
-                .weightInit(WeightInit.RELU)
+                .weightInit(WeightInit.DISTRIBUTION)
                 .regularization(true)
                 .l2(1e-3)
                 .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
@@ -180,7 +180,7 @@ public class TrainningDisintegrationTime {
         List<EpochTerminationCondition> terminationconditions = new LinkedList<EpochTerminationCondition>();
   //      terminationconditions.add(new ScoreImprovementEpochTerminationCondition(10, 1E-10));
     //    terminationconditions.add(new BestScoreEpochTerminationCondition(10));
-        terminationconditions.add(new MaxEpochsTerminationCondition(20000));
+        terminationconditions.add(new MaxEpochsTerminationCondition(15000));
 
         EarlyStoppingConfiguration<MultiLayerNetwork> esConf = new EarlyStoppingConfiguration.Builder<MultiLayerNetwork>()
         		.epochTerminationConditions(terminationconditions)
@@ -251,6 +251,8 @@ public class TrainningDisintegrationTime {
         //test on best model
         testOnDiffModel(bestModel, trainningData, testData);
  
+        
+        System.out.println(bestModel.summary());
 	}
 
 	public static void testOnDiffModel(MultiLayerNetwork net, DataSet trainningData,  DataSet testData)
