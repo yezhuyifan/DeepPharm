@@ -60,7 +60,7 @@ public class ModelTraining {
 		//data read
 		int numLinesToSkip = 1;
 		String fileDelimiter = ",";
-		int batchSize = 100;
+		int batchSize = 200;
 		
 		//caco2 reader
 		RecordReader caco2Reader = new CSVRecordReader(numLinesToSkip,fileDelimiter);
@@ -216,168 +216,205 @@ public class ModelTraining {
 				.seed(123456)
 		        .graphBuilder()
 		        .addInputs("input")
-		        .addLayer("L1", new DenseLayer.Builder().activation(Activation.TANH).nIn(9).nOut(100).build(), "input")
-		        .addLayer("L2", new DenseLayer.Builder().activation(Activation.TANH).nIn(100).nOut(1000).build(), "L1")
-		        .addLayer("M1", new DenseLayer.Builder().activation(Activation.TANH).nIn(1000).nOut(1000).build(), "L2")
-		        .addLayer("M2", new DenseLayer.Builder().activation(Activation.TANH).nIn(1000).nOut(1000).build(), "M1")
-		        .addLayer("M3", new DenseLayer.Builder().activation(Activation.TANH).nIn(1000).nOut(1000).build(), "M2")
-		        .addLayer("M4", new DenseLayer.Builder().activation(Activation.TANH).nIn(1000).nOut(1000).build(), "M3")	       
-		        .addLayer("L3", new DenseLayer.Builder().activation(Activation.TANH).nIn(1000).nOut(1000).build(), "M4")
-		        .addLayer("caco2", new OutputLayer.Builder().activation(Activation.SIGMOID)
+		        .addLayer("L1", new DenseLayer.Builder().activation(Activation.TANH).nIn(9).nOut(50).build(), "input")
+		        .addLayer("L2", new DenseLayer.Builder().activation(Activation.TANH).nIn(50).nOut(100).build(), "L1")
+		        .addLayer("M1", new DenseLayer.Builder().activation(Activation.TANH).nIn(100).nOut(200).build(), "L2")
+		        .addLayer("M2", new DenseLayer.Builder().activation(Activation.TANH).nIn(200).nOut(400).build(), "M1")
+		        .addLayer("M3", new DenseLayer.Builder().activation(Activation.TANH).nIn(400).nOut(800).build(), "M2")
+		        .addLayer("M4", new DenseLayer.Builder().activation(Activation.TANH).nIn(800).nOut(400).build(), "M3")
+		        .addLayer("L3", new DenseLayer.Builder().activation(Activation.TANH).nIn(400).nOut(200).build(), "M4")
+		        .addLayer("caco2C1", new DenseLayer.Builder().activation(Activation.TANH).nIn(200).nOut(100).build(), "L3")
+		        .addLayer("caco2C2", new OutputLayer.Builder().activation(Activation.SIGMOID)
 		                .lossFunction(LossFunctions.LossFunction.L2)
-		                .nIn(1000).nOut(1).build(), "L3")
-		        .addLayer("logP", new OutputLayer.Builder().activation(Activation.SIGMOID)
-		                .lossFunction(LossFunctions.LossFunction.L2)
-		                .nIn(1000).nOut(1).build(), "L3")
-		        .addLayer("WS", new OutputLayer.Builder().activation(Activation.SIGMOID)
-		                .lossFunction(LossFunctions.LossFunction.L2)
-		                .nIn(1000).nOut(1).build(), "L3")
-		        .setOutputs("caco2","logP", "WS")
+		                .nIn(100).nOut(1).build(), "caco2C1")
+//		        .addLayer("logP", new OutputLayer.Builder().activation(Activation.SIGMOID)
+//		                .lossFunction(LossFunctions.LossFunction.L2)
+//		                .nIn(100).nOut(1).build(), "caco2-C1")
+//		        .addLayer("WS", new OutputLayer.Builder().activation(Activation.SIGMOID)
+//		                .lossFunction(LossFunctions.LossFunction.L2)
+//		                .nIn(100).nOut(1).build(), "caco2-C1")
+		        .setOutputs("caco2C2")
 		        .backprop(true)
 		        .build();
+	
+		
+		
+		
 		
 		ComputationGraph net = new ComputationGraph(conf);
 		net.init();
 		
+		
 	    FineTuneConfiguration fineTuneConf = new FineTuneConfiguration.Builder()
 	               .learningRate(0.03)
 	               .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-	               .updater(Updater.NESTEROVS)
+	//               .updater(Updater.NESTEROVS)
 	               .momentum(0.8)
-	//               .weightInit(WeightInit.XAVIER)
+	               .weightInit(WeightInit.XAVIER)
 	               .updater(Updater.ADAM)
 	               .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
 	               .seed(123456)
 	               .regularization(true)
-	               .l2(1e-3)
+	               .l2(1e-2)
 	               .build();
 		
-		//network for caco2
-		ComputationGraph caco2net = new TransferLearning.GraphBuilder(net)
-		            .fineTuneConfiguration(fineTuneConf)
-		            .removeVertexAndConnections("WS")
-		            .removeVertexAndConnections("logP")
-		            .build();	
-		
-//		System.out.println(caco2net.summary());
-		caco2net.setListeners(new ScoreIterationListener(1));
-		
-		//train caco2Net	
-		for (int i = 0; i < 20; i++) {			
-			caco2net.fit(caco2iterator);    
-		}	
-		
-		//get caco2 parameters
-		Layer caco2Layer = caco2net.getLayer("caco2");
-		Map<String, INDArray> caco2 = caco2Layer.paramTable();
-		
-		for (String s : caco2.keySet()) {
-			System.out.print("key: " + s);
-			System.out.println(" contents: " + caco2.get(s).toString());
-		}
-		
-
-		
-		//network for WS
-		ComputationGraph WSnet = new TransferLearning.GraphBuilder(caco2net)
-	            .fineTuneConfiguration(fineTuneConf)
-	            .removeVertexAndConnections("caco2")
-	            .addLayer("WS", new OutputLayer.Builder().activation(Activation.SIGMOID)
-		                .lossFunction(LossFunctions.LossFunction.L2)
-		                .nIn(1000).nOut(1).build(), "L3")
-	            .setOutputs("WS") 
-	            .build();	
-		
-//		System.out.println(WSnet.summary());
-		WSnet.setListeners(new ScoreIterationListener(4));
-				
-		for (int i = 0; i < 20; i++) {			
-			WSnet.fit(WSiterator);    
-		}
-		
-		//get WS parameters
-		Layer WSLayer = WSnet.getLayer("WS");
-		Map<String, INDArray> WSpara = WSLayer.paramTable();
-		
-		for (String s : WSpara.keySet()) {
-			System.out.print("key: " + s);
-			System.out.println(" contents: " + WSpara.get(s).toString());
-		}
-		
-
-		
 		//network for logP
-		ComputationGraph logPnet = new TransferLearning.GraphBuilder(WSnet)
+		ComputationGraph logPnet = new TransferLearning.GraphBuilder(net)
 	            .fineTuneConfiguration(fineTuneConf)
-	            .removeVertexAndConnections("WS")
-	            .addLayer("logP", new OutputLayer.Builder().activation(Activation.SIGMOID)
+	            .removeVertexAndConnections("caco2C1")
+	            .removeVertexAndConnections("caco2C2")
+	            .addLayer("logPC1", new DenseLayer.Builder().activation(Activation.TANH).nIn(200).nOut(100).build(), "L3")
+	            .addLayer("logPC2", new OutputLayer.Builder().activation(Activation.SIGMOID)
 		                .lossFunction(LossFunctions.LossFunction.L2)
-		                .nIn(1000).nOut(1).build(), "L3")
-	            .setOutputs("logP")
+		                .nIn(100).nOut(1).build(), "logPC1")
+	            .setOutputs("logPC2")
 	            .build();	
+		
+		System.out.println(logPnet.summary());
 		
 //		System.out.println(logPnet.summary());
-		logPnet.setListeners(new ScoreIterationListener(5));
+		logPnet.setListeners(new ScoreIterationListener(30));
 		
 		//train logPnet
-		for (int i = 0; i < 20; i++) {			
+		for (int i = 0; i < 48; i++) {			
 			logPnet.fit(logPiterator);    
 		}
 		
 		//get logP parameters
-		Layer logPLayer = logPnet.getLayer("logP");
-		Map<String, INDArray> logPpara = logPLayer.paramTable();
+		Layer logPC1Layer = logPnet.getLayer("logPC1");
+		Map<String, INDArray> logPparaC1 = logPC1Layer.paramTable();
+		Layer logPC2Layer = logPnet.getLayer("logPC2");
+		Map<String, INDArray> logPparaC2 = logPC2Layer.paramTable();
+	   
 		
-		for (String s : logPpara.keySet()) {
-			System.out.print("key: " + s);
-			System.out.println(" contents: " + logPpara.get(s).toString());
-		}
-			
-		//evaluate Caco2Net
-		System.out.println("Caco2Net Training set accurary is :");
-		evalR(caco2iterator, caco2net);
-		System.out.println("Caco2Net validation set accurary is :");
-		evalR(caco2Validationiterator, caco2net);
-		System.out.println("");
+//		//network for WS
+//		ComputationGraph WSnet = new TransferLearning.GraphBuilder(logPnet)
+//	            .fineTuneConfiguration(fineTuneConf)
+//	            .removeVertexAndConnections("logPC1")
+//	            .removeVertexAndConnections("logPC2")
+//	            .addLayer("WS-C1", new DenseLayer.Builder().activation(Activation.TANH).nIn(100).nOut(100).build(), "L3")
+//	            .addLayer("WS-C2", new OutputLayer.Builder().activation(Activation.SIGMOID)
+//		                .lossFunction(LossFunctions.LossFunction.L2)
+//		                .nIn(100).nOut(1).build(), "WS-C1")
+//	            .setOutputs("WS-C2") 
+//	            .build();	
+//		
+////		System.out.println(WSnet.summary());
+//		WSnet.setListeners(new ScoreIterationListener(4));
+//				
+//		System.out.println(WSnet.summary());
+//
+//		
+//		for (int i = 0; i < 50; i++) {			
+//			WSnet.fit(WSiterator);    
+//		}
+//		
+//		//get WS parameters
+//		Layer WSC1Layer = WSnet.getLayer("WS-C1");
+//		Map<String, INDArray> WSparaC1 = WSC1Layer.paramTable();
+//		Layer WSC2Layer = WSnet.getLayer("WS-C2");
+//		Map<String, INDArray> WSparaC2 = WSC2Layer.paramTable();
+		
+	    
 
-		//evaluate WSnet
-		System.out.println("WSnet Training set accurary is :");
-		evalR(WSiterator, WSnet);
-		System.out.println("WSnet validation set accurary is :");
-		evalR(WSValidationiterator, WSnet);
-		System.out.println("");
+		
+		//network for caco2
+		ComputationGraph caco2net = new TransferLearning.GraphBuilder(logPnet)
+		            .fineTuneConfiguration(fineTuneConf)
+//		            .setFeatureExtractor("L3")
+		            .removeVertexAndConnections("logPC1")
+		            .removeVertexAndConnections("logPC2")		            
+//		            .removeVertexAndConnections("WS-C1")
+//		            .removeVertexAndConnections("WS-C2")
+		            .addLayer("caco2C1", new DenseLayer.Builder().activation(Activation.TANH).nIn(200).nOut(1000).build(), "L3")
+		            .addLayer("caco2C2", new OutputLayer.Builder().activation(Activation.SIGMOID)
+			                .lossFunction(LossFunctions.LossFunction.L2)
+			                .nIn(1000).nOut(1).build(), "caco2C1")
+		            .setOutputs("caco2C2") 
+		            .build();	
+//		ComputationGraph caco2net = net;
+		
+		System.out.println(caco2net.summary());
+
+		
+//		System.out.println(caco2net.summary());
+		caco2net.setListeners(new ScoreIterationListener(10));
+		
+		//train caco2Net	
+		for (int i = 0; i < 100; i++) {			
+			caco2net.fit(caco2iterator);    
+		}	
+		
+		//get caco2 parameters
+		Layer caco2C1Layer = caco2net.getLayer("caco2C1");
+		Map<String, INDArray> caco2C1 = caco2C1Layer.paramTable();
+		
+		Layer caco2C2Layer = caco2net.getLayer("caco2C2");
+		Map<String, INDArray> caco2C2 = caco2C2Layer.paramTable();
+		
+//		for (String s : caco2.keySet()) {
+//			System.out.print("key: " + s);
+//			System.out.println(" contents: " + caco2.get(s).toString());
+//		}
+		
 
 		//evaluate logPnet
 		System.out.println("logPnet Training set accurary is :");
 		evalR(logPiterator, logPnet);
 		System.out.println("logPnet validation set accurary is :");
 		evalR(logPValidationiterator, logPnet);
-		System.out.println("");
+		System.out.println("logPnet Testing set accurary is :");
+		evalR(logPTestingiterator, logPnet);
+		System.out.println("");	
 
-//		//final model
-		ComputationGraph finalnet = new TransferLearning.GraphBuilder(logPnet)
-	            .fineTuneConfiguration(fineTuneConf)
-//	            .setFeatureExtractor("L3")
-	            .removeVertexAndConnections("logP")
-	            .addLayer("WS", new OutputLayer.Builder().activation(Activation.SIGMOID)
-		                .lossFunction(LossFunctions.LossFunction.L2)
-		                .nIn(1000).nOut(1).build(), "L3")
-	            .setOutputs("WS")
-	            .build();	
 		
-		finalnet.getLayer("WS").setParamTable(WSpara);
 		
-		//train caco2Net	
-		for (int i = 0; i < 20; i++) {			
-			finalnet.fit(WSiterator);    
-		}
 		
 		//evaluate WSnet
-		System.out.println("fINAL WSnet Training set accurary is :");
-		evalR(WSiterator, finalnet);
-		System.out.println("FINAL WSnet validation set accurary is :");
-		evalR(WSValidationiterator, finalnet);
+//		System.out.println("WSnet Training set accurary is :");
+//		evalR(WSiterator, WSnet);
+//		System.out.println("WSnet validation set accurary is :");
+//		evalR(WSValidationiterator, WSnet);
+//		System.out.println("");
+
+		//evaluate Caco2Net
+		System.out.println("Caco2Net Training set accurary is :");
+		evalR(caco2iterator, caco2net);
+		System.out.println("Caco2Net validation set accurary is :");
+		evalR(caco2Validationiterator, caco2net);
+		System.out.println("Caco2Net Testing set accurary is :");
+		evalR(caco2Testingiterator, caco2net);
 		System.out.println("");
+		
+		
+
+//		//final model
+//		ComputationGraph finalnet = new TransferLearning.GraphBuilder(caco2net)
+//	            .fineTuneConfiguration(fineTuneConf)
+//	            .setFeatureExtractor("L3")
+//	            .removeVertexAndConnections("caco2C1")
+//	            .removeVertexAndConnections("caco2C2")
+//	            .addLayer("WS-C1", new DenseLayer.Builder().activation(Activation.TANH).nIn(100).nOut(100).build(), "L3")
+//	            .addLayer("WS-C2", new OutputLayer.Builder().activation(Activation.SIGMOID)
+//		                .lossFunction(LossFunctions.LossFunction.L2)
+//		                .nIn(100).nOut(1).build(), "WS-C1")
+//	            .setOutputs("WS-C2") 
+//	            .build();	
+//		
+//		finalnet.getLayer("WS-C1").setParamTable(WSparaC1);
+//		finalnet.getLayer("WS-C2").setParamTable(WSparaC2);
+//
+//		//train caco2Net	
+//		for (int i = 0; i < 10; i++) {			
+//			finalnet.fit(WSiterator);    
+//		}
+//		
+//		//evaluate WSnet
+//		System.out.println("fINAL WSnet Training set accurary is :");
+//		evalR(WSiterator, finalnet);
+//		System.out.println("FINAL WSnet validation set accurary is :");
+//		evalR(WSValidationiterator, finalnet);
+//		System.out.println("");
 	}
 	
 	
@@ -395,8 +432,8 @@ public class ModelTraining {
 //			 System.out.println("Input 2:" + data.getFeatureMatrix().getRow(1));
 	//		 System.out.println("Input Shapre" + input.shapeInfoToString());
 			 INDArray[] output = net.output(input);
-	//		 System.out.println("Label: " + data.getLabels());
-	//		 System.out.println("Prediction: " + output[0]);
+		//	 System.out.println("Label: " + data.getLabels());
+		//	 System.out.println("Prediction: " + output[0]);
 			 e.eval(data.getLabels(), output[0]);
 		 }
 		 
