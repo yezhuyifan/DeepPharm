@@ -53,7 +53,7 @@ import org.nd4j.linalg.lossfunctions.LossFunctions;
  * Then Transfer to Each Task (frozen feature layers)
  *
  */
-public class ModelTraining {
+public class ModelTrainingTransfer {
 	
 	public static void main(String[] args) {
 		
