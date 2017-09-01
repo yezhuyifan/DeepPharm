@@ -20,6 +20,7 @@ import org.deeplearning4j.earlystopping.scorecalc.DataSetLossCalculator;
 import org.deeplearning4j.earlystopping.termination.EpochTerminationCondition;
 import org.deeplearning4j.earlystopping.termination.MaxEpochsTerminationCondition;
 import org.deeplearning4j.earlystopping.trainer.EarlyStoppingTrainer;
+import org.deeplearning4j.eval.BaseEvaluation;
 import org.deeplearning4j.eval.Evaluation;
 import org.deeplearning4j.eval.RegressionEvaluation;
 import org.deeplearning4j.nn.api.Layer;
@@ -38,10 +39,14 @@ import org.deeplearning4j.nn.weights.WeightInit;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
+import org.nd4j.linalg.api.ops.impl.transforms.Abs;
 import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.dataset.api.MultiDataSet;
 import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
 import org.nd4j.linalg.dataset.api.iterator.MultiDataSetIterator;
+import org.nd4j.linalg.dataset.api.preprocessor.MultiNormalizerMinMaxScaler;
+import org.nd4j.linalg.dataset.api.preprocessor.MultiNormalizerStandardize;
+import org.nd4j.linalg.dataset.api.preprocessor.NormalizerStandardize;
 import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.indexing.BooleanIndexing;
 import org.nd4j.linalg.indexing.conditions.Conditions;
@@ -61,187 +66,17 @@ import org.nd4j.linalg.lossfunctions.LossFunctions;
  */
 public class ModelTrainingMultiTask {
 	
+	
 	public static void main(String[] args) {
 		
 		//data read
 		int numLinesToSkip = 1;
 		String fileDelimiter = ",";
-		int batchSize = 100;
+		
 		int epochLogP = 200;
 		int epochcaco2 = 150;
-		int epoch = 100;
-		
-//		//caco2 reader
-//		RecordReader caco2Reader = new CSVRecordReader(numLinesToSkip,fileDelimiter);
-//		
-//		String caco2CsvPath = "src/main/resources/Caco2Permeability/trainingset.csv";
-//		try {
-//			caco2Reader.initialize(new FileSplit(new File(caco2CsvPath)));
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		RecordReader caco2ValidationReader = new CSVRecordReader(numLinesToSkip,fileDelimiter);
-//		String caco2ValidationCsvPath = "src/main/resources/Caco2Permeability/validationset.csv";
-//		try {
-//			caco2ValidationReader.initialize(new FileSplit(new File(caco2ValidationCsvPath)));
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		RecordReader caco2TestingReader = new CSVRecordReader(numLinesToSkip,fileDelimiter);
-//		String caco2TestingCsvPath = "src/main/resources/Caco2Permeability/testingset.csv";
-//		try {
-//			caco2TestingReader.initialize(new FileSplit(new File(caco2TestingCsvPath)));
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//
-//		//logP reader
-//		RecordReader logPReader = new CSVRecordReader(numLinesToSkip,fileDelimiter);
-//		String logPCsvPath = "src/main/resources/logP/trainingset.csv";
-//		try {
-//			logPReader.initialize(new FileSplit(new File(logPCsvPath)));
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//
-//		RecordReader logPValidationReader = new CSVRecordReader(numLinesToSkip,fileDelimiter);
-//		String logPValidationCsvPath = "src/main/resources/logP/validationset.csv";
-//		try {
-//			logPValidationReader.initialize(new FileSplit(new File(logPValidationCsvPath)));
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		RecordReader logPTestingReader = new CSVRecordReader(numLinesToSkip,fileDelimiter);
-//		String logPTestingCsvPath = "src/main/resources/logP/testingset.csv";
-//		try {
-//			logPTestingReader.initialize(new FileSplit(new File(logPTestingCsvPath)));
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		//WS Reader
-//		RecordReader WSReader = new CSVRecordReader(numLinesToSkip,fileDelimiter);
-//		String WSPath = "src/main/resources/WaterSolubility/trainingset.csv";
-//		try {
-//			WSReader.initialize(new FileSplit(new File(WSPath)));
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		RecordReader WSValidationReader = new CSVRecordReader(numLinesToSkip,fileDelimiter);
-//		String WSValidationPath = "src/main/resources/WaterSolubility/validationset.csv";
-//		try {
-//			WSValidationReader.initialize(new FileSplit(new File(WSValidationPath)));
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		RecordReader WSTestingReader = new CSVRecordReader(numLinesToSkip,fileDelimiter);
-//		String WSTestingPath = "src/main/resources/WaterSolubility/testingset.csv";
-//		try {
-//			WSTestingReader.initialize(new FileSplit(new File(WSTestingPath)));
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-////        DataSetIterator logPiterator = new RecordReaderDataSetIterator(logPReader, batchSize, 9, 9, true);	
-////        DataSetIterator logPValidationiterator = new RecordReaderDataSetIterator(logPValidationReader, batchSize, 9, 9, true);	
-////        DataSetIterator logPTestingiterator = new RecordReaderDataSetIterator(logPTestingReader, batchSize, 9, 9, true);	
-////
-////        DataSetIterator WSiterator = new RecordReaderDataSetIterator(WSReader, batchSize, 9, 9, true);	
-////        DataSetIterator WSValidationiterator = new RecordReaderDataSetIterator(WSValidationReader, batchSize, 9, 9, true);	
-////        DataSetIterator WSTestingiterator = new RecordReaderDataSetIterator(WSTestingReader, batchSize, 9, 9, true);	
-////
-////        DataSetIterator caco2iterator = new RecordReaderDataSetIterator(caco2Reader, batchSize, 9, 9, true);	
-////        DataSetIterator caco2Validationiterator = new RecordReaderDataSetIterator(caco2ValidationReader, batchSize, 9, 9, true);	
-////        DataSetIterator caco2Testingiterator = new RecordReaderDataSetIterator(caco2TestingReader, batchSize, 9, 9, true);	
-//
-//	
-//		
-//		
-//		MultiDataSetIterator logPiterator = new RecordReaderMultiDataSetIterator.Builder(batchSize)
-//					        
-//		        .addReader("logP", logPReader)
-//		        .addInput("logP", 0, 8) 
-//		        .addOutput("logP", 9, 9)
-//		        .addOutput("logP", 10, 10) 
-//		        .addOutput("logP", 11, 11) 
-//		        .build();
-//		
-//		MultiDataSetIterator caco2iterator = new RecordReaderMultiDataSetIterator.Builder(batchSize)
-//				
-//		        .addReader("caco2", caco2Reader)
-//		        .addInput("caco2", 0, 8) 
-//		        .addOutput("caco2", 9, 9) 
-//		        .addOutput("caco2", 10, 10)
-//		        .addOutput("caco2", 10, 10) 
-//		        .build();
-//		
-//		
-//		MultiDataSetIterator logPValidationiterator = new RecordReaderMultiDataSetIterator.Builder(batchSize)
-//		        
-//		        .addReader("logP", logPValidationReader)
-//		        .addInput("logP", 0, 8) 
-//		        .addOutput("logP", 9, 9)
-//		        .addOutput("logP", 10, 10) 
-//		        .addOutput("logP", 11, 11) 
-//		        .build();
-//		
-//		MultiDataSetIterator caco2Validationiterator = new RecordReaderMultiDataSetIterator.Builder(batchSize)
-//				
-//		        .addReader("caco2", caco2ValidationReader)
-//		        .addInput("caco2", 0, 8) 
-//		        .addOutput("caco2", 9, 9) 
-//		        .addOutput("caco2", 10, 10)
-//		        .addOutput("caco2", 10, 10) 
-//		        .build();
-//		
-//		MultiDataSetIterator WSiterator = new RecordReaderMultiDataSetIterator.Builder(batchSize)
-//						        
-//		        .addReader("WS", WSReader)
-//		        .addInput("WS", 0, 8) 
-//		        .addOutput("WS", 9, 9)
-//		        .build();
-		
+		int epoch = 20;
+		int batchSize = 100;
         
 		//ADME reader
 		RecordReader ADME = new CSVRecordReader(numLinesToSkip,fileDelimiter);
@@ -263,40 +98,39 @@ public class ModelTrainingMultiTask {
 				
 		        .addReader("adme", ADME)
 		        .addInput("adme", 10, 1033)  //finger prints
+//		        .addOutput("adme", 1034, 1037)
 		        .addOutput("adme", 1034, 1034) //Bioavailability
 		        .addOutput("adme", 1035, 1035) //Blood Protein Binding
 		        .addOutput("adme", 1036, 1036) //Half Life
+		        .addOutput("adme", 1037, 1037) //Volume of Distribution
 		        .build();
 		
+		MultiNormalizerMinMaxScaler normalizer = new MultiNormalizerMinMaxScaler();
 		
-//		MultiDataSet ms = ADMEiter.next();
-//		System.out.println("#features: " + ms.getFeatures()[0].length());
-//		System.out.println("#labels:: " + ms.getLabels().length);
-//        
-////		System.out.println("features: " + ms.getFeatures()[0]);
-//		System.out.println("label 1:: " + ms.getLabels()[0]);
-//		System.out.println("label 2:: " + ms.getLabels()[1]);
-//		System.out.println("label 3:: " + ms.getLabels()[2]);
-//		
-//		
-//		BooleanIndexing.replaceWhere(ms.getLabels(0), 1,  Conditions.greaterThan(-100000));
-//		System.out.println("label not Nan:: " + ms.getLabels()[0]);
-//		BooleanIndexing.replaceWhere(ms.getLabels(0), 0,  Conditions.isNan());
-//		System.out.println("label NaN:: " + ms.getLabels()[0]);
+		normalizer.fitLabel(true);
+		normalizer.fit(ADMEiter);
 		
+		ADMEiter.reset();
 		
-//		.applyWhere(ms.getLabels(0), Conditions.isNan())
+		int numLabels = normalizer.numOutputs();
+		
+		for (int i = 0; i < numLabels; i++) {
+			System.out.println("label max:" + String.valueOf(normalizer.getLabelMax(i)));
+			System.out.println("label min:" + String.valueOf(normalizer.getLabelMin(i)));
+		}
+
 
 		
 		//final network
 		ComputationGraphConfiguration conf = new NeuralNetConfiguration.Builder()
 				.seed(123456)
 		        .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-	            .learningRate(0.01)
-//	            .updater(Updater.NESTEROVS)
-	            .updater(Updater.ADAM)
+	            .learningRate(0.1)
+	            .updater(Updater.NESTEROVS)
+	            .momentum(0.9)
+//	            .updater(Updater.ADAM)
 
-                .weightInit(WeightInit.RELU)
+                .weightInit(WeightInit.XAVIER_UNIFORM)
 //                .regularization(true)
 //                .l2(1e-3)
 //                .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
@@ -309,21 +143,29 @@ public class ModelTrainingMultiTask {
 		        .addLayer("M3", new DenseLayer.Builder().activation(Activation.TANH).nIn(400).nOut(200).build(), "M2")
 		        .addLayer("M4", new DenseLayer.Builder().activation(Activation.TANH).nIn(200).nOut(100).build(), "M3")	       
 		        .addLayer("L3", new DenseLayer.Builder().activation(Activation.TANH).nIn(100).nOut(50).build(), "M4")
-		        .addLayer("Bioavailability", new OutputLayer.Builder().activation(Activation.IDENTITY)
+//		        .addLayer("AllinOne", new OutputLayer.Builder().activation(Activation.SIGMOID)
+//		                .lossFunction(LossFunctions.LossFunction.L2)
+//		                .nIn(50).nOut(4).build(), "L3")
+		        .addLayer("Bioavailability", new OutputLayer.Builder().activation(Activation.SIGMOID)
 		                .lossFunction(LossFunctions.LossFunction.L2)
 		                .nIn(50).nOut(1).build(), "L3")
-		        .addLayer("BloodProteinBinding", new OutputLayer.Builder().activation(Activation.IDENTITY)
+		        .addLayer("BloodProteinBinding", new OutputLayer.Builder().activation(Activation.SIGMOID)
 		                .lossFunction(LossFunctions.LossFunction.L2)
 		                .nIn(50).nOut(1).build(), "L3")
-		        .addLayer("HalfLife", new OutputLayer.Builder().activation(Activation.IDENTITY)
+		        .addLayer("HalfLife", new OutputLayer.Builder().activation(Activation.SIGMOID)
 		                .lossFunction(LossFunctions.LossFunction.L2)
 		                .nIn(50).nOut(1).build(), "L3")
-		        .setOutputs("Bioavailability","BloodProteinBinding", "HalfLife")
+		        .addLayer("VolumeofDistribution", new OutputLayer.Builder().activation(Activation.SIGMOID)
+		                .lossFunction(LossFunctions.LossFunction.L2)
+		                .nIn(50).nOut(1).build(), "L3")
+		        .setOutputs("Bioavailability","BloodProteinBinding", "HalfLife", "VolumeofDistribution")
+//		        .setOutputs("AllinOne")
 		        .backprop(true)
 		        .build();
 		
 		ComputationGraph net = new ComputationGraph(conf);
 		net.init();
+		
 		
 		System.out.println("-------------------- training ADME ----------------------- ");
 		for (int i = 0; i < epoch; i++) {
@@ -331,358 +173,120 @@ public class ModelTrainingMultiTask {
 			MultiDataSet data = null;
 			while (ADMEiter.hasNext()) {
 				
-//				System.out.println("start next");
 				data = ADMEiter.next();
-//				System.out.println("finish next");
+				
+				normalizer.transform(data);
+		
+				data.setLabelsMaskArray(computeOutPutMask(data));
+		
+				net.fit(data);
 
-//				data.getLabels()[0].getDouble(99);
-				
-				//Create Mask Array
-				INDArray[] outputmask = new INDArray[3];
-				
-				for (int j = 0; j < 3; j++) {
-					
-					outputmask[j] = data.getLabels(j).dup();
-						
-					BooleanIndexing.replaceWhere(outputmask[j], 1,  Conditions.greaterThan(-100000));
-//					System.out.println("label not Nan:: " + outputmask[j]);
-					BooleanIndexing.replaceWhere(outputmask[j], 0,  Conditions.isNan());
-//					System.out.println("label NaN:: " +outputmask[j]);
-					
-				}
-				
-				data.setLabelsMaskArray(outputmask);
-				
-				net.fit(data.getFeatures(), data.getLabels(), null, outputmask);
-//				System.out.println("score:" + net.score());
 			}
 			
 			ADMEiter.reset();
 			
-			System.out.println("epoch:" + i + " score:" + net.score());
+			System.out.println("epoch " + i + " score: " + net.score());
 
 		}		
 		
-		
-		
-		
-		
-//  ================ mask network =======================		
-		
-		
-		
-//		outputmask[0].putScalar(0, 1);
-//		System.out.println(outputmask[0].getDouble(0));
-//		
-//		net.setLayerMaskArrays(null, outputmask);
-		
-		
-//		double[] caco2mask = {1};
+	}
 
 	
-		
-		
-//		net.setLayerMaskArrays(null, outputmask);
-		
-//  ================ mask data =======================
-		
-//		INDArray[] outputmask = new INDArray[3];
-//		outputmask[0] = Nd4j.ones(100, 1);
-//		outputmask[1] = Nd4j.zeros(100, 1);
-//		outputmask[2] = Nd4j.zeros(100, 1);
-//		
-//		MultiDataSet test = null;
-//		while (logPiterator.hasNext()) {
-//			test =  logPiterator.next();
-//			test.setLabelsMaskArray(outputmask);
-//			net.fit(test);
-//			System.out.println("score:" + net.score());
-//		}
-		
-// ======================================================-		
-		
-//		System.out.println("labbel1:" + test.getLabels()[0].toString());
-//		System.out.println("labbel2:" + test.getLabels()[1].toString());
-//		System.out.println("labbel3:"+ test.getLabels()[2].toString());
-//		System.out.println(test.numFeatureArrays());
-//		System.out.println(test.numLabelsArrays());
-		
-//		System.out.println(net.summary());
-		
-		//training logP
-//		System.out.println("-------------------- training logP ----------------------- ");
-//		for (int i = 0; i < epochLogP; i++) {
-//		
-//			MultiDataSet data = null;
-//			while (logPiterator.hasNext()) {
-//				
-//				data = logPiterator.next();
-//				
-//				INDArray[] outputmask = new INDArray[3];
-//				outputmask[0] = Nd4j.zeros(data.getLabels()[0].size(0), 1);
-//				outputmask[1] = Nd4j.ones(data.getLabels()[1].size(0), 1);
-//				outputmask[2] = Nd4j.zeros(data.getLabels()[2].size(0), 1);
-//				
-//				data.setLabelsMaskArray(outputmask);
-//				net.fit(data.getFeatures(), data.getLabels(), null, outputmask);
-////				System.out.println("score:" + net.score());
-//			}
-//			
-//			logPiterator.reset();
-//			
-//			System.out.println("epoch:" + i + " score:" + net.score());
-//
-//		}		
-//		
-//		System.out.println("");
-//		
-//		//training Caco2		
-//		System.out.println("-------------------- training caco2 ----------------------- ");
-//		for (int i = 0; i < epochcaco2; i++) {
-//			
-//			MultiDataSet data = null;
-//			while (caco2iterator.hasNext()) {
-//				
-//				data = caco2iterator.next();
-//				
-//				INDArray[] outputmask = new INDArray[3];
-//				outputmask[0] = Nd4j.ones(data.getLabels()[0].size(0), 1);
-//				outputmask[1] = Nd4j.zeros(data.getLabels()[1].size(0), 1);
-//				outputmask[2] = Nd4j.zeros(data.getLabels()[2].size(0), 1);
-//				
-//				data.setLabelsMaskArray(outputmask);
-//				net.fit(data.getFeatures(), data.getLabels(), null, outputmask);
-////				System.out.println("score:" + net.score());
-//			}
-//			
-//			caco2iterator.reset();
-//			
-//			System.out.println("epoch:" + i + " score:" + net.score());
-//
-//		}
-		
+	public static INDArray[] computeOutPutMask(MultiDataSet data) {
 
+		INDArray[] lables = data.getLabels();
+		
+		//Create Mask Array
+		INDArray[] outputmask = new INDArray[lables.length];
+		
+		for (int j = 0; j < lables.length; j++) {
+
+			outputmask[j] = lables[j].dup();
+				
+			BooleanIndexing.replaceWhere(outputmask[j], 1,  Conditions.greaterThan(-100000));
+
+			BooleanIndexing.replaceWhere(outputmask[j], 0,  Conditions.isNan());
 			
-
-
-//		//evaluate WSnet
-//		System.out.println("WSnet Training set accurary is :");
-//		evalR(WSiterator, WSnet);
-//		System.out.println("WSnet validation set accurary is :");
-//		evalR(WSValidationiterator, WSnet);
-//		System.out.println("");
-
-//		//evaluate logPnet
-//		System.out.println("In epoch " + epochLogP);
-//		System.out.print("logPnet Training set accurary is :");
-//		evalR(logPiterator, net, 1);
-//		System.out.print("logPnet validation set accurary is :");
-//		evalR(logPValidationiterator, net, 1);
-//		System.out.println("");
-//		
-//		//evaluate Caco2Net
-//		System.out.println("In epoch " + epochcaco2);
-//		System.out.print("Caco2Net Training set accurary is :");
-//		evalR(caco2iterator, net, 0);
-//		System.out.print("Caco2Net validation set accurary is :");
-//		evalR(caco2Validationiterator, net, 0);
-//		System.out.println("");
+			//avoiding NaN bug when applying mask array
+			BooleanIndexing.replaceWhere(lables[j], -1,  Conditions.isNan());
+			
+		}
+		
+		return outputmask;
 		
 	}
-	
-	
-	//Evaluation Function
-	public static void evalR(MultiDataSetIterator iter, ComputationGraph net, int index) {
-		
-		 RegressionEvaluation e = new RegressionEvaluation(1);
-		
-		 iter.reset();
-		 
-		 while(iter.hasNext()) {
-			 MultiDataSet data = iter.next();
-			 INDArray input = data.getFeatures(0);
-//			 System.out.println("Input 1:" + data.getFeatureMatrix().getRow(0));
-//			 System.out.println("Input 2:" + data.getFeatureMatrix().getRow(1));
-	//		 System.out.println("Input Shapre" + input.shapeInfoToString());
-			 INDArray[] output = net.output(input);
-	//		 System.out.println("Label: " + data.getLabels());
-	//		 System.out.println("Prediction: " + output[0]);
-			 e.eval(data.getLabels(index), output[index]);
-		 }
-		 
-		 iter.reset();
-		 
-		 System.out.println("R is: " + String.format("%.4f", e.correlationR2(0))); 
-//		 System.out.println("cost is: " + String.format("%.4f", e.meanAbsoluteError(0))); 
 
-		 
-	}
-	
-		
-//	    FineTuneConfiguration fineTuneConf = new FineTuneConfiguration.Builder()
-//	               .learningRate(0.03)
-//	               .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
-//	               .updater(Updater.NESTEROVS)
-//	               .momentum(0.8)
-//	//               .weightInit(WeightInit.XAVIER)
-//	               .updater(Updater.ADAM)
-//	               .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
-//	               .seed(123456)
-//	               .regularization(true)
-//	               .l2(1e-3)
-//	               .build();
-//		
-//		//network for caco2
-//		ComputationGraph caco2net = new TransferLearning.GraphBuilder(net)
-//		            .fineTuneConfiguration(fineTuneConf)
-//		            .removeVertexAndConnections("WS")
-//		            .removeVertexAndConnections("logP")
-//		            .build();	
-//		
-////		System.out.println(caco2net.summary());
-//		caco2net.setListeners(new ScoreIterationListener(1));
-//		
-//		//train caco2Net	
-//		for (int i = 0; i < 20; i++) {			
-//			caco2net.fit(caco2iterator);    
-//		}	
-//		
-//		//get caco2 parameters
-//		Layer caco2Layer = caco2net.getLayer("caco2");
-//		Map<String, INDArray> caco2 = caco2Layer.paramTable();
-//		
-//		for (String s : caco2.keySet()) {
-//			System.out.print("key: " + s);
-//			System.out.println(" contents: " + caco2.get(s).toString());
-//		}
-//		
-//
-//		
-//		//network for WS
-//		ComputationGraph WSnet = new TransferLearning.GraphBuilder(caco2net)
-//	            .fineTuneConfiguration(fineTuneConf)
-//	            .removeVertexAndConnections("caco2")
-//	            .addLayer("WS", new OutputLayer.Builder().activation(Activation.SIGMOID)
-//		                .lossFunction(LossFunctions.LossFunction.L2)
-//		                .nIn(1000).nOut(1).build(), "L3")
-//	            .setOutputs("WS") 
-//	            .build();	
-//		
-////		System.out.println(WSnet.summary());
-//		WSnet.setListeners(new ScoreIterationListener(4));
-//				
-//		for (int i = 0; i < 20; i++) {			
-//			WSnet.fit(WSiterator);    
-//		}
-//		
-//		//get WS parameters
-//		Layer WSLayer = WSnet.getLayer("WS");
-//		Map<String, INDArray> WSpara = WSLayer.paramTable();
-//		
-//		for (String s : WSpara.keySet()) {
-//			System.out.print("key: " + s);
-//			System.out.println(" contents: " + WSpara.get(s).toString());
-//		}
-//		
-//
-//		
-//		//network for logP
-//		ComputationGraph logPnet = new TransferLearning.GraphBuilder(WSnet)
-//	            .fineTuneConfiguration(fineTuneConf)
-//	            .removeVertexAndConnections("WS")
-//	            .addLayer("logP", new OutputLayer.Builder().activation(Activation.SIGMOID)
-//		                .lossFunction(LossFunctions.LossFunction.L2)
-//		                .nIn(1000).nOut(1).build(), "L3")
-//	            .setOutputs("logP")
-//	            .build();	
-//		
-////		System.out.println(logPnet.summary());
-//		logPnet.setListeners(new ScoreIterationListener(5));
-//		
-//		//train logPnet
-//		for (int i = 0; i < 20; i++) {			
-//			logPnet.fit(logPiterator);    
-//		}
-//		
-//		//get logP parameters
-//		Layer logPLayer = logPnet.getLayer("logP");
-//		Map<String, INDArray> logPpara = logPLayer.paramTable();
-//		
-//		for (String s : logPpara.keySet()) {
-//			System.out.print("key: " + s);
-//			System.out.println(" contents: " + logPpara.get(s).toString());
-//		}
-//			
-//		//evaluate Caco2Net
-//		System.out.println("Caco2Net Training set accurary is :");
-//		evalR(caco2iterator, caco2net);
-//		System.out.println("Caco2Net validation set accurary is :");
-//		evalR(caco2Validationiterator, caco2net);
-//		System.out.println("");
-//
-//		//evaluate WSnet
-//		System.out.println("WSnet Training set accurary is :");
-//		evalR(WSiterator, WSnet);
-//		System.out.println("WSnet validation set accurary is :");
-//		evalR(WSValidationiterator, WSnet);
-//		System.out.println("");
-//
-//		//evaluate logPnet
-//		System.out.println("logPnet Training set accurary is :");
-//		evalR(logPiterator, logPnet);
-//		System.out.println("logPnet validation set accurary is :");
-//		evalR(logPValidationiterator, logPnet);
-//		System.out.println("");
-//
-////		//final model
-//		ComputationGraph finalnet = new TransferLearning.GraphBuilder(logPnet)
-//	            .fineTuneConfiguration(fineTuneConf)
-////	            .setFeatureExtractor("L3")
-//	            .removeVertexAndConnections("logP")
-//	            .addLayer("WS", new OutputLayer.Builder().activation(Activation.SIGMOID)
-//		                .lossFunction(LossFunctions.LossFunction.L2)
-//		                .nIn(1000).nOut(1).build(), "L3")
-//	            .setOutputs("WS")
-//	            .build();	
-//		
-//		finalnet.getLayer("WS").setParamTable(WSpara);
-//		
-//		//train caco2Net	
-//		for (int i = 0; i < 20; i++) {			
-//			finalnet.fit(WSiterator);    
-//		}
-//		
-//		//evaluate WSnet
-//		System.out.println("fINAL WSnet Training set accurary is :");
-//		evalR(WSiterator, finalnet);
-//		System.out.println("FINAL WSnet validation set accurary is :");
-//		evalR(WSValidationiterator, finalnet);
-//		System.out.println("");
-//	}
-//	
 	
 //	//Evaluation Function
-//	public static void evalR(DataSetIterator iter, ComputationGraph net) {
+//	public static void evalR(MultiDataSetIterator iter, ComputationGraph net, int index) {
 //		
 //		 RegressionEvaluation e = new RegressionEvaluation(1);
 //		
 //		 iter.reset();
 //		 
 //		 while(iter.hasNext()) {
-//			 DataSet data = iter.next();
-//			 INDArray input = data.getFeatureMatrix();
+//			 MultiDataSet data = iter.next();
+//			 INDArray input = data.getFeatures(0);
 ////			 System.out.println("Input 1:" + data.getFeatureMatrix().getRow(0));
 ////			 System.out.println("Input 2:" + data.getFeatureMatrix().getRow(1));
 //	//		 System.out.println("Input Shapre" + input.shapeInfoToString());
 //			 INDArray[] output = net.output(input);
 //	//		 System.out.println("Label: " + data.getLabels());
 //	//		 System.out.println("Prediction: " + output[0]);
-//			 e.eval(data.getLabels(), output[0]);
+//			 e.eval(data.getLabels(index), output[index]);
 //		 }
 //		 
 //		 iter.reset();
 //		 
-//		 System.out.println("testing set R is: " + String.format("%.4f", e.correlationR2(0))); 
+//		 System.out.println("R is: " + String.format("%.4f", e.correlationR2(0))); 
+////		 System.out.println("cost is: " + String.format("%.4f", e.meanAbsoluteError(0))); 
+//
 //		 
 //	}
+//	
+//    public static void eval(INDArray labels, INDArray predictions) {
+//        //References for the calculations is this section:
+//        //https://en.wikipedia.org/wiki/Algorithms_for_calculating_variance#Online_algorithm
+//        //https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient#For_a_sample
+//        //Doing online calculation of means, sum of squares, etc.
+//
+//        labelsSumPerColumn.addi(labels.sum(0));
+//
+//        INDArray error = predictions.sub(labels);
+//        INDArray absErrorSum = Nd4j.getExecutioner().execAndReturn(new Abs(error.dup())).sum(0);
+//        INDArray squaredErrorSum = error.mul(error).sum(0);
+//
+//        sumAbsErrorsPerColumn.addi(absErrorSum);
+//        sumSquaredErrorsPerColumn.addi(squaredErrorSum);
+//
+//        sumOfProducts.addi(labels.mul(predictions).sum(0));
+//
+//        sumSquaredLabels.addi(labels.mul(labels).sum(0));
+//        sumSquaredPredicted.addi(predictions.mul(predictions).sum(0));
+//
+//        int nRows = labels.size(0);
+//
+//        currentMean.muli(exampleCount).addi(labels.sum(0)).divi(exampleCount + nRows);
+//        currentPredictionMean.muli(exampleCount).addi(predictions.sum(0)).divi(exampleCount + nRows);
+//
+//        exampleCount += nRows;
+//    }
+//    
+//    public static double correlationR2(int column) {
+//        //r^2 Correlation coefficient
+//
+//        double sumxiyi = sumOfProducts.getDouble(column);
+//        double predictionMean = currentPredictionMean.getDouble(column);
+//        double labelMean = currentMean.getDouble(column);
+//
+//        double sumSquaredLabels = sumSquaredLabels.getDouble(column);
+//        double sumSquaredPredicted = sumSquaredPredicted.getDouble(column);
+//
+//        double r2 = sumxiyi - exampleCount * predictionMean * labelMean;
+//        r2 /= Math.sqrt(sumSquaredLabels - exampleCount * labelMean * labelMean)
+//                        * Math.sqrt(sumSquaredPredicted - exampleCount * predictionMean * predictionMean);
+//
+//        return r2;
+//    }
+//	
 }
