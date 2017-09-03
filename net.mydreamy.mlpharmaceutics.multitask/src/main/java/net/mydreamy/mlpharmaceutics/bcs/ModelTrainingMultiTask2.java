@@ -73,7 +73,7 @@ import org.nd4j.linalg.ops.transforms.Transforms;
  * 
  *
  */
-public class ModelTrainingMultiTask {
+public class ModelTrainingMultiTask2 {
 	
 	
 	public static void main(String[] args) {
@@ -93,7 +93,7 @@ public class ModelTrainingMultiTask {
 		//ADME reader
 		RecordReader ADME = new CSVRecordReader(numLinesToSkip,fileDelimiter);
 		
-		String ADMEPath = "src/main/resources/ADMETra.csv";
+		String ADMEPath = "src/main/resources/ADME.csv";
 		try {
 			ADME.initialize(new FileSplit(new File(ADMEPath)));
 		} catch (IOException e) {
@@ -116,12 +116,45 @@ public class ModelTrainingMultiTask {
 		        .addOutput("adme", 1037, 1037) //Volume of Distribution
 		        .build();
 		
+		
+
+		
 		//normalization
 		MultiNormalizerMinMaxScaler normalizer = new MultiNormalizerMinMaxScaler();
 		
 		normalizer.fitLabel(true);
 		normalizer.fit(ADMEiter);
 		
+		ADMEiter.reset();
+		
+		//print for histograhm HL
+		while (ADMEiter.hasNext()) {
+			
+			MultiDataSet ss = ADMEiter.next();
+			normalizer.transform(ss);
+			INDArray hl = ss.getLabels(0);
+			for (int i = 0; i < hl.size(0); i++) {
+				double e = hl.getDouble(i);
+				if (!Double.isNaN(e))
+					System.out.print(e + " ");
+			}
+		}
+		System.out.println(" ");
+		ADMEiter.reset();
+		
+		//print for histograhm HL
+		while (ADMEiter.hasNext()) {
+			
+			MultiDataSet ss = ADMEiter.next();
+			normalizer.transform(ss);
+			INDArray hl = ss.getLabels(1);
+			for (int i = 0; i < hl.size(0); i++) {
+				double e = hl.getDouble(i);
+				if (!Double.isNaN(e))
+					System.out.print(e + " ");
+			}
+		}
+		System.out.println(" ");
 		ADMEiter.reset();
 		
 		
