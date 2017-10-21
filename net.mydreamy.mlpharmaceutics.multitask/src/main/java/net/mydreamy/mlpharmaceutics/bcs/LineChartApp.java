@@ -92,21 +92,53 @@ public class LineChartApp extends Application {
     private ObservableList<XYChart.Series<Double,Double>> TrainDevTestHLlineChartData;
     private ObservableList<XYChart.Series<Double,Double>> TrainDevTestVDlineChartData;
     
+    private List<double[]> MSEs;
+    private int mselength;
+    private List<double[]> MSEDevs;
+    private int devlength;
+    private List<double[]> MSETests;
+    private int testlength;
+    
+    private ModelTrainingMultiTaskWihoutNormalizationForGUI model;
 
+    public void getAccuaryFromModel(String resulttype) {
+    	
+    	if (resulttype.equals("MAE")) {
+    		
+           	MSEs = model.getMSEs();
+        	mselength = MSEs.size();
+        	
+        	MSEDevs = model.getMSEDevs();
+        	devlength = MSEDevs.size();
+        	
+        	MSETests = model.getMSETs();
+        	testlength = MSETests.size();
+    		
+    	}
+    	
+    	if (resulttype.equals("MAELessTen")) {
+    		
+           	MSEs = model.getAccurecyMAEs();
+        	mselength = MSEs.size();
+        	
+        	MSEDevs = model.getAccurecyMAEDevs();
+        	devlength = MSEDevs.size();
+        	
+        	MSETests = model.getAccurecyMAETs();
+        	testlength = MSETests.size();
+    		
+    	}
+    	
+
+    	
+    }
     
     public void trainAndPrepareChart() {
     	
-    	ModelTrainingMultiTaskWihoutNormalizationForGUI model = new ModelTrainingMultiTaskWihoutNormalizationForGUI();
+    	model = new ModelTrainingMultiTaskWihoutNormalizationForGUI();
     	model.train();
     	
-    	List<double[]> MSEs = model.getMSEs();
-    	int mselength = MSEs.size();
-    	
-    	List<double[]> MSEDevs = model.getMSEDevs();
-    	int devlength = MSEDevs.size();
-    	
-    	List<double[]> MSETests = model.getMSETs();
-    	int testlength = MSETests.size();
+    	getAccuaryFromModel("MAE"); 
     	
 
         

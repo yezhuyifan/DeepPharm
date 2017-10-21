@@ -13,6 +13,7 @@ import org.datavec.api.records.reader.RecordReader;
 import org.datavec.api.records.reader.impl.csv.CSVRecordReader;
 import org.datavec.api.split.FileSplit;
 import org.datavec.api.util.ClassPathResource;
+import org.deeplearning4j.api.storage.StatsStorage;
 import org.deeplearning4j.datasets.datavec.RecordReaderDataSetIterator;
 import org.deeplearning4j.datasets.datavec.RecordReaderMultiDataSetIterator;
 import org.deeplearning4j.earlystopping.EarlyStoppingConfiguration;
@@ -29,6 +30,7 @@ import org.deeplearning4j.nn.api.Layer;
 import org.deeplearning4j.nn.api.OptimizationAlgorithm;
 import org.deeplearning4j.nn.conf.ComputationGraphConfiguration;
 import org.deeplearning4j.nn.conf.GradientNormalization;
+import org.deeplearning4j.nn.conf.LearningRatePolicy;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.Updater;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
@@ -39,6 +41,9 @@ import org.deeplearning4j.nn.transferlearning.FineTuneConfiguration;
 import org.deeplearning4j.nn.transferlearning.TransferLearning;
 import org.deeplearning4j.nn.weights.WeightInit;
 import org.deeplearning4j.optimize.listeners.ScoreIterationListener;
+import org.deeplearning4j.ui.api.UIServer;
+import org.deeplearning4j.ui.stats.StatsListener;
+import org.deeplearning4j.ui.storage.InMemoryStatsStorage;
 import org.nd4j.linalg.activations.Activation;
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.api.ops.impl.accum.MatchCondition;
@@ -62,6 +67,7 @@ import org.nd4j.linalg.indexing.conditions.IsNaN;
 import org.nd4j.linalg.indexing.conditions.Not;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 import org.nd4j.linalg.ops.transforms.Transforms;
+import javafx.application.Application;
 
 
 /**
@@ -76,20 +82,23 @@ import org.nd4j.linalg.ops.transforms.Transforms;
 public class ModelTrainingMultiTaskWihoutNormalization {
 	
 	
+	private String[] args;
+	
 	public static void main(String[] args) {
 		
+		 
+		args = args;
+		 
 		//data read
 		int numLinesToSkip = 1;
 		String fileDelimiter = ",";
 		
 		int epochLogP = 200;
 		int epochcaco2 = 150;
-		int epoch = 20;
-		int batchSize = 100;
+		int epoch = 100;
+		int batchSize = 1000;
 		
-		
-		
-        
+
 		//ADME reader
 		RecordReader ADME = new CSVRecordReader(numLinesToSkip,fileDelimiter);
 		
@@ -115,28 +124,50 @@ public class ModelTrainingMultiTaskWihoutNormalization {
 		        .addOutput("adme", 1034, 1034) //Half Life
 		        .addOutput("adme", 1035, 1035) //Volume of Distribution
 		        .build();
-		
 
-	
-
-		
 		//TestReader
-				RecordReader ADMEtest = new CSVRecordReader(numLinesToSkip,fileDelimiter);
+		RecordReader ADMEdev = new CSVRecordReader(numLinesToSkip,fileDelimiter);
 				
-				String ADMETestPath = "src/main/resources/ADME/validationset.csv";
-				try {
-					ADMEtest.initialize(new FileSplit(new File(ADMETestPath)));
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+		String ADMEdevPath = "src/main/resources/ADME/validationset.csv";
+		try {
+			ADMEdev.initialize(new FileSplit(new File(ADMEdevPath)));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 						
-				MultiDataSetIterator ADMETestiter = new RecordReaderMultiDataSetIterator.Builder(batchSize)
+		MultiDataSetIterator ADMEDeviter = new RecordReaderMultiDataSetIterator.Builder(batchSize)
 					
-				        .addReader("adme", ADMEtest)
+				     	.addReader("adme", ADMEdev)
+				        .addInput("adme", 8, 1031)  //finger prints
+//				        .addOutput("adme", 1034, 1037)
+				        .addOutput("adme", 1032, 1032) //Bioavailability
+				        .addOutput("adme", 1033, 1033) //Blood Protein Binding
+				        .addOutput("adme", 1034, 1034) //Half Life
+				        .addOutput("adme", 1035, 1035) //Volume of Distribution
+				        .build();		
+		
+
+		//TestReader
+		RecordReader ADMEtest = new CSVRecordReader(numLinesToSkip,fileDelimiter);
+				
+		String ADMETestPath = "src/main/resources/ADME/testingset.csv";
+		try {
+			ADMEtest.initialize(new FileSplit(new File(ADMETestPath)));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+						
+		MultiDataSetIterator ADMETestiter = new RecordReaderMultiDataSetIterator.Builder(batchSize)
+					
+				     	.addReader("adme", ADMEtest)
 				        .addInput("adme", 8, 1031)  //finger prints
 //				        .addOutput("adme", 1034, 1037)
 				        .addOutput("adme", 1032, 1032) //Bioavailability
@@ -144,16 +175,20 @@ public class ModelTrainingMultiTaskWihoutNormalization {
 				        .addOutput("adme", 1034, 1034) //Half Life
 				        .addOutput("adme", 1035, 1035) //Volume of Distribution
 				        .build();
-		
+
+				
+				
 
 				
 		//final network
 		ComputationGraphConfiguration conf = new NeuralNetConfiguration.Builder()
 				.seed(123456)
-		        .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
+//		        .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
 	            .learningRate(0.01)
-	            .updater(Updater.NESTEROVS)
-	            .momentum(0.9)
+	            //.learningRateDecayPolicy(LearningRatePolicy.Exponential)
+	           // .lrPolicyDecayRate(0.95)
+	            .updater(Updater.ADAM)
+	            //.momentum(0.9)
 //	            .updater(Updater.ADAM)
 
                 .weightInit(WeightInit.XAVIER)
@@ -173,16 +208,16 @@ public class ModelTrainingMultiTaskWihoutNormalization {
 //		                .lossFunction(LossFunctions.LossFunction.L2)
 //		                .nIn(50).nOut(4).build(), "L3")
 		        .addLayer("Bioavailability", new OutputLayer.Builder().activation(Activation.SIGMOID)
-		                .lossFunction(LossFunctions.LossFunction.L2)
+		                .lossFunction(LossFunctions.LossFunction.L1)
 		                .nIn(50).nOut(1).build(), "L3")
 		        .addLayer("BloodProteinBinding", new OutputLayer.Builder().activation(Activation.SIGMOID)
-		                .lossFunction(LossFunctions.LossFunction.L2)
+		                .lossFunction(LossFunctions.LossFunction.L1)
 		                .nIn(50).nOut(1).build(), "L3")
 		        .addLayer("HalfLife", new OutputLayer.Builder().activation(Activation.SIGMOID)
-		                .lossFunction(LossFunctions.LossFunction.L2)
+		                .lossFunction(LossFunctions.LossFunction.L1)
 		                .nIn(50).nOut(1).build(), "L3")
 		        .addLayer("VolumeofDistribution", new OutputLayer.Builder().activation(Activation.SIGMOID)
-		                .lossFunction(LossFunctions.LossFunction.L2)
+		                .lossFunction(LossFunctions.LossFunction.L1)
 		                .nIn(50).nOut(1).build(), "L3")
 		        .setOutputs("Bioavailability","BloodProteinBinding", "HalfLife", "VolumeofDistribution")
 //		        .setOutputs("AllinOne")
@@ -190,54 +225,190 @@ public class ModelTrainingMultiTaskWihoutNormalization {
 		        .build();
 		
 		ComputationGraph net = new ComputationGraph(conf);
+		
+//		//Initialize the user interface backend
+//	    UIServer uiServer = UIServer.getInstance();
+//
+//	    //Configure where the network information (gradients, score vs. time etc) is to be stored. Here: store in memory.
+//	    StatsStorage statsStorage = new InMemoryStatsStorage();         //Alternative: new FileStatsStorage(File), for saving and loading later
+//	    
+//	    //Attach the StatsStorage instance to the UI: this allows the contents of the StatsStorage to be visualized
+//	    uiServer.attach(statsStorage);
+//
+//	    //Then add the StatsListener to collect this information from the network, as it trains
+//	    net.setListeners(new StatsListener(statsStorage));
+		
 		net.init();
 		
 		
+
+		
 		System.out.println("-------------------- training ADME ----------------------- ");
 		
-		List<double []> errors = new LinkedList<double []>();
-		List<double []> errorsT = new LinkedList<double []>();
-		
+		//cache for all errors
+		List<double []> MSEs = new LinkedList<double []>();
+		List<double []> MSEDevs = new LinkedList<double []>();
+		List<double []> MSETs = new LinkedList<double []>();
+	
+		List<double []> R2s = new LinkedList<double []>();
+		List<double []> R2Devs = new LinkedList<double []>();
+		List<double []> R2Ts = new LinkedList<double []>();
+
+
 		for (int i = 0; i < epoch; i++) {
 		
 			MultiDataSet data = null;
 			while (ADMEiter.hasNext()) {
 				
 				data = ADMEiter.next();
-				
-		
+	
 				//apply label mask
 				data.setLabelsMaskArray(computeOutPutMask(data));
 		
 				net.fit(data);
+				
 
 			}
 			
 			ADMEiter.reset();
 			
-			if (i % 1 == 0) {
-				System.out.println("-------------------- testing epoch " + i + "----------------------- ");
-				System.out.println("epoch " + i + " score: " + net.score());
-				
+			if (i % 1 == 0) {				
 				System.out.println("-------------------- tranning set ----------------------- ");
-				double[] error = testing(net, ADMEiter);
-				errors.add(error);
-				
+				testing(net, ADMEiter, MSEs, true, R2s, true, false);
+	
+				System.out.println("-------------------- validation set ----------------------- ");
+				testing(net, ADMEDeviter, MSEDevs, true, R2Devs, true, true);
+		
 				System.out.println("-------------------- testing set ----------------------- ");
-				double[] errorT = testing(net, ADMETestiter);
-				errorsT.add(errorT);
-				
+				testing(net, ADMETestiter, MSETs, true, R2Ts, true, false);	
 			}
 		}		
-		
+	
 		System.out.println("-------------------- final testing ADME ----------------------- ");
+		System.out.println("-------------------- tranning set ----------------------- ");
+		testing(net, ADMEiter, MSEs, true, R2s, true, false);
+
+		System.out.println("-------------------- validation set ----------------------- ");
+		testing(net, ADMEDeviter, MSEDevs, true, R2Devs, true, false);
+
+		System.out.println("-------------------- testing set ----------------------- ");
+		testing(net, ADMETestiter, MSETs, true, R2Ts, true, false);	
 		
-		double[] error = testing(net, ADMEiter);
-		errors.add(error);
+		//print MSE for display cost figure
+		printAllCost(MSEs, MSEDevs, MSETs);
+		System.out.println("");
+		printAllCost(R2s, R2Devs, R2Ts);
+
+	}
+	
+	public static void testing(ComputationGraph net, MultiDataSetIterator ADMEiter, List<double []> mses, boolean printMSE, List<double []> R2s, boolean printR2, boolean printPerdiction) {
 		
-		double[] errorT = testing(net, ADMETestiter);
-		errorsT.add(errorT);
+		ADMEiter.reset();
 		
+		MultiDataSet data = null;
+		
+		int numOfBatch = 0;
+		double sumR2[] = {0,0,0,0};
+		double sumMSE[] = {0,0,0,0};
+		
+		while (ADMEiter.hasNext()) {
+			
+			data = ADMEiter.next();
+			
+			int numlabels = data.numLabelsArrays();
+			
+			//compute mask
+			INDArray[] masks = computeOutPutMask(data);
+	
+			//apply label mask
+			data.setLabelsMaskArray(masks);
+	
+			INDArray[] labels = data.getLabels();
+			INDArray[] predictions = net.output(data.getFeatures(0));
+			
+			Application.launch(LineChartApp.class, null);
+
+		
+			
+			for (int i = 0; i < numlabels; i++) {
+				
+				if (printPerdiction) {
+					
+					System.out.println("column: " + i);
+					 
+					int length = labels[i].length();
+					
+					System.out.println("label: " + i + " ");
+					for (int j = 0; j < length; j++) {
+
+						if (labels[i].getDouble(j) != -1) {
+							System.out.print("number " + j + ": ");
+							System.out.print(labels[i].getDouble(j) + " ");
+							System.out.println(predictions[i].getDouble(j));
+						}
+							
+
+						
+					}
+				}
+//				System.out.println("mask: " + i + " " + masks[i].toString());
+//				System.out.println("");
+				
+				sumR2[i] += AccuracyRSquare(labels[i], predictions[i], masks[i]);
+				sumMSE[i] += MAE(labels[i], predictions[i], masks[i]);
+				
+				
+			}
+
+			numOfBatch++;
+			
+		}
+		
+		//compuate R2 on all batches
+		
+		sumR2[0]/=numOfBatch;
+		sumR2[1]/=numOfBatch;
+		sumR2[2]/=numOfBatch;
+		sumR2[3]/=numOfBatch;
+		
+		R2s.add(sumR2);
+		
+		if (printR2) {
+			
+			System.out.println("================== R squared ==================");
+			System.out.println("R2[0]" +  String.format("%.4f", sumR2[0]/numOfBatch));
+			System.out.println("R2[1]" +  String.format("%.4f", sumR2[1]/numOfBatch));
+			System.out.println("R2[2]" +  String.format("%.4f", sumR2[2]/numOfBatch));
+			System.out.println("R2[3]" +  String.format("%.4f", sumR2[3]/numOfBatch));
+		}
+		
+		
+		//compute MSE on all batches
+		
+		sumMSE[0]/=numOfBatch;
+		sumMSE[1]/=numOfBatch;
+		sumMSE[2]/=numOfBatch;
+		sumMSE[3]/=numOfBatch;
+		
+		mses.add(sumMSE);
+
+		if (printMSE) {
+			System.out.println("================== MSE ==================");
+			System.out.println("MSE[0]" +  String.format("%.4f", sumMSE[0]));
+			System.out.println("MSE[1]" +  String.format("%.4f", sumMSE[1]));
+			System.out.println("MSE[2]" +  String.format("%.4f", sumMSE[2]));
+			System.out.println("MSE[3]" +  String.format("%.4f", sumMSE[3]));
+		}
+		
+		
+		ADMEiter.reset();
+		
+		
+		
+	}
+	
+
+	public static void printAllCost(List<double []> errors, List<double []> errorDevs, List<double []> errorsT) {
 		
 		System.out.println("-------------------- training set error ----------------------- ");
 		for (double[] e : errors) {
@@ -261,6 +432,31 @@ public class ModelTrainingMultiTaskWihoutNormalization {
 		for (double[] e : errors) {
 			System.out.print(e[3] + " ");
 		}
+
+		System.out.println("");
+		System.out.println("-------------------- validation set error ----------------------- ");
+
+		for (double[] e : errorDevs) {
+			System.out.print(e[0] + " ");
+		}
+		
+		System.out.println("\n");
+		
+		for (double[] e : errorDevs) {
+			System.out.print(e[1] + " ");
+		}
+		
+		System.out.println("\n");
+		
+		for (double[] e : errorDevs) {
+			System.out.print(e[2] + " ");
+		}
+		
+		System.out.println("\n");
+		
+		for (double[] e : errorDevs) {
+			System.out.print(e[3] + " ");
+		}		
 		
 		System.out.println("");
 		System.out.println("-------------------- testing set error ----------------------- ");
@@ -286,73 +482,6 @@ public class ModelTrainingMultiTaskWihoutNormalization {
 		for (double[] e : errorsT) {
 			System.out.print(e[3] + " ");
 		}
-	}
-	
-	public static double[] testing(ComputationGraph net, MultiDataSetIterator ADMEiter) {
-		
-		ADMEiter.reset();
-		
-		MultiDataSet data = null;
-		
-		int numOfBatch = 0;
-		double sumR2[] = {0,0,0,0};
-		double sumMAE[] = {0,0,0,0};
-		
-		while (ADMEiter.hasNext()) {
-			
-			data = ADMEiter.next();
-			
-			int numlabels = data.numLabelsArrays();
-			
-			//compute mask
-			INDArray[] masks = computeOutPutMask(data);
-	
-			//apply label mask
-			data.setLabelsMaskArray(masks);
-	
-			INDArray[] labels = data.getLabels();
-			INDArray[] predictions = net.output(data.getFeatures(0));
-			
-			for (int i = 0; i < numlabels; i++) {
-				
-//				System.out.println("column: " + i);
-//				System.out.println("prediction: " + i + " " + predictions[i].toString());
-//				System.out.println("label: " + i + " " + labels[i].toString());
-//				System.out.println("mask: " + i + " " + masks[i].toString());
-//				System.out.println("");
-				
-				sumR2[i] += AccuracyRSquare(labels[i], predictions[i], masks[i]);
-				sumMAE[i] += MSE(labels[i], predictions[i], masks[i]);
-				
-				
-			}
-			
-			numOfBatch++;
-			
-		}
-		
-		System.out.println("================== R squared ==================");
-		System.out.println("R2[0]" +  String.format("%.4f", sumR2[0]/numOfBatch));
-		System.out.println("R2[1]" +  String.format("%.4f", sumR2[1]/numOfBatch));
-		System.out.println("R2[2]" +  String.format("%.4f", sumR2[2]/numOfBatch));
-		System.out.println("R2[3]" +  String.format("%.4f", sumR2[3]/numOfBatch));
-		
-		sumMAE[0]/=numOfBatch;
-		sumMAE[1]/=numOfBatch;
-		sumMAE[2]/=numOfBatch;
-		sumMAE[3]/=numOfBatch;
-		
-		System.out.println("================== MAE ==================");
-		System.out.println("MAE[0]" +  String.format("%.4f", sumMAE[0]/numOfBatch));
-		System.out.println("MAE[1]" +  String.format("%.4f", sumMAE[1]/numOfBatch));
-		System.out.println("MAE[2]" +  String.format("%.4f", sumMAE[2]/numOfBatch));
-		System.out.println("MAE[3]" +  String.format("%.4f", sumMAE[3]/numOfBatch));
-
-		
-		ADMEiter.reset();
-		
-		return sumMAE;
-		
 		
 	}
 	
@@ -404,11 +533,11 @@ public class ModelTrainingMultiTaskWihoutNormalization {
 		
 		if (vaildlength != 0) {
 
-	        Double mae = Transforms.pow(lablesTest.sub(PredictionTest), 2).sum(0).getDouble(0);
+	        Double mse = Transforms.pow(lablesTest.sub(PredictionTest), 2).sum(0).getDouble(0) / vaildlength;
 
 //	        System.out.println("Sub MAE square: " + mae);
 	        
-	        return mae;
+	        return mse;
         
 		} else {
 			
@@ -427,7 +556,7 @@ public class ModelTrainingMultiTaskWihoutNormalization {
 		
 		if (vaildlength != 0) {
 
-	        Double mae = Transforms.abs(lablesTest.sub(PredictionTest)).sum(0).getDouble(0);
+	        Double mae = Transforms.abs(lablesTest.sub(PredictionTest)).sum(0).getDouble(0) / vaildlength;
 
 //	        System.out.println("Sub MAE square: " + mae);
 	        

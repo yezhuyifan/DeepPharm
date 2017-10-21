@@ -83,8 +83,11 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 	
 	int epoch = 100;
 	int batchSize = 1000;
-	double learningrate = 0.03;
-	double lambd = 10;
+	double learningrate = 0.1;
+	double lambd = 0.01;
+	double beta1 = 0.5;
+	double beta2 = 0.999;
+			
 
 	public void train() {
 		
@@ -92,10 +95,6 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 		int numLinesToSkip = 1;
 		String fileDelimiter = ",";
 		
-
-
-		
-
 		//ADME reader
 		RecordReader ADME = new CSVRecordReader(numLinesToSkip,fileDelimiter);
 		
@@ -174,39 +173,37 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 				        .build();
 
 				
-				
-
-				
 		//final network
-		ComputationGraphConfiguration conf = new NeuralNetConfiguration.Builder()
+		ComputationGraphConfiguration conf = new NeuralNetConfiguration.Builder() //create global builder 
+				
+				//flowing method set attribute then return this object
 				.seed(123456)
-//		        .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
 	            .learningRate(learningrate)
 	            .learningRateDecayPolicy(LearningRatePolicy.Inverse)
-//	            .lrPolicyDecayRate(0.95)
-	            .lrPolicyDecayRate(0.001).lrPolicyPower(1)
+	            .lrPolicyDecayRate(0.001).lrPolicyPower(2)
 	            .updater(Updater.ADAM)
-	            //.momentum(0.9)
-//	            .updater(Updater.ADAM)
-
+	            .adamMeanDecay(beta1)
+	            .adamVarDecay(beta2)	            
                 .weightInit(WeightInit.XAVIER)
-//                .regularization(true)
+                .regularization(true)
                 .l1(lambd)
-//                .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
-		        .graphBuilder()
-		        .addInputs("input")
-		        .addLayer("L1", new DenseLayer.Builder().activation(Activation.TANH).nIn(1024).nOut(3000).build(), "input")
-		        .addLayer("L2", new DenseLayer.Builder().activation(Activation.TANH).nIn(3000).nOut(900).build(), "L1")
+		        .graphBuilder()  //create GraphBuilder with global builder 
+				        
+		        .addInputs("input") //set input layers
+		        .setOutputs("Bioavailability","BloodProteinBinding", "HalfLife", "VolumeofDistribution") //set output layers
+		        
+		        //nIn nOut at DenseLayer.Builder(), activation in BaseLayer.Builder() << abstract Layer.Builder() (dropout here)
+		        .addLayer("L1", new DenseLayer.Builder().activation(Activation.TANH).nIn(1024).nOut(1000).build(), "input")
+		        .addLayer("L2", new DenseLayer.Builder().activation(Activation.TANH).nIn(1000).nOut(900).build(), "L1")
 		        .addLayer("L3", new DenseLayer.Builder().activation(Activation.TANH).nIn(900).nOut(800).build(), "L2")
 		        .addLayer("L4", new DenseLayer.Builder().activation(Activation.TANH).nIn(800).nOut(700).build(), "L3")
 		        .addLayer("M1", new DenseLayer.Builder().activation(Activation.TANH).nIn(700).nOut(600).build(), "L4")
 		        .addLayer("M2", new DenseLayer.Builder().activation(Activation.TANH).nIn(600).nOut(500).build(), "M1")
 		        .addLayer("M3", new DenseLayer.Builder().activation(Activation.TANH).nIn(500).nOut(400).build(), "M2")
-		        .addLayer("M4", new DenseLayer.Builder().activation(Activation.TANH).nIn(400).nOut(200).build(), "M3")	       
-		        .addLayer("MOUT", new DenseLayer.Builder().activation(Activation.TANH).nIn(200).nOut(100).build(), "M4")
-//		        .addLayer("AllinOne", new OutputLayer.Builder().activation(Activation.SIGMOID)
-//		                .lossFunction(LossFunctions.LossFunction.L2)
-//		                .nIn(50).nOut(4).build(), "L3")
+		        .addLayer("M4", new DenseLayer.Builder().activation(Activation.TANH).nIn(400).nOut(300).build(), "M3")
+		        .addLayer("M5", new DenseLayer.Builder().activation(Activation.TANH).nIn(300).nOut(200).build(), "M4")	       
+		        .addLayer("MOUT", new DenseLayer.Builder().activation(Activation.TANH).nIn(200).nOut(100).build(), "M5")
+
 		        .addLayer("Bioavailability", new OutputLayer.Builder().activation(Activation.SIGMOID)
 		                .lossFunction(LossFunctions.LossFunction.L1)
 		                .nIn(100).nOut(1).build(), "MOUT")
@@ -218,11 +215,10 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 		                .nIn(100).nOut(1).build(), "MOUT")
 		        .addLayer("VolumeofDistribution", new OutputLayer.Builder().activation(Activation.SIGMOID)
 		                .lossFunction(LossFunctions.LossFunction.L1)
-		                .nIn(100).nOut(1).build(), "MOUT")
-		        .setOutputs("Bioavailability","BloodProteinBinding", "HalfLife", "VolumeofDistribution")
-//		        .setOutputs("AllinOne")
+		                .nIn(100).nOut(1).build(), "MOUT") 
+
 		        .backprop(true)
-		        .build();
+		        .build();  //use set all parameters and global configuration to create a object of ComputationGraphConfiguration
 		
 		ComputationGraph net = new ComputationGraph(conf);
 		
@@ -254,7 +250,13 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 		List<double []> R2Devs = new LinkedList<double []>();
 		List<double []> R2Ts = new LinkedList<double []>();
 
-
+		
+		accurecyMAEs = new LinkedList<double []>();
+		accurecyMAEDevs = new LinkedList<double []>();
+		accurecyMAETs = new LinkedList<double []>();
+		
+		
+		
 		for (int i = 0; i < epoch; i++) {
 		
 			MultiDataSet data = null;
@@ -273,26 +275,27 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 			ADMEiter.reset();
 			
 			if (i % 1 == 0) {				
+				System.out.println("-------------------- epoch " + i + "----------------------- ");
 				System.out.println("-------------------- tranning set ----------------------- ");
-				testing(net, ADMEiter, MSEs, true, R2s, false, false);
+				testing(net, ADMEiter, MSEs, true, R2s, false, accurecyMAEs, true, false);
 	
 				System.out.println("-------------------- validation set ----------------------- ");
-				testing(net, ADMEDeviter, MSEDevs, true, R2Devs, false, false);
+				testing(net, ADMEDeviter, MSEDevs, true, R2Devs, false, accurecyMAEDevs, true, false);
 		
 				System.out.println("-------------------- testing set ----------------------- ");
-				testing(net, ADMETestiter, MSETs, true, R2Ts, false, false);	
+				testing(net, ADMETestiter, MSETs, true, R2Ts, false, accurecyMAETs, true, false);	
 			}
 		}		
 	
 		System.out.println("-------------------- final testing ADME ----------------------- ");
 		System.out.println("-------------------- tranning set ----------------------- ");
-		testing(net, ADMEiter, MSEs, true, R2s, false, false);
+		testing(net, ADMEiter, MSEs, true, R2s, false, accurecyMAEs, true, false);
 
 		System.out.println("-------------------- validation set ----------------------- ");
-		testing(net, ADMEDeviter, MSEDevs, true, R2Devs, false, false);
+		testing(net, ADMEDeviter, MSEDevs, true, R2Devs, false, accurecyMAEDevs, true, false);
 
 		System.out.println("-------------------- testing set ----------------------- ");
-		testing(net, ADMETestiter, MSETs, true, R2Ts, false, false);	
+		testing(net, ADMETestiter, MSETs, true, R2Ts, false, accurecyMAETs, true, false);	
 		
 		//print MSE for display cost figure
 	//	printAllCost(MSEs, MSEDevs, MSETs);
@@ -300,15 +303,19 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 	//	printAllCost(R2s, R2Devs, R2Ts);
 
 		
+
+		
 		//Net Configuration Summary
 		System.out.println(net.summary());
 		System.out.println("learning rate:" + learningrate);
 		System.out.println("total epoch: " + epoch);
+		System.out.println("beta1: " + beta1);
+		System.out.println("beta2: " + beta2);
 		System.out.println("lambda :" + lambd); 
 		
 	}
 	
-	public static void testing(ComputationGraph net, MultiDataSetIterator ADMEiter, List<double []> mses, boolean printMSE, List<double []> R2s, boolean printR2, boolean printPerdiction) {
+	public static void testing(ComputationGraph net, MultiDataSetIterator ADMEiter, List<double []> mses, boolean printMSE, List<double []> R2s, boolean printR2, List<double []> MAEarruaccys, boolean printMAEarruaccy, boolean printPerdiction) {
 		
 		ADMEiter.reset();
 		
@@ -316,7 +323,8 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 		
 		int numOfBatch = 0;
 		double sumR2[] = {0,0,0,0};
-		double sumMSE[] = {0,0,0,0};
+		double sumMAE[] = {0,0,0,0};
+		double sumaccurecyMAE[] = {0,0,0,0};
 		
 		while (ADMEiter.hasNext()) {
 			
@@ -364,8 +372,8 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 //				System.out.println("");
 				
 				sumR2[i] += AccuracyRSquare(labels[i], predictions[i], masks[i]);
-				sumMSE[i] += MAE(labels[i], predictions[i], masks[i]);
-				
+				sumMAE[i] += MAE(labels[i], predictions[i], masks[i]);
+				sumaccurecyMAE[i] += AccuracyMAE(labels[i], predictions[i], masks[i], 0.1);
 				
 			}
 
@@ -392,21 +400,38 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 		}
 		
 		
-		//compute MSE on all batches
+		//compute MAE on all batches
 		
-		sumMSE[0]/=numOfBatch;
-		sumMSE[1]/=numOfBatch;
-		sumMSE[2]/=numOfBatch;
-		sumMSE[3]/=numOfBatch;
+		sumMAE[0]/=numOfBatch;
+		sumMAE[1]/=numOfBatch;
+		sumMAE[2]/=numOfBatch;
+		sumMAE[3]/=numOfBatch;
 		
-		mses.add(sumMSE);
+		mses.add(sumMAE);
 
 		if (printMSE) {
-			System.out.println("================== MSE ==================");
-			System.out.println("MSE[0]" +  String.format("%.4f", sumMSE[0]));
-			System.out.println("MSE[1]" +  String.format("%.4f", sumMSE[1]));
-			System.out.println("MSE[2]" +  String.format("%.4f", sumMSE[2]));
-			System.out.println("MSE[3]" +  String.format("%.4f", sumMSE[3]));
+			System.out.println("================== MAE ==================");
+			System.out.println(String.format("%.4f", sumMAE[0]));
+			System.out.println(String.format("%.4f", sumMAE[1]));
+			System.out.println(String.format("%.4f", sumMAE[2]));
+			System.out.println(String.format("%.4f", sumMAE[3]));
+		}
+		
+		//compute accuracyMAE on all batches
+		
+		sumaccurecyMAE[0]/=numOfBatch;
+		sumaccurecyMAE[1]/=numOfBatch;
+		sumaccurecyMAE[2]/=numOfBatch;
+		sumaccurecyMAE[3]/=numOfBatch;
+		
+		MAEarruaccys.add(sumaccurecyMAE);
+
+		if (printMAEarruaccy) {
+			System.out.println("================== MAEarruaccys ==================");
+			System.out.println(String.format("%.4f", sumaccurecyMAE[0]));
+			System.out.println(String.format("%.4f", sumaccurecyMAE[1]));
+			System.out.println(String.format("%.4f", sumaccurecyMAE[2]));
+			System.out.println(String.format("%.4f", sumaccurecyMAE[3]));
 		}
 		
 		
@@ -577,6 +602,30 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 			
 		}
 	}
+	
+	public static double AccuracyMAE(INDArray lablesTest, INDArray PredictionTest, INDArray mask, double therdsold) {
+		
+        INDArray absErrorMatrix = Transforms.abs(lablesTest.sub(PredictionTest));
+        int size = absErrorMatrix.size(0);
+        double validasize = 0;
+        double correct = 0;
+        
+        for (int i = 0; i < size; i++)
+        {
+        	if (mask.getDouble(i) == 1) {
+        		
+        		validasize++;
+        		
+	        	if (absErrorMatrix.getDouble(i) <= therdsold) {
+	        		correct++;
+	        	}
+        	}	
+        }
+        
+        return correct/validasize;
+      // log.info(allAE.toString());
+      //  log.info("AccuracyMAE  <= " + therdsold*100 + "%: " + String.format("%.4f", correct/size));
+	}
 
 	
 	//compute mask array for multi-labels, change NaN of origin data as -1
@@ -612,6 +661,37 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 	private List<double []> MSEs;
 	private List<double []> MSEDevs;
 	private List<double []> MSETs;
+	
+	private List<double []> accurecyMAEs;
+	private List<double []> accurecyMAEDevs;
+	private List<double []> accurecyMAETs;
+
+	
+	
+	
+	public List<double[]> getAccurecyMAETs() {
+		return accurecyMAETs;
+	}
+
+	public void setAccurecyMAETs(List<double[]> accurecyMAETs) {
+		this.accurecyMAETs = accurecyMAETs;
+	}
+
+	public List<double[]> getAccurecyMAEs() {
+		return accurecyMAEs;
+	}
+
+	public void setAccurecyMAEs(List<double[]> accurecyMAEs) {
+		this.accurecyMAEs = accurecyMAEs;
+	}
+
+	public List<double[]> getAccurecyMAEDevs() {
+		return accurecyMAEDevs;
+	}
+
+	public void setAccurecyMAEDevs(List<double[]> accurecyMAEDevs) {
+		this.accurecyMAEDevs = accurecyMAEDevs;
+	}
 
 	public List<double[]> getMSEs() {
 		return MSEs;
