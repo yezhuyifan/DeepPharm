@@ -138,7 +138,7 @@ public class LineChartApp extends Application {
     	model = new ModelTrainingMultiTaskWihoutNormalizationForGUI();
     	model.train();
     	
-    	getAccuaryFromModel("MAE"); 
+    	getAccuaryFromModel("MAELessTen"); 
     	
 
         
