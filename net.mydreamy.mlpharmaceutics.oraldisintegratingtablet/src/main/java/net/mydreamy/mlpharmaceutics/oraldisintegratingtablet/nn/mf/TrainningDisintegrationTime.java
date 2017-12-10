@@ -1,4 +1,4 @@
-package net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.finalcode;
+package net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.nn.mf;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -70,7 +70,7 @@ public class TrainningDisintegrationTime {
     public static final double learningRate = 0.01;
     
     //with api properties
-    public static final int numInputs = 26;
+    public static final int numInputs = 30;
     //
     //public static final int numInputs = 18;
     public static final int numOutputs = 1;
@@ -94,7 +94,7 @@ public class TrainningDisintegrationTime {
         String delimiter = ",";
         RecordReader recordReadertrain = new CSVRecordReader(numLinesToSkip,delimiter);
         try {
-        	recordReadertrain.initialize(new FileSplit(new ClassPathResource("trainingset.csv").getFile()));
+        	recordReadertrain.initialize(new FileSplit(new ClassPathResource("manufacture/trainingset-mf.csv").getFile()));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -113,7 +113,7 @@ public class TrainningDisintegrationTime {
         
         RecordReader recordReadertest = new CSVRecordReader(numLinesToSkip,delimiter);
         try {
-        	recordReadertest.initialize(new FileSplit(new ClassPathResource("testingset.csv").getFile()));
+        	recordReadertest.initialize(new FileSplit(new ClassPathResource("manufacture/testingset-mf.csv").getFile()));
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -154,7 +154,7 @@ public class TrainningDisintegrationTime {
                 .iterations(iterations)
                 .optimizationAlgo(OptimizationAlgorithm.STOCHASTIC_GRADIENT_DESCENT)
                 .learningRate(learningRate)
-                .weightInit(WeightInit.RELU)
+                .weightInit(WeightInit.DISTRIBUTION)
                 .regularization(true)
                 .l2(1e-3)
                 .gradientNormalization(GradientNormalization.RenormalizeL2PerLayer)
@@ -165,35 +165,10 @@ public class TrainningDisintegrationTime {
                 .layer(0, new DenseLayer.Builder().nIn(numInputs).nOut(numHiddenNodes)
                         .activation("tanh")
                         .build())
-                .layer(1, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("tanh")
-                        .build())
-                .layer(2, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("tanh")
-                        .build())
-                .layer(3, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("tanh")
-                        .build())
-                .layer(4, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("tanh")
-                        .build())
-                .layer(5, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("tanh")
-                        .build())
-                .layer(6, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("tanh")
-                        .build())
-                .layer(7, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("tanh")
-                        .build())
-                .layer(8, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
-                        .activation("tanh")
-                        .build())
-
 //                .layer(5, new DenseLayer.Builder().nIn(numHiddenNodes).nOut(numHiddenNodes)
 //                        .activation("tanh")
 //                        .build())
-                .layer(9, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
+                .layer(1, new OutputLayer.Builder(LossFunctions.LossFunction.L2)
                         .activation("sigmoid")
                         .nIn(numHiddenNodes).nOut(numOutputs).build())
                 .pretrain(false).backprop(true).build()
@@ -205,7 +180,7 @@ public class TrainningDisintegrationTime {
         List<EpochTerminationCondition> terminationconditions = new LinkedList<EpochTerminationCondition>();
   //      terminationconditions.add(new ScoreImprovementEpochTerminationCondition(10, 1E-10));
     //    terminationconditions.add(new BestScoreEpochTerminationCondition(10));
-        terminationconditions.add(new MaxEpochsTerminationCondition(1500));
+        terminationconditions.add(new MaxEpochsTerminationCondition(15000));
 
         EarlyStoppingConfiguration<MultiLayerNetwork> esConf = new EarlyStoppingConfiguration.Builder<MultiLayerNetwork>()
         		.epochTerminationConditions(terminationconditions)
@@ -276,6 +251,8 @@ public class TrainningDisintegrationTime {
         //test on best model
         testOnDiffModel(bestModel, trainningData, testData);
  
+        
+        System.out.println(bestModel.summary());
 	}
 
 	public static void testOnDiffModel(MultiLayerNetwork net, DataSet trainningData,  DataSet testData)

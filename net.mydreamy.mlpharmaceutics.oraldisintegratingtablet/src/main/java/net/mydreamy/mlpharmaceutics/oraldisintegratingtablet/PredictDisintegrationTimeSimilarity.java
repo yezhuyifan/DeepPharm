@@ -23,7 +23,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.base.EvaluationMCloud;
-import net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.finalcode.TrainningDisintegrationTime;
+import net.mydreamy.mlpharmaceutics.oraldisintegratingtablet.mf.TrainningDisintegrationTime;
 
 public class PredictDisintegrationTimeSimilarity {
 	
