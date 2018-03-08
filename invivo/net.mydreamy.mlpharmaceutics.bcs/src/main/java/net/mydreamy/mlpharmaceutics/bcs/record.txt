@@ -1,0 +1,748 @@
+[main] INFO org.nd4j.linalg.factory.Nd4jBackend - Loaded [CpuBackend] backend
+[main] INFO org.nd4j.nativeblas.NativeOpsHolder - Number of threads used for NativeOps: 4
+[main] INFO org.reflections.Reflections - Reflections took 109 ms to scan 11 urls, producing 29 keys and 189 values 
+[main] INFO org.nd4j.nativeblas.Nd4jBlas - Number of threads used for BLAS: 4
+[main] INFO org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner - Backend used: [CPU]; OS: [Mac OS X]
+[main] INFO org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner - Cores: [4]; Memory: [3.6GB];
+[main] INFO org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner - Blas vendor: [OPENBLAS]
+[main] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/System/Library/Java/Extensions/libAppleScriptEngine.jnilib]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:109)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:91)
+	at org.reflections.Reflections.scan(Reflections.java:237)
+	at org.reflections.Reflections.scan(Reflections.java:204)
+	at org.reflections.Reflections.<init>(Reflections.java:129)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.registerSubtypes(NeuralNetConfiguration.java:431)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.configureMapper(NeuralNetConfiguration.java:386)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.initMapper(NeuralNetConfiguration.java:376)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.<clinit>(NeuralNetConfiguration.java:123)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration$Builder.build(NeuralNetConfiguration.java:1019)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:559)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:543)
+	at net.mydreamy.mlpharmaceutics.bcs.ModelTrainingMultiTask.main(ModelTrainingMultiTask.java:251)
+[main] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/System/Library/Java/Extensions/libJ3DUtils.jnilib]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:109)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:91)
+	at org.reflections.Reflections.scan(Reflections.java:237)
+	at org.reflections.Reflections.scan(Reflections.java:204)
+	at org.reflections.Reflections.<init>(Reflections.java:129)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.registerSubtypes(NeuralNetConfiguration.java:431)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.configureMapper(NeuralNetConfiguration.java:386)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.initMapper(NeuralNetConfiguration.java:376)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.<clinit>(NeuralNetConfiguration.java:123)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration$Builder.build(NeuralNetConfiguration.java:1019)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:559)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:543)
+	at net.mydreamy.mlpharmaceutics.bcs.ModelTrainingMultiTask.main(ModelTrainingMultiTask.java:251)
+[main] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/System/Library/Java/Extensions/libJ3DAudio.jnilib]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:109)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:91)
+	at org.reflections.Reflections.scan(Reflections.java:237)
+	at org.reflections.Reflections.scan(Reflections.java:204)
+	at org.reflections.Reflections.<init>(Reflections.java:129)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.registerSubtypes(NeuralNetConfiguration.java:431)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.configureMapper(NeuralNetConfiguration.java:386)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.initMapper(NeuralNetConfiguration.java:376)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.<clinit>(NeuralNetConfiguration.java:123)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration$Builder.build(NeuralNetConfiguration.java:1019)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:559)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:543)
+	at net.mydreamy.mlpharmaceutics.bcs.ModelTrainingMultiTask.main(ModelTrainingMultiTask.java:251)
+[main] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/System/Library/Java/Extensions/libmlib_jai.jnilib]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:109)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:91)
+	at org.reflections.Reflections.scan(Reflections.java:237)
+	at org.reflections.Reflections.scan(Reflections.java:204)
+	at org.reflections.Reflections.<init>(Reflections.java:129)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.registerSubtypes(NeuralNetConfiguration.java:431)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.configureMapper(NeuralNetConfiguration.java:386)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.initMapper(NeuralNetConfiguration.java:376)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.<clinit>(NeuralNetConfiguration.java:123)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration$Builder.build(NeuralNetConfiguration.java:1019)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:559)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:543)
+	at net.mydreamy.mlpharmaceutics.bcs.ModelTrainingMultiTask.main(ModelTrainingMultiTask.java:251)
+[main] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/System/Library/Java/Extensions/libJ3D.jnilib]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:109)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:91)
+	at org.reflections.Reflections.scan(Reflections.java:237)
+	at org.reflections.Reflections.scan(Reflections.java:204)
+	at org.reflections.Reflections.<init>(Reflections.java:129)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.registerSubtypes(NeuralNetConfiguration.java:431)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.configureMapper(NeuralNetConfiguration.java:386)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.initMapper(NeuralNetConfiguration.java:376)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.<clinit>(NeuralNetConfiguration.java:123)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration$Builder.build(NeuralNetConfiguration.java:1019)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:559)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:543)
+	at net.mydreamy.mlpharmaceutics.bcs.ModelTrainingMultiTask.main(ModelTrainingMultiTask.java:251)
+[main] WARN org.reflections.Reflections - could not create Vfs.Dir from url. ignoring the exception and continuing
+org.reflections.ReflectionsException: could not create Vfs.Dir from url, no matching UrlType was found [file:/usr/lib/java/libjdns_sd.jnilib]
+either use fromURL(final URL url, final List<UrlType> urlTypes) or use the static setDefaultURLTypes(final List<UrlType> urlTypes) or addDefaultURLTypes(UrlType urlType) with your specialized UrlType.
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:109)
+	at org.reflections.vfs.Vfs.fromURL(Vfs.java:91)
+	at org.reflections.Reflections.scan(Reflections.java:237)
+	at org.reflections.Reflections.scan(Reflections.java:204)
+	at org.reflections.Reflections.<init>(Reflections.java:129)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.registerSubtypes(NeuralNetConfiguration.java:431)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.configureMapper(NeuralNetConfiguration.java:386)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.initMapper(NeuralNetConfiguration.java:376)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration.<clinit>(NeuralNetConfiguration.java:123)
+	at org.deeplearning4j.nn.conf.NeuralNetConfiguration$Builder.build(NeuralNetConfiguration.java:1019)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:559)
+	at org.deeplearning4j.nn.conf.ComputationGraphConfiguration$GraphBuilder.addLayer(ComputationGraphConfiguration.java:543)
+	at net.mydreamy.mlpharmaceutics.bcs.ModelTrainingMultiTask.main(ModelTrainingMultiTask.java:251)
+[main] INFO org.reflections.Reflections - Reflections took 1075 ms to scan 117 urls, producing 2551 keys and 10592 values 
+[main] WARN org.deeplearning4j.nn.conf.layers.LayerValidation - Layer "Layer not named" momentum is automatically set to 0.9. Add momentum to configuration to change the value.
+[main] WARN org.deeplearning4j.nn.conf.layers.LayerValidation - Layer "Layer not named" momentum is automatically set to 0.9. Add momentum to configuration to change the value.
+[main] WARN org.deeplearning4j.nn.conf.layers.LayerValidation - Layer "Layer not named" momentum is automatically set to 0.9. Add momentum to configuration to change the value.
+[main] WARN org.deeplearning4j.nn.conf.layers.LayerValidation - Layer "Layer not named" momentum is automatically set to 0.9. Add momentum to configuration to change the value.
+[main] WARN org.deeplearning4j.nn.conf.layers.LayerValidation - Layer "Layer not named" momentum is automatically set to 0.9. Add momentum to configuration to change the value.
+[main] WARN org.deeplearning4j.nn.conf.layers.LayerValidation - Layer "Layer not named" momentum is automatically set to 0.9. Add momentum to configuration to change the value.
+[main] WARN org.deeplearning4j.nn.conf.layers.LayerValidation - Layer "Layer not named" momentum is automatically set to 0.9. Add momentum to configuration to change the value.
+[main] WARN org.deeplearning4j.nn.conf.layers.LayerValidation - Layer "Layer not named" momentum is automatically set to 0.9. Add momentum to configuration to change the value.
+[main] WARN org.deeplearning4j.nn.conf.layers.LayerValidation - Layer "Layer not named" momentum is automatically set to 0.9. Add momentum to configuration to change the value.
+[main] WARN org.deeplearning4j.nn.conf.layers.LayerValidation - Layer "Layer not named" momentum is automatically set to 0.9. Add momentum to configuration to change the value.
+[main] INFO org.reflections.Reflections - Reflections took 114 ms to scan 11 urls, producing 371 keys and 1443 values 
+-------------------- training logP ----------------------- 
+epoch:0 score:0.2291206971143322
+epoch:1 score:0.22491357143815854
+epoch:2 score:0.2245185589035483
+epoch:3 score:0.2244161732473247
+epoch:4 score:0.22438611515427642
+epoch:5 score:0.22356983195204186
+epoch:6 score:0.22296620728907127
+epoch:7 score:0.22260888590797107
+epoch:8 score:0.22231357083603387
+epoch:9 score:0.22198845124894484
+epoch:10 score:0.2216841255544163
+epoch:11 score:0.22143647026312152
+epoch:12 score:0.22122680090541033
+epoch:13 score:0.2210536028724639
+epoch:14 score:0.2209228470147111
+epoch:15 score:0.22082631401739566
+epoch:16 score:0.22076227446254093
+epoch:17 score:0.22073273338403152
+epoch:18 score:0.22073086866305622
+epoch:19 score:0.220748462931881
+-------------------- training caco2 ----------------------- 
+epoch:0 score:0.1407446937804467
+epoch:1 score:0.13583991311282853
+epoch:2 score:0.1297208533363094
+epoch:3 score:0.12324537429895241
+epoch:4 score:0.11713723888173963
+epoch:5 score:0.11190579485527757
+epoch:6 score:0.10781805990347876
+epoch:7 score:0.10491993028927082
+epoch:8 score:0.10309271801431251
+epoch:9 score:0.10212191927971905
+epoch:10 score:0.10175979387679428
+epoch:11 score:0.10177034768962365
+epoch:12 score:0.10195475526745257
+epoch:13 score:0.10216128464819706
+epoch:14 score:0.1022847949171236
+epoch:15 score:0.10226106980000446
+epoch:16 score:0.10205933507892123
+epoch:17 score:0.1016748387541928
+epoch:18 score:0.10112204346106367
+epoch:19 score:0.1004289751720232
+epoch:20 score:0.09963238860023556
+epoch:21 score:0.09877292413756986
+epoch:22 score:0.09789134092856538
+epoch:23 score:0.09702484558738736
+epoch:24 score:0.09620417888280419
+epoch:25 score:0.09545117356021296
+epoch:26 score:0.09477789598848795
+epoch:27 score:0.09418639971149159
+epoch:28 score:0.09366988847652007
+epoch:29 score:0.09321469119437019
+epoch:30 score:0.09280285023859476
+epoch:31 score:0.09241500434865423
+epoch:32 score:0.09203300459173885
+epoch:33 score:0.09164214877778445
+epoch:34 score:0.09123237062193038
+epoch:35 score:0.09079890598036545
+epoch:36 score:0.09034188340991527
+epoch:37 score:0.08986535654649613
+epoch:38 score:0.08937593127420827
+epoch:39 score:0.08888120781709329
+epoch:40 score:0.08838865521757193
+epoch:41 score:0.08790415621238538
+epoch:42 score:0.08743170372099593
+epoch:43 score:0.08697305801818389
+epoch:44 score:0.08652793082166324
+epoch:45 score:0.08609460571679904
+epoch:46 score:0.08567055127901799
+epoch:47 score:0.08525292044166538
+epoch:48 score:0.0848392403261969
+epoch:49 score:0.08442774513239343
+epoch:50 score:0.0840176467071454
+epoch:51 score:0.08360902029596996
+epoch:52 score:0.08320271202611479
+epoch:53 score:0.08280014319635885
+epoch:54 score:0.08240283529295904
+epoch:55 score:0.08201225170542181
+epoch:56 score:0.08162951109242556
+epoch:57 score:0.08125526164963073
+epoch:58 score:0.08088964712995453
+epoch:59 score:0.08053253999564502
+epoch:60 score:0.08018345760202883
+epoch:61 score:0.07984193132191672
+epoch:62 score:0.0795075848085763
+epoch:63 score:0.079180167217204
+epoch:64 score:0.07885971673765552
+epoch:65 score:0.07854643118294805
+epoch:66 score:0.07824058597153973
+epoch:67 score:0.07794251152031666
+epoch:68 score:0.07765247123579214
+epoch:69 score:0.07737061374293129
+epoch:70 score:0.07709701492862804
+epoch:71 score:0.0768315593929404
+epoch:72 score:0.07657411335429533
+epoch:73 score:0.07632450571831736
+epoch:74 score:0.07608253005350944
+epoch:75 score:0.07584799870943375
+epoch:76 score:0.07562076761227292
+epoch:77 score:0.07540072365016225
+epoch:78 score:0.07518766830979585
+epoch:79 score:0.0749815028990693
+epoch:80 score:0.07478203972443424
+epoch:81 score:0.07458907753417844
+epoch:82 score:0.07440242149010486
+epoch:83 score:0.07422177289510366
+epoch:84 score:0.07404696037043967
+epoch:85 score:0.073877732268412
+epoch:86 score:0.0737138033637708
+epoch:87 score:0.07355497498864004
+epoch:88 score:0.07340102782090951
+epoch:89 score:0.0732517546356897
+epoch:90 score:0.0731069126009999
+epoch:91 score:0.07296636156744284
+epoch:92 score:0.0728298338234951
+epoch:93 score:0.07269716570426799
+epoch:94 score:0.07256813154733391
+epoch:95 score:0.0724425513534066
+epoch:96 score:0.07232025474211955
+epoch:97 score:0.07220105794461884
+epoch:98 score:0.0720848170757548
+epoch:99 score:0.07197136243630994
+epoch:100 score:0.07186053412648462
+epoch:101 score:0.0717522145437619
+epoch:102 score:0.07164624632163306
+epoch:103 score:0.07154254102827519
+epoch:104 score:0.07144097818896666
+epoch:105 score:0.0713414348156376
+epoch:106 score:0.07124381811887011
+epoch:107 score:0.07114805083485885
+epoch:108 score:0.07105401996548073
+epoch:109 score:0.0709616656471357
+epoch:110 score:0.0708708860368651
+epoch:111 score:0.0707816197580909
+epoch:112 score:0.07069381836280267
+epoch:113 score:0.07060741221098023
+epoch:114 score:0.07052235859375647
+epoch:115 score:0.07043859915505704
+epoch:116 score:0.07035607687825804
+epoch:117 score:0.07027475035714559
+epoch:118 score:0.0701945957688998
+epoch:119 score:0.07011557657877907
+epoch:120 score:0.07003766013153265
+epoch:121 score:0.06996081507701848
+epoch:122 score:0.06988500856636913
+epoch:123 score:0.06981021134485584
+epoch:124 score:0.06973641822044331
+epoch:125 score:0.06966358838675867
+epoch:126 score:0.06959171725034714
+epoch:127 score:0.0695207621089678
+epoch:128 score:0.06945073961020146
+epoch:129 score:0.06938161421577922
+epoch:130 score:0.06931337185836459
+epoch:131 score:0.06924601875504563
+epoch:132 score:0.06917951733352208
+epoch:133 score:0.06911384311405933
+epoch:134 score:0.06904900382620922
+epoch:135 score:0.06898500321126551
+epoch:136 score:0.06892182123265052
+epoch:137 score:0.0688594282972465
+epoch:138 score:0.06879784029307116
+epoch:139 score:0.06873704758733465
+epoch:140 score:0.06867703550544123
+epoch:141 score:0.06861778129957095
+epoch:142 score:0.06855927044266756
+epoch:143 score:0.06850151589434494
+epoch:144 score:0.06844453091174282
+epoch:145 score:0.06838828331387375
+epoch:146 score:0.06833274876348273
+epoch:147 score:0.06827796268118126
+epoch:148 score:0.06822387771669391
+epoch:149 score:0.06817050202392064
+epoch:150 score:0.06811782794286783
+epoch:151 score:0.06806582988689752
+epoch:152 score:0.06801453177153143
+epoch:153 score:0.06796393269667225
+epoch:154 score:0.06791401383985632
+epoch:155 score:0.06786474083267925
+epoch:156 score:0.06781611893468553
+epoch:157 score:0.06776816628643978
+epoch:158 score:0.06772085530784142
+epoch:159 score:0.06767418861797586
+epoch:160 score:0.06762817578359079
+epoch:161 score:0.06758276150735926
+epoch:162 score:0.06753796166567505
+epoch:163 score:0.06749377478156955
+epoch:164 score:0.0674502116019204
+epoch:165 score:0.06740725171043664
+epoch:166 score:0.06736488567900685
+epoch:167 score:0.06732309462108241
+epoch:168 score:0.06728188566608906
+epoch:169 score:0.06724127033072799
+epoch:170 score:0.06720121190545385
+epoch:171 score:0.06716170395855427
+epoch:172 score:0.06712277024554936
+epoch:173 score:0.06708436107410663
+epoch:174 score:0.06704649409680893
+epoch:175 score:0.06700917214164148
+epoch:176 score:0.06697235762830467
+epoch:177 score:0.06693607318960561
+epoch:178 score:0.0669003151023242
+epoch:179 score:0.06686504443549994
+epoch:180 score:0.06683028559262846
+epoch:181 score:0.0667960358722635
+epoch:182 score:0.06676227326301845
+epoch:183 score:0.06672899088011917
+epoch:184 score:0.06669619368169165
+epoch:185 score:0.06666386870152667
+epoch:186 score:0.06663200592685015
+epoch:187 score:0.06660060268709657
+epoch:188 score:0.06656965174784023
+epoch:189 score:0.06653914610144156
+epoch:190 score:0.06650908744605678
+epoch:191 score:0.0664794521384476
+epoch:192 score:0.0664502535382365
+epoch:193 score:0.06642146910467316
+epoch:194 score:0.0663931001056253
+epoch:195 score:0.0663651614509226
+epoch:196 score:0.06633764143282499
+epoch:197 score:0.06631050175991474
+epoch:198 score:0.06628376933039168
+epoch:199 score:0.0662574202245577
+In epoch 20
+logPnet Training set accurary is :R is: 0.7460
+logPnet validation set accurary is :R is: 0.6516
+
+In epoch 200
+Caco2Net Training set accurary is :R is: 0.7386
+Caco2Net validation set accurary is :R is: 0.2348
+
+
+============================================================================================================================================
+VertexName (VertexType)                 nIn,nOut       TotalParams    ParamsShape                    Vertex Inputs
+============================================================================================================================================
+input (InputVertex)                     -,-            -              -                              -
+L1 (DenseLayer)                         9,100          1000           b:{1,100}, W:{9,100}           [input]
+L2 (DenseLayer)                         100,1000       101000         b:{1,1000}, W:{100,1000}       [L1]
+M1 (DenseLayer)                         1000,1000      1001000        b:{1,1000}, W:{1000,1000}      [L2]
+M2 (DenseLayer)                         1000,1000      1001000        b:{1,1000}, W:{1000,1000}      [M1]
+M3 (DenseLayer)                         1000,1000      1001000        b:{1,1000}, W:{1000,1000}      [M2]
+M4 (DenseLayer)                         1000,1000      1001000        b:{1,1000}, W:{1000,1000}      [M3]
+L3 (DenseLayer)                         1000,1000      1001000        b:{1,1000}, W:{1000,1000}      [M4]
+caco2 (OutputLayer)                     1000,1         1001           b:{1,1}, W:{1000,1}            [L3]
+logP (OutputLayer)                      1000,1         1001           b:{1,1}, W:{1000,1}            [L3]
+WS (OutputLayer)                        1000,1         1001           b:{1,1}, W:{1000,1}            [L3]
+--------------------------------------------------------------------------------------------------------------------------------------------
+            Total Parameters:  5110003
+        Trainable Parameters:  5110003
+           Frozen Parameters:  0
+============================================================================================================================================
+
+-------------------- training logP ----------------------- 
+epoch:0 score:0.2291206971143322
+epoch:1 score:0.22491357143815854
+epoch:2 score:0.2245185589035483
+epoch:3 score:0.2244161732473247
+epoch:4 score:0.22438611515427642
+epoch:5 score:0.22356983195204186
+epoch:6 score:0.22296620728907127
+epoch:7 score:0.22260888590797107
+epoch:8 score:0.22231357083603387
+epoch:9 score:0.22198845124894484
+epoch:10 score:0.2216841255544163
+epoch:11 score:0.22143647026312152
+epoch:12 score:0.22122680090541033
+epoch:13 score:0.2210536028724639
+epoch:14 score:0.2209228470147111
+epoch:15 score:0.22082631401739566
+epoch:16 score:0.22076227446254093
+epoch:17 score:0.22073273338403152
+epoch:18 score:0.22073086866305622
+epoch:19 score:0.220748462931881
+epoch:20 score:0.22078323812984138
+epoch:21 score:0.22082861786956628
+epoch:22 score:0.22087758634735663
+epoch:23 score:0.22092662294926654
+epoch:24 score:0.22097165508311747
+epoch:25 score:0.22100861822996845
+epoch:26 score:0.22103587685066792
+epoch:27 score:0.22105269781602296
+epoch:28 score:0.2210582016372168
+epoch:29 score:0.22105239861311474
+
+-------------------- training caco2 ----------------------- 
+epoch:0 score:0.14053549275036079
+epoch:1 score:0.13564447525912376
+epoch:2 score:0.12952318417174044
+epoch:3 score:0.12301692613614189
+epoch:4 score:0.11684440087721246
+epoch:5 score:0.11151887770606232
+epoch:6 score:0.10731775904172278
+epoch:7 score:0.10430036073166031
+epoch:8 score:0.10235994507754283
+epoch:9 score:0.10128989850810168
+epoch:10 score:0.10084556062828942
+epoch:11 score:0.1007901090143091
+epoch:12 score:0.10092134339708982
+epoch:13 score:0.10108296480182417
+epoch:14 score:0.10116515587798151
+epoch:15 score:0.10109970104044541
+epoch:16 score:0.10085274206216324
+epoch:17 score:0.10041748592906462
+epoch:18 score:0.09980765417016223
+epoch:19 score:0.0990515597671261
+epoch:20 score:0.09818719288284333
+epoch:21 score:0.0972574415784089
+epoch:22 score:0.09630573486178552
+epoch:23 score:0.09537218722182463
+epoch:24 score:0.09449009095529548
+epoch:25 score:0.093683375331745
+epoch:26 score:0.09296505375901336
+epoch:27 score:0.0923368744198183
+epoch:28 score:0.09179055886210118
+epoch:29 score:0.09131000365218782
+epoch:30 score:0.09087436337930457
+epoch:31 score:0.0904613941775841
+epoch:32 score:0.09005086579358201
+epoch:33 score:0.08962693345396108
+epoch:34 score:0.08917975227206812
+epoch:35 score:0.08870591265814841
+epoch:36 score:0.08820773821799532
+epoch:37 score:0.08769193036788056
+epoch:38 score:0.08716750168008713
+epoch:39 score:0.08664399832693287
+epoch:40 score:0.08612970257592556
+epoch:41 score:0.08563060751533887
+epoch:42 score:0.08514986427159846
+epoch:43 score:0.084687911946806
+epoch:44 score:0.08424293236255001
+epoch:45 score:0.08381179528386475
+epoch:46 score:0.08339091558186452
+epoch:47 score:0.08297698165387304
+epoch:48 score:0.08256763240033449
+epoch:49 score:0.08216166370102362
+epoch:50 score:0.08175914261488569
+epoch:51 score:0.08136108454355956
+epoch:52 score:0.08096913037146093
+epoch:53 score:0.08058517526579502
+epoch:54 score:0.08021088153722969
+epoch:55 score:0.07984735413917723
+epoch:56 score:0.0794951076771614
+epoch:57 score:0.07915407429416112
+epoch:58 score:0.07882363612695169
+epoch:59 score:0.07850305133453535
+epoch:60 score:0.07819152430478195
+epoch:61 score:0.07788848164851954
+epoch:62 score:0.07759360402369624
+epoch:63 score:0.07730687924280769
+epoch:64 score:0.07702844629975714
+epoch:65 score:0.07675855944591628
+epoch:66 score:0.07649740983575205
+epoch:67 score:0.0762450634060241
+epoch:68 score:0.07600150472918776
+epoch:69 score:0.07576654250989684
+epoch:70 score:0.07553978042744529
+epoch:71 score:0.07532093709247147
+epoch:72 score:0.07510962234644783
+epoch:73 score:0.07490552724597992
+epoch:74 score:0.07470839102851877
+epoch:75 score:0.07451790913750361
+epoch:76 score:0.07433394587868603
+epoch:77 score:0.07415622911951175
+epoch:78 score:0.07398454399568404
+epoch:79 score:0.07381865647535651
+epoch:80 score:0.07365824638864382
+epoch:81 score:0.0735030272289114
+epoch:82 score:0.07335272659916788
+epoch:83 score:0.07320710336667967
+epoch:84 score:0.07306584557134094
+epoch:85 score:0.07292876251975823
+epoch:86 score:0.07279565155092291
+epoch:87 score:0.07266622837924659
+epoch:88 score:0.07254035629801225
+epoch:89 score:0.07241778732646391
+epoch:90 score:0.07229836172536236
+epoch:91 score:0.07218191016719344
+epoch:92 score:0.07206824610814942
+epoch:93 score:0.07195720627581403
+epoch:94 score:0.07184865594078683
+epoch:95 score:0.07174245806145027
+epoch:96 score:0.07163844856604433
+epoch:97 score:0.07153653930518274
+epoch:98 score:0.07143659130480837
+epoch:99 score:0.07133851158558249
+epoch:100 score:0.0712421971523324
+epoch:101 score:0.07114757076837035
+epoch:102 score:0.07105452798674472
+epoch:103 score:0.07096304543946777
+epoch:104 score:0.0708730060495589
+epoch:105 score:0.0707843509855634
+epoch:106 score:0.07069703102916383
+epoch:107 score:0.07061098990609725
+epoch:108 score:0.07052618007717854
+epoch:109 score:0.0704425774050426
+epoch:110 score:0.07036010604414543
+epoch:111 score:0.0702787516410664
+epoch:112 score:0.07019847509009393
+epoch:113 score:0.07011924530355117
+epoch:114 score:0.0700410385493152
+epoch:115 score:0.06996381762117053
+epoch:116 score:0.06988756908225713
+epoch:117 score:0.06981228506749566
+epoch:118 score:0.06973793277779025
+epoch:119 score:0.0696644910870484
+epoch:120 score:0.06959194174388862
+epoch:121 score:0.06952028499956187
+epoch:122 score:0.06944948525455796
+epoch:123 score:0.06937955527042185
+epoch:124 score:0.06931047077761424
+epoch:125 score:0.06924221245989635
+epoch:126 score:0.06917479230482486
+epoch:127 score:0.06910816458944094
+epoch:128 score:0.06904233972940664
+epoch:129 score:0.06897729959693982
+epoch:130 score:0.06891307929257956
+epoch:131 score:0.06884963717871667
+epoch:132 score:0.06878694388369418
+epoch:133 score:0.0687250175466396
+epoch:134 score:0.06866386553313308
+epoch:135 score:0.06860344422570039
+epoch:136 score:0.06854376280469981
+epoch:137 score:0.06848483168848071
+epoch:138 score:0.06842661285673725
+epoch:139 score:0.06836912810487356
+epoch:140 score:0.06831235642651888
+epoch:141 score:0.06825630819777066
+epoch:142 score:0.06820095473781067
+epoch:143 score:0.06814626108443424
+epoch:144 score:0.06809227066087346
+epoch:145 score:0.06803897366401844
+epoch:146 score:0.06798635952486258
+epoch:147 score:0.06793443277315293
+epoch:148 score:0.06788316449651505
+epoch:149 score:0.06783254683838999
+epoch:150 score:0.06778260260051941
+epoch:151 score:0.06773328486388944
+epoch:152 score:0.06768461894490005
+epoch:153 score:0.0676365754882474
+epoch:154 score:0.0675891664889176
+epoch:155 score:0.06754239052161501
+epoch:156 score:0.0674962333921921
+epoch:157 score:0.06745069356925919
+epoch:158 score:0.06740574088524977
+epoch:159 score:0.0673613983758321
+epoch:160 score:0.0673176530355245
+epoch:161 score:0.06727448979554125
+epoch:162 score:0.06723192082114368
+epoch:163 score:0.06718990307734804
+epoch:164 score:0.06714847480901431
+epoch:165 score:0.06710760592166762
+epoch:166 score:0.06706728101036809
+epoch:167 score:0.0670275076098238
+epoch:168 score:0.06698828331456563
+epoch:169 score:0.06694960824602457
+epoch:170 score:0.06691146856405139
+epoch:171 score:0.06687385649790928
+epoch:172 score:0.06683675997811425
+epoch:173 score:0.06680018874058956
+epoch:174 score:0.06676411976383032
+epoch:175 score:0.06672855332801923
+epoch:176 score:0.06669349038172455
+epoch:177 score:0.06665891803905463
+epoch:178 score:0.06662481779202875
+epoch:179 score:0.06659120263470439
+epoch:180 score:0.06655806643705298
+epoch:181 score:0.06652540694441182
+epoch:182 score:0.06649322601082237
+epoch:183 score:0.06646147695231615
+epoch:184 score:0.06643019521509927
+epoch:185 score:0.06639934868380219
+epoch:186 score:0.06636894513899037
+epoch:187 score:0.0663389755358897
+epoch:188 score:0.06630944840541234
+epoch:189 score:0.06628035459464668
+epoch:190 score:0.06625164920356272
+epoch:191 score:0.06622338250298496
+epoch:192 score:0.0661955107022103
+epoch:193 score:0.06616802690338044
+epoch:194 score:0.06614096823581879
+epoch:195 score:0.06611429868397758
+epoch:196 score:0.06608801669632634
+epoch:197 score:0.06606210552464395
+epoch:198 score:0.06603656686282734
+epoch:199 score:0.06601141627935847
+In epoch 30
+logPnet Training set accurary is :R is: 0.7479
+logPnet validation set accurary is :R is: 0.6467
+
+In epoch 200
+Caco2Net Training set accurary is :R is: 0.7404
+Caco2Net validation set accurary is :R is: 0.2435
+
+In epoch 600
+logPnet Training set accurary is :R is: 0.7399
+logPnet validation set accurary is :R is: 0.5534
+
+In epoch 2000
+Caco2Net Training set accurary is :R is: 0.8039
+Caco2Net validation set accurary is :R is: 0.4784
+
+In epoch 40
+logPnet Training set accurary is :R is: 0.7615
+logPnet validation set accurary is :R is: 0.5998
+
+In epoch 3000
+Caco2Net Training set accurary is :R is: 0.8154
+Caco2Net validation set accurary is :R is: 0.4778
+
+In epoch 40
+logPnet Training set accurary is :R is: 0.7485
+logPnet validation set accurary is :R is: 0.6435
+
+In epoch 200
+Caco2Net Training set accurary is :R is: 0.7419
+Caco2Net validation set accurary is :R is: 0.2494
+
+In epoch 45
+logPnet Training set accurary is :R is: 0.7486
+logPnet validation set accurary is :R is: 0.6422
+
+In epoch 200
+Caco2Net Training set accurary is :R is: 0.7425
+Caco2Net validation set accurary is :R is: 0.2519
+
+In epoch 50
+logPnet Training set accurary is :R is: 0.7487
+logPnet validation set accurary is :R is: 0.6410
+
+In epoch 200
+Caco2Net Training set accurary is :R is: 0.7431
+Caco2Net validation set accurary is :R is: 0.2544
+
+In epoch 40
+logPnet Training set accurary is :R is: 0.7809
+logPnet validation set accurary is :R is: 0.7201
+
+In epoch 0
+Caco2Net Training set accurary is :R is: 0.4344
+Caco2Net validation set accurary is :R is: 0.0567
+
+-------------------- training caco2 ----------------------- 
+In epoch 50
+logPnet Training set accurary is :R is: 0.7848
+logPnet validation set accurary is :R is: 0.7270
+
+In epoch 0
+Caco2Net Training set accurary is :R is: 0.4421
+Caco2Net validation set accurary is :R is: 0.0644
+
+
+In epoch 60
+logPnet Training set accurary is :R is: 0.7877
+logPnet validation set accurary is :R is: 0.7320
+
+In epoch 0
+Caco2Net Training set accurary is :R is: 0.4481
+Caco2Net validation set accurary is :R is: 0.0705
+
+-------------------- training caco2 ----------------------- 
+In epoch 100
+logPnet Training set accurary is :R is: 0.7948
+logPnet validation set accurary is :R is: 0.7417
+
+In epoch 0
+Caco2Net Training set accurary is :R is: 0.4634
+Caco2Net validation set accurary is :R is: 0.0890
+
+
+-------------------- training caco2 ----------------------- 
+In epoch 150
+logPnet Training set accurary is :R is: 0.8003
+logPnet validation set accurary is :R is: 0.7443
+
+In epoch 0
+Caco2Net Training set accurary is :R is: 0.4728
+Caco2Net validation set accurary is :R is: 0.1049
+
+t accurary is :R is: 0.1428
+
+-------------------- training caco2 ----------------------- 
+In epoch 200
+logPnet Training set accurary is :R is: 0.8040
+logPnet validation set accurary is :R is: 0.7434
+
+In epoch 0
+Caco2Net Training set accurary is :R is: 0.4779
+Caco2Net validation set accurary is :R is: 0.1168
+
+
+-------------------- training caco2 ----------------------- 
+In epoch 250
+logPnet Training set accurary is :R is: 0.8064
+logPnet validation set accurary is :R is: 0.7409
+
+In epoch 0
+Caco2Net Training set accurary is :R is: 0.4825
+Caco2Net validation set accurary is :R is: 0.1269
+
+
+-------------------- training caco2 ----------------------- 
+In epoch 300
+logPnet Training set accurary is :R is: 0.8054
+logPnet validation set accurary is :R is: 0.7423
+
+
+In epoch 0
+Caco2Net Training set accurary is :R is: 0.4967
+Caco2Net validation se
+
+epoch:49 score:0.08203971407902837
+In epoch 200
+logPnet Training set accurary is :R is: 0.7981
+logPnet validation set accurary is :R is: 0.7391
+
+In epoch 50
+Caco2Net Training set accurary is :R is: 0.6396
+Caco2Net validation set accurary is :R is: 0.4090
+
+In epoch 200
+logPnet Training set accurary is :R is: 0.7786
+logPnet validation set accurary is :R is: 0.6969
+
+In epoch 100
+Caco2Net Training set accurary is :R is: 0.6921
+Caco2Net validation set accurary is :R is: 0.4638
+
+In epoch 200
+logPnet Training set accurary is :R is: 0.7680
+logPnet validation set accurary is :R is: 0.6660
+
+In epoch 150
+Caco2Net Training set accurary is :R is: 0.7299
+Caco2Net validation set accurary is :R is: 0.3853

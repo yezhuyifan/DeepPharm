@@ -1,0 +1,3713 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/yylonly/.m2/repository/ch/qos/logback/logback-classic/1.1.3/logback-classic-1.1.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/yylonly/.m2/repository/org/slf4j/slf4j-simple/1.7.21/slf4j-simple-1.7.21.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+23:23:16.080 [JavaFX Application Thread] INFO  org.nd4j.linalg.factory.Nd4jBackend - Loaded [CpuBackend] backend
+23:23:16.189 [JavaFX Application Thread] INFO  org.nd4j.nativeblas.NativeOpsHolder - Number of threads used for NativeOps: 4
+23:23:16.240 [JavaFX Application Thread] DEBUG org.reflections.Reflections - going to scan these urls:
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-macosx-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-windows-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/jackson/0.8.0/jackson-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-context/0.8.0/nd4j-context-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-api/0.8.0/nd4j-api-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-ppc64le.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-base64/0.8.0/nd4j-base64-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-jackson/0.8.0/nd4j-jackson-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-common/0.8.0/nd4j-common-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native-api/0.8.0/nd4j-native-api-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-buffer/0.8.0/nd4j-buffer-0.8.0.jar!/
+23:23:16.341 [JavaFX Application Thread] INFO  org.reflections.Reflections - Reflections took 98 ms to scan 13 urls, producing 29 keys and 189 values 
+23:23:16.510 [JavaFX Application Thread] INFO  org.nd4j.nativeblas.Nd4jBlas - Number of threads used for BLAS: 4
+23:23:16.513 [JavaFX Application Thread] INFO  o.n.l.a.o.e.DefaultOpExecutioner - Backend used: [CPU]; OS: [Mac OS X]
+23:23:16.513 [JavaFX Application Thread] INFO  o.n.l.a.o.e.DefaultOpExecutioner - Cores: [4]; Memory: [3.6GB];
+23:23:16.513 [JavaFX Application Thread] INFO  o.n.l.a.o.e.DefaultOpExecutioner - Blas vendor: [OPENBLAS]
+23:23:16.787 [JavaFX Application Thread] DEBUG org.reflections.Reflections - going to scan these urls:
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-macosx-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/uncommons/maths/uncommons-maths/1.2.2a/uncommons-maths-1.2.2a.jar
+file:/Users/yylonly/.m2/repository/org/reflections/reflections/0.9.10/reflections-0.9.10.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-android-x86.jar
+file:/Users/yylonly/.m2/repository/org/slf4j/jul-to-slf4j/1.7.12/jul-to-slf4j-1.7.12.jar
+file:/Users/yylonly/.m2/repository/org/tukaani/xz/1.5/xz-1.5.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-server_2.11/2.4.6/play-server_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/com/github/jai-imageio/jai-imageio-core/1.3.0/jai-imageio-core-1.3.0.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-bmp/3.1.1/imageio-bmp-3.1.1.jar
+file:/Users/yylonly/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar
+file:/Users/yylonly/.m2/repository/org/eclipse/collections/eclipse-collections/7.1.1/eclipse-collections-7.1.1.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-remote_2.11/2.3.13/akka-remote_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/io/netty/netty/3.10.4.Final/netty-3.10.4.Final.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-api/0.8.0/nd4j-api-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/datavec/datavec-nd4j-common/0.8.0/datavec-nd4j-common-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-windows-x86_64.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-iteratees_2.11/2.4.6/play-iteratees_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+file:/Users/yylonly/.m2/repository/org/apache/commons/commons-lang3/3.3.1/commons-lang3-3.3.1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-android-x86.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-netty-utils/2.4.6/play-netty-utils-2.4.6.jar
+file:/Users/yylonly/.m2/repository/junit/junit/4.8.2/junit-4.8.2.jar
+file:/Users/yylonly/.m2/repository/net/jpountz/lz4/lz4/1.3.0/lz4-1.3.0.jar
+file:/Users/yylonly/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv-platform/3.1.0-1.3/opencv-platform-3.1.0-1.3.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-netty-server_2.11/2.4.6/play-netty-server_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-functional_2.11/2.4.6/play-functional_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/twirl-api_2.11/1.1.1/twirl-api_2.11-1.1.1.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/netty/netty-http-pipelining/1.1.4/netty-http-pipelining-1.1.4.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-datacommons_2.11/2.4.6/play-datacommons_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-nlp/0.8.0/deeplearning4j-nlp-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-linux-x86.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-ui-resources/0.8.0/deeplearning4j-ui-resources-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3.jar
+file:/Users/yylonly/.m2/repository/org/datavec/datavec-data-image/0.8.0/datavec-data-image-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/build-link/2.4.6/build-link-2.4.6.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-metadata/3.1.1/imageio-metadata-3.1.1.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-persistence-experimental_2.11/2.3.13/akka-persistence-experimental_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/org/jboss/logging/jboss-logging/3.2.1.Final/jboss-logging-3.2.1.Final.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-linux32/1.5/leveldbjni-linux32-1.5.jar
+file:/Users/yylonly/.m2/repository/org/iq80/leveldb/leveldb/0.5/leveldb-0.5.jar
+file:/Users/yylonly/.m2/repository/org/apache/commons/commons-math3/3.4.1/commons-math3-3.4.1.jar
+file:/Users/yylonly/.m2/repository/org/joda/joda-convert/1.7/joda-convert-1.7.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-linux64/1.5/leveldbjni-linux64-1.5.jar
+file:/Users/yylonly/.m2/repository/net/jodah/typetools/0.4.3/typetools-0.4.3.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-context/0.8.0/nd4j-context-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-slf4j_2.11/2.3.13/akka-slf4j_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar
+file:/Users/yylonly/.m2/repository/com/google/code/findbugs/jsr305/2.0.3/jsr305-2.0.3.jar
+file:/Users/yylonly/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.0.2/kotlin-stdlib-1.0.2.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-ui-model/0.8.0/deeplearning4j-ui-model-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacv/1.3.1/javacv-1.3.1.jar
+file:/Users/yylonly/.m2/repository/com/beust/jcommander/1.27/jcommander-1.27.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5-platform/1.10.0-patch1-1.3/hdf5-platform-1.10.0-patch1-1.3.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play_2.11/2.4.6/play_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-win32/1.5/leveldbjni-win32-1.5.jar
+file:/Users/yylonly/.m2/repository/org/yaml/snakeyaml/1.12/snakeyaml-1.12.jar
+file:/Users/yylonly/.m2/repository/org/javassist/javassist/3.19.0-GA/javassist-3.19.0-GA.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-android-arm.jar
+file:/Users/yylonly/.m2/repository/org/eclipse/collections/eclipse-collections-forkjoin/7.1.1/eclipse-collections-forkjoin-7.1.1.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.4/jackson-module-scala_2.11-2.4.4.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-linux-ppc64le.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-linux-ppc64le.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-windows-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/libfreenect2/0.2.0-1.3/libfreenect2-0.2.0-1.3.jar
+file:/Users/yylonly/.m2/repository/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-core/3.1.1/imageio-core-3.1.1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/flandmark/1.07-1.3/flandmark-1.07-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-linux-x86_64.jar
+file:/Users/yylonly/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
+file:/Users/yylonly/.m2/repository/org/eclipse/collections/eclipse-collections-api/7.1.1/eclipse-collections-api-7.1.1.jar
+file:/Users/yylonly/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.12/jcl-over-slf4j-1.7.12.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-linux-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-ui_2.11/0.8.0/deeplearning4j-ui_2.11-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/hawtjni/hawtjni-runtime/1.8/hawtjni-runtime-1.8.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-windows-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-macosx-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/datavec/datavec-api/0.8.0/datavec-api-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-tiff/3.1.1/imageio-tiff-3.1.1.jar
+file:/Users/yylonly/.m2/repository/net/ericaro/neoitertools/1.0.0/neoitertools-1.0.0.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native-api/0.8.0/nd4j-native-api-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.4.4/jackson-databind-2.4.4.jar
+file:/Users/yylonly/.m2/repository/it/unimi/dsi/fastutil/6.5.7/fastutil-6.5.7.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-psd/3.1.1/imageio-psd-3.1.1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-android-x86.jar
+file:/Users/yylonly/.m2/repository/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/json/json/20131018/json-20131018.jar
+file:/Users/yylonly/.m2/repository/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-linux-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-macosx-x86_64.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-json_2.11/2.4.6/play-json_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-windows-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-android-x86.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.4.4/jackson-datatype-jdk8-2.4.4.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-linux-armhf.jar
+file:/Users/yylonly/.m2/repository/org/springframework/spring-core/4.1.6.RELEASE/spring-core-4.1.6.RELEASE.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/common/common-io/3.1.1/common-io-3.1.1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-windows-x86_64.jar
+file:/Users/yylonly/.m2/repository/joda-time/joda-time/2.2/joda-time-2.2.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-java_2.11/2.4.6/play-java_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-jpeg/3.1.1/imageio-jpeg-3.1.1.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-actor_2.11/2.3.13/akka-actor_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-linux-armhf.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-buffer/0.8.0/nd4j-buffer-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-linux-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-windows-x86.jar
+file:/Users/yylonly/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-linux-armhf.jar
+file:/Users/yylonly/.m2/repository/org/mapdb/elsa/3.0.0-M5/elsa-3.0.0-M5.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/ffmpeg/3.2.1-1.3/ffmpeg-3.2.1-1.3.jar
+file:/Users/yylonly/.m2/repository/com/google/code/findbugs/annotations/2.0.1/annotations-2.0.1.jar
+file:/Users/yylonly/.m2/repository/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar
+file:/Users/yylonly/.m2/repository/com/clearspring/analytics/stream/2.7.0/stream-2.7.0.jar
+file:/Users/yylonly/.m2/repository/org/xerial/sqlite-jdbc/3.15.1/sqlite-jdbc-3.15.1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-linux-ppc64le.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-linux-x86.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-nn/0.8.0/deeplearning4j-nn-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/apache/directory/studio/org.apache.commons.codec/1.8/org.apache.commons.codec-1.8.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-linux-ppc64le.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/common/common-image/3.1.1/common-image-3.1.1.jar
+file:/Users/yylonly/.m2/repository/org/projectlombok/lombok/1.16.10/lombok-1.16.10.jar
+file:/Users/yylonly/.m2/repository/org/iq80/leveldb/leveldb-api/0.5/leveldb-api-0.5.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-windows-x86.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.4.4/jackson-core-2.4.4.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-windows-x86.jar
+file:/Users/yylonly/Desktop/pharmaceutics/net.mydreamy.mlpharmaceutics.multitask/target/classes/
+file:/Users/yylonly/.m2/repository/org/scala-stm/scala-stm_2.11/0.7/scala-stm_2.11-0.7.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-cluster_2.11/2.3.13/akka-cluster_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/org/agrona/Agrona/0.5.4/Agrona-0.5.4.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native-platform/0.8.0/nd4j-native-platform-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/config/1.3.0/config-1.3.0.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-play_2.11/0.8.0/deeplearning4j-play_2.11-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.4.4/jackson-annotations-2.4.4.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/libfreenect/0.5.3-1.3/libfreenect-0.5.3-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-android-arm.jar
+file:/Users/yylonly/.m2/repository/org/hibernate/hibernate-validator/5.0.3.Final/hibernate-validator-5.0.3.Final.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-android-arm.jar
+file:/Users/yylonly/.m2/repository/com/google/inject/guice/4.0/guice-4.0.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-contrib_2.11/2.3.13/akka-contrib_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-base64/0.8.0/nd4j-base64-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-osx/1.5/leveldbjni-osx-1.5.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-exceptions/2.4.6/play-exceptions-2.4.6.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/artoolkitplus/2.3.1-1.3/artoolkitplus-2.3.1-1.3.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-win64/1.5/leveldbjni-win64-1.5.jar
+file:/Users/yylonly/.m2/repository/org/mapdb/mapdb/3.0.2/mapdb-3.0.2.jar
+file:/Users/yylonly/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0/javax.ws.rs-api-2.0.jar
+file:/Users/yylonly/.m2/repository/ch/qos/logback/logback-classic/1.1.3/logback-classic-1.1.3.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-common/0.8.0/nd4j-common-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/flycapture/2.9.3.43-1.3/flycapture-2.9.3.43-1.3.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-macosx-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-macosx-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/libdc1394/2.2.4-1.3/libdc1394-2.2.4-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas-platform/0.2.19-1.3/openblas-platform-0.2.19-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-linux-x86.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-core/0.8.0/deeplearning4j-core-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni/1.7/leveldbjni-1.7.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-linux-x86.jar
+file:/Users/yylonly/.m2/repository/org/freemarker/freemarker/2.3.23/freemarker-2.3.23.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp/1.3.2/javacpp-1.3.2.jar
+file:/Users/yylonly/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/jackson/0.8.0/jackson-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/jetbrains/kotlin/kotlin-runtime/1.0.2/kotlin-runtime-1.0.2.jar
+file:/Users/yylonly/.m2/repository/ch/qos/logback/logback-core/1.1.3/logback-core-1.1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/videoinput/0.200-1.3/videoinput-0.200-1.3.jar
+file:/Users/yylonly/.m2/repository/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.jar
+file:/Users/yylonly/.m2/repository/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-ppc64le.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-jackson/0.8.0/nd4j-jackson-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica-platform/1.73-1.3/leptonica-platform-1.73-1.3.jar
+file:/Users/yylonly/.m2/repository/commons-net/commons-net/3.1/commons-net-3.1.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.4.4/jackson-datatype-jsr310-2.4.4.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-android-arm.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-ui-components/0.8.0/deeplearning4j-ui-components-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/springframework/spring-beans/4.1.6.RELEASE/spring-beans-4.1.6.RELEASE.jar
+file:/Users/yylonly/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-windows-x86.jar
+file:/Users/yylonly/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar
+file:/Users/yylonly/.m2/repository/org/apache/tomcat/tomcat-servlet-api/8.0.21/tomcat-servlet-api-8.0.21.jar
+file:/Users/yylonly/.m2/repository/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar
+file:/Users/yylonly/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/common/common-lang/3.1.1/common-lang-3.1.1.jar
+file:/Users/yylonly/.m2/repository/org/slf4j/slf4j-simple/1.7.21/slf4j-simple-1.7.21.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-all/1.7/leveldbjni-all-1.7.jar
+file:/Users/yylonly/.m2/repository/org/scala-lang/modules/scala-xml_2.11/1.0.1/scala-xml_2.11-1.0.1.jar
+file:/Users/yylonly/.m2/repository/org/scala-lang/modules/scala-java8-compat_2.11/0.3.0/scala-java8-compat_2.11-0.3.0.jar
+file:/Users/yylonly/.m2/repository/org/apache/commons/commons-compress/1.8/commons-compress-1.8.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-modelimport/0.8.0/deeplearning4j-modelimport-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/librealsense/1.9.6-1.3/librealsense-1.9.6-1.3.jar
+file:/System/Library/Java/Extensions/MRJToolkit.jar
+23:23:19.840 [JavaFX Application Thread] INFO  org.reflections.Reflections - Reflections took 3052 ms to scan 198 urls, producing 3916 keys and 22678 values 
+23:23:19.882 [JavaFX Application Thread] DEBUG o.d.nn.conf.NeuralNetConfiguration - Registering class for JSON serialization: org.deeplearning4j.nn.conf.layers.CenterLossOutputLayer as subtype of org.deeplearning4j.nn.conf.layers.Layer
+23:23:19.882 [JavaFX Application Thread] DEBUG o.d.nn.conf.NeuralNetConfiguration - Registering class for JSON serialization: org.deeplearning4j.nn.modelimport.keras.preprocessors.TensorFlowCnnToFeedForwardPreProcessor as subtype of org.deeplearning4j.nn.conf.InputPreProcessor
+23:23:19.887 [JavaFX Application Thread] DEBUG o.d.nn.conf.NeuralNetConfiguration - Registering class for JSON serialization: org.deeplearning4j.nn.conf.layers.CenterLossOutputLayer as subtype of org.deeplearning4j.nn.conf.layers.Layer
+23:23:19.887 [JavaFX Application Thread] DEBUG o.d.nn.conf.NeuralNetConfiguration - Registering class for JSON serialization: org.deeplearning4j.nn.modelimport.keras.preprocessors.TensorFlowCnnToFeedForwardPreProcessor as subtype of org.deeplearning4j.nn.conf.InputPreProcessor
+23:23:19.970 [JavaFX Application Thread] DEBUG org.reflections.Reflections - going to scan these urls:
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-macosx-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-windows-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/jackson/0.8.0/jackson-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-context/0.8.0/nd4j-context-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-api/0.8.0/nd4j-api-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-ppc64le.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-base64/0.8.0/nd4j-base64-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-jackson/0.8.0/nd4j-jackson-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-common/0.8.0/nd4j-common-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native-api/0.8.0/nd4j-native-api-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-buffer/0.8.0/nd4j-buffer-0.8.0.jar!/
+23:23:20.100 [JavaFX Application Thread] INFO  org.reflections.Reflections - Reflections took 130 ms to scan 13 urls, producing 373 keys and 1449 values 
+-------------------- training ADME ----------------------- 
+-------------------- epoch 0----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2465
+0.3505
+0.3772
+0.2009
+================== MAEarruaccys ==================
+0.2136
+0.0819
+0.0129
+0.1189
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2582
+0.3248
+0.3592
+0.2177
+================== MAEarruaccys ==================
+0.2137
+0.1118
+0.0402
+0.1809
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2899
+0.3037
+0.3219
+0.2300
+================== MAEarruaccys ==================
+0.1667
+0.1497
+0.0690
+0.1778
+-------------------- epoch 1----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2373
+0.3169
+0.2798
+0.1088
+================== MAEarruaccys ==================
+0.2364
+0.0885
+0.0548
+0.6872
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2539
+0.2999
+0.2723
+0.1438
+================== MAEarruaccys ==================
+0.2222
+0.1429
+0.0862
+0.5638
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2962
+0.2787
+0.2425
+0.1947
+================== MAEarruaccys ==================
+0.1528
+0.1497
+0.1322
+0.5333
+-------------------- epoch 2----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2323
+0.2782
+0.1464
+0.0886
+================== MAEarruaccys ==================
+0.2318
+0.0841
+0.2097
+0.8106
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2530
+0.2733
+0.1608
+0.1255
+================== MAEarruaccys ==================
+0.2051
+0.1615
+0.2184
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2985
+0.2554
+0.1531
+0.1976
+================== MAEarruaccys ==================
+0.1389
+0.1905
+0.3908
+0.5778
+-------------------- epoch 3----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2284
+0.2446
+0.0787
+0.0853
+================== MAEarruaccys ==================
+0.2318
+0.1173
+0.8387
+0.8106
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2525
+0.2602
+0.1075
+0.1213
+================== MAEarruaccys ==================
+0.2137
+0.1615
+0.7874
+0.7234
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2986
+0.2444
+0.1302
+0.2003
+================== MAEarruaccys ==================
+0.1389
+0.2245
+0.6552
+0.5889
+-------------------- epoch 4----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2248
+0.2238
+0.0610
+0.0843
+================== MAEarruaccys ==================
+0.2409
+0.2389
+0.8484
+0.8106
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2516
+0.2620
+0.0944
+0.1199
+================== MAEarruaccys ==================
+0.2393
+0.2360
+0.7759
+0.7447
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2946
+0.2506
+0.1335
+0.2008
+================== MAEarruaccys ==================
+0.1528
+0.2653
+0.6724
+0.5889
+-------------------- epoch 5----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2227
+0.2168
+0.0577
+0.0832
+================== MAEarruaccys ==================
+0.2500
+0.4934
+0.8435
+0.8106
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2549
+0.2660
+0.0929
+0.1189
+================== MAEarruaccys ==================
+0.2137
+0.3665
+0.7701
+0.7447
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3071
+0.2606
+0.1373
+0.1999
+================== MAEarruaccys ==================
+0.1250
+0.4422
+0.6437
+0.5889
+-------------------- epoch 6----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2135
+0.2145
+0.0569
+0.0819
+================== MAEarruaccys ==================
+0.2591
+0.6128
+0.8403
+0.8150
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2496
+0.2714
+0.0928
+0.1178
+================== MAEarruaccys ==================
+0.2479
+0.4658
+0.7701
+0.7553
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2907
+0.2685
+0.1394
+0.1983
+================== MAEarruaccys ==================
+0.1528
+0.4354
+0.6379
+0.5889
+-------------------- epoch 7----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2057
+0.2135
+0.0567
+0.0803
+================== MAEarruaccys ==================
+0.2909
+0.6261
+0.8419
+0.8194
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2487
+0.2732
+0.0928
+0.1170
+================== MAEarruaccys ==================
+0.2393
+0.4658
+0.7701
+0.7447
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2993
+0.2712
+0.1399
+0.1966
+================== MAEarruaccys ==================
+0.1528
+0.4286
+0.6207
+0.6000
+-------------------- epoch 8----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2005
+0.2126
+0.0564
+0.0777
+================== MAEarruaccys ==================
+0.2955
+0.6283
+0.8419
+0.8238
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2479
+0.2739
+0.0926
+0.1160
+================== MAEarruaccys ==================
+0.2479
+0.4720
+0.7701
+0.7447
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2827
+0.2724
+0.1395
+0.1952
+================== MAEarruaccys ==================
+0.1667
+0.4354
+0.6264
+0.6000
+-------------------- epoch 9----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1970
+0.2109
+0.0562
+0.0740
+================== MAEarruaccys ==================
+0.3455
+0.6150
+0.8435
+0.8238
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2559
+0.2709
+0.0924
+0.1149
+================== MAEarruaccys ==================
+0.2222
+0.4410
+0.7701
+0.7340
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3141
+0.2680
+0.1384
+0.1935
+================== MAEarruaccys ==================
+0.1806
+0.4286
+0.6437
+0.6000
+-------------------- epoch 10----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1719
+0.2094
+0.0562
+0.0681
+================== MAEarruaccys ==================
+0.3273
+0.6084
+0.8435
+0.8326
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2449
+0.2693
+0.0922
+0.1151
+================== MAEarruaccys ==================
+0.2479
+0.4161
+0.7701
+0.7234
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2899
+0.2656
+0.1373
+0.1858
+================== MAEarruaccys ==================
+0.1250
+0.4354
+0.6437
+0.6000
+-------------------- epoch 11----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1602
+0.2075
+0.0567
+0.0588
+================== MAEarruaccys ==================
+0.4545
+0.5774
+0.8500
+0.8502
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2457
+0.2655
+0.0922
+0.1118
+================== MAEarruaccys ==================
+0.2564
+0.4037
+0.7759
+0.7340
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3017
+0.2603
+0.1352
+0.1841
+================== MAEarruaccys ==================
+0.1944
+0.4422
+0.6494
+0.6000
+-------------------- epoch 12----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1569
+0.2054
+0.0577
+0.0573
+================== MAEarruaccys ==================
+0.3682
+0.5619
+0.8581
+0.8590
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2563
+0.2628
+0.0922
+0.1158
+================== MAEarruaccys ==================
+0.2650
+0.3975
+0.7759
+0.7021
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2901
+0.2563
+0.1328
+0.1718
+================== MAEarruaccys ==================
+0.1111
+0.4286
+0.6609
+0.6000
+-------------------- epoch 13----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1824
+0.2029
+0.0578
+0.0551
+================== MAEarruaccys ==================
+0.3409
+0.4469
+0.8597
+0.8458
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2701
+0.2568
+0.0924
+0.1052
+================== MAEarruaccys ==================
+0.2735
+0.3354
+0.7644
+0.7340
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3424
+0.2482
+0.1318
+0.1801
+================== MAEarruaccys ==================
+0.1944
+0.3265
+0.6724
+0.5889
+-------------------- epoch 14----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1285
+0.1970
+0.0575
+0.0479
+================== MAEarruaccys ==================
+0.5136
+0.4956
+0.8613
+0.8767
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2535
+0.2555
+0.0920
+0.1086
+================== MAEarruaccys ==================
+0.2564
+0.3727
+0.7759
+0.7021
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2927
+0.2478
+0.1305
+0.1725
+================== MAEarruaccys ==================
+0.1667
+0.4082
+0.6609
+0.6222
+-------------------- epoch 15----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1146
+0.1916
+0.0562
+0.0421
+================== MAEarruaccys ==================
+0.5909
+0.4867
+0.8581
+0.8855
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2498
+0.2514
+0.0916
+0.1055
+================== MAEarruaccys ==================
+0.2308
+0.3416
+0.7759
+0.7234
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2958
+0.2444
+0.1313
+0.1734
+================== MAEarruaccys ==================
+0.1944
+0.3810
+0.6724
+0.6000
+-------------------- epoch 16----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1078
+0.1851
+0.0557
+0.0445
+================== MAEarruaccys ==================
+0.6455
+0.4801
+0.8597
+0.9075
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2509
+0.2472
+0.0913
+0.1150
+================== MAEarruaccys ==================
+0.2479
+0.3727
+0.7701
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3048
+0.2402
+0.1306
+0.1716
+================== MAEarruaccys ==================
+0.2083
+0.3673
+0.6667
+0.6111
+-------------------- epoch 17----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1165
+0.1798
+0.0552
+0.0551
+================== MAEarruaccys ==================
+0.5364
+0.4912
+0.8548
+0.8326
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2607
+0.2438
+0.0916
+0.1054
+================== MAEarruaccys ==================
+0.2222
+0.3727
+0.7701
+0.7340
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2901
+0.2405
+0.1322
+0.1797
+================== MAEarruaccys ==================
+0.2083
+0.3673
+0.6494
+0.6000
+-------------------- epoch 18----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1295
+0.1728
+0.0552
+0.0432
+================== MAEarruaccys ==================
+0.4727
+0.4580
+0.8581
+0.8678
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2622
+0.2358
+0.0917
+0.1046
+================== MAEarruaccys ==================
+0.2991
+0.3416
+0.7701
+0.7447
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3301
+0.2333
+0.1313
+0.1759
+================== MAEarruaccys ==================
+0.1806
+0.3061
+0.6667
+0.5889
+-------------------- epoch 19----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1324
+0.1615
+0.0570
+0.0675
+================== MAEarruaccys ==================
+0.4000
+0.5465
+0.8532
+0.7621
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2876
+0.2347
+0.0938
+0.1318
+================== MAEarruaccys ==================
+0.2137
+0.4037
+0.7644
+0.6064
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2961
+0.2359
+0.1302
+0.1815
+================== MAEarruaccys ==================
+0.2222
+0.4082
+0.6782
+0.5333
+-------------------- epoch 20----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1192
+0.1610
+0.0551
+0.0434
+================== MAEarruaccys ==================
+0.5318
+0.4624
+0.8597
+0.8634
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2623
+0.2254
+0.0914
+0.1048
+================== MAEarruaccys ==================
+0.2906
+0.3230
+0.7759
+0.7340
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3280
+0.2279
+0.1307
+0.1780
+================== MAEarruaccys ==================
+0.1944
+0.2993
+0.6667
+0.5778
+-------------------- epoch 21----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0881
+0.1519
+0.0547
+0.0443
+================== MAEarruaccys ==================
+0.6682
+0.5243
+0.8581
+0.8722
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2613
+0.2236
+0.0911
+0.1059
+================== MAEarruaccys ==================
+0.2564
+0.3540
+0.7759
+0.7234
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2987
+0.2272
+0.1306
+0.1786
+================== MAEarruaccys ==================
+0.2083
+0.3333
+0.6667
+0.5778
+-------------------- epoch 22----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0792
+0.1444
+0.0550
+0.0341
+================== MAEarruaccys ==================
+0.7045
+0.5553
+0.8597
+0.9075
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2607
+0.2211
+0.0916
+0.1108
+================== MAEarruaccys ==================
+0.2479
+0.3851
+0.7644
+0.6915
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3012
+0.2258
+0.1297
+0.1738
+================== MAEarruaccys ==================
+0.2083
+0.3537
+0.6667
+0.6111
+-------------------- epoch 23----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0770
+0.1384
+0.0547
+0.0340
+================== MAEarruaccys ==================
+0.7318
+0.5708
+0.8597
+0.9207
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2587
+0.2194
+0.0915
+0.1129
+================== MAEarruaccys ==================
+0.2650
+0.3975
+0.7701
+0.6915
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3080
+0.2254
+0.1295
+0.1728
+================== MAEarruaccys ==================
+0.2361
+0.3878
+0.6724
+0.6222
+-------------------- epoch 24----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0833
+0.1343
+0.0534
+0.0307
+================== MAEarruaccys ==================
+0.7136
+0.5973
+0.8629
+0.9339
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2655
+0.2187
+0.0905
+0.1076
+================== MAEarruaccys ==================
+0.2308
+0.4161
+0.7759
+0.7234
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2981
+0.2264
+0.1303
+0.1739
+================== MAEarruaccys ==================
+0.2222
+0.4082
+0.6609
+0.6222
+-------------------- epoch 25----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0889
+0.1293
+0.0532
+0.0283
+================== MAEarruaccys ==================
+0.7045
+0.5996
+0.8661
+0.9427
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2595
+0.2113
+0.0902
+0.1099
+================== MAEarruaccys ==================
+0.3077
+0.4099
+0.7701
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3207
+0.2229
+0.1297
+0.1715
+================== MAEarruaccys ==================
+0.2639
+0.4082
+0.6667
+0.6222
+-------------------- epoch 26----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0738
+0.1246
+0.0526
+0.0251
+================== MAEarruaccys ==================
+0.7455
+0.6283
+0.8645
+0.9515
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2662
+0.2101
+0.0903
+0.1086
+================== MAEarruaccys ==================
+0.2308
+0.4658
+0.7759
+0.7021
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3034
+0.2231
+0.1302
+0.1714
+================== MAEarruaccys ==================
+0.2361
+0.4286
+0.6667
+0.6333
+-------------------- epoch 27----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0714
+0.1214
+0.0527
+0.0236
+================== MAEarruaccys ==================
+0.7955
+0.6195
+0.8677
+0.9604
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2606
+0.2038
+0.0902
+0.1093
+================== MAEarruaccys ==================
+0.2564
+0.4596
+0.7701
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3136
+0.2204
+0.1299
+0.1725
+================== MAEarruaccys ==================
+0.2639
+0.4286
+0.6667
+0.6333
+-------------------- epoch 28----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0641
+0.1180
+0.0521
+0.0287
+================== MAEarruaccys ==================
+0.7955
+0.6460
+0.8661
+0.9471
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2634
+0.2042
+0.0902
+0.1070
+================== MAEarruaccys ==================
+0.2564
+0.4907
+0.7816
+0.7234
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3039
+0.2211
+0.1310
+0.1729
+================== MAEarruaccys ==================
+0.2222
+0.4286
+0.6552
+0.6333
+-------------------- epoch 29----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0635
+0.1146
+0.0523
+0.0246
+================== MAEarruaccys ==================
+0.8182
+0.6460
+0.8661
+0.9604
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2606
+0.2006
+0.0900
+0.1104
+================== MAEarruaccys ==================
+0.2564
+0.4845
+0.7701
+0.6915
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3122
+0.2201
+0.1295
+0.1734
+================== MAEarruaccys ==================
+0.2361
+0.4286
+0.6609
+0.6111
+-------------------- epoch 30----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0581
+0.1120
+0.0518
+0.0238
+================== MAEarruaccys ==================
+0.8227
+0.6726
+0.8694
+0.9648
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2631
+0.2007
+0.0900
+0.1066
+================== MAEarruaccys ==================
+0.2479
+0.5031
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3056
+0.2211
+0.1307
+0.1724
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6552
+0.6222
+-------------------- epoch 31----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0606
+0.1091
+0.0517
+0.0207
+================== MAEarruaccys ==================
+0.8364
+0.6748
+0.8710
+0.9648
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2601
+0.1985
+0.0897
+0.1083
+================== MAEarruaccys ==================
+0.2650
+0.4969
+0.7759
+0.7021
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3138
+0.2206
+0.1296
+0.1721
+================== MAEarruaccys ==================
+0.2500
+0.4354
+0.6667
+0.6222
+-------------------- epoch 32----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0658
+0.1071
+0.0512
+0.0191
+================== MAEarruaccys ==================
+0.8000
+0.6925
+0.8677
+0.9648
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2682
+0.1988
+0.0897
+0.1068
+================== MAEarruaccys ==================
+0.2564
+0.5031
+0.7816
+0.7021
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3069
+0.2213
+0.1302
+0.1715
+================== MAEarruaccys ==================
+0.2222
+0.4490
+0.6609
+0.6222
+-------------------- epoch 33----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0637
+0.1052
+0.0513
+0.0189
+================== MAEarruaccys ==================
+0.8409
+0.6814
+0.8710
+0.9692
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2598
+0.1955
+0.0895
+0.1082
+================== MAEarruaccys ==================
+0.2821
+0.4907
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3174
+0.2200
+0.1295
+0.1726
+================== MAEarruaccys ==================
+0.2639
+0.4422
+0.6667
+0.6222
+-------------------- epoch 34----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0525
+0.1029
+0.0509
+0.0219
+================== MAEarruaccys ==================
+0.8636
+0.7035
+0.8710
+0.9648
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2634
+0.1963
+0.0896
+0.1060
+================== MAEarruaccys ==================
+0.2821
+0.5093
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3100
+0.2207
+0.1303
+0.1723
+================== MAEarruaccys ==================
+0.2222
+0.4558
+0.6609
+0.6333
+-------------------- epoch 35----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0493
+0.1005
+0.0509
+0.0199
+================== MAEarruaccys ==================
+0.8818
+0.7080
+0.8742
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2635
+0.1950
+0.0895
+0.1087
+================== MAEarruaccys ==================
+0.2821
+0.5093
+0.7816
+0.6915
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3113
+0.2206
+0.1290
+0.1746
+================== MAEarruaccys ==================
+0.2361
+0.4558
+0.6667
+0.6000
+-------------------- epoch 36----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0549
+0.0996
+0.0507
+0.0211
+================== MAEarruaccys ==================
+0.8636
+0.7035
+0.8758
+0.9736
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2574
+0.1937
+0.0894
+0.1060
+================== MAEarruaccys ==================
+0.2991
+0.5031
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3129
+0.2201
+0.1300
+0.1729
+================== MAEarruaccys ==================
+0.2639
+0.4422
+0.6609
+0.6222
+-------------------- epoch 37----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0594
+0.0977
+0.0507
+0.0191
+================== MAEarruaccys ==================
+0.8636
+0.7235
+0.8726
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2673
+0.1944
+0.0893
+0.1089
+================== MAEarruaccys ==================
+0.2650
+0.5093
+0.7816
+0.6915
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3070
+0.2210
+0.1289
+0.1755
+================== MAEarruaccys ==================
+0.2222
+0.4626
+0.6609
+0.6111
+-------------------- epoch 38----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0543
+0.0971
+0.0505
+0.0198
+================== MAEarruaccys ==================
+0.8636
+0.7190
+0.8758
+0.9736
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2571
+0.1924
+0.0893
+0.1063
+================== MAEarruaccys ==================
+0.3077
+0.4845
+0.7874
+0.7021
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3135
+0.2203
+0.1297
+0.1728
+================== MAEarruaccys ==================
+0.2639
+0.4286
+0.6609
+0.6222
+-------------------- epoch 39----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0468
+0.0947
+0.0504
+0.0166
+================== MAEarruaccys ==================
+0.8955
+0.7279
+0.8758
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2634
+0.1928
+0.0891
+0.1081
+================== MAEarruaccys ==================
+0.3077
+0.5031
+0.7816
+0.6809
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3092
+0.2210
+0.1289
+0.1740
+================== MAEarruaccys ==================
+0.2361
+0.4422
+0.6667
+0.6111
+-------------------- epoch 40----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0441
+0.0938
+0.0502
+0.0164
+================== MAEarruaccys ==================
+0.8955
+0.7323
+0.8742
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2610
+0.1924
+0.0892
+0.1063
+================== MAEarruaccys ==================
+0.2906
+0.4907
+0.7816
+0.6915
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3111
+0.2210
+0.1294
+0.1726
+================== MAEarruaccys ==================
+0.2361
+0.4490
+0.6667
+0.6222
+-------------------- epoch 41----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0424
+0.0925
+0.0503
+0.0163
+================== MAEarruaccys ==================
+0.9000
+0.7412
+0.8774
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2627
+0.1922
+0.0891
+0.1079
+================== MAEarruaccys ==================
+0.2821
+0.4907
+0.7816
+0.6915
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3108
+0.2212
+0.1288
+0.1735
+================== MAEarruaccys ==================
+0.2222
+0.4558
+0.6667
+0.6111
+-------------------- epoch 42----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0436
+0.0919
+0.0501
+0.0171
+================== MAEarruaccys ==================
+0.8955
+0.7412
+0.8774
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2597
+0.1917
+0.0892
+0.1062
+================== MAEarruaccys ==================
+0.3077
+0.4783
+0.7874
+0.6915
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3120
+0.2208
+0.1295
+0.1723
+================== MAEarruaccys ==================
+0.2639
+0.4490
+0.6667
+0.6222
+-------------------- epoch 43----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0454
+0.0909
+0.0501
+0.0157
+================== MAEarruaccys ==================
+0.8955
+0.7500
+0.8774
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2644
+0.1918
+0.0891
+0.1080
+================== MAEarruaccys ==================
+0.2991
+0.4907
+0.7816
+0.6915
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3095
+0.2210
+0.1288
+0.1743
+================== MAEarruaccys ==================
+0.2222
+0.4558
+0.6667
+0.6111
+-------------------- epoch 44----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0448
+0.0903
+0.0499
+0.0158
+================== MAEarruaccys ==================
+0.8909
+0.7456
+0.8758
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2587
+0.1908
+0.0891
+0.1065
+================== MAEarruaccys ==================
+0.2991
+0.4720
+0.7816
+0.6915
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3130
+0.2205
+0.1293
+0.1725
+================== MAEarruaccys ==================
+0.2778
+0.4422
+0.6667
+0.6222
+-------------------- epoch 45----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0404
+0.0892
+0.0500
+0.0145
+================== MAEarruaccys ==================
+0.9045
+0.7500
+0.8790
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2626
+0.1908
+0.0891
+0.1076
+================== MAEarruaccys ==================
+0.2906
+0.4783
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3104
+0.2208
+0.1288
+0.1736
+================== MAEarruaccys ==================
+0.2222
+0.4558
+0.6667
+0.6222
+-------------------- epoch 46----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0391
+0.0887
+0.0499
+0.0140
+================== MAEarruaccys ==================
+0.9045
+0.7500
+0.8774
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2608
+0.1906
+0.0891
+0.1067
+================== MAEarruaccys ==================
+0.2906
+0.4783
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3119
+0.2209
+0.1291
+0.1724
+================== MAEarruaccys ==================
+0.2361
+0.4558
+0.6667
+0.6222
+-------------------- epoch 47----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0381
+0.0880
+0.0499
+0.0137
+================== MAEarruaccys ==================
+0.9091
+0.7566
+0.8806
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2620
+0.1905
+0.0890
+0.1074
+================== MAEarruaccys ==================
+0.2735
+0.4720
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3114
+0.2211
+0.1288
+0.1730
+================== MAEarruaccys ==================
+0.2222
+0.4558
+0.6667
+0.6222
+-------------------- epoch 48----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0378
+0.0877
+0.0498
+0.0144
+================== MAEarruaccys ==================
+0.9045
+0.7566
+0.8774
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2606
+0.1904
+0.0890
+0.1064
+================== MAEarruaccys ==================
+0.2906
+0.4720
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3117
+0.2211
+0.1291
+0.1723
+================== MAEarruaccys ==================
+0.2639
+0.4490
+0.6667
+0.6222
+-------------------- epoch 49----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0393
+0.0871
+0.0498
+0.0135
+================== MAEarruaccys ==================
+0.9091
+0.7611
+0.8806
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2630
+0.1903
+0.0890
+0.1074
+================== MAEarruaccys ==================
+0.2991
+0.4783
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3104
+0.2211
+0.1287
+0.1729
+================== MAEarruaccys ==================
+0.2222
+0.4558
+0.6667
+0.6222
+-------------------- epoch 50----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0386
+0.0870
+0.0498
+0.0133
+================== MAEarruaccys ==================
+0.9091
+0.7611
+0.8774
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2600
+0.1898
+0.0890
+0.1066
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3125
+0.2210
+0.1289
+0.1722
+================== MAEarruaccys ==================
+0.2639
+0.4490
+0.6667
+0.6222
+-------------------- epoch 51----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0367
+0.0864
+0.0498
+0.0129
+================== MAEarruaccys ==================
+0.9091
+0.7677
+0.8806
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2621
+0.1901
+0.0890
+0.1071
+================== MAEarruaccys ==================
+0.2906
+0.4720
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3111
+0.2211
+0.1287
+0.1726
+================== MAEarruaccys ==================
+0.2222
+0.4558
+0.6667
+0.6222
+-------------------- epoch 52----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0358
+0.0861
+0.0498
+0.0125
+================== MAEarruaccys ==================
+0.9091
+0.7633
+0.8806
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2614
+0.1899
+0.0890
+0.1072
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3117
+0.2211
+0.1287
+0.1725
+================== MAEarruaccys ==================
+0.2361
+0.4490
+0.6667
+0.6222
+-------------------- epoch 53----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0355
+0.0858
+0.0498
+0.0124
+================== MAEarruaccys ==================
+0.9091
+0.7655
+0.8790
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2613
+0.1899
+0.0890
+0.1072
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3118
+0.2212
+0.1287
+0.1723
+================== MAEarruaccys ==================
+0.2361
+0.4490
+0.6667
+0.6222
+-------------------- epoch 54----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0361
+0.0855
+0.0498
+0.0127
+================== MAEarruaccys ==================
+0.9091
+0.7633
+0.8790
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2623
+0.1898
+0.0890
+0.1074
+================== MAEarruaccys ==================
+0.2991
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3110
+0.2212
+0.1286
+0.1725
+================== MAEarruaccys ==================
+0.2222
+0.4490
+0.6667
+0.6222
+-------------------- epoch 55----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0365
+0.0856
+0.0498
+0.0132
+================== MAEarruaccys ==================
+0.9091
+0.7655
+0.8790
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2603
+0.1896
+0.0890
+0.1067
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3121
+0.2211
+0.1287
+0.1723
+================== MAEarruaccys ==================
+0.2639
+0.4490
+0.6667
+0.6222
+-------------------- epoch 56----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0350
+0.0852
+0.0498
+0.0124
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8790
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2617
+0.1898
+0.0890
+0.1072
+================== MAEarruaccys ==================
+0.2991
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3113
+0.2211
+0.1285
+0.1724
+================== MAEarruaccys ==================
+0.2222
+0.4490
+0.6667
+0.6222
+-------------------- epoch 57----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0347
+0.0851
+0.0498
+0.0122
+================== MAEarruaccys ==================
+0.9136
+0.7699
+0.8806
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2610
+0.1897
+0.0890
+0.1071
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3118
+0.2212
+0.1285
+0.1723
+================== MAEarruaccys ==================
+0.2361
+0.4490
+0.6667
+0.6222
+-------------------- epoch 58----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0344
+0.0849
+0.0499
+0.0124
+================== MAEarruaccys ==================
+0.9136
+0.7699
+0.8823
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2617
+0.1897
+0.0890
+0.1074
+================== MAEarruaccys ==================
+0.2991
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3116
+0.2212
+0.1284
+0.1726
+================== MAEarruaccys ==================
+0.2361
+0.4490
+0.6724
+0.6222
+-------------------- epoch 59----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0342
+0.0849
+0.0499
+0.0124
+================== MAEarruaccys ==================
+0.9136
+0.7699
+0.8806
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2612
+0.1896
+0.0890
+0.1071
+================== MAEarruaccys ==================
+0.2991
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3118
+0.2211
+0.1285
+0.1723
+================== MAEarruaccys ==================
+0.2500
+0.4490
+0.6667
+0.6222
+-------------------- epoch 60----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0341
+0.0848
+0.0499
+0.0121
+================== MAEarruaccys ==================
+0.9136
+0.7699
+0.8823
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2615
+0.1895
+0.0890
+0.1072
+================== MAEarruaccys ==================
+0.2991
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3115
+0.2211
+0.1283
+0.1725
+================== MAEarruaccys ==================
+0.2361
+0.4490
+0.6724
+0.6222
+-------------------- epoch 61----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0343
+0.0847
+0.0499
+0.0120
+================== MAEarruaccys ==================
+0.9136
+0.7699
+0.8839
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2609
+0.1895
+0.0890
+0.1071
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3119
+0.2211
+0.1283
+0.1723
+================== MAEarruaccys ==================
+0.2500
+0.4490
+0.6724
+0.6222
+-------------------- epoch 62----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0340
+0.0847
+0.0499
+0.0120
+================== MAEarruaccys ==================
+0.9136
+0.7699
+0.8839
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2615
+0.1895
+0.0890
+0.1073
+================== MAEarruaccys ==================
+0.2991
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3115
+0.2211
+0.1282
+0.1724
+================== MAEarruaccys ==================
+0.2361
+0.4490
+0.6724
+0.6222
+-------------------- epoch 63----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0340
+0.0847
+0.0500
+0.0121
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8839
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2610
+0.1895
+0.0890
+0.1072
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3118
+0.2210
+0.1282
+0.1723
+================== MAEarruaccys ==================
+0.2361
+0.4490
+0.6724
+0.6222
+-------------------- epoch 64----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0338
+0.0846
+0.0500
+0.0122
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8839
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2614
+0.1895
+0.0890
+0.1074
+================== MAEarruaccys ==================
+0.2991
+0.4596
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3115
+0.2210
+0.1281
+0.1724
+================== MAEarruaccys ==================
+0.2361
+0.4490
+0.6782
+0.6222
+-------------------- epoch 65----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0338
+0.0846
+0.0500
+0.0121
+================== MAEarruaccys ==================
+0.9136
+0.7699
+0.8839
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2611
+0.1895
+0.0891
+0.1072
+================== MAEarruaccys ==================
+0.2906
+0.4596
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3116
+0.2210
+0.1281
+0.1723
+================== MAEarruaccys ==================
+0.2500
+0.4422
+0.6782
+0.6222
+-------------------- epoch 66----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0337
+0.0846
+0.0501
+0.0119
+================== MAEarruaccys ==================
+0.9136
+0.7699
+0.8855
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2612
+0.1894
+0.0891
+0.1073
+================== MAEarruaccys ==================
+0.2991
+0.4596
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3115
+0.2209
+0.1280
+0.1723
+================== MAEarruaccys ==================
+0.2500
+0.4422
+0.6782
+0.6222
+-------------------- epoch 67----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0336
+0.0847
+0.0502
+0.0120
+================== MAEarruaccys ==================
+0.9136
+0.7699
+0.8855
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2611
+0.1894
+0.0891
+0.1073
+================== MAEarruaccys ==================
+0.2991
+0.4596
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3115
+0.2209
+0.1280
+0.1723
+================== MAEarruaccys ==================
+0.2500
+0.4422
+0.6782
+0.6222
+-------------------- epoch 68----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0336
+0.0847
+0.0502
+0.0121
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8855
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2610
+0.1894
+0.0891
+0.1073
+================== MAEarruaccys ==================
+0.2906
+0.4596
+0.7874
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3115
+0.2209
+0.1279
+0.1722
+================== MAEarruaccys ==================
+0.2500
+0.4422
+0.6782
+0.6222
+-------------------- epoch 69----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0337
+0.0847
+0.0502
+0.0120
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8855
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2611
+0.1894
+0.0891
+0.1074
+================== MAEarruaccys ==================
+0.2991
+0.4596
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3114
+0.2208
+0.1279
+0.1723
+================== MAEarruaccys ==================
+0.2361
+0.4422
+0.6782
+0.6222
+-------------------- epoch 70----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0337
+0.0848
+0.0503
+0.0120
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8855
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2609
+0.1894
+0.0891
+0.1074
+================== MAEarruaccys ==================
+0.2906
+0.4596
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3115
+0.2208
+0.1278
+0.1723
+================== MAEarruaccys ==================
+0.2500
+0.4422
+0.6782
+0.6222
+-------------------- epoch 71----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0337
+0.0848
+0.0504
+0.0120
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8855
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2610
+0.1894
+0.0891
+0.1074
+================== MAEarruaccys ==================
+0.2906
+0.4596
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3113
+0.2207
+0.1278
+0.1723
+================== MAEarruaccys ==================
+0.2361
+0.4422
+0.6839
+0.6222
+-------------------- epoch 72----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0338
+0.0849
+0.0504
+0.0120
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2609
+0.1894
+0.0892
+0.1074
+================== MAEarruaccys ==================
+0.2906
+0.4596
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3113
+0.2207
+0.1277
+0.1723
+================== MAEarruaccys ==================
+0.2361
+0.4422
+0.6839
+0.6222
+-------------------- epoch 73----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0339
+0.0850
+0.0505
+0.0121
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2609
+0.1894
+0.0892
+0.1074
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3112
+0.2206
+0.1276
+0.1723
+================== MAEarruaccys ==================
+0.2361
+0.4422
+0.6839
+0.6222
+-------------------- epoch 74----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0339
+0.0850
+0.0505
+0.0121
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2608
+0.1893
+0.0892
+0.1075
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3112
+0.2206
+0.1276
+0.1723
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6839
+0.6222
+-------------------- epoch 75----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0340
+0.0851
+0.0506
+0.0121
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2608
+0.1893
+0.0892
+0.1074
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3112
+0.2205
+0.1275
+0.1722
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6839
+0.6222
+-------------------- epoch 76----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0341
+0.0852
+0.0507
+0.0122
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2607
+0.1893
+0.0893
+0.1075
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3111
+0.2205
+0.1275
+0.1722
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6839
+0.6222
+-------------------- epoch 77----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0342
+0.0853
+0.0507
+0.0122
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2607
+0.1893
+0.0893
+0.1075
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3110
+0.2204
+0.1274
+0.1722
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6897
+0.6111
+-------------------- epoch 78----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0343
+0.0854
+0.0508
+0.0123
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8855
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2606
+0.1893
+0.0893
+0.1075
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3110
+0.2204
+0.1274
+0.1722
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6897
+0.6111
+-------------------- epoch 79----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0344
+0.0855
+0.0508
+0.0123
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8855
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2605
+0.1893
+0.0893
+0.1076
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3109
+0.2203
+0.1273
+0.1722
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6897
+0.6111
+-------------------- epoch 80----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0346
+0.0856
+0.0509
+0.0124
+================== MAEarruaccys ==================
+0.9136
+0.7677
+0.8855
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2605
+0.1893
+0.0893
+0.1076
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3109
+0.2203
+0.1273
+0.1722
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6897
+0.6111
+-------------------- epoch 81----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0347
+0.0857
+0.0510
+0.0124
+================== MAEarruaccys ==================
+0.9136
+0.7655
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2604
+0.1893
+0.0894
+0.1076
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3108
+0.2202
+0.1272
+0.1722
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6897
+0.6111
+-------------------- epoch 82----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0349
+0.0858
+0.0510
+0.0125
+================== MAEarruaccys ==================
+0.9182
+0.7655
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2603
+0.1893
+0.0894
+0.1076
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3107
+0.2201
+0.1272
+0.1722
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6897
+0.6111
+-------------------- epoch 83----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0350
+0.0859
+0.0511
+0.0126
+================== MAEarruaccys ==================
+0.9182
+0.7655
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2603
+0.1893
+0.0894
+0.1076
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3106
+0.2201
+0.1271
+0.1721
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6897
+0.6111
+-------------------- epoch 84----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0352
+0.0860
+0.0512
+0.0127
+================== MAEarruaccys ==================
+0.9182
+0.7633
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2602
+0.1892
+0.0895
+0.1077
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3106
+0.2200
+0.1271
+0.1721
+================== MAEarruaccys ==================
+0.2222
+0.4354
+0.6897
+0.6111
+-------------------- epoch 85----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0354
+0.0861
+0.0513
+0.0128
+================== MAEarruaccys ==================
+0.9182
+0.7633
+0.8887
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2601
+0.1892
+0.0895
+0.1077
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3105
+0.2200
+0.1270
+0.1721
+================== MAEarruaccys ==================
+0.2222
+0.4354
+0.6897
+0.6111
+-------------------- epoch 86----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0356
+0.0862
+0.0513
+0.0128
+================== MAEarruaccys ==================
+0.9182
+0.7633
+0.8887
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2601
+0.1892
+0.0895
+0.1077
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3104
+0.2199
+0.1270
+0.1721
+================== MAEarruaccys ==================
+0.2222
+0.4354
+0.6897
+0.6111
+-------------------- epoch 87----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0358
+0.0863
+0.0514
+0.0129
+================== MAEarruaccys ==================
+0.9182
+0.7633
+0.8887
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2600
+0.1892
+0.0895
+0.1077
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3103
+0.2199
+0.1269
+0.1721
+================== MAEarruaccys ==================
+0.2222
+0.4354
+0.6897
+0.6111
+-------------------- epoch 88----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0359
+0.0864
+0.0515
+0.0131
+================== MAEarruaccys ==================
+0.9182
+0.7611
+0.8887
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2599
+0.1892
+0.0896
+0.1078
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3102
+0.2198
+0.1269
+0.1721
+================== MAEarruaccys ==================
+0.2222
+0.4354
+0.6897
+0.6111
+-------------------- epoch 89----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0362
+0.0866
+0.0516
+0.0132
+================== MAEarruaccys ==================
+0.9136
+0.7611
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2598
+0.1892
+0.0896
+0.1078
+================== MAEarruaccys ==================
+0.2906
+0.4596
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3102
+0.2197
+0.1268
+0.1720
+================== MAEarruaccys ==================
+0.2222
+0.4354
+0.6897
+0.6111
+-------------------- epoch 90----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0364
+0.0867
+0.0516
+0.0133
+================== MAEarruaccys ==================
+0.9136
+0.7588
+0.8855
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2598
+0.1892
+0.0896
+0.1078
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3101
+0.2197
+0.1268
+0.1720
+================== MAEarruaccys ==================
+0.2222
+0.4422
+0.6897
+0.6111
+-------------------- epoch 91----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0366
+0.0868
+0.0517
+0.0134
+================== MAEarruaccys ==================
+0.9136
+0.7588
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2597
+0.1891
+0.0897
+0.1079
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3100
+0.2196
+0.1267
+0.1720
+================== MAEarruaccys ==================
+0.2222
+0.4354
+0.6897
+0.6111
+-------------------- epoch 92----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0368
+0.0869
+0.0518
+0.0135
+================== MAEarruaccys ==================
+0.9136
+0.7588
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2596
+0.1891
+0.0897
+0.1079
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3099
+0.2196
+0.1267
+0.1720
+================== MAEarruaccys ==================
+0.2222
+0.4354
+0.6897
+0.6111
+-------------------- epoch 93----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0370
+0.0870
+0.0518
+0.0137
+================== MAEarruaccys ==================
+0.9045
+0.7588
+0.8871
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2595
+0.1891
+0.0897
+0.1079
+================== MAEarruaccys ==================
+0.2906
+0.4658
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3098
+0.2195
+0.1266
+0.1720
+================== MAEarruaccys ==================
+0.2222
+0.4354
+0.6897
+0.6111
+-------------------- epoch 94----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0372
+0.0871
+0.0519
+0.0138
+================== MAEarruaccys ==================
+0.9045
+0.7588
+0.8903
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2594
+0.1891
+0.0898
+0.1080
+================== MAEarruaccys ==================
+0.2906
+0.4720
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3097
+0.2195
+0.1266
+0.1720
+================== MAEarruaccys ==================
+0.2222
+0.4354
+0.6839
+0.6111
+-------------------- epoch 95----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0374
+0.0873
+0.0520
+0.0139
+================== MAEarruaccys ==================
+0.9045
+0.7566
+0.8903
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2594
+0.1891
+0.0898
+0.1080
+================== MAEarruaccys ==================
+0.2906
+0.4720
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3096
+0.2194
+0.1265
+0.1719
+================== MAEarruaccys ==================
+0.2222
+0.4354
+0.6897
+0.6111
+-------------------- epoch 96----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0376
+0.0874
+0.0521
+0.0141
+================== MAEarruaccys ==================
+0.9045
+0.7522
+0.8903
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2593
+0.1891
+0.0899
+0.1080
+================== MAEarruaccys ==================
+0.2906
+0.4720
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3095
+0.2194
+0.1264
+0.1719
+================== MAEarruaccys ==================
+0.2222
+0.4286
+0.6897
+0.6111
+-------------------- epoch 97----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0379
+0.0875
+0.0522
+0.0142
+================== MAEarruaccys ==================
+0.9045
+0.7544
+0.8903
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2592
+0.1891
+0.0899
+0.1081
+================== MAEarruaccys ==================
+0.2906
+0.4720
+0.7759
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3095
+0.2193
+0.1264
+0.1719
+================== MAEarruaccys ==================
+0.2222
+0.4286
+0.6897
+0.6111
+-------------------- epoch 98----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0381
+0.0876
+0.0522
+0.0144
+================== MAEarruaccys ==================
+0.9000
+0.7544
+0.8903
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2591
+0.1890
+0.0899
+0.1081
+================== MAEarruaccys ==================
+0.2906
+0.4783
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3094
+0.2192
+0.1263
+0.1719
+================== MAEarruaccys ==================
+0.2222
+0.4286
+0.6897
+0.6111
+-------------------- epoch 99----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0383
+0.0878
+0.0523
+0.0145
+================== MAEarruaccys ==================
+0.9000
+0.7544
+0.8919
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2591
+0.1890
+0.0900
+0.1081
+================== MAEarruaccys ==================
+0.2906
+0.4783
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3093
+0.2192
+0.1263
+0.1719
+================== MAEarruaccys ==================
+0.2222
+0.4286
+0.6954
+0.6111
+-------------------- final testing ADME ----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0383
+0.0878
+0.0523
+0.0145
+================== MAEarruaccys ==================
+0.9000
+0.7544
+0.8919
+0.9780
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2591
+0.1890
+0.0900
+0.1081
+================== MAEarruaccys ==================
+0.2906
+0.4783
+0.7816
+0.7128
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3093
+0.2192
+0.1263
+0.1719
+================== MAEarruaccys ==================
+0.2222
+0.4286
+0.6954
+0.6111
+
+
+
+
+============================================================================================================================================
+VertexName (VertexType)                 nIn,nOut       TotalParams    ParamsShape                    Vertex Inputs
+============================================================================================================================================
+input (InputVertex)                     -,-            -              -                              -
+L1 (DenseLayer)                         1024,1000      1025000        b:{1,1000}, W:{1024,1000}      [input]
+L2 (DenseLayer)                         1000,900       900900         b:{1,900}, W:{1000,900}        [L1]
+L3 (DenseLayer)                         900,800        720800         b:{1,800}, W:{900,800}         [L2]
+L4 (DenseLayer)                         800,700        560700         b:{1,700}, W:{800,700}         [L3]
+M1 (DenseLayer)                         700,600        420600         b:{1,600}, W:{700,600}         [L4]
+M2 (DenseLayer)                         600,500        300500         b:{1,500}, W:{600,500}         [M1]
+M3 (DenseLayer)                         500,400        200400         b:{1,400}, W:{500,400}         [M2]
+M4 (DenseLayer)                         400,300        120300         b:{1,300}, W:{400,300}         [M3]
+M5 (DenseLayer)                         300,200        60200          b:{1,200}, W:{300,200}         [M4]
+MOUT (DenseLayer)                       200,1000       201000         b:{1,1000}, W:{200,1000}       [M5]
+Bioavailability (OutputLayer)           1000,1         1001           b:{1,1}, W:{1000,1}            [MOUT]
+BloodProteinBinding (OutputLayer)       1000,1         1001           b:{1,1}, W:{1000,1}            [MOUT]
+HalfLife (OutputLayer)                  1000,1         1001           b:{1,1}, W:{1000,1}            [MOUT]
+VolumeofDistribution (OutputLayer)      1000,1         1001           b:{1,1}, W:{1000,1}            [MOUT]
+--------------------------------------------------------------------------------------------------------------------------------------------
+            Total Parameters:  4514404
+        Trainable Parameters:  4514404
+           Frozen Parameters:  0
+============================================================================================================================================
+
+learning rate:0.1
+total epoch: 100
+beta1: 0.5
+beta2: 0.999
+lambda :0.01
