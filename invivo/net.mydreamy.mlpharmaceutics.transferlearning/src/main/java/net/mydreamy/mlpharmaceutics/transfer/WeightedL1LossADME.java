@@ -7,7 +7,7 @@ import org.nd4j.linalg.factory.Nd4j;
 import org.nd4j.linalg.lossfunctions.LossUtil;
 import org.nd4j.linalg.lossfunctions.impl.LossL1;
 
-public class WeightedL1LossADME extends LossL1 {
+public class WeightedL1LossADME extends LossL1 implements org.nd4j.linalg.lossfunctions.ILossFunction {
 	
 	private double outputweight;
 	

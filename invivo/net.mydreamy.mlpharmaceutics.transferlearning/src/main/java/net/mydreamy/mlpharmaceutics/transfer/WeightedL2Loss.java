@@ -23,6 +23,7 @@ public class WeightedL2Loss extends LossL2 implements org.nd4j.linalg.lossfuncti
 	
 	public WeightedL2Loss(INDArray weights) {		
 		super(weights);
+		this.outputweight = 1;
 	}
 	
 	public WeightedL2Loss(INDArray weights, double outputweight) {
@@ -127,32 +128,34 @@ public class WeightedL2Loss extends LossL2 implements org.nd4j.linalg.lossfuncti
 
         INDArray dLda = output.subi(labels).muli(2);
         
+        if (weight > 1) {
         
+	        //apply weight to cost
+	        for (int i = 0; i < r; i++) {
+	        		for (int j = 0; j < c; j++) {
+	        			
+	        			if (mask.getDouble(i, j) == 1) {
+	        				
+	//        				System.out.println("output: " + output.getDouble(i, j));
+	        				
+	        				
+	//        				System.out.println("before: " + dLda.getDouble(i, j));
+	        				if (labels.getDouble(i, j) == 1) {
+	        					dLda.put(i, j, dLda.getDouble(i, j) * 100);
+	        				}
+	        				else {
+	//        					dLda.put(i, j, dLda.getDouble(i, j) * 71.42);
+	        				
+	        					if (labels.getDouble(i, j) == 0 && output.getDouble(i, j) > 0.5)
+	        						dLda.put(i, j, dLda.getDouble(i, j) * 1);
+	        				
+	//        				System.out.println("after: " + dLda.getDouble(i, j));
+	        				}
+	        			}
+	        			
+	        		}
+	        }
         
-        //apply weight to cost
-        for (int i = 0; i < r; i++) {
-        		for (int j = 0; j < c; j++) {
-        			
-        			if (mask.getDouble(i, j) == 1) {
-        				
-//        				System.out.println("output: " + output.getDouble(i, j));
-        				
-        				
-//        				System.out.println("before: " + dLda.getDouble(i, j));
-        				if (labels.getDouble(i, j) == 1 && weight > 1) {
-        					dLda.put(i, j, dLda.getDouble(i, j) * weight);
-        				}
-        				else {
-//        					dLda.put(i, j, dLda.getDouble(i, j) * 71.42);
-        				
-        					if (output.getDouble(i, j) > 0.5)
-        						dLda.put(i, j, dLda.getDouble(i, j) * weight);
-        				
-//        				System.out.println("after: " + dLda.getDouble(i, j));
-        				}
-        			}
-        			
-        		}
         }
               
 //        System.out.println("dlda: " + dLda.shapeInfoToString());
@@ -162,13 +165,7 @@ public class WeightedL2Loss extends LossL2 implements org.nd4j.linalg.lossfuncti
             dLda.muliRowVector(weights);
         }
 
-        if(mask != null && LossUtil.isPerOutputMasking(dLda, mask)){
-            //For *most* activation functions: we don't actually need to mask dL/da in addition to masking dL/dz later
-            //but: some, like softmax, require both (due to dL/dz_i being a function of dL/da_j, for i != j)
-            //We could add a special case for softmax (activationFn instanceof ActivationSoftmax) but that would be
-            // error prone - but buy us a tiny bit of performance
-            LossUtil.applyMask(dLda, mask);
-        }
+
 
         INDArray gradients = activationFn.backprop(preOutput, dLda).getFirst(); //TODO handle activation function parameter gradients
 

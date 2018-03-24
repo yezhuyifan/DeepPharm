@@ -534,13 +534,13 @@ public class PretainNetworkandTransfer {
 	
 		System.out.println("-------------------- final testing ADME ----------------------- ");
 		System.out.println("-------------------- tranning set ----------------------- ");
-		ADMEtesting(ADMEnet, ADMEiter, MSEs, true, R2s, false, accurecyMAEs, true, false);
+		ADMEtesting(ADMEnet, ADMEiter, MSEs, true, R2s, false, accurecyMAEs, true, true);
 
 		System.out.println("-------------------- validation set ----------------------- ");
-		ADMEtesting(ADMEnet, ADMEDeviter, MSEDevs, true, R2Devs, false, accurecyMAEDevs, true, false);
+		ADMEtesting(ADMEnet, ADMEDeviter, MSEDevs, true, R2Devs, false, accurecyMAEDevs, true, true);
 
 		System.out.println("-------------------- testing set ----------------------- ");
-		ADMEtesting(ADMEnet, ADMETestiter, MSETs, true, R2Ts, false, accurecyMAETs, true, false);	
+		ADMEtesting(ADMEnet, ADMETestiter, MSETs, true, R2Ts, false, accurecyMAETs, true, true);	
 		
 		
 	}

@@ -90,7 +90,7 @@ import javafx.application.Application;
  */
 public class PretainSaveAndLoadNetwork {
 	
-	static int epoch = 20;
+	static int epoch = 5;
 	static int trainsetsize = 432803;
 	static int batchSize = 200;
 	static int totalNumberofBatch = trainsetsize / batchSize;
@@ -210,7 +210,7 @@ public class PretainSaveAndLoadNetwork {
 		        .addLayer("HIDDEN", new DenseLayer.Builder().activation(Activation.TANH).nIn(100).nOut(1000).build(), "FEATURE")
 
 		        .addLayer("TASKS", new OutputLayer.Builder().activation(Activation.SIGMOID)
-		                .lossFunction(new WeightedL2Loss(1))
+		                .lossFunction(new WeightedL2Loss())
 		                .nIn(1000).nOut(157).build(), "HIDDEN")
 		      
 
@@ -244,12 +244,18 @@ public class PretainSaveAndLoadNetwork {
 			while (ADMEiter.hasNext()) {
 				
 				
+
 				//data loading
 				long substart = System.currentTimeMillis();
 				data = ADMEiter.next();
 				double loadingtime =  ((double) System.currentTimeMillis() - substart);
 				subloadingtime+=loadingtime;
  				
+//				if (numberOfBatchSize < 1800) {
+//					numberOfBatchSize++;
+//					continue;
+//				} 
+				
 				
 				//apply label mask
 				substart = System.currentTimeMillis();
@@ -261,7 +267,11 @@ public class PretainSaveAndLoadNetwork {
 				
 				//fit data
 				substart = System.currentTimeMillis();
+	
+
 				net.fit(data);
+	
+				
 	
 				double traintime =  ((double) System.currentTimeMillis() - substart);
 				epochTime += loadingtime+maskingtime+traintime;
@@ -305,14 +315,14 @@ public class PretainSaveAndLoadNetwork {
 			subEpochTime = 0;
 			
 			//evalute every 10 epochs
-			if (i % 5 == 0) {				
-				
-				System.out.println("-------------------- tranning set ----------------------- ");
-				test(net, ADMEiter);
-				System.out.println("-------------------- validation set ----------------------- ");
-				test(net, ADMEDeviter);
-				
-			}
+//			if (i % 5 == 0) {				
+//				
+//				System.out.println("-------------------- tranning set ----------------------- ");
+//				test(net, ADMEiter);
+//				System.out.println("-------------------- validation set ----------------------- ");
+//				test(net, ADMEDeviter);
+//				
+//			}
 			
 		
 		}		
@@ -330,7 +340,7 @@ public class PretainSaveAndLoadNetwork {
         File locationToSave = new File("DeepPharm.zip");       //Where to save the network. Note: the file is in .zip format - can be opened externally
         boolean saveUpdater = true;                                             //Updater: i.e., the state for Momentum, RMSProp, Adagrad etc. Save this if you want to train your network more in the future
         try {
-			ModelSerializer.writeModel(net, locationToSave, false);
+			ModelSerializer.writeModel(net, locationToSave, saveUpdater);
 			System.out.println("model saved");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

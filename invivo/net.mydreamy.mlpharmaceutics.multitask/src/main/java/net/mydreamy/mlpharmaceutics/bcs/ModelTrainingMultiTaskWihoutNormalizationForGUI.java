@@ -290,13 +290,13 @@ public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 	
 		System.out.println("-------------------- final testing ADME ----------------------- ");
 		System.out.println("-------------------- tranning set ----------------------- ");
-		testing(net, ADMEiter, MSEs, true, R2s, false, accurecyMAEs, true, false);
+		testing(net, ADMEiter, MSEs, true, R2s, false, accurecyMAEs, true, true);
 
 		System.out.println("-------------------- validation set ----------------------- ");
-		testing(net, ADMEDeviter, MSEDevs, true, R2Devs, false, accurecyMAEDevs, true, false);
+		testing(net, ADMEDeviter, MSEDevs, true, R2Devs, false, accurecyMAEDevs, true, true);
 
 		System.out.println("-------------------- testing set ----------------------- ");
-		testing(net, ADMETestiter, MSETs, true, R2Ts, false, accurecyMAETs, true, false);	
+		testing(net, ADMETestiter, MSETs, true, R2Ts, false, accurecyMAETs, true, true);	
 		
 		//print MSE for display cost figure
 	//	printAllCost(MSEs, MSEDevs, MSETs);

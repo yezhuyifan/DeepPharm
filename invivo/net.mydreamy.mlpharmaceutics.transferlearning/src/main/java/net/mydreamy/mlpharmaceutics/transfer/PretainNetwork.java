@@ -210,7 +210,8 @@ public class PretainNetwork {
 		        .addLayer("HIDDEN", new DenseLayer.Builder().activation(Activation.TANH).nIn(100).nOut(1000).build(), "FEATURE")
 
 		        .addLayer("TASKS", new OutputLayer.Builder().activation(Activation.SIGMOID)
-		                .lossFunction(new WeightedL2Loss(1))
+//		                .lossFunction(new WeightedL2Loss(1))
+		                .lossFunction(LossFunctions.LossFunction.L1)
 		                .nIn(1000).nOut(157).build(), "HIDDEN")
 		      
 

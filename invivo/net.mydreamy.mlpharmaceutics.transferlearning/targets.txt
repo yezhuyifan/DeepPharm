@@ -1,0 +1,293 @@
+[main] INFO org.nd4j.linalg.factory.Nd4jBackend - Loaded [CpuBackend] backend
+[main] INFO org.reflections.Reflections - Reflections took 197 ms to scan 138 urls, producing 52965 keys and 56649 values 
+[main] INFO org.nd4j.nativeblas.NativeOpsHolder - Number of threads used for NativeOps: 8
+[main] INFO org.reflections.Reflections - Reflections took 132 ms to scan 18 urls, producing 31 keys and 227 values 
+[main] INFO org.nd4j.nativeblas.Nd4jBlas - Number of threads used for BLAS: 8
+[main] INFO org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner - Backend used: [CPU]; OS: [Mac OS X]
+[main] INFO org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner - Cores: [4]; Memory: [3.6GB];
+[main] INFO org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner - Blas vendor: [OPENBLAS]
+[main] INFO org.reflections.Reflections - Reflections took 922 ms to scan 123 urls, producing 2305 keys and 9507 values 
+[main] INFO org.deeplearning4j.nn.graph.ComputationGraph - Starting ComputationGraph with WorkspaceModes set to [training: SINGLE; inference: SINGLE]
+[main] INFO org.reflections.Reflections - Reflections took 146 ms to scan 18 urls, producing 409 keys and 1628 values 
+-------------------- training ADME ----------------------- 
+Epoches:5
+epoch:0, batch number:50/2164, 50 loadding time:2765.0 ms, masking time:48.0 ms, training time:11849.00 ms, time elaspe:11.85 s, error: 0.22410039622312897
+epoch:0, batch number:100/2164, 50 loadding time:2319.0 ms, masking time:41.0 ms, training time:9716.00 ms, time elaspe:21.57 s, error: 0.20676983292695061
+epoch:0, batch number:150/2164, 50 loadding time:2313.0 ms, masking time:43.0 ms, training time:9675.00 ms, time elaspe:31.24 s, error: 0.19972379453622613
+epoch:0, batch number:200/2164, 50 loadding time:2320.0 ms, masking time:44.0 ms, training time:9410.00 ms, time elaspe:40.65 s, error: 0.19511759180931526
+epoch:0, batch number:250/2164, 50 loadding time:2322.0 ms, masking time:37.0 ms, training time:9410.00 ms, time elaspe:50.06 s, error: 0.16532341635151274
+epoch:0, batch number:300/2164, 50 loadding time:2275.0 ms, masking time:38.0 ms, training time:9348.00 ms, time elaspe:59.41 s, error: 0.1761243842058121
+epoch:0, batch number:350/2164, 50 loadding time:2323.0 ms, masking time:41.0 ms, training time:9375.00 ms, time elaspe:68.78 s, error: 0.17753833163316085
+epoch:0, batch number:400/2164, 50 loadding time:2292.0 ms, masking time:39.0 ms, training time:9324.00 ms, time elaspe:78.11 s, error: 0.18627814614848728
+epoch:0, batch number:450/2164, 50 loadding time:2370.0 ms, masking time:38.0 ms, training time:9444.00 ms, time elaspe:87.55 s, error: 0.14960820872312897
+epoch:0, batch number:500/2164, 50 loadding time:2285.0 ms, masking time:36.0 ms, training time:9331.00 ms, time elaspe:96.88 s, error: 0.1752525533688296
+epoch:0, batch number:550/2164, 50 loadding time:2320.0 ms, masking time:39.0 ms, training time:9340.00 ms, time elaspe:106.22 s, error: 0.14902637651771497
+epoch:0, batch number:600/2164, 50 loadding time:2303.0 ms, masking time:42.0 ms, training time:9345.00 ms, time elaspe:115.57 s, error: 0.15447491105195066
+epoch:0, batch number:650/2164, 50 loadding time:2298.0 ms, masking time:42.0 ms, training time:9329.00 ms, time elaspe:124.90 s, error: 0.14353669573546976
+epoch:0, batch number:700/2164, 50 loadding time:2370.0 ms, masking time:42.0 ms, training time:9420.00 ms, time elaspe:134.32 s, error: 0.14937464234175957
+epoch:0, batch number:750/2164, 50 loadding time:2320.0 ms, masking time:38.0 ms, training time:9347.00 ms, time elaspe:143.66 s, error: 0.14060896758061306
+epoch:0, batch number:800/2164, 50 loadding time:2281.0 ms, masking time:35.0 ms, training time:9355.00 ms, time elaspe:153.02 s, error: 0.15185632401970542
+epoch:0, batch number:850/2164, 50 loadding time:2305.0 ms, masking time:35.0 ms, training time:9401.00 ms, time elaspe:162.42 s, error: 0.14822385362758758
+epoch:0, batch number:900/2164, 50 loadding time:2341.0 ms, masking time:39.0 ms, training time:9362.00 ms, time elaspe:171.78 s, error: 0.16024361191281847
+epoch:0, batch number:950/2164, 50 loadding time:2291.0 ms, masking time:35.0 ms, training time:9338.00 ms, time elaspe:181.12 s, error: 0.16131632227806528
+epoch:0, batch number:1000/2164, 50 loadding time:2273.0 ms, masking time:38.0 ms, training time:9287.00 ms, time elaspe:190.41 s, error: 0.15441228975915605
+epoch:0, batch number:1050/2164, 50 loadding time:2337.0 ms, masking time:38.0 ms, training time:9332.00 ms, time elaspe:199.74 s, error: 0.16707334481986463
+epoch:0, batch number:1100/2164, 50 loadding time:2305.0 ms, masking time:44.0 ms, training time:9334.00 ms, time elaspe:209.07 s, error: 0.13498727980692674
+epoch:0, batch number:1150/2164, 50 loadding time:2432.0 ms, masking time:42.0 ms, training time:9444.00 ms, time elaspe:218.52 s, error: 0.15643237460191084
+epoch:0, batch number:1200/2164, 50 loadding time:2292.0 ms, masking time:40.0 ms, training time:9353.00 ms, time elaspe:227.87 s, error: 0.15610301801353502
+epoch:0, batch number:1250/2164, 50 loadding time:2289.0 ms, masking time:39.0 ms, training time:9338.00 ms, time elaspe:237.21 s, error: 0.16799745596138535
+epoch:0, batch number:1300/2164, 50 loadding time:2283.0 ms, masking time:40.0 ms, training time:9318.00 ms, time elaspe:246.53 s, error: 0.15645067737360668
+epoch:0, batch number:1350/2164, 50 loadding time:2289.0 ms, masking time:43.0 ms, training time:9347.00 ms, time elaspe:255.87 s, error: 0.14971881842157642
+epoch:0, batch number:1400/2164, 50 loadding time:2321.0 ms, masking time:42.0 ms, training time:9393.00 ms, time elaspe:265.27 s, error: 0.15965145426950636
+epoch:0, batch number:1450/2164, 50 loadding time:2303.0 ms, masking time:39.0 ms, training time:9338.00 ms, time elaspe:274.60 s, error: 0.1428077104896497
+epoch:0, batch number:1500/2164, 50 loadding time:2360.0 ms, masking time:38.0 ms, training time:9454.00 ms, time elaspe:284.06 s, error: 0.1493921831458997
+epoch:0, batch number:1550/2164, 50 loadding time:2318.0 ms, masking time:41.0 ms, training time:9294.00 ms, time elaspe:293.35 s, error: 0.16519512589570062
+epoch:0, batch number:1600/2164, 50 loadding time:2394.0 ms, masking time:41.0 ms, training time:9415.00 ms, time elaspe:302.77 s, error: 0.14227977582603502
+epoch:0, batch number:1650/2164, 50 loadding time:2288.0 ms, masking time:41.0 ms, training time:9320.00 ms, time elaspe:312.09 s, error: 0.13706598950039808
+epoch:0, batch number:1700/2164, 50 loadding time:2285.0 ms, masking time:29.0 ms, training time:9281.00 ms, time elaspe:321.37 s, error: 0.14390466386345543
+epoch:0, batch number:1750/2164, 50 loadding time:2307.0 ms, masking time:38.0 ms, training time:9351.00 ms, time elaspe:330.72 s, error: 0.14725172297969746
+epoch:0, batch number:1800/2164, 50 loadding time:2314.0 ms, masking time:43.0 ms, training time:8602.00 ms, time elaspe:339.32 s, error: 0.0017488224491192278
+epoch:0, batch number:1850/2164, 50 loadding time:2267.0 ms, masking time:40.0 ms, training time:8370.00 ms, time elaspe:347.69 s, error: 0.001100160635201035
+epoch:0, batch number:1900/2164, 50 loadding time:2356.0 ms, masking time:35.0 ms, training time:8463.00 ms, time elaspe:356.15 s, error: 9.58316098352906E-4
+epoch:0, batch number:1950/2164, 50 loadding time:2250.0 ms, masking time:42.0 ms, training time:8361.00 ms, time elaspe:364.51 s, error: 0.001182927174173343
+epoch:0, batch number:2000/2164, 50 loadding time:2404.0 ms, masking time:39.0 ms, training time:8505.00 ms, time elaspe:373.02 s, error: 0.0010933862674008508
+epoch:0, batch number:2050/2164, 50 loadding time:2275.0 ms, masking time:41.0 ms, training time:8475.00 ms, time elaspe:381.49 s, error: 0.0010633780849967035
+epoch:0, batch number:2100/2164, 50 loadding time:2257.0 ms, masking time:39.0 ms, training time:8383.00 ms, time elaspe:389.88 s, error: 0.0011152865172951085
+epoch:0, batch number:2150/2164, 50 loadding time:2265.0 ms, masking time:38.0 ms, training time:8383.00 ms, time elaspe:398.26 s, error: 0.07847513186703821
+Epoch Time: 6.67895min
+epoch:1, batch number:50/2164, 50 loadding time:2286.0 ms, masking time:40.0 ms, training time:9314.00 ms, time elaspe:9.31 s, error: 0.14359732658240446
+epoch:1, batch number:100/2164, 50 loadding time:2287.0 ms, masking time:40.0 ms, training time:9347.00 ms, time elaspe:18.66 s, error: 0.16301092257165606
+epoch:1, batch number:150/2164, 50 loadding time:2291.0 ms, masking time:42.0 ms, training time:9321.00 ms, time elaspe:27.98 s, error: 0.12618637570909633
+epoch:1, batch number:200/2164, 50 loadding time:2504.0 ms, masking time:42.0 ms, training time:9536.00 ms, time elaspe:37.52 s, error: 0.1462789858678344
+epoch:1, batch number:250/2164, 50 loadding time:2255.0 ms, masking time:41.0 ms, training time:9284.00 ms, time elaspe:46.80 s, error: 0.13369614910927546
+epoch:1, batch number:300/2164, 50 loadding time:2286.0 ms, masking time:36.0 ms, training time:9272.00 ms, time elaspe:56.07 s, error: 0.14116198497213375
+epoch:1, batch number:350/2164, 50 loadding time:2348.0 ms, masking time:42.0 ms, training time:9370.00 ms, time elaspe:65.44 s, error: 0.15499051428144905
+epoch:1, batch number:400/2164, 50 loadding time:2279.0 ms, masking time:41.0 ms, training time:9287.00 ms, time elaspe:74.73 s, error: 0.13997272467157643
+epoch:1, batch number:450/2164, 50 loadding time:2291.0 ms, masking time:33.0 ms, training time:9288.00 ms, time elaspe:84.02 s, error: 0.10593650477707006
+epoch:1, batch number:500/2164, 50 loadding time:2349.0 ms, masking time:41.0 ms, training time:9350.00 ms, time elaspe:93.37 s, error: 0.15935313619625796
+epoch:1, batch number:550/2164, 50 loadding time:2265.0 ms, masking time:39.0 ms, training time:9259.00 ms, time elaspe:102.63 s, error: 0.11780365184613853
+epoch:1, batch number:600/2164, 50 loadding time:2351.0 ms, masking time:38.0 ms, training time:9362.00 ms, time elaspe:111.99 s, error: 0.12286333412121815
+epoch:1, batch number:650/2164, 50 loadding time:2405.0 ms, masking time:40.0 ms, training time:9420.00 ms, time elaspe:121.41 s, error: 0.1252688656946656
+epoch:1, batch number:700/2164, 50 loadding time:2262.0 ms, masking time:41.0 ms, training time:9331.00 ms, time elaspe:130.74 s, error: 0.1348572166102707
+epoch:1, batch number:750/2164, 50 loadding time:2349.0 ms, masking time:39.0 ms, training time:9398.00 ms, time elaspe:140.14 s, error: 0.14612677896098725
+epoch:1, batch number:800/2164, 50 loadding time:2274.0 ms, masking time:41.0 ms, training time:9299.00 ms, time elaspe:149.44 s, error: 0.14273291326632165
+epoch:1, batch number:850/2164, 50 loadding time:2382.0 ms, masking time:42.0 ms, training time:9453.00 ms, time elaspe:158.89 s, error: 0.13474337243730095
+epoch:1, batch number:900/2164, 50 loadding time:2285.0 ms, masking time:40.0 ms, training time:9322.00 ms, time elaspe:168.21 s, error: 0.1469838369576035
+epoch:1, batch number:950/2164, 50 loadding time:2279.0 ms, masking time:42.0 ms, training time:9335.00 ms, time elaspe:177.55 s, error: 0.14593177746815286
+epoch:1, batch number:1000/2164, 50 loadding time:2315.0 ms, masking time:39.0 ms, training time:9431.00 ms, time elaspe:186.98 s, error: 0.13241540605095542
+epoch:1, batch number:1050/2164, 50 loadding time:2444.0 ms, masking time:40.0 ms, training time:9467.00 ms, time elaspe:196.45 s, error: 0.15383677099920381
+epoch:1, batch number:1100/2164, 50 loadding time:2309.0 ms, masking time:45.0 ms, training time:9327.00 ms, time elaspe:205.77 s, error: 0.1277816947402468
+epoch:1, batch number:1150/2164, 50 loadding time:2282.0 ms, masking time:38.0 ms, training time:9302.00 ms, time elaspe:215.08 s, error: 0.1364081315933519
+epoch:1, batch number:1200/2164, 50 loadding time:2299.0 ms, masking time:39.0 ms, training time:9346.00 ms, time elaspe:224.42 s, error: 0.1430095541401274
+epoch:1, batch number:1250/2164, 50 loadding time:2298.0 ms, masking time:39.0 ms, training time:9328.00 ms, time elaspe:233.75 s, error: 0.15077823323049364
+epoch:1, batch number:1300/2164, 50 loadding time:2314.0 ms, masking time:41.0 ms, training time:9321.00 ms, time elaspe:243.07 s, error: 0.15161159248109077
+epoch:1, batch number:1350/2164, 50 loadding time:2378.0 ms, masking time:37.0 ms, training time:9344.00 ms, time elaspe:252.41 s, error: 0.1334901846138535
+epoch:1, batch number:1400/2164, 50 loadding time:2452.0 ms, masking time:39.0 ms, training time:9491.00 ms, time elaspe:261.91 s, error: 0.13901605107981688
+epoch:1, batch number:1450/2164, 50 loadding time:2240.0 ms, masking time:34.0 ms, training time:9226.00 ms, time elaspe:271.13 s, error: 0.12828641271894903
+epoch:1, batch number:1500/2164, 50 loadding time:2291.0 ms, masking time:43.0 ms, training time:9282.00 ms, time elaspe:280.41 s, error: 0.14070844322253184
+epoch:1, batch number:1550/2164, 50 loadding time:2269.0 ms, masking time:42.0 ms, training time:9289.00 ms, time elaspe:289.70 s, error: 0.14805287743829618
+epoch:1, batch number:1600/2164, 50 loadding time:2268.0 ms, masking time:40.0 ms, training time:9275.00 ms, time elaspe:298.98 s, error: 0.13594446656050954
+epoch:1, batch number:1650/2164, 50 loadding time:2310.0 ms, masking time:39.0 ms, training time:9320.00 ms, time elaspe:308.30 s, error: 0.12637314328722135
+epoch:1, batch number:1700/2164, 50 loadding time:2333.0 ms, masking time:43.0 ms, training time:9353.00 ms, time elaspe:317.65 s, error: 0.13383400303542994
+epoch:1, batch number:1750/2164, 50 loadding time:2293.0 ms, masking time:42.0 ms, training time:9308.00 ms, time elaspe:326.96 s, error: 0.13334848974920382
+epoch:1, batch number:1800/2164, 50 loadding time:2333.0 ms, masking time:41.0 ms, training time:8592.00 ms, time elaspe:335.55 s, error: 0.0011589536241665007
+epoch:1, batch number:1850/2164, 50 loadding time:2328.0 ms, masking time:40.0 ms, training time:8436.00 ms, time elaspe:343.99 s, error: 9.933630220449654E-4
+epoch:1, batch number:1900/2164, 50 loadding time:2279.0 ms, masking time:36.0 ms, training time:8384.00 ms, time elaspe:352.37 s, error: 9.390031608046998E-4
+epoch:1, batch number:1950/2164, 50 loadding time:2261.0 ms, masking time:42.0 ms, training time:8357.00 ms, time elaspe:360.73 s, error: 0.0011694095392895353
+epoch:1, batch number:2000/2164, 50 loadding time:2254.0 ms, masking time:36.0 ms, training time:8328.00 ms, time elaspe:369.06 s, error: 0.001051822224999689
+epoch:1, batch number:2050/2164, 50 loadding time:2305.0 ms, masking time:40.0 ms, training time:8421.00 ms, time elaspe:377.48 s, error: 0.0011278978578603952
+epoch:1, batch number:2100/2164, 50 loadding time:2362.0 ms, masking time:36.0 ms, training time:8474.00 ms, time elaspe:385.95 s, error: 0.0011748997876598578
+epoch:1, batch number:2150/2164, 50 loadding time:2476.0 ms, masking time:40.0 ms, training time:8621.00 ms, time elaspe:394.57 s, error: 0.07663298199890525
+Epoch Time: 6.617016666666666min
+epoch:2, batch number:50/2164, 50 loadding time:2266.0 ms, masking time:38.0 ms, training time:9274.00 ms, time elaspe:9.27 s, error: 0.12396279110270701
+epoch:2, batch number:100/2164, 50 loadding time:2232.0 ms, masking time:37.0 ms, training time:9221.00 ms, time elaspe:18.50 s, error: 0.14444413689291402
+epoch:2, batch number:150/2164, 50 loadding time:2271.0 ms, masking time:40.0 ms, training time:9258.00 ms, time elaspe:27.75 s, error: 0.11916232552498009
+epoch:2, batch number:200/2164, 50 loadding time:2273.0 ms, masking time:43.0 ms, training time:9366.00 ms, time elaspe:37.12 s, error: 0.1400285038067277
+epoch:2, batch number:250/2164, 50 loadding time:2274.0 ms, masking time:36.0 ms, training time:9245.00 ms, time elaspe:46.36 s, error: 0.12503784957205413
+epoch:2, batch number:300/2164, 50 loadding time:2293.0 ms, masking time:40.0 ms, training time:9259.00 ms, time elaspe:55.62 s, error: 0.13001820946954618
+epoch:2, batch number:350/2164, 50 loadding time:2267.0 ms, masking time:43.0 ms, training time:9255.00 ms, time elaspe:64.88 s, error: 0.14362707441779457
+epoch:2, batch number:400/2164, 50 loadding time:2265.0 ms, masking time:43.0 ms, training time:9275.00 ms, time elaspe:74.15 s, error: 0.13656851798865446
+epoch:2, batch number:450/2164, 50 loadding time:2404.0 ms, masking time:38.0 ms, training time:9378.00 ms, time elaspe:83.53 s, error: 0.09923541998407642
+epoch:2, batch number:500/2164, 50 loadding time:2315.0 ms, masking time:42.0 ms, training time:9395.00 ms, time elaspe:92.93 s, error: 0.15449839209295382
+epoch:2, batch number:550/2164, 50 loadding time:2287.0 ms, masking time:42.0 ms, training time:9300.00 ms, time elaspe:102.23 s, error: 0.107227394444168
+epoch:2, batch number:600/2164, 50 loadding time:2311.0 ms, masking time:36.0 ms, training time:9313.00 ms, time elaspe:111.54 s, error: 0.11766622555483679
+epoch:2, batch number:650/2164, 50 loadding time:2303.0 ms, masking time:43.0 ms, training time:9302.00 ms, time elaspe:120.84 s, error: 0.11337579617834395
+epoch:2, batch number:700/2164, 50 loadding time:2342.0 ms, masking time:41.0 ms, training time:9362.00 ms, time elaspe:130.20 s, error: 0.12545382165605096
+epoch:2, batch number:750/2164, 50 loadding time:2321.0 ms, masking time:43.0 ms, training time:9324.00 ms, time elaspe:139.53 s, error: 0.14109953473328024
+epoch:2, batch number:800/2164, 50 loadding time:2280.0 ms, masking time:37.0 ms, training time:9292.00 ms, time elaspe:148.82 s, error: 0.13125012440286624
+epoch:2, batch number:850/2164, 50 loadding time:2559.0 ms, masking time:41.0 ms, training time:9605.00 ms, time elaspe:158.42 s, error: 0.12791251212927945
+epoch:2, batch number:900/2164, 50 loadding time:2298.0 ms, masking time:40.0 ms, training time:9292.00 ms, time elaspe:167.72 s, error: 0.13908229560609076
+epoch:2, batch number:950/2164, 50 loadding time:2255.0 ms, masking time:37.0 ms, training time:9292.00 ms, time elaspe:177.01 s, error: 0.13777164920879778
+epoch:2, batch number:1000/2164, 50 loadding time:2258.0 ms, masking time:43.0 ms, training time:9276.00 ms, time elaspe:186.28 s, error: 0.12331445779010748
+epoch:2, batch number:1050/2164, 50 loadding time:2301.0 ms, masking time:42.0 ms, training time:9301.00 ms, time elaspe:195.59 s, error: 0.14433223651472932
+epoch:2, batch number:1100/2164, 50 loadding time:2310.0 ms, masking time:43.0 ms, training time:9294.00 ms, time elaspe:204.88 s, error: 0.12244720653363853
+epoch:2, batch number:1150/2164, 50 loadding time:2286.0 ms, masking time:40.0 ms, training time:9268.00 ms, time elaspe:214.15 s, error: 0.12598937599522292
+epoch:2, batch number:1200/2164, 50 loadding time:2293.0 ms, masking time:38.0 ms, training time:9308.00 ms, time elaspe:223.46 s, error: 0.13835942165107484
+epoch:2, batch number:1250/2164, 50 loadding time:2362.0 ms, masking time:44.0 ms, training time:9338.00 ms, time elaspe:232.79 s, error: 0.14312282294984077
+epoch:2, batch number:1300/2164, 50 loadding time:2275.0 ms, masking time:35.0 ms, training time:9281.00 ms, time elaspe:242.07 s, error: 0.14592740781747612
+epoch:2, batch number:1350/2164, 50 loadding time:2367.0 ms, masking time:35.0 ms, training time:9397.00 ms, time elaspe:251.47 s, error: 0.12479985133857484
+epoch:2, batch number:1400/2164, 50 loadding time:2271.0 ms, masking time:42.0 ms, training time:9284.00 ms, time elaspe:260.76 s, error: 0.1286428891321656
+epoch:2, batch number:1450/2164, 50 loadding time:2320.0 ms, masking time:46.0 ms, training time:9334.00 ms, time elaspe:270.09 s, error: 0.1212659857683121
+epoch:2, batch number:1500/2164, 50 loadding time:2329.0 ms, masking time:35.0 ms, training time:9301.00 ms, time elaspe:279.39 s, error: 0.13517069628284237
+epoch:2, batch number:1550/2164, 50 loadding time:2309.0 ms, masking time:43.0 ms, training time:9326.00 ms, time elaspe:288.72 s, error: 0.14154024743730095
+epoch:2, batch number:1600/2164, 50 loadding time:2279.0 ms, masking time:41.0 ms, training time:9286.00 ms, time elaspe:298.00 s, error: 0.13421226550059714
+epoch:2, batch number:1650/2164, 50 loadding time:2385.0 ms, masking time:34.0 ms, training time:9392.00 ms, time elaspe:307.39 s, error: 0.12193917632862261
+epoch:2, batch number:1700/2164, 50 loadding time:2396.0 ms, masking time:34.0 ms, training time:9383.00 ms, time elaspe:316.78 s, error: 0.1287257569914411
+epoch:2, batch number:1750/2164, 50 loadding time:2404.0 ms, masking time:41.0 ms, training time:9439.00 ms, time elaspe:326.22 s, error: 0.12808023829369028
+epoch:2, batch number:1800/2164, 50 loadding time:2243.0 ms, masking time:31.0 ms, training time:8485.00 ms, time elaspe:334.70 s, error: 0.0010493813046983853
+epoch:2, batch number:1850/2164, 50 loadding time:2276.0 ms, masking time:38.0 ms, training time:8437.00 ms, time elaspe:343.14 s, error: 9.674776283798704E-4
+epoch:2, batch number:1900/2164, 50 loadding time:2288.0 ms, masking time:38.0 ms, training time:8373.00 ms, time elaspe:351.51 s, error: 9.010214714487647E-4
+epoch:2, batch number:1950/2164, 50 loadding time:2255.0 ms, masking time:32.0 ms, training time:8339.00 ms, time elaspe:359.85 s, error: 0.0011626514507706758
+epoch:2, batch number:2000/2164, 50 loadding time:2291.0 ms, masking time:29.0 ms, training time:8370.00 ms, time elaspe:368.22 s, error: 0.0010246535623149508
+epoch:2, batch number:2050/2164, 50 loadding time:2378.0 ms, masking time:41.0 ms, training time:8476.00 ms, time elaspe:376.70 s, error: 0.0011977068178213326
+epoch:2, batch number:2100/2164, 50 loadding time:2302.0 ms, masking time:40.0 ms, training time:8378.00 ms, time elaspe:385.07 s, error: 0.0012157553168618755
+epoch:2, batch number:2150/2164, 50 loadding time:2312.0 ms, masking time:43.0 ms, training time:8594.00 ms, time elaspe:393.67 s, error: 0.07794435148785828
+Epoch Time: 6.6021min
+epoch:3, batch number:50/2164, 50 loadding time:2236.0 ms, masking time:40.0 ms, training time:9266.00 ms, time elaspe:9.27 s, error: 0.11638535809365047
+epoch:3, batch number:100/2164, 50 loadding time:2277.0 ms, masking time:43.0 ms, training time:9284.00 ms, time elaspe:18.55 s, error: 0.13618272915007962
+epoch:3, batch number:150/2164, 50 loadding time:2284.0 ms, masking time:36.0 ms, training time:9284.00 ms, time elaspe:27.83 s, error: 0.11368992119078423
+epoch:3, batch number:200/2164, 50 loadding time:2312.0 ms, masking time:43.0 ms, training time:9339.00 ms, time elaspe:37.17 s, error: 0.13173910541898887
+epoch:3, batch number:250/2164, 50 loadding time:2289.0 ms, masking time:38.0 ms, training time:9295.00 ms, time elaspe:46.47 s, error: 0.12117552155901672
+epoch:3, batch number:300/2164, 50 loadding time:2342.0 ms, masking time:42.0 ms, training time:9365.00 ms, time elaspe:55.83 s, error: 0.1242711236066879
+epoch:3, batch number:350/2164, 50 loadding time:2306.0 ms, masking time:37.0 ms, training time:9289.00 ms, time elaspe:65.12 s, error: 0.13635440510549363
+epoch:3, batch number:400/2164, 50 loadding time:2418.0 ms, masking time:43.0 ms, training time:9482.00 ms, time elaspe:74.60 s, error: 0.1317732540057723
+epoch:3, batch number:450/2164, 50 loadding time:2245.0 ms, masking time:44.0 ms, training time:9234.00 ms, time elaspe:83.84 s, error: 0.0950800221437102
+epoch:3, batch number:500/2164, 50 loadding time:2291.0 ms, masking time:40.0 ms, training time:9296.00 ms, time elaspe:93.13 s, error: 0.14653034185907643
+epoch:3, batch number:550/2164, 50 loadding time:2290.0 ms, masking time:40.0 ms, training time:9283.00 ms, time elaspe:102.42 s, error: 0.10125619681777469
+epoch:3, batch number:600/2164, 50 loadding time:2315.0 ms, masking time:36.0 ms, training time:9296.00 ms, time elaspe:111.71 s, error: 0.11500545817575636
+epoch:3, batch number:650/2164, 50 loadding time:2303.0 ms, masking time:36.0 ms, training time:9305.00 ms, time elaspe:121.02 s, error: 0.1087423647740844
+epoch:3, batch number:700/2164, 50 loadding time:2342.0 ms, masking time:34.0 ms, training time:9323.00 ms, time elaspe:130.34 s, error: 0.12122902256667993
+epoch:3, batch number:750/2164, 50 loadding time:2300.0 ms, masking time:40.0 ms, training time:9295.00 ms, time elaspe:139.64 s, error: 0.1382913421825239
+epoch:3, batch number:800/2164, 50 loadding time:2293.0 ms, masking time:40.0 ms, training time:9292.00 ms, time elaspe:148.93 s, error: 0.12710719017466163
+epoch:3, batch number:850/2164, 50 loadding time:2430.0 ms, masking time:41.0 ms, training time:9480.00 ms, time elaspe:158.41 s, error: 0.12217058121019109
+epoch:3, batch number:900/2164, 50 loadding time:2246.0 ms, masking time:39.0 ms, training time:9251.00 ms, time elaspe:167.66 s, error: 0.1327027144705414
+epoch:3, batch number:950/2164, 50 loadding time:2297.0 ms, masking time:42.0 ms, training time:9316.00 ms, time elaspe:176.98 s, error: 0.13207435559315286
+epoch:3, batch number:1000/2164, 50 loadding time:2263.0 ms, masking time:35.0 ms, training time:9287.00 ms, time elaspe:186.26 s, error: 0.11902307984175955
+epoch:3, batch number:1050/2164, 50 loadding time:2302.0 ms, masking time:34.0 ms, training time:9305.00 ms, time elaspe:195.57 s, error: 0.13937611962579619
+epoch:3, batch number:1100/2164, 50 loadding time:2325.0 ms, masking time:37.0 ms, training time:9372.00 ms, time elaspe:204.94 s, error: 0.11786301533887342
+epoch:3, batch number:1150/2164, 50 loadding time:2310.0 ms, masking time:44.0 ms, training time:9355.00 ms, time elaspe:214.29 s, error: 0.11887679762141719
+epoch:3, batch number:1200/2164, 50 loadding time:2324.0 ms, masking time:39.0 ms, training time:9341.00 ms, time elaspe:223.64 s, error: 0.13442867983678344
+epoch:3, batch number:1250/2164, 50 loadding time:2280.0 ms, masking time:39.0 ms, training time:9268.00 ms, time elaspe:232.90 s, error: 0.13717053455911624
+epoch:3, batch number:1300/2164, 50 loadding time:2419.0 ms, masking time:41.0 ms, training time:9511.00 ms, time elaspe:242.41 s, error: 0.14161286761046976
+epoch:3, batch number:1350/2164, 50 loadding time:2527.0 ms, masking time:37.0 ms, training time:9612.00 ms, time elaspe:252.03 s, error: 0.12095351686902867
+epoch:3, batch number:1400/2164, 50 loadding time:2241.0 ms, masking time:35.0 ms, training time:9257.00 ms, time elaspe:261.28 s, error: 0.12191050146795382
+epoch:3, batch number:1450/2164, 50 loadding time:2285.0 ms, masking time:37.0 ms, training time:9302.00 ms, time elaspe:270.59 s, error: 0.11602336907842357
+epoch:3, batch number:1500/2164, 50 loadding time:2269.0 ms, masking time:44.0 ms, training time:9276.00 ms, time elaspe:279.86 s, error: 0.13363632688097135
+epoch:3, batch number:1550/2164, 50 loadding time:2281.0 ms, masking time:41.0 ms, training time:9302.00 ms, time elaspe:289.16 s, error: 0.134263472830414
+epoch:3, batch number:1600/2164, 50 loadding time:2319.0 ms, masking time:42.0 ms, training time:9428.00 ms, time elaspe:298.59 s, error: 0.13111181951632164
+epoch:3, batch number:1650/2164, 50 loadding time:2580.0 ms, masking time:39.0 ms, training time:9616.00 ms, time elaspe:308.21 s, error: 0.11856230717555732
+epoch:3, batch number:1700/2164, 50 loadding time:2286.0 ms, masking time:41.0 ms, training time:9252.00 ms, time elaspe:317.46 s, error: 0.12307299960191083
+epoch:3, batch number:1750/2164, 50 loadding time:2329.0 ms, masking time:38.0 ms, training time:9308.00 ms, time elaspe:326.77 s, error: 0.12355566717257166
+epoch:3, batch number:1800/2164, 50 loadding time:2271.0 ms, masking time:44.0 ms, training time:8553.00 ms, time elaspe:335.32 s, error: 0.0010015501034487586
+epoch:3, batch number:1850/2164, 50 loadding time:2355.0 ms, masking time:38.0 ms, training time:8433.00 ms, time elaspe:343.75 s, error: 9.510774065734475E-4
+epoch:3, batch number:1900/2164, 50 loadding time:2367.0 ms, masking time:36.0 ms, training time:8458.00 ms, time elaspe:352.21 s, error: 8.973665298170346E-4
+epoch:3, batch number:1950/2164, 50 loadding time:2253.0 ms, masking time:39.0 ms, training time:8356.00 ms, time elaspe:360.57 s, error: 0.001150355976857957
+epoch:3, batch number:2000/2164, 50 loadding time:2292.0 ms, masking time:37.0 ms, training time:8349.00 ms, time elaspe:368.92 s, error: 9.890658384675434E-4
+epoch:3, batch number:2050/2164, 50 loadding time:2285.0 ms, masking time:39.0 ms, training time:8366.00 ms, time elaspe:377.28 s, error: 0.0012423829971605045
+epoch:3, batch number:2100/2164, 50 loadding time:2288.0 ms, masking time:38.0 ms, training time:8359.00 ms, time elaspe:385.64 s, error: 0.00122925910220784
+epoch:3, batch number:2150/2164, 50 loadding time:2279.0 ms, masking time:41.0 ms, training time:8414.00 ms, time elaspe:394.06 s, error: 0.07659005523487261
+Epoch Time: 6.6097166666666665min
+epoch:4, batch number:50/2164, 50 loadding time:2277.0 ms, masking time:40.0 ms, training time:9256.00 ms, time elaspe:9.26 s, error: 0.10952370030105493
+epoch:4, batch number:100/2164, 50 loadding time:2338.0 ms, masking time:43.0 ms, training time:9307.00 ms, time elaspe:18.56 s, error: 0.1308986707553742
+epoch:4, batch number:150/2164, 50 loadding time:2299.0 ms, masking time:40.0 ms, training time:9321.00 ms, time elaspe:27.88 s, error: 0.10860531946656052
+epoch:4, batch number:200/2164, 50 loadding time:2313.0 ms, masking time:40.0 ms, training time:9276.00 ms, time elaspe:37.16 s, error: 0.12502481837181528
+epoch:4, batch number:250/2164, 50 loadding time:2388.0 ms, masking time:46.0 ms, training time:9384.00 ms, time elaspe:46.54 s, error: 0.11822453784335192
+epoch:4, batch number:300/2164, 50 loadding time:2315.0 ms, masking time:37.0 ms, training time:9316.00 ms, time elaspe:55.86 s, error: 0.1196320629727309
+epoch:4, batch number:350/2164, 50 loadding time:2377.0 ms, masking time:42.0 ms, training time:9383.00 ms, time elaspe:65.24 s, error: 0.12934442022044187
+epoch:4, batch number:400/2164, 50 loadding time:2274.0 ms, masking time:39.0 ms, training time:9248.00 ms, time elaspe:74.49 s, error: 0.1254679958076234
+epoch:4, batch number:450/2164, 50 loadding time:2319.0 ms, masking time:36.0 ms, training time:9306.00 ms, time elaspe:83.80 s, error: 0.09335614052547771
+epoch:4, batch number:500/2164, 50 loadding time:2341.0 ms, masking time:33.0 ms, training time:9297.00 ms, time elaspe:93.09 s, error: 0.1400778139928344
+epoch:4, batch number:550/2164, 50 loadding time:2288.0 ms, masking time:35.0 ms, training time:9272.00 ms, time elaspe:102.37 s, error: 0.09770837480095543
+epoch:4, batch number:600/2164, 50 loadding time:2416.0 ms, masking time:39.0 ms, training time:9414.00 ms, time elaspe:111.78 s, error: 0.11227957367137739
+epoch:4, batch number:650/2164, 50 loadding time:2280.0 ms, masking time:34.0 ms, training time:9277.00 ms, time elaspe:121.06 s, error: 0.10689882314888535
+epoch:4, batch number:700/2164, 50 loadding time:2340.0 ms, masking time:38.0 ms, training time:9365.00 ms, time elaspe:130.42 s, error: 0.12070742467406449
+epoch:4, batch number:750/2164, 50 loadding time:2353.0 ms, masking time:44.0 ms, training time:9331.00 ms, time elaspe:139.75 s, error: 0.13396663204120224
+epoch:4, batch number:800/2164, 50 loadding time:2382.0 ms, masking time:39.0 ms, training time:9484.00 ms, time elaspe:149.24 s, error: 0.12361349117983679
+epoch:4, batch number:850/2164, 50 loadding time:2328.0 ms, masking time:38.0 ms, training time:9283.00 ms, time elaspe:158.52 s, error: 0.11512451171875
+epoch:4, batch number:900/2164, 50 loadding time:2299.0 ms, masking time:39.0 ms, training time:9328.00 ms, time elaspe:167.85 s, error: 0.12658804923865447
+epoch:4, batch number:950/2164, 50 loadding time:2316.0 ms, masking time:36.0 ms, training time:9343.00 ms, time elaspe:177.19 s, error: 0.12652309539211784
+epoch:4, batch number:1000/2164, 50 loadding time:2331.0 ms, masking time:44.0 ms, training time:9328.00 ms, time elaspe:186.52 s, error: 0.11429194553642516
+epoch:4, batch number:1050/2164, 50 loadding time:2354.0 ms, masking time:40.0 ms, training time:9449.00 ms, time elaspe:195.97 s, error: 0.13557066704816878
+epoch:4, batch number:1100/2164, 50 loadding time:2309.0 ms, masking time:40.0 ms, training time:9312.00 ms, time elaspe:205.28 s, error: 0.11349461646596337
+epoch:4, batch number:1150/2164, 50 loadding time:2298.0 ms, masking time:41.0 ms, training time:9327.00 ms, time elaspe:214.61 s, error: 0.11374598023238455
+epoch:4, batch number:1200/2164, 50 loadding time:2318.0 ms, masking time:42.0 ms, training time:9368.00 ms, time elaspe:223.98 s, error: 0.13108967580613057
+epoch:4, batch number:1250/2164, 50 loadding time:2312.0 ms, masking time:39.0 ms, training time:9333.00 ms, time elaspe:233.31 s, error: 0.13103720889729298
+epoch:4, batch number:1300/2164, 50 loadding time:2366.0 ms, masking time:38.0 ms, training time:9348.00 ms, time elaspe:242.66 s, error: 0.13778513136942674
+epoch:4, batch number:1350/2164, 50 loadding time:2342.0 ms, masking time:42.0 ms, training time:9334.00 ms, time elaspe:251.99 s, error: 0.11817684489450636
+epoch:4, batch number:1400/2164, 50 loadding time:2307.0 ms, masking time:33.0 ms, training time:9315.00 ms, time elaspe:261.31 s, error: 0.11892629441182326
+epoch:4, batch number:1450/2164, 50 loadding time:2366.0 ms, masking time:42.0 ms, training time:9385.00 ms, time elaspe:270.69 s, error: 0.11168219110768313
+epoch:4, batch number:1500/2164, 50 loadding time:2286.0 ms, masking time:44.0 ms, training time:9274.00 ms, time elaspe:279.96 s, error: 0.1296888373308121
+epoch:4, batch number:1550/2164, 50 loadding time:2315.0 ms, masking time:40.0 ms, training time:9300.00 ms, time elaspe:289.26 s, error: 0.12936435577975716
+epoch:4, batch number:1600/2164, 50 loadding time:2321.0 ms, masking time:38.0 ms, training time:9349.00 ms, time elaspe:298.61 s, error: 0.12612970242834395
+epoch:4, batch number:1650/2164, 50 loadding time:2288.0 ms, masking time:41.0 ms, training time:9281.00 ms, time elaspe:307.89 s, error: 0.11461553294187897
+epoch:4, batch number:1700/2164, 50 loadding time:2388.0 ms, masking time:38.0 ms, training time:9414.00 ms, time elaspe:317.31 s, error: 0.11792502239251591
+epoch:4, batch number:1750/2164, 50 loadding time:2293.0 ms, masking time:37.0 ms, training time:9317.00 ms, time elaspe:326.63 s, error: 0.11987410429936306
+epoch:4, batch number:1800/2164, 50 loadding time:2319.0 ms, masking time:39.0 ms, training time:8581.00 ms, time elaspe:335.21 s, error: 0.0010164375669637303
+epoch:4, batch number:1850/2164, 50 loadding time:2307.0 ms, masking time:37.0 ms, training time:8397.00 ms, time elaspe:343.60 s, error: 9.589773530413391E-4
+epoch:4, batch number:1900/2164, 50 loadding time:2285.0 ms, masking time:42.0 ms, training time:8358.00 ms, time elaspe:351.96 s, error: 8.867962952632054E-4
+epoch:4, batch number:1950/2164, 50 loadding time:2271.0 ms, masking time:43.0 ms, training time:8372.00 ms, time elaspe:360.33 s, error: 0.001113520336758559
+epoch:4, batch number:2000/2164, 50 loadding time:2277.0 ms, masking time:38.0 ms, training time:8357.00 ms, time elaspe:368.69 s, error: 9.582498878430409E-4
+epoch:4, batch number:2050/2164, 50 loadding time:2391.0 ms, masking time:41.0 ms, training time:8465.00 ms, time elaspe:377.16 s, error: 0.0012795382700148661
+epoch:4, batch number:2100/2164, 50 loadding time:2276.0 ms, masking time:38.0 ms, training time:8381.00 ms, time elaspe:385.54 s, error: 0.0011860366383935237
+epoch:4, batch number:2150/2164, 50 loadding time:2273.0 ms, masking time:35.0 ms, training time:8379.00 ms, time elaspe:393.92 s, error: 0.07016839482981688
+Epoch Time: 6.606516666666667min
+
+============================================================================================================================================
+VertexName (VertexType)                 nIn,nOut       TotalParams    ParamsShape                    Vertex Inputs
+============================================================================================================================================
+INPUT (InputVertex)                     -,-            -              -                              -
+L1 (DenseLayer)                         1024,1000      1025000        b:{1,1000}, W:{1024,1000}      [INPUT]
+L2 (DenseLayer)                         1000,900       900900         b:{1,900}, W:{1000,900}        [L1]
+L3 (DenseLayer)                         900,800        720800         b:{1,800}, W:{900,800}         [L2]
+L4 (DenseLayer)                         800,700        560700         b:{1,700}, W:{800,700}         [L3]
+M1 (DenseLayer)                         700,600        420600         b:{1,600}, W:{700,600}         [L4]
+M2 (DenseLayer)                         600,500        300500         b:{1,500}, W:{600,500}         [M1]
+M3 (DenseLayer)                         500,400        200400         b:{1,400}, W:{500,400}         [M2]
+M4 (DenseLayer)                         400,300        120300         b:{1,300}, W:{400,300}         [M3]
+M5 (DenseLayer)                         300,200        60200          b:{1,200}, W:{300,200}         [M4]
+FEATURE (DenseLayer)                    200,100        20100          b:{1,100}, W:{200,100}         [M5]
+HIDDEN (DenseLayer)                     100,1000       101000         b:{1,1000}, W:{100,1000}       [FEATURE]
+TASKS (OutputLayer)                     1000,157       157157         b:{1,157}, W:{1000,157}        [HIDDEN]
+--------------------------------------------------------------------------------------------------------------------------------------------
+            Total Parameters:  4587657
+        Trainable Parameters:  4587657
+           Frozen Parameters:  0
+============================================================================================================================================
+
+batchsize:200
+learning rate:0.01
+total epoch: 5
+beta1: 0.5
+beta2: 0.999
+lambda :0.01
+model saved
+model loaded
+-------------------- final testing ADME ----------------------- 
+-------------------- tranning set ----------------------- 
+Testing started 
+testing on sub batch: 0/2164
+testing on sub batch: 500/2164
+testing on sub batch: 1000/2164
+testing on sub batch: 1500/2164
+testing on sub batch: 2000/2164
+Test time elasped: 172.957s
+non NaNs number:27535751
+activity number:385874
+active number rate:0.014013563
+tp num:338155
+recall:87.63353%
+fp num:5685502
+precision:5.6137824%
+f1:10.551631%
+-------------------- validation set ----------------------- 
+Testing started 
+testing on sub batch: 0/2164
+Test time elasped: 21.42s
+non NaNs number:3456204
+activity number:48349
+active number rate:0.013989047
+tp num:41502
+recall:85.83839%
+fp num:718027
+precision:5.4641757%
+f1:10.274323%
