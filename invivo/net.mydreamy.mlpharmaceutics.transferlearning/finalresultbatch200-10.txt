@@ -1,0 +1,114 @@
+[main] INFO org.nd4j.linalg.factory.Nd4jBackend - Loaded [CpuBackend] backend
+[main] INFO org.reflections.Reflections - Reflections took 449 ms to scan 140 urls, producing 51888 keys and 55584 values 
+[main] INFO org.nd4j.nativeblas.NativeOpsHolder - Number of threads used for NativeOps: 2
+[main] INFO org.reflections.Reflections - Reflections took 277 ms to scan 18 urls, producing 31 keys and 227 values 
+[main] INFO org.nd4j.nativeblas.Nd4jBlas - Number of threads used for BLAS: 2
+[main] INFO org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner - Backend used: [CPU]; OS: [Windows 10]
+[main] INFO org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner - Cores: [4]; Memory: [0.9GB];
+[main] INFO org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner - Blas vendor: [OPENBLAS]
+================== begin finssal testing ================
+[main] INFO org.reflections.Reflections - Reflections took 2010 ms to scan 122 urls, producing 2304 keys and 9502 values 
+[main] INFO org.deeplearning4j.nn.graph.ComputationGraph - Starting ComputationGraph with WorkspaceModes set to [training: NONE; inference: SEPARATE]
+[main] INFO org.reflections.Reflections - Reflections took 294 ms to scan 18 urls, producing 409 keys and 1628 values 
+-------------------- transfer1 testing ADME ----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0564
+0.0400
+0.0343
+0.0182
+================== MAEarruaccys ==================
+0.8231
+0.9281
+0.9393
+0.9851
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2719
+0.1954
+0.1013
+0.0807
+================== MAEarruaccys ==================
+0.3422
+0.4420
+0.7711
+0.8810
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2865
+0.1935
+0.1119
+0.1698
+================== MAEarruaccys ==================
+0.3451
+0.4060
+0.6880
+0.5829
+-------------------- transfer2 testing ADME ----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0694
+0.0463
+0.0337
+0.0187
+================== MAEarruaccys ==================
+0.7168
+0.8941
+0.9464
+0.9648
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2710
+0.1916
+0.1005
+0.0828
+================== MAEarruaccys ==================
+0.3092
+0.4559
+0.7711
+0.7310
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2910
+0.1866
+0.1117
+0.1730
+================== MAEarruaccys ==================
+0.2275
+0.4887
+0.7041
+0.5967
+-------------------- transfer3-4 testing ADME ----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0532
+0.0480
+0.0306
+0.0250
+================== MAEarruaccys ==================
+0.8689
+0.8577
+0.9491
+0.9661
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2786
+0.1862
+0.0987
+0.0710
+================== MAEarruaccys ==================
+0.2419
+0.4922
+0.7929
+0.7929
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2781
+0.1963
+0.1068
+0.1741
+================== MAEarruaccys ==================
+0.2659
+0.4417
+0.6912
+0.6346

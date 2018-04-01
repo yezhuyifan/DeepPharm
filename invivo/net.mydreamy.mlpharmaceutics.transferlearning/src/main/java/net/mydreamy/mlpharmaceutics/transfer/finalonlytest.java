@@ -89,7 +89,7 @@ import javafx.application.Application;
  * 
  *
  */
-public class finaltest {
+public class finalonlytest {
 	
 	static int epoch = 20;
 	static int trainsetsize = 432803;
@@ -127,6 +127,15 @@ public class finaltest {
 		//data read
 		int numLinesToSkip = 0;
 		
+		ComputationGraph net = null;
+        
+        //Load the model
+        try {
+        		net = ModelSerializer.restoreComputationGraph("DeepPharm.zip");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 //		System.out.println("-------------------- final testing ADME ----------------------- ");
@@ -137,7 +146,7 @@ public class finaltest {
 		
 		
 		//==============  AMDE data ==============
-		System.out.println("================== begin finssal testing ================");
+		System.out.println("================== Tranfer to new network ================");
 		String fileDelimiter = ",";
 		numLinesToSkip = 1;
 		
@@ -219,10 +228,73 @@ public class finaltest {
 				        .build();
 
 		
+		
+		
+		//transfered networked
+		int epoch = 96; //task1
+//		int epoch = 98; //task2
+		int batchSize = 1000;
+		double learningrate = 0.03;
+		double lambd = 0.01;
+		double beta1 = 0.5;
+		double beta2 = 0.999;
+		
+	    FineTuneConfiguration fineTuneConf = new FineTuneConfiguration.Builder()
+				.seed(123456)
+	            .learningRate(learningrate)
+	            .updater(Updater.ADAM)
+	            .adamMeanDecay(beta1)
+	            .adamVarDecay(beta2)	            
+                .weightInit(WeightInit.XAVIER)
+                .regularization(true)
+                .l1(lambd)
+	               .build();
+
+	    
+		//network for ADME
+		ComputationGraph ADMEnet = new TransferLearning.GraphBuilder(net)
+	            .fineTuneConfiguration(fineTuneConf)
+//	            .setFeatureExtractor("FEATURE")
+	            .removeVertexAndConnections("HIDDEN")
+	            .removeVertexAndConnections("TASKS")
+//	            .addLayer("MOUT1", new DenseLayer.Builder().activation(Activation.TANH).nIn(100).nOut(100).build(), "FEATURE")
+//	            .addLayer("MOUT2", new DenseLayer.Builder().activation(Activation.TANH).nIn(100).nOut(1000).build(), "FEATURE")
+	            .addLayer("HIDDEN", new DenseLayer.Builder().activation(Activation.TANH).nIn(100).nOut(1000).build(), "FEATURE")
+
+		        .addLayer("Bioavailability", new OutputLayer.Builder().activation(Activation.SIGMOID)
+                .lossFunction(new WeightedL1LossADME(3))
+                .nIn(1000).nOut(1).build(), "HIDDEN")
+		        .addLayer("BloodProteinBinding", new OutputLayer.Builder().activation(Activation.SIGMOID)
+		                .lossFunction(new WeightedL1LossADME(1))
+		                .nIn(1000).nOut(1).build(), "HIDDEN")
+		        .addLayer("HalfLife", new OutputLayer.Builder().activation(Activation.SIGMOID)
+		                .lossFunction(new WeightedL1LossADME(1))
+		                .nIn(1000).nOut(1).build(), "HIDDEN")
+		        .addLayer("VolumeofDistribution", new OutputLayer.Builder().activation(Activation.SIGMOID)
+		                .lossFunction(new WeightedL1LossADME(9))
+		                .nIn(1000).nOut(1).build(), "HIDDEN") 
+	            
+	            
+//		        .addLayer("Bioavailability", new OutputLayer.Builder().activation(Activation.SIGMOID)
+//		                .lossFunction(new WeightedL1LossADME(3))
+//		                .nIn(1000).nOut(1).build(), "MOUT2")
+//		        .addLayer("BloodProteinBinding", new OutputLayer.Builder().activation(Activation.SIGMOID)
+//		                .lossFunction(new WeightedL1LossADME(1))
+//		                .nIn(1000).nOut(1).build(), "MOUT2")
+//		        .addLayer("HalfLife", new OutputLayer.Builder().activation(Activation.SIGMOID)
+//		                .lossFunction(new WeightedL1LossADME(1))
+//		                .nIn(100).nOut(1).build(), "MOUT1")
+//		        .addLayer("VolumeofDistribution", new OutputLayer.Builder().activation(Activation.SIGMOID)
+//		                .lossFunction(new WeightedL1LossADME(9))
+//		                .nIn(100).nOut(1).build(), "MOUT1") 
+		        
+		        .setOutputs("Bioavailability","BloodProteinBinding", "HalfLife", "VolumeofDistribution")
+	            .build();	
+		
+		System.out.println(ADMEnet.summary());
 
 		
-		
-		ComputationGraph ADMEnet = null;
+//		System.out.println("-------------------- training ADME ----------------------- ");
 		
 		//cache for all errors
 		List<double []> MSEs = new LinkedList<double []>();
@@ -252,7 +324,7 @@ public class finaltest {
 				e.printStackTrace();
 			}
 	
-		System.out.println("-------------------- transfer1 testing ADME ----------------------- ");
+		System.out.println("-------------------- transfer2 testing ADME ----------------------- ");
 		System.out.println("-------------------- tranning set ----------------------- ");
 		ADMEtesting(ADMEnet, ADMEiter, MSEs, true, R2s, false, accurecyMAEs, true, false);
 
@@ -274,7 +346,7 @@ public class finaltest {
 				e.printStackTrace();
 			}
 	
-		System.out.println("-------------------- transfer2 testing ADME ----------------------- ");
+		System.out.println("-------------------- transfer1 testing ADME ----------------------- ");
 		System.out.println("-------------------- tranning set ----------------------- ");
 		ADMEtesting(ADMEnet, ADMEiter, MSEs, true, R2s, false, accurecyMAEs, true, false);
 
@@ -382,7 +454,7 @@ public class finaltest {
 					System.out.println("label: " + i + " ");
 					for (int j = 0; j < length; j++) {
 
-						if (masks[i].getDouble(j) == 1) {
+						if (labels[i].getDouble(j) != -1) {
 							System.out.print("number " + j + ": ");
 							System.out.print(labels[i].getDouble(j) + " ");
 							System.out.println(predictions[i].getDouble(j));
@@ -397,7 +469,7 @@ public class finaltest {
 				
 				sumR2[i] += AccuracyRSquare(labels[i], predictions[i], masks[i]);
 				sumMAE[i] += MAE(labels[i], predictions[i], masks[i]);
-				sumaccurecyMAE[i] += AccuracyMAE(labels[i], predictions[i], masks[i], 0.10);
+				sumaccurecyMAE[i] += AccuracyMAE(labels[i], predictions[i], masks[i], 0.1);
 				
 			}
 
@@ -456,8 +528,6 @@ public class finaltest {
 			System.out.println(String.format("%.4f", sumaccurecyMAE[1]));
 			System.out.println(String.format("%.4f", sumaccurecyMAE[2]));
 			System.out.println(String.format("%.4f", sumaccurecyMAE[3]));
-			
-//			System.out.println(numOfBatch);
 		}
 		
 		
@@ -955,18 +1025,16 @@ public class finaltest {
 		MAEarruaccys.add(sumaccurecyMAE);
 
 		if (printMAEarruaccy) {
-			System.out.println("================== MAEarruac   cys ==================");
+			System.out.println("================== MAEarruaccys ==================");
 			System.out.println(String.format("%.4f", sumaccurecyMAE[0]));
 			System.out.println(String.format("%.4f", sumaccurecyMAE[1]));
 			System.out.println(String.format("%.4f", sumaccurecyMAE[2]));
 			System.out.println(String.format("%.4f", sumaccurecyMAE[3]));
-			
-			System.out.println("batch number" + numOfBatch);
-
 		}
 		
 		
 		ADMEiter.reset();
+		
 		
 		
 	}
