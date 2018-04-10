@@ -81,8 +81,8 @@ import javafx.application.Application;
  */
 public class ModelTrainingMultiTaskWihoutNormalizationForGUI {
 	
-	int epoch = 100;
-	int batchSize = 1000;
+	int epoch = 20;
+	int batchSize = 200;
 	double learningrate = 0.1;
 	double lambd = 0.01;
 	double beta1 = 0.5;
