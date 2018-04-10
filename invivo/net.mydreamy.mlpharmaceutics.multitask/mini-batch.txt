@@ -1,0 +1,3614 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/yylonly/.m2/repository/ch/qos/logback/logback-classic/1.1.3/logback-classic-1.1.3.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/yylonly/.m2/repository/org/slf4j/slf4j-simple/1.7.21/slf4j-simple-1.7.21.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [ch.qos.logback.classic.util.ContextSelectorStaticBinder]
+21:46:47.203 [JavaFX Application Thread] INFO  org.nd4j.linalg.factory.Nd4jBackend - Loaded [CpuBackend] backend
+21:46:47.298 [JavaFX Application Thread] INFO  org.nd4j.nativeblas.NativeOpsHolder - Number of threads used for NativeOps: 4
+21:46:47.336 [JavaFX Application Thread] DEBUG org.reflections.Reflections - going to scan these urls:
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-macosx-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-windows-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/jackson/0.8.0/jackson-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-context/0.8.0/nd4j-context-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-api/0.8.0/nd4j-api-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-ppc64le.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-base64/0.8.0/nd4j-base64-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-jackson/0.8.0/nd4j-jackson-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-common/0.8.0/nd4j-common-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native-api/0.8.0/nd4j-native-api-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-buffer/0.8.0/nd4j-buffer-0.8.0.jar!/
+21:46:47.432 [JavaFX Application Thread] INFO  org.reflections.Reflections - Reflections took 94 ms to scan 13 urls, producing 29 keys and 189 values 
+21:46:47.589 [JavaFX Application Thread] INFO  org.nd4j.nativeblas.Nd4jBlas - Number of threads used for BLAS: 4
+21:46:47.591 [JavaFX Application Thread] INFO  o.n.l.a.o.e.DefaultOpExecutioner - Backend used: [CPU]; OS: [Mac OS X]
+21:46:47.591 [JavaFX Application Thread] INFO  o.n.l.a.o.e.DefaultOpExecutioner - Cores: [4]; Memory: [3.6GB];
+21:46:47.591 [JavaFX Application Thread] INFO  o.n.l.a.o.e.DefaultOpExecutioner - Blas vendor: [OPENBLAS]
+21:46:47.794 [JavaFX Application Thread] DEBUG org.reflections.Reflections - going to scan these urls:
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-macosx-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/uncommons/maths/uncommons-maths/1.2.2a/uncommons-maths-1.2.2a.jar
+file:/Users/yylonly/.m2/repository/org/reflections/reflections/0.9.10/reflections-0.9.10.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-android-x86.jar
+file:/Users/yylonly/.m2/repository/org/slf4j/jul-to-slf4j/1.7.12/jul-to-slf4j-1.7.12.jar
+file:/Users/yylonly/.m2/repository/org/tukaani/xz/1.5/xz-1.5.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-server_2.11/2.4.6/play-server_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/com/github/jai-imageio/jai-imageio-core/1.3.0/jai-imageio-core-1.3.0.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-bmp/3.1.1/imageio-bmp-3.1.1.jar
+file:/Users/yylonly/.m2/repository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar
+file:/Users/yylonly/.m2/repository/org/eclipse/collections/eclipse-collections/7.1.1/eclipse-collections-7.1.1.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-remote_2.11/2.3.13/akka-remote_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/io/netty/netty/3.10.4.Final/netty-3.10.4.Final.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-api/0.8.0/nd4j-api-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/datavec/datavec-nd4j-common/0.8.0/datavec-nd4j-common-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-windows-x86_64.jar
+file:/Users/yylonly/DeepPharm-Dev/invivo/net.mydreamy.mlpharmaceutics.multitask/target/classes/
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-iteratees_2.11/2.4.6/play-iteratees_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+file:/Users/yylonly/.m2/repository/org/apache/commons/commons-lang3/3.3.1/commons-lang3-3.3.1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-android-x86.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-netty-utils/2.4.6/play-netty-utils-2.4.6.jar
+file:/Users/yylonly/.m2/repository/junit/junit/4.8.2/junit-4.8.2.jar
+file:/Users/yylonly/.m2/repository/net/jpountz/lz4/lz4/1.3.0/lz4-1.3.0.jar
+file:/Users/yylonly/.m2/repository/aopalliance/aopalliance/1.0/aopalliance-1.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv-platform/3.1.0-1.3/opencv-platform-3.1.0-1.3.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-netty-server_2.11/2.4.6/play-netty-server_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-functional_2.11/2.4.6/play-functional_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/twirl-api_2.11/1.1.1/twirl-api_2.11-1.1.1.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/netty/netty-http-pipelining/1.1.4/netty-http-pipelining-1.1.4.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-datacommons_2.11/2.4.6/play-datacommons_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-nlp/0.8.0/deeplearning4j-nlp-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-linux-x86.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-ui-resources/0.8.0/deeplearning4j-ui-resources-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3.jar
+file:/Users/yylonly/.m2/repository/org/datavec/datavec-data-image/0.8.0/datavec-data-image-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/build-link/2.4.6/build-link-2.4.6.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-metadata/3.1.1/imageio-metadata-3.1.1.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-persistence-experimental_2.11/2.3.13/akka-persistence-experimental_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/org/jboss/logging/jboss-logging/3.2.1.Final/jboss-logging-3.2.1.Final.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-linux32/1.5/leveldbjni-linux32-1.5.jar
+file:/Users/yylonly/.m2/repository/org/iq80/leveldb/leveldb/0.5/leveldb-0.5.jar
+file:/Users/yylonly/.m2/repository/org/apache/commons/commons-math3/3.4.1/commons-math3-3.4.1.jar
+file:/Users/yylonly/.m2/repository/org/joda/joda-convert/1.7/joda-convert-1.7.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-linux64/1.5/leveldbjni-linux64-1.5.jar
+file:/Users/yylonly/.m2/repository/net/jodah/typetools/0.4.3/typetools-0.4.3.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-context/0.8.0/nd4j-context-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-slf4j_2.11/2.3.13/akka-slf4j_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/org/codehaus/woodstox/stax2-api/3.1.4/stax2-api-3.1.4.jar
+file:/Users/yylonly/.m2/repository/com/google/code/findbugs/jsr305/2.0.3/jsr305-2.0.3.jar
+file:/Users/yylonly/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.0.2/kotlin-stdlib-1.0.2.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-ui-model/0.8.0/deeplearning4j-ui-model-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacv/1.3.1/javacv-1.3.1.jar
+file:/Users/yylonly/.m2/repository/com/beust/jcommander/1.27/jcommander-1.27.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5-platform/1.10.0-patch1-1.3/hdf5-platform-1.10.0-patch1-1.3.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play_2.11/2.4.6/play_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-win32/1.5/leveldbjni-win32-1.5.jar
+file:/Users/yylonly/.m2/repository/org/yaml/snakeyaml/1.12/snakeyaml-1.12.jar
+file:/Users/yylonly/.m2/repository/org/javassist/javassist/3.19.0-GA/javassist-3.19.0-GA.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-android-arm.jar
+file:/Users/yylonly/.m2/repository/org/eclipse/collections/eclipse-collections-forkjoin/7.1.1/eclipse-collections-forkjoin-7.1.1.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/module/jackson-module-scala_2.11/2.4.4/jackson-module-scala_2.11-2.4.4.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-linux-ppc64le.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-linux-ppc64le.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-windows-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/libfreenect2/0.2.0-1.3/libfreenect2-0.2.0-1.3.jar
+file:/Users/yylonly/.m2/repository/org/scala-lang/scala-reflect/2.11.2/scala-reflect-2.11.2.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-core/3.1.1/imageio-core-3.1.1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/flandmark/1.07-1.3/flandmark-1.07-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-linux-x86_64.jar
+file:/Users/yylonly/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar
+file:/Users/yylonly/.m2/repository/org/eclipse/collections/eclipse-collections-api/7.1.1/eclipse-collections-api-7.1.1.jar
+file:/Users/yylonly/.m2/repository/org/slf4j/jcl-over-slf4j/1.7.12/jcl-over-slf4j-1.7.12.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-linux-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-ui_2.11/0.8.0/deeplearning4j-ui_2.11-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/hawtjni/hawtjni-runtime/1.8/hawtjni-runtime-1.8.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-windows-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-macosx-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/datavec/datavec-api/0.8.0/datavec-api-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-tiff/3.1.1/imageio-tiff-3.1.1.jar
+file:/Users/yylonly/.m2/repository/net/ericaro/neoitertools/1.0.0/neoitertools-1.0.0.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native-api/0.8.0/nd4j-native-api-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.4.4/jackson-databind-2.4.4.jar
+file:/Users/yylonly/.m2/repository/it/unimi/dsi/fastutil/6.5.7/fastutil-6.5.7.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-psd/3.1.1/imageio-psd-3.1.1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-android-x86.jar
+file:/Users/yylonly/.m2/repository/xerces/xercesImpl/2.11.0/xercesImpl-2.11.0.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/json/json/20131018/json-20131018.jar
+file:/Users/yylonly/.m2/repository/com/thoughtworks/paranamer/paranamer/2.6/paranamer-2.6.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-linux-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-macosx-x86_64.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-json_2.11/2.4.6/play-json_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-windows-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-android-x86.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.4.4/jackson-datatype-jdk8-2.4.4.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-linux-armhf.jar
+file:/Users/yylonly/.m2/repository/org/springframework/spring-core/4.1.6.RELEASE/spring-core-4.1.6.RELEASE.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/common/common-io/3.1.1/common-io-3.1.1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-windows-x86_64.jar
+file:/Users/yylonly/.m2/repository/joda-time/joda-time/2.2/joda-time-2.2.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-java_2.11/2.4.6/play-java_2.11-2.4.6.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/imageio/imageio-jpeg/3.1.1/imageio-jpeg-3.1.1.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-actor_2.11/2.3.13/akka-actor_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-linux-armhf.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-buffer/0.8.0/nd4j-buffer-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/google/protobuf/protobuf-java/2.5.0/protobuf-java-2.5.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-linux-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-windows-x86.jar
+file:/Users/yylonly/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-linux-armhf.jar
+file:/Users/yylonly/.m2/repository/org/mapdb/elsa/3.0.0-M5/elsa-3.0.0-M5.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/ffmpeg/3.2.1-1.3/ffmpeg-3.2.1-1.3.jar
+file:/Users/yylonly/.m2/repository/com/google/code/findbugs/annotations/2.0.1/annotations-2.0.1.jar
+file:/Users/yylonly/.m2/repository/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar
+file:/Users/yylonly/.m2/repository/com/clearspring/analytics/stream/2.7.0/stream-2.7.0.jar
+file:/Users/yylonly/.m2/repository/org/xerial/sqlite-jdbc/3.15.1/sqlite-jdbc-3.15.1.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-linux-ppc64le.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-linux-x86.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-nn/0.8.0/deeplearning4j-nn-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/apache/directory/studio/org.apache.commons.codec/1.8/org.apache.commons.codec-1.8.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-linux-ppc64le.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/common/common-image/3.1.1/common-image-3.1.1.jar
+file:/Users/yylonly/.m2/repository/org/projectlombok/lombok/1.16.10/lombok-1.16.10.jar
+file:/Users/yylonly/.m2/repository/org/iq80/leveldb/leveldb-api/0.5/leveldb-api-0.5.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-windows-x86.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.4.4/jackson-core-2.4.4.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-windows-x86.jar
+file:/Users/yylonly/.m2/repository/org/scala-stm/scala-stm_2.11/0.7/scala-stm_2.11-0.7.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-cluster_2.11/2.3.13/akka-cluster_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/org/agrona/Agrona/0.5.4/Agrona-0.5.4.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native-platform/0.8.0/nd4j-native-platform-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/config/1.3.0/config-1.3.0.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-play_2.11/0.8.0/deeplearning4j-play_2.11-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.4.4/jackson-annotations-2.4.4.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/libfreenect/0.5.3-1.3/libfreenect-0.5.3-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-android-arm.jar
+file:/Users/yylonly/.m2/repository/org/hibernate/hibernate-validator/5.0.3.Final/hibernate-validator-5.0.3.Final.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-android-arm.jar
+file:/Users/yylonly/.m2/repository/com/google/inject/guice/4.0/guice-4.0.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/akka/akka-contrib_2.11/2.3.13/akka-contrib_2.11-2.3.13.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-base64/0.8.0/nd4j-base64-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-osx/1.5/leveldbjni-osx-1.5.jar
+file:/Users/yylonly/.m2/repository/com/typesafe/play/play-exceptions/2.4.6/play-exceptions-2.4.6.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/artoolkitplus/2.3.1-1.3/artoolkitplus-2.3.1-1.3.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-win64/1.5/leveldbjni-win64-1.5.jar
+file:/Users/yylonly/.m2/repository/org/mapdb/mapdb/3.0.2/mapdb-3.0.2.jar
+file:/Users/yylonly/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0/javax.ws.rs-api-2.0.jar
+file:/Users/yylonly/.m2/repository/ch/qos/logback/logback-classic/1.1.3/logback-classic-1.1.3.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-common/0.8.0/nd4j-common-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/flycapture/2.9.3.43-1.3/flycapture-2.9.3.43-1.3.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-macosx-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3-macosx-x86_64.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/libdc1394/2.2.4-1.3/libdc1394-2.2.4-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas-platform/0.2.19-1.3/openblas-platform-0.2.19-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/openblas/0.2.19-1.3/openblas-0.2.19-1.3-linux-x86.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-core/0.8.0/deeplearning4j-core-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni/1.7/leveldbjni-1.7.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/hdf5/1.10.0-patch1-1.3/hdf5-1.10.0-patch1-1.3-linux-x86.jar
+file:/Users/yylonly/.m2/repository/org/freemarker/freemarker/2.3.23/freemarker-2.3.23.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp/1.3.2/javacpp-1.3.2.jar
+file:/Users/yylonly/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/jackson/0.8.0/jackson-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/jetbrains/kotlin/kotlin-runtime/1.0.2/kotlin-runtime-1.0.2.jar
+file:/Users/yylonly/.m2/repository/ch/qos/logback/logback-core/1.1.3/logback-core-1.1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/videoinput/0.200-1.3/videoinput-0.200-1.3.jar
+file:/Users/yylonly/.m2/repository/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.jar
+file:/Users/yylonly/.m2/repository/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-ppc64le.jar
+file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-jackson/0.8.0/nd4j-jackson-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica-platform/1.73-1.3/leptonica-platform-1.73-1.3.jar
+file:/Users/yylonly/.m2/repository/commons-net/commons-net/3.1/commons-net-3.1.jar
+file:/Users/yylonly/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.4.4/jackson-datatype-jsr310-2.4.4.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-android-arm.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-ui-components/0.8.0/deeplearning4j-ui-components-0.8.0.jar
+file:/Users/yylonly/.m2/repository/org/springframework/spring-beans/4.1.6.RELEASE/spring-beans-4.1.6.RELEASE.jar
+file:/Users/yylonly/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/opencv/3.1.0-1.3/opencv-3.1.0-1.3.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/leptonica/1.73-1.3/leptonica-1.73-1.3-windows-x86.jar
+file:/Users/yylonly/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar
+file:/Users/yylonly/.m2/repository/org/apache/tomcat/tomcat-servlet-api/8.0.21/tomcat-servlet-api-8.0.21.jar
+file:/Users/yylonly/.m2/repository/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar
+file:/Users/yylonly/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar
+file:/Users/yylonly/.m2/repository/com/twelvemonkeys/common/common-lang/3.1.1/common-lang-3.1.1.jar
+file:/Users/yylonly/.m2/repository/org/slf4j/slf4j-simple/1.7.21/slf4j-simple-1.7.21.jar
+file:/Users/yylonly/.m2/repository/org/fusesource/leveldbjni/leveldbjni-all/1.7/leveldbjni-all-1.7.jar
+file:/Users/yylonly/.m2/repository/org/scala-lang/modules/scala-xml_2.11/1.0.1/scala-xml_2.11-1.0.1.jar
+file:/Users/yylonly/.m2/repository/org/scala-lang/modules/scala-java8-compat_2.11/0.3.0/scala-java8-compat_2.11-0.3.0.jar
+file:/Users/yylonly/.m2/repository/org/apache/commons/commons-compress/1.8/commons-compress-1.8.jar
+file:/Users/yylonly/.m2/repository/org/deeplearning4j/deeplearning4j-modelimport/0.8.0/deeplearning4j-modelimport-0.8.0.jar
+file:/Users/yylonly/.m2/repository/com/google/guava/guava/19.0/guava-19.0.jar
+file:/Users/yylonly/.m2/repository/org/bytedeco/javacpp-presets/librealsense/1.9.6-1.3/librealsense-1.9.6-1.3.jar
+file:/System/Library/Java/Extensions/MRJToolkit.jar
+21:46:50.836 [JavaFX Application Thread] INFO  org.reflections.Reflections - Reflections took 3041 ms to scan 198 urls, producing 3916 keys and 22678 values 
+21:46:50.876 [JavaFX Application Thread] DEBUG o.d.nn.conf.NeuralNetConfiguration - Registering class for JSON serialization: org.deeplearning4j.nn.conf.layers.CenterLossOutputLayer as subtype of org.deeplearning4j.nn.conf.layers.Layer
+21:46:50.876 [JavaFX Application Thread] DEBUG o.d.nn.conf.NeuralNetConfiguration - Registering class for JSON serialization: org.deeplearning4j.nn.modelimport.keras.preprocessors.TensorFlowCnnToFeedForwardPreProcessor as subtype of org.deeplearning4j.nn.conf.InputPreProcessor
+21:46:50.880 [JavaFX Application Thread] DEBUG o.d.nn.conf.NeuralNetConfiguration - Registering class for JSON serialization: org.deeplearning4j.nn.conf.layers.CenterLossOutputLayer as subtype of org.deeplearning4j.nn.conf.layers.Layer
+21:46:50.880 [JavaFX Application Thread] DEBUG o.d.nn.conf.NeuralNetConfiguration - Registering class for JSON serialization: org.deeplearning4j.nn.modelimport.keras.preprocessors.TensorFlowCnnToFeedForwardPreProcessor as subtype of org.deeplearning4j.nn.conf.InputPreProcessor
+21:46:50.958 [JavaFX Application Thread] DEBUG org.reflections.Reflections - going to scan these urls:
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-macosx-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-windows-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/jackson/0.8.0/jackson-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-context/0.8.0/nd4j-context-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-api/0.8.0/nd4j-api-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-ppc64le.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-base64/0.8.0/nd4j-base64-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-jackson/0.8.0/nd4j-jackson-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-common/0.8.0/nd4j-common-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native-api/0.8.0/nd4j-native-api-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0-linux-x86_64.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-native/0.8.0/nd4j-native-0.8.0.jar!/
+jar:file:/Users/yylonly/.m2/repository/org/nd4j/nd4j-buffer/0.8.0/nd4j-buffer-0.8.0.jar!/
+21:46:51.076 [JavaFX Application Thread] INFO  org.reflections.Reflections - Reflections took 118 ms to scan 13 urls, producing 373 keys and 1449 values 
+-------------------- training ADME ----------------------- 
+-------------------- epoch 0----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.4164
+0.2130
+0.0533
+0.0885
+================== MAEarruaccys ==================
+0.1224
+0.6014
+0.8643
+0.7845
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.3535
+0.2948
+0.1017
+0.1047
+================== MAEarruaccys ==================
+0.1428
+0.4091
+0.7744
+0.7571
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.4274
+0.2864
+0.1222
+0.2119
+================== MAEarruaccys ==================
+0.1000
+0.3703
+0.6848
+0.5386
+-------------------- epoch 1----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2731
+0.2195
+0.0526
+0.0843
+================== MAEarruaccys ==================
+0.1809
+0.5921
+0.8617
+0.8249
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2505
+0.3063
+0.1024
+0.0902
+================== MAEarruaccys ==================
+0.2260
+0.4022
+0.7744
+0.7869
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3195
+0.3018
+0.1233
+0.1934
+================== MAEarruaccys ==================
+0.1945
+0.3590
+0.6688
+0.5765
+-------------------- epoch 2----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2456
+0.2110
+0.0525
+0.0798
+================== MAEarruaccys ==================
+0.1860
+0.6238
+0.8604
+0.8035
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2443
+0.2901
+0.1038
+0.0951
+================== MAEarruaccys ==================
+0.1758
+0.4126
+0.7711
+0.7631
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3074
+0.2802
+0.1254
+0.2021
+================== MAEarruaccys ==================
+0.0846
+0.3816
+0.6656
+0.5575
+-------------------- epoch 3----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2187
+0.2117
+0.0553
+0.0836
+================== MAEarruaccys ==================
+0.2342
+0.6314
+0.8604
+0.7914
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2472
+0.2975
+0.1135
+0.1362
+================== MAEarruaccys ==================
+0.1805
+0.4056
+0.7494
+0.7429
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3048
+0.2688
+0.1217
+0.1919
+================== MAEarruaccys ==================
+0.1714
+0.3891
+0.6752
+0.6030
+-------------------- epoch 4----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2626
+0.2147
+0.0572
+0.0815
+================== MAEarruaccys ==================
+0.1851
+0.4541
+0.8590
+0.7845
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2657
+0.2655
+0.1021
+0.1025
+================== MAEarruaccys ==================
+0.1758
+0.2878
+0.7711
+0.7571
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3196
+0.2520
+0.1211
+0.2099
+================== MAEarruaccys ==================
+0.1560
+0.4267
+0.6880
+0.5322
+-------------------- epoch 5----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1693
+0.2097
+0.0594
+0.0798
+================== MAEarruaccys ==================
+0.3185
+0.6206
+0.8499
+0.8103
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2602
+0.2800
+0.1094
+0.0875
+================== MAEarruaccys ==================
+0.1900
+0.4195
+0.7299
+0.8131
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2811
+0.2741
+0.1237
+0.1691
+================== MAEarruaccys ==================
+0.1253
+0.4135
+0.6880
+0.6674
+-------------------- epoch 6----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1367
+0.2005
+0.0531
+0.0646
+================== MAEarruaccys ==================
+0.4942
+0.6309
+0.8564
+0.8294
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2550
+0.2729
+0.1090
+0.0817
+================== MAEarruaccys ==================
+0.3186
+0.4385
+0.7646
+0.7750
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2680
+0.2600
+0.1327
+0.1787
+================== MAEarruaccys ==================
+0.2275
+0.3609
+0.6314
+0.6157
+-------------------- epoch 7----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.2145
+0.1853
+0.0583
+0.0654
+================== MAEarruaccys ==================
+0.2776
+0.3974
+0.8519
+0.8222
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.3138
+0.2401
+0.1133
+0.0926
+================== MAEarruaccys ==================
+0.1617
+0.2790
+0.7331
+0.7190
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.3385
+0.2220
+0.1342
+0.1858
+================== MAEarruaccys ==================
+0.1154
+0.3609
+0.6474
+0.6030
+-------------------- epoch 8----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1509
+0.1613
+0.0571
+0.0502
+================== MAEarruaccys ==================
+0.3988
+0.5971
+0.8634
+0.8744
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.3076
+0.2497
+0.1115
+0.0947
+================== MAEarruaccys ==================
+0.1445
+0.3797
+0.7364
+0.6750
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2846
+0.2272
+0.1335
+0.1814
+================== MAEarruaccys ==================
+0.1000
+0.3609
+0.6571
+0.5892
+-------------------- epoch 9----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.1029
+0.1416
+0.0525
+0.0522
+================== MAEarruaccys ==================
+0.5937
+0.6165
+0.8661
+0.8131
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2929
+0.2405
+0.1087
+0.1139
+================== MAEarruaccys ==================
+0.2513
+0.4022
+0.7461
+0.6512
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2543
+0.2191
+0.1268
+0.1672
+================== MAEarruaccys ==================
+0.4418
+0.3816
+0.6538
+0.4603
+-------------------- epoch 10----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0901
+0.1337
+0.0520
+0.0385
+================== MAEarruaccys ==================
+0.6791
+0.6540
+0.8714
+0.9079
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2876
+0.2429
+0.1077
+0.0941
+================== MAEarruaccys ==================
+0.1775
+0.4559
+0.7461
+0.6952
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2431
+0.2225
+0.1280
+0.1714
+================== MAEarruaccys ==================
+0.3143
+0.3853
+0.6667
+0.5058
+-------------------- epoch 11----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0819
+0.1203
+0.0514
+0.0330
+================== MAEarruaccys ==================
+0.6897
+0.6639
+0.8648
+0.9193
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2901
+0.2277
+0.1086
+0.0864
+================== MAEarruaccys ==================
+0.2371
+0.4350
+0.7461
+0.7369
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2498
+0.2081
+0.1277
+0.1775
+================== MAEarruaccys ==================
+0.3374
+0.3703
+0.6603
+0.5892
+-------------------- epoch 12----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0798
+0.1164
+0.0515
+0.0283
+================== MAEarruaccys ==================
+0.6743
+0.6558
+0.8635
+0.9311
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2884
+0.2234
+0.1094
+0.0913
+================== MAEarruaccys ==================
+0.2324
+0.4316
+0.7396
+0.6869
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2503
+0.2046
+0.1276
+0.1784
+================== MAEarruaccys ==================
+0.4088
+0.3233
+0.6571
+0.5892
+-------------------- epoch 13----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0731
+0.1105
+0.0513
+0.0246
+================== MAEarruaccys ==================
+0.7175
+0.7050
+0.8669
+0.9520
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2885
+0.2252
+0.1084
+0.0980
+================== MAEarruaccys ==================
+0.2324
+0.4265
+0.7396
+0.6429
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2455
+0.2023
+0.1262
+0.1749
+================== MAEarruaccys ==================
+0.3297
+0.3853
+0.6603
+0.5892
+-------------------- epoch 14----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0725
+0.1091
+0.0517
+0.0227
+================== MAEarruaccys ==================
+0.7285
+0.6840
+0.8643
+0.9486
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2896
+0.2233
+0.1091
+0.0960
+================== MAEarruaccys ==================
+0.2466
+0.4489
+0.7396
+0.6429
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2467
+0.2006
+0.1267
+0.1767
+================== MAEarruaccys ==================
+0.3297
+0.3816
+0.6603
+0.6082
+-------------------- epoch 15----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0700
+0.1083
+0.0523
+0.0222
+================== MAEarruaccys ==================
+0.7254
+0.6910
+0.8643
+0.9520
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2883
+0.2230
+0.1091
+0.0977
+================== MAEarruaccys ==================
+0.2277
+0.4559
+0.7396
+0.5929
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2474
+0.1997
+0.1267
+0.1768
+================== MAEarruaccys ==================
+0.3297
+0.3853
+0.6635
+0.5892
+-------------------- epoch 16----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0701
+0.1084
+0.0529
+0.0221
+================== MAEarruaccys ==================
+0.7285
+0.6820
+0.8630
+0.9520
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2879
+0.2222
+0.1093
+0.0985
+================== MAEarruaccys ==================
+0.2277
+0.4524
+0.7396
+0.5929
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2480
+0.1987
+0.1269
+0.1766
+================== MAEarruaccys ==================
+0.3297
+0.4211
+0.6635
+0.5892
+-------------------- epoch 17----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0700
+0.1092
+0.0538
+0.0226
+================== MAEarruaccys ==================
+0.7254
+0.6747
+0.8683
+0.9560
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2860
+0.2218
+0.1095
+0.0986
+================== MAEarruaccys ==================
+0.2324
+0.4524
+0.7364
+0.5929
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2491
+0.1981
+0.1270
+0.1769
+================== MAEarruaccys ==================
+0.3297
+0.4211
+0.6635
+0.5955
+-------------------- epoch 18----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0706
+0.1103
+0.0547
+0.0233
+================== MAEarruaccys ==================
+0.7251
+0.6677
+0.8657
+0.9560
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2851
+0.2215
+0.1096
+0.0998
+================== MAEarruaccys ==================
+0.2324
+0.4489
+0.7331
+0.5929
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2499
+0.1977
+0.1270
+0.1766
+================== MAEarruaccys ==================
+0.3220
+0.4098
+0.6635
+0.5892
+-------------------- epoch 19----------------------- 
+-------------------- tranning set ----------------------- 
+================== MAE ==================
+0.0717
+0.1116
+0.0558
+0.0244
+================== MAEarruaccys ==================
+0.7219
+0.6607
+0.8657
+0.9460
+-------------------- validation set ----------------------- 
+================== MAE ==================
+0.2832
+0.2211
+0.1098
+0.1004
+================== MAEarruaccys ==================
+0.2371
+0.4420
+0.7331
+0.5869
+-------------------- testing set ----------------------- 
+================== MAE ==================
+0.2510
+0.1973
+0.1272
+0.1767
+================== MAEarruaccys ==================
+0.3143
+0.4023
+0.6635
+0.5892
+-------------------- final testing ADME ----------------------- 
+-------------------- tranning set ----------------------- 
+column: 0
+label: 0 
+number 4: 0.019980398938059807 0.2245764285326004
+number 6: 0.7899957895278931 0.8509977459907532
+number 10: 0.49998998641967773 0.8127565383911133
+number 11: 0.8599972128868103 0.8495650887489319
+number 12: 0.6699934005737305 0.7798839211463928
+number 13: 0.8999980092048645 0.8521599769592285
+number 14: 0.6399927735328674 0.6402564644813538
+number 16: 0.9399988055229187 0.891239583492279
+number 17: 0.9399988055229187 0.8912947773933411
+number 18: 0.7499949932098389 0.7471962571144104
+number 19: 0.6999940276145935 0.8384779691696167
+number 20: 0.9499989748001099 0.8596776127815247
+number 21: 0.9499989748001099 0.8722617030143738
+number 22: 0.8199964165687561 0.8436453938484192
+number 23: 0.2499849945306778 0.4110884964466095
+number 26: 0.44998899102211 0.49589842557907104
+number 27: 0.6249924898147583 0.760399580001831
+number 30: 0.049980998039245605 0.35798245668411255
+number 31: 0.3299866020679474 0.37489020824432373
+number 35: 0.5499910116195679 0.7115813493728638
+number 37: 0.44998899102211 0.7280874252319336
+number 38: 1.0 0.8927986025810242
+number 42: 0.43998879194259644 0.8683103919029236
+number 43: 0.8949978947639465 0.8892234563827515
+number 44: 0.8499969840049744 0.8254956007003784
+number 47: 0.8999980092048645 0.8427635431289673
+number 48: 0.4299885928630829 0.4306251108646393
+number 49: 0.8949978947639465 0.8600274324417114
+number 55: 1.0 0.8678916096687317
+number 58: 0.41998839378356934 0.684897780418396
+number 60: 0.4299885928630829 0.46719011664390564
+number 65: 0.49998998641967773 0.6988357305526733
+number 70: 0.8499969840049744 0.7553439140319824
+number 71: 0.9599992036819458 0.9385958313941956
+number 73: 0.799996018409729 0.7671886682510376
+number 75: 0.2499849945306778 0.3888852596282959
+number 76: 1.0 0.8572536706924438
+number 77: 0.4299885928630829 0.44900497794151306
+number 78: 0.799996018409729 0.7685960531234741
+number 88: 0.6999940276145935 0.5437971353530884
+number 90: 1.0 0.8865776658058167
+number 91: 0.9499989748001099 0.732650876045227
+number 95: 0.8999980092048645 0.5819434523582458
+number 100: 0.8999980092048645 0.7295099496841431
+number 103: 0.799996018409729 0.8560454845428467
+number 107: 0.5999919772148132 0.6865254044532776
+number 108: 1.0 0.7412986159324646
+number 113: 0.49998998641967773 0.46900084614753723
+number 114: 0.9599992036819458 0.9216176271438599
+number 115: 0.8999980092048645 0.913663923740387
+number 116: 0.5999919772148132 0.5069383382797241
+number 118: 0.9249985218048096 0.7159074544906616
+number 124: 0.6999940276145935 0.6594740748405457
+number 129: 0.6999940276145935 0.5617263317108154
+number 130: 0.5449908971786499 0.44408807158470154
+number 133: 0.769995391368866 0.7980935573577881
+number 134: 0.9899997711181641 0.8573499917984009
+number 135: 0.8899977803230286 0.6790065169334412
+number 138: 0.7399948239326477 0.5504276156425476
+number 141: 0.5499910116195679 0.5407127141952515
+number 147: 0.7349947094917297 0.7379999756813049
+number 148: 0.6799936294555664 0.8340451717376709
+number 149: 0.8999980092048645 0.8685325384140015
+number 152: 0.9299985766410828 0.8692826628684998
+number 154: 0.8999980092048645 0.853598415851593
+number 157: 0.5999919772148132 0.5215538144111633
+number 167: 0.6999940276145935 0.9032138586044312
+number 173: 0.29998600482940674 0.30043745040893555
+number 174: 0.39998799562454224 0.4604102373123169
+number 176: 0.799996018409729 0.7416439056396484
+number 182: 0.5999919772148132 0.6531229615211487
+number 185: 0.6399927735328674 0.664671003818512
+number 188: 0.6999940276145935 0.8991825580596924
+number 189: 0.6749935150146484 0.6780787110328674
+number 192: 0.8499969840049744 0.8544619679450989
+number 193: 0.9299985766410828 0.8796564340591431
+number 195: 0.8499969840049744 0.8436825275421143
+number 196: 0.5999919772148132 0.6654189229011536
+number 198: 0.5999919772148132 0.6540307998657227
+column: 1
+label: 1 
+number 0: 0.8399999737739563 0.8751726746559143
+number 1: 0.9800000190734863 0.9507047533988953
+number 2: 0.8999999761581421 0.9488856196403503
+number 3: 0.9300000071525574 0.9471819400787354
+number 4: 0.949999988079071 0.9288468360900879
+number 5: 0.9399999976158142 0.8513063788414001
+number 7: 0.6800000071525574 0.6092473864555359
+number 8: 0.9599999785423279 0.9335030913352966
+number 10: 0.8700000047683716 0.7226558327674866
+number 13: 0.8500000238418579 0.8800746202468872
+number 15: 0.9900000095367432 0.8827566504478455
+number 19: 0.6000000238418579 0.5326451659202576
+number 20: 0.9900000095367432 0.8857465386390686
+number 21: 0.9900000095367432 0.8683681488037109
+number 22: 0.9900000095367432 0.8968957662582397
+number 24: 0.8999999761581421 0.8754317760467529
+number 25: 0.8299999833106995 0.9047533273696899
+number 26: 0.14000000059604645 0.7877278923988342
+number 27: 0.949999988079071 0.8365592360496521
+number 29: 0.7099999785423279 0.9287529587745667
+number 31: 0.996999979019165 0.9275325536727905
+number 32: 0.949999988079071 0.6524809002876282
+number 34: 0.5400000214576721 0.630915105342865
+number 36: 0.9399999976158142 0.9172933101654053
+number 37: 0.27000001072883606 0.8133261203765869
+number 38: 0.30000001192092896 0.5398696064949036
+number 39: 0.9599999785423279 0.9408847093582153
+number 40: 0.949999988079071 0.9198846220970154
+number 41: 0.949999988079071 0.9176155924797058
+number 43: 0.7799999713897705 0.7725003957748413
+number 44: 0.800000011920929 0.9347783327102661
+number 45: 0.8999999761581421 0.9209568500518799
+number 46: 0.9800000190734863 0.9594011902809143
+number 47: 0.9300000071525574 0.8711065649986267
+number 48: 0.949999988079071 0.954005777835846
+number 49: 0.7799999713897705 0.7889832258224487
+number 50: 0.9900000095367432 0.9438808560371399
+number 51: 0.7300000190734863 0.4784577190876007
+number 54: 0.9629999995231628 0.8402206897735596
+number 55: 0.3100000023841858 0.569393515586853
+number 56: 0.03999999910593033 0.34852513670921326
+number 57: 0.05000000074505806 0.832289457321167
+number 58: 0.8999999761581421 0.9011499881744385
+number 60: 0.949999988079071 0.9502677321434021
+number 61: 0.9700000286102295 0.9075510501861572
+number 63: 0.019999999552965164 0.47540947794914246
+number 65: 0.9700000286102295 0.9363369345664978
+number 69: 0.9900000095367432 0.9121204018592834
+number 70: 0.699999988079071 0.7194541096687317
+number 71: 0.20000000298023224 0.2514781653881073
+number 72: 0.3919999897480011 0.8956685066223145
+number 75: 0.4000000059604645 0.5113414525985718
+number 76: 0.550000011920929 0.7975250482559204
+number 77: 0.949999988079071 0.9636669158935547
+number 78: 0.20000000298023224 0.3337565064430237
+number 80: 0.8899999856948853 0.7782413959503174
+number 82: 0.9200000166893005 0.7720814943313599
+number 84: 0.925000011920929 0.9085884094238281
+number 85: 0.9150000214576721 0.870501697063446
+number 86: 0.8399999737739563 0.9131370782852173
+number 88: 0.8999999761581421 0.9191334843635559
+number 89: 0.4699999988079071 0.36388587951660156
+number 91: 0.9950000047683716 0.8803843259811401
+number 92: 0.8500000238418579 0.8235412836074829
+number 93: 0.9700000286102295 0.9199615716934204
+number 94: 0.5 0.827921450138092
+number 95: 0.8999999761581421 0.9209584593772888
+number 98: 0.9750000238418579 0.9456727504730225
+number 100: 0.2800000011920929 0.6000261306762695
+number 102: 0.6000000238418579 0.5092636346817017
+number 103: 0.9900000095367432 0.8564916849136353
+number 104: 0.800000011920929 0.6433547735214233
+number 105: 0.949999988079071 0.9226343631744385
+number 106: 0.4000000059604645 0.4941248297691345
+number 107: 0.949999988079071 0.8787044882774353
+number 108: 0.9950000047683716 0.8386040329933167
+number 110: 0.8399999737739563 0.8248962759971619
+number 111: 0.9850000143051147 0.8519212603569031
+number 112: 0.5649999976158142 0.7718119621276855
+number 113: 0.8500000238418579 0.8640652298927307
+number 114: 0.5799999833106995 0.5750236511230469
+number 115: 0.11500000208616257 0.5738322734832764
+number 116: 0.9900000095367432 0.9463911652565002
+number 117: 0.9300000071525574 0.8915789723396301
+number 118: 0.9700000286102295 0.8686895370483398
+number 119: 0.9990000128746033 0.9492378830909729
+number 121: 0.9800000190734863 0.9409065246582031
+number 122: 0.9649999737739563 0.9312779307365417
+number 124: 0.8799999952316284 0.9042539000511169
+number 125: 0.7300000190734863 0.7999758124351501
+number 127: 0.18000000715255737 0.8508363366127014
+number 130: 0.1550000011920929 0.23167966306209564
+number 131: 0.4000000059604645 0.6026033759117126
+number 132: 0.9599999785423279 0.8534733057022095
+number 133: 0.22499999403953552 0.43487146496772766
+number 134: 0.10000000149011612 0.39667004346847534
+number 135: 0.9940000176429749 0.7412976622581482
+number 136: 0.20000000298023224 0.40127354860305786
+number 138: 0.29499998688697815 0.7866914868354797
+number 140: 0.5550000071525574 0.7693725824356079
+number 141: 0.8199999928474426 0.7868204116821289
+number 142: 0.15000000596046448 0.2965187728404999
+number 144: 0.11999999731779099 0.3769668936729431
+number 146: 0.20000000298023224 0.4149065911769867
+number 147: 0.44999998807907104 0.5828738808631897
+number 148: 0.875 0.8607573509216309
+number 149: 0.6000000238418579 0.5714609026908875
+number 150: 0.9950000047683716 0.9506825804710388
+number 151: 0.699999988079071 0.8793305158615112
+number 152: 0.9850000143051147 0.8409866690635681
+number 154: 0.9100000262260437 0.9106811285018921
+number 155: 0.8999999761581421 0.8980068564414978
+number 156: 0.8999999761581421 0.876083493232727
+number 157: 0.5 0.501217782497406
+number 158: 0.9900000095367432 0.8400964140892029
+number 159: 0.9962499737739563 0.9033977389335632
+number 160: 0.949999988079071 0.9237878322601318
+number 161: 0.9490000009536743 0.9391953349113464
+number 166: 0.8999999761581421 0.872252881526947
+number 167: 0.30000001192092896 0.3490734100341797
+number 168: 0.9869999885559082 0.6666264533996582
+number 170: 0.9950000047683716 0.9259947538375854
+number 171: 0.3050000071525574 0.2519967555999756
+number 172: 0.9900000095367432 0.9522743821144104
+number 174: 0.9800000190734863 0.9522185921669006
+number 175: 0.9900000095367432 0.9480161070823669
+number 176: 0.9700000286102295 0.8711026906967163
+number 177: 0.824999988079071 0.9596408009529114
+number 179: 0.7599999904632568 0.6313545107841492
+number 180: 0.5 0.7911399006843567
+number 182: 0.9200000166893005 0.9036710858345032
+number 183: 0.9599999785423279 0.9615347385406494
+number 184: 0.9900000095367432 0.9344852566719055
+number 185: 0.10000000149011612 0.1999540776014328
+number 186: 0.949999988079071 0.9342029094696045
+number 188: 0.30000001192092896 0.3160797655582428
+number 189: 0.9700000286102295 0.8506489992141724
+number 191: 0.9700000286102295 0.8235335350036621
+number 192: 0.8999999761581421 0.7646778225898743
+number 195: 0.8999999761581421 0.8194775581359863
+number 198: 0.9700000286102295 0.926541268825531
+number 199: 0.949999988079071 0.9263186454772949
+column: 2
+label: 2 
+number 0: 0.04793795943260193 0.03634065389633179
+number 1: 0.006271205376833677 0.06573829799890518
+number 2: 0.082184799015522 0.46437954902648926
+number 3: 0.2568436563014984 0.08374307304620743
+number 4: 0.18971985578536987 0.10197889804840088
+number 5: 0.11985631287097931 0.037203866988420486
+number 6: 0.05067770928144455 0.03421293944120407
+number 7: 0.010038357228040695 0.03561379015445709
+number 8: 0.027389859780669212 0.045270636677742004
+number 9: 0.023965176194906235 0.1619834452867508
+number 10: 0.03423922508955002 0.04893024265766144
+number 11: 0.00786916259676218 0.04000145569443703
+number 12: 0.01711580902338028 0.0552704893052578
+number 13: 0.23972024023532867 0.05273238196969032
+number 14: 0.06506137549877167 0.051631711423397064
+number 15: 0.01026644092053175 0.052152544260025024
+number 16: 0.082184799015522 0.03652128949761391
+number 17: 0.082184799015522 0.0375988595187664
+number 18: 0.013691124506294727 0.02708342857658863
+number 19: 0.005985586438328028 0.038875922560691833
+number 20: 0.10273289680480957 0.051784731447696686
+number 21: 0.10273289680480957 0.04593420401215553
+number 22: 0.082184799015522 0.04175630584359169
+number 23: 0.082184799015522 0.03619939461350441
+number 24: 0.03081454336643219 0.03449302166700363
+number 25: 0.06163669377565384 0.060612745583057404
+number 26: 0.01711580902338028 0.033947139978408813
+number 27: 0.07533542811870575 0.0304338987916708
+number 28: 0.020540492609143257 0.05859122425317764
+number 29: 0.013691124506294727 0.051103439182043076
+number 30: 0.036294035613536835 0.047955241054296494
+number 31: 0.013691124506294727 0.06184955686330795
+number 32: 0.027389859780669212 0.043353062123060226
+number 33: 0.003417073981836438 0.0434427335858345
+number 34: 0.005129415541887283 0.030711855739355087
+number 35: 0.041088592261075974 0.056043922901153564
+number 37: 0.03423922508955002 0.03929372876882553
+number 38: 0.01711580902338028 0.03995688259601593
+number 40: 0.04793795943260193 0.038717638701200485
+number 41: 0.04793795943260193 0.04609889164566994
+number 42: 0.023965176194906235 0.05415719002485275
+number 43: 0.013691124506294727 0.035720761865377426
+number 44: 0.11369188874959946 0.05318501219153404
+number 46: 0.006271205376833677 0.06999765336513519
+number 47: 0.016430871561169624 0.03756098449230194
+number 48: 0.24656960368156433 0.06459628790616989
+number 49: 0.013691124506294727 0.03197136148810387
+number 50: 0.01095137745141983 0.04546193778514862
+number 51: 5.631481180898845E-4 0.04811713472008705
+number 52: 0.06163669377565384 0.03511211648583412
+number 53: 8.485612343065441E-4 0.03355842083692551
+number 54: 0.019170617684721947 0.030709119513630867
+number 55: 0.03423922508955002 0.03850549831986427
+number 56: 0.013691124506294727 0.05652335286140442
+number 57: 0.013691124506294727 0.038960546255111694
+number 58: 0.16437719762325287 0.04301543906331062
+number 59: 0.051362644881010056 0.06971827149391174
+number 60: 0.24656960368156433 0.06530706584453583
+number 61: 0.15067847073078156 0.05701584368944168
+number 62: 0.0019328161142766476 0.03527918457984924
+number 63: 0.01711580902338028 0.03907085582613945
+number 64: 0.23287087678909302 0.05358722060918808
+number 65: 0.051362644881010056 0.044861793518066406
+number 66: 0.01026644092053175 0.04837001487612724
+number 67: 0.0019328161142766476 0.28507182002067566
+number 68: 0.12328100204467773 0.030951721593737602
+number 70: 0.3082139194011688 0.032018501311540604
+number 71: 0.07191074639558792 0.08994198590517044
+number 72: 0.013691124506294727 0.04217459261417389
+number 73: 0.13697972893714905 0.030331416055560112
+number 74: 0.054787326604127884 0.06975142657756805
+number 77: 0.24656960368156433 0.06802360713481903
+number 78: 0.04793795943260193 0.04267105460166931
+number 79: 0.005129415541887283 0.07324349880218506
+number 80: 0.022595301270484924 0.03410126641392708
+number 81: 0.013691124506294727 0.03635065630078316
+number 83: 0.03800637647509575 0.039070405066013336
+number 84: 0.017800744622945786 0.04499536380171776
+number 85: 0.05821201205253601 0.04862518236041069
+number 86: 0.16437719762325287 0.042009975761175156
+number 87: 2.2067976533435285E-4 0.05904332920908928
+number 88: 0.08903416246175766 0.0398135744035244
+number 89: 0.03560910001397133 0.04565983638167381
+number 90: 0.001134179881773889 0.0545189194381237
+number 91: 0.3760226368904114 0.052144117653369904
+number 92: 0.003417073981836438 0.040514685213565826
+number 94: 0.03423922508955002 0.04385393485426903
+number 95: 0.03492416441440582 0.053188398480415344
+number 96: 0.03081454336643219 0.04208781570196152
+number 97: 0.006841757334768772 0.03024355135858059
+number 98: 0.3079741895198822 0.059114087373018265
+number 99: 0.15067847073078156 0.13232198357582092
+number 100: 0.14725378155708313 0.04446077719330788
+number 101: 0.013691124506294727 0.05602052062749863
+number 102: 0.054787326604127884 0.053172577172517776
+number 103: 0.023965176194906235 0.04669488966464996
+number 104: 0.006841757334768772 0.043957166373729706
+number 105: 0.04793795943260193 0.04249691590666771
+number 106: 0.012321251444518566 0.039362773299217224
+number 107: 0.013691124506294727 0.03883936256170273
+number 108: 0.03423922508955002 0.044097352772951126
+number 109: 0.012526731938123703 0.14793968200683594
+number 110: 0.3082139194011688 0.035910218954086304
+number 111: 0.023965176194906235 0.04111238941550255
+number 112: 0.004444479010999203 0.03428364172577858
+number 113: 0.027389859780669212 0.03308728337287903
+number 115: 0.2054734081029892 0.07794667035341263
+number 116: 0.04793795943260193 0.04887087643146515
+number 117: 0.1541031450033188 0.06226066127419472
+number 118: 0.20889808237552643 0.05274580791592598
+number 119: 0.0445132777094841 0.0717010647058487
+number 120: 0.01711580902338028 0.03713114932179451
+number 122: 0.082184799015522 0.06401088833808899
+number 123: 0.01095137745141983 0.03129376471042633
+number 124: 0.15067847073078156 0.04028204828500748
+number 125: 0.03903378173708916 0.034901607781648636
+number 126: 0.006841757334768772 0.03159228339791298
+number 127: 0.04793795943260193 0.031407471746206284
+number 128: 0.013691124506294727 0.038207605481147766
+number 129: 0.008211631327867508 0.027974938973784447
+number 130: 0.019855555146932602 0.05267011746764183
+number 131: 0.3424607515335083 0.04978982359170914
+number 132: 0.015060998499393463 0.04664086923003197
+number 133: 0.06848606467247009 0.043383147567510605
+number 134: 0.04793795943260193 0.03541840985417366
+number 135: 0.11985631287097931 0.035843510180711746
+number 136: 0.017800744622945786 0.025147100910544395
+number 137: 0.328762024641037 0.2584415376186371
+number 138: 0.0445132777094841 0.029582630842924118
+number 139: 0.008896567858755589 0.029345570132136345
+number 140: 0.041088592261075974 0.043731413781642914
+number 141: 0.01026644092053175 0.031113935634493828
+number 142: 0.012321251444518566 0.06427135318517685
+number 143: 0.23629555106163025 0.05201004073023796
+number 144: 0.09040403366088867 0.050310250371694565
+number 145: 0.16437719762325287 0.042612504214048386
+number 146: 0.051362644881010056 0.06085769459605217
+number 147: 0.03081454336643219 0.024571023881435394
+number 148: 0.2054734081029892 0.03577056899666786
+number 149: 0.3082139194011688 0.04483743757009506
+number 150: 0.16437719762325287 0.05999869108200073
+number 151: 0.012435635551810265 0.037245627492666245
+number 152: 0.5753392577171326 0.04949701577425003
+number 153: 0.012663719244301319 0.07179778069257736
+number 154: 0.013691124506294727 0.05279098451137543
+number 155: 0.027389859780669212 0.033750761300325394
+number 156: 0.013691124506294727 0.060600847005844116
+number 157: 0.0445132777094841 0.05039041116833687
+number 159: 0.32533732056617737 0.06455183029174805
+number 160: 0.008554099127650261 0.06957950443029404
+number 161: 0.04725302383303642 0.06094563752412796
+number 162: 0.005129415541887283 0.026877254247665405
+number 163: 0.020540492609143257 0.04967302829027176
+number 164: 0.023965176194906235 0.04185082018375397
+number 165: 0.01026644092053175 0.03389330208301544
+number 166: 0.01711580902338028 0.03113633580505848
+number 167: 0.027389859780669212 0.05240139365196228
+number 168: 0.054787326604127884 0.03295519948005676
+number 169: 0.024992581456899643 0.04457857087254524
+number 170: 0.0017047321889549494 0.047891534864902496
+number 171: 0.03423922508955002 0.06754409521818161
+number 172: 0.24656960368156433 0.08786850422620773
+number 173: 0.03081454336643219 0.035522930324077606
+number 174: 0.057527076452970505 0.056034669280052185
+number 175: 0.24656960368156433 0.08507835119962692
+number 176: 0.01026644092053175 0.03277934715151787
+number 177: 0.2294461876153946 0.09584874659776688
+number 178: 0.023965176194906235 0.04463456943631172
+number 179: 0.008554099127650261 0.03698528930544853
+number 180: 0.006841757334768772 0.033182352781295776
+number 181: 0.007469844538718462 0.037570055574178696
+number 183: 0.1541031450033188 0.060093704611063004
+number 184: 0.02944466844201088 0.06280895322561264
+number 185: 0.0017047321889549494 0.09658774733543396
+number 186: 0.013691124506294727 0.12310819327831268
+number 187: 0.39725568890571594 0.05395433306694031
+number 188: 0.027389859780669212 0.05419710651040077
+number 189: 0.01711580902338028 0.034343235194683075
+number 190: 0.07533542811870575 0.06415709853172302
+number 191: 0.0017047321889549494 0.03909922018647194
+number 192: 0.15067847073078156 0.04842957481741905
+number 193: 0.36300885677337646 0.05300122871994972
+number 194: 0.043828342109918594 0.04717135801911354
+number 195: 0.15067847073078156 0.045556314289569855
+number 196: 0.041088592261075974 0.057574622333049774
+number 197: 0.013691124506294727 0.037666771560907364
+number 198: 0.013691124506294727 0.03473412245512009
+number 199: 0.01026644092053175 0.03941880911588669
+column: 3
+label: 3 
+number 0: 0.07498012483119965 0.0392342284321785
+number 2: 0.834362804889679 0.8306535482406616
+number 3: 0.5081850290298462 0.3727918267250061
+number 5: 0.03064032830297947 0.05406634137034416
+number 6: 0.027072757482528687 0.04794716462492943
+number 10: 0.00923490896821022 0.019277298822999
+number 11: 0.021976230666041374 0.035044483840465546
+number 12: 0.07548977434635162 0.09215611964464188
+number 16: 0.10861720889806747 0.07330503314733505
+number 17: 0.10861720889806747 0.07678809016942978
+number 18: 0.011018694378435612 0.03159885108470917
+number 22: 0.023505188524723053 0.04436910152435303
+number 24: 0.03420789912343025 0.03853083774447441
+number 26: 0.06988359242677689 0.10681997984647751
+number 27: 0.03420789912343025 0.04072784259915352
+number 31: 0.01586039550602436 0.02182227373123169
+number 32: 0.0022017001174390316 0.017113231122493744
+number 34: 0.003852975321933627 0.021337155252695084
+number 35: 0.2278759777545929 0.24456742405891418
+number 37: 0.2278759777545929 0.16312386095523834
+number 38: 0.046184737235307693 0.05882267281413078
+number 50: 0.0023545960430055857 0.03158034756779671
+number 54: 0.05612296983599663 0.06482118368148804
+number 55: 0.021466577425599098 0.031054718419909477
+number 56: 0.004036450292915106 0.037808049470186234
+number 57: 0.07498012483119965 0.10407546162605286
+number 59: 0.0023545960430055857 0.020917993038892746
+number 76: 0.13104192912578583 0.13116134703159332
+number 85: 0.010763867758214474 0.028182044625282288
+number 88: 0.03573685511946678 0.024866055697202682
+number 91: 0.004648033529520035 0.025100097060203552
+number 93: 0.2171732634305954 0.15418218076229095
+number 94: 0.03242411091923714 0.04189063981175423
+number 99: 0.4419301450252533 0.414917916059494
+number 100: 0.021650051698088646 0.03895209729671478
+number 101: 0.38077181577682495 0.3405679166316986
+number 103: 0.0054125129245221615 0.04038733243942261
+number 108: 0.009642631746828556 0.02111979015171528
+number 110: 0.021466577425599098 0.03268900886178017
+number 111: 0.004138380754739046 0.017250560224056244
+number 112: 0.016879701986908913 0.028087371960282326
+number 113: 0.06886428594589233 0.057310108095407486
+number 114: 0.13919638097286224 0.13706551492214203
+number 116: 0.04440095275640488 0.05853838101029396
+number 118: 0.30432388186454773 0.2569701671600342
+number 121: 0.6101155877113342 0.6170949339866638
+number 123: 0.13919638097286224 0.046591777354478836
+number 124: 0.04440095275640488 0.07463714480400085
+number 126: 0.04134303703904152 0.036157090216875076
+number 127: 0.08772144466638565 0.0699952095746994
+number 128: 0.023505188524723053 0.024690929800271988
+number 132: 0.131806418299675 0.1419060230255127
+number 133: 0.03155770152807236 0.023889102041721344
+number 135: 0.003628728212788701 0.019053176045417786
+number 138: 0.08517318218946457 0.08008718490600586
+number 141: 0.039304424077272415 0.030252769589424133
+number 142: 0.010763867758214474 0.025644665583968163
+number 144: 0.02401484176516533 0.03860355168581009
+number 146: 0.018918313086032867 0.029770035296678543
+number 147: 0.0780380368232727 0.04508902505040169
+number 148: 0.13613846898078918 0.07680164277553558
+number 149: 0.03553299605846405 0.03595346212387085
+number 150: 0.2533586025238037 0.06343268603086472
+number 151: 0.05051678791642189 0.05048777163028717
+number 152: 0.026053452864289284 0.038842201232910156
+number 154: 0.03828512132167816 0.061803728342056274
+number 155: 5.708111566491425E-4 0.04941694438457489
+number 157: 0.004036450292915106 0.01723281666636467
+number 158: 0.0028132835868746042 0.02768874168395996
+number 180: 0.02911136858165264 0.04373189061880112
+number 184: 0.08007664978504181 0.0468030609190464
+number 187: 0.0028132835868746042 0.017240481451153755
+number 191: 0.0023800786584615707 0.027508603408932686
+number 196: 0.02809206396341324 0.030771126970648766
+column: 0
+label: 0 
+number 0: 0.8999980092048645 0.812052845954895
+number 3: 0.0899818018078804 0.46860313415527344
+number 8: 0.5999919772148132 0.574109673500061
+number 11: 0.3499870002269745 0.35625264048576355
+number 12: 0.7299945950508118 0.7335143089294434
+number 13: 0.2299845963716507 0.3191716969013214
+number 14: 0.31498628854751587 0.2138533890247345
+number 15: 0.009980199858546257 0.11809486895799637
+number 17: 0.6999940276145935 0.6851634383201599
+number 22: 0.17998360097408295 0.15019211173057556
+number 26: 0.2099841982126236 0.2181074023246765
+number 28: 1.0 0.5168668031692505
+number 34: 0.3499870002269745 0.36143428087234497
+number 39: 0.6499930024147034 0.5683112144470215
+number 40: 0.9799996018409729 0.9092623591423035
+number 41: 0.049980998039245605 0.4208785593509674
+number 42: 0.5199903845787048 0.5280699729919434
+number 45: 0.8499969840049744 0.8128027319908142
+number 46: 0.799996018409729 0.7712723612785339
+number 48: 0.19998399913311005 0.2915794253349304
+number 49: 0.9499989748001099 0.769932210445404
+number 50: 0.9499989748001099 0.7581769824028015
+number 52: 0.3699873983860016 0.0951509177684784
+number 61: 0.49998998641967773 0.5034877061843872
+number 66: 1.0 0.8672351837158203
+number 67: 0.2099841982126236 0.23994500935077667
+number 69: 0.799996018409729 0.7912600040435791
+number 70: 0.29998600482940674 0.49716728925704956
+number 71: 0.9499989748001099 0.8162581324577332
+number 73: 0.3699873983860016 0.38451269268989563
+number 78: 0.8999980092048645 0.8009126782417297
+number 79: 0.3899877965450287 0.4021388292312622
+number 80: 0.47498950362205505 0.47769761085510254
+number 81: 0.35998719930648804 0.3867069482803345
+number 82: 0.799996018409729 0.7798071503639221
+number 85: 0.6499930024147034 0.647577702999115
+number 86: 0.8999980092048645 0.8581393361091614
+number 87: 0.1499830037355423 0.24000795185565948
+number 89: 0.799996018409729 0.738667368888855
+number 92: 0.8999980092048645 0.8523440957069397
+number 94: 0.3499870002269745 0.719017505645752
+number 95: 0.39998799562454224 0.3734014332294464
+number 98: 0.9299985766410828 0.8435603380203247
+number 101: 0.5999919772148132 0.567979097366333
+number 103: 0.49998998641967773 0.5176924467086792
+number 107: 1.0 0.7081735730171204
+number 109: 0.1499830037355423 0.1634756624698639
+number 110: 0.6749935150146484 0.6634308695793152
+number 113: 0.5499910116195679 0.6070030927658081
+number 117: 0.9499989748001099 0.8366461992263794
+number 118: 0.2499849945306778 0.401753306388855
+number 125: 0.6499930024147034 0.6446243524551392
+number 136: 0.559991180896759 0.5411385893821716
+number 141: 0.3699873983860016 0.3869914710521698
+number 144: 0.1499830037355423 0.34199026226997375
+number 146: 0.8599972128868103 0.840332567691803
+number 147: 0.012580251321196556 0.23617690801620483
+number 149: 0.5999919772148132 0.604725182056427
+number 156: 0.1499830037355423 0.4595125913619995
+number 157: 0.4299885928630829 0.4463968873023987
+number 158: 0.5999919772148132 0.5898138284683228
+number 161: 0.6399927735328674 0.6135308146476746
+number 164: 0.799996018409729 0.7917776703834534
+number 165: 0.6999940276145935 0.6706342101097107
+number 166: 0.9299985766410828 0.8610149621963501
+number 170: 0.35998719930648804 0.3621128499507904
+number 171: 0.8999980092048645 0.8359760046005249
+number 175: 0.8349967002868652 0.8154330253601074
+number 184: 0.799996018409729 0.7783297300338745
+number 193: 0.8899977803230286 0.7984843850135803
+number 197: 0.9499989748001099 0.752657949924469
+number 198: 0.8499969840049744 0.8249925374984741
+column: 1
+label: 1 
+number 0: 0.0 0.46878910064697266
+number 1: 0.9980000257492065 0.923468291759491
+number 2: 0.9850000143051147 0.885348379611969
+number 3: 0.800000011920929 0.880937933921814
+number 4: 0.75 0.9363583922386169
+number 6: 0.9900000095367432 0.963860273361206
+number 7: 0.8999999761581421 0.7754153609275818
+number 8: 0.9599999785423279 0.9167307615280151
+number 9: 0.9700000286102295 0.9392150640487671
+number 10: 0.4000000059604645 0.6002943515777588
+number 11: 0.9800000190734863 0.869899332523346
+number 12: 0.9800000190734863 0.8773831129074097
+number 13: 0.9549999833106995 0.9192014932632446
+number 14: 0.30000001192092896 0.852851927280426
+number 16: 0.9900000095367432 0.9549084305763245
+number 17: 0.9900000095367432 0.8039186596870422
+number 18: 0.9900000095367432 0.9507195949554443
+number 19: 0.4000000059604645 0.5880090594291687
+number 21: 0.949999988079071 0.9199761152267456
+number 22: 0.9900000095367432 0.9292743802070618
+number 23: 0.9700000286102295 0.9724154472351074
+number 26: 0.9900000095367432 0.8934308290481567
+number 27: 0.9900000095367432 0.9635276794433594
+number 28: 0.05000000074505806 0.4202722907066345
+number 29: 0.75 0.8686342835426331
+number 30: 0.9850000143051147 0.9490754008293152
+number 32: 0.6399999856948853 0.8028573989868164
+number 34: 0.05000000074505806 0.225955069065094
+number 36: 0.9769999980926514 0.9305698275566101
+number 37: 0.9929999709129333 0.9348720908164978
+number 40: 0.550000011920929 0.5499408841133118
+number 41: 0.949999988079071 0.8457222580909729
+number 42: 0.9629999995231628 0.9521597027778625
+number 43: 0.9300000071525574 0.947942316532135
+number 44: 0.9900000095367432 0.8671280741691589
+number 45: 0.9850000143051147 0.7790154218673706
+number 46: 0.9900000095367432 0.8509461879730225
+number 47: 0.9700000286102295 0.8185778260231018
+number 49: 0.0 0.5044150948524475
+number 50: 0.36000001430511475 0.36116793751716614
+number 51: 0.23499999940395355 0.6310890316963196
+number 52: 0.5099999904632568 0.6197908520698547
+number 53: 0.9900000095367432 0.9089853763580322
+number 55: 0.9629999995231628 0.9279260039329529
+number 56: 0.4000000059604645 0.29143643379211426
+number 57: 0.4399999976158142 0.3954031467437744
+number 58: 0.14000000059604645 0.6079650521278381
+number 59: 0.20000000298023224 0.18151329457759857
+number 60: 0.9750000238418579 0.9482427835464478
+number 61: 0.20000000298023224 0.6605375409126282
+number 63: 0.23999999463558197 0.35827261209487915
+number 65: 0.9900000095367432 0.9289664626121521
+number 66: 0.9700000286102295 0.9098620414733887
+number 67: 0.6499999761581421 0.5284274816513062
+number 69: 0.9700000286102295 0.9191024899482727
+number 70: 0.30000001192092896 0.8205968737602234
+number 71: 0.9599999785423279 0.8176456689834595
+number 72: 0.699999988079071 0.4337899684906006
+number 73: 0.9700000286102295 0.9541208744049072
+number 74: 0.9200000166893005 0.8852788805961609
+number 75: 0.3499999940395355 0.7597115635871887
+number 76: 0.8399999737739563 0.9222360253334045
+number 77: 0.8999999761581421 0.8690218329429626
+number 78: 0.9700000286102295 0.9271783232688904
+number 79: 0.875 0.9034562110900879
+number 83: 0.9900000095367432 0.9529007077217102
+number 84: 0.824999988079071 0.9290133714675903
+number 85: 0.17499999701976776 0.4359719753265381
+number 86: 0.550000011920929 0.63775235414505
+number 87: 0.20999999344348907 0.16504861414432526
+number 88: 0.25 0.5297582745552063
+number 89: 0.9449999928474426 0.8364984393119812
+number 90: 0.9850000143051147 0.9250938892364502
+number 91: 0.9300000071525574 0.870501697063446
+number 92: 0.0 0.3684871196746826
+number 94: 0.949999988079071 0.8880414366722107
+number 95: 0.25 0.6934072375297546
+number 96: 0.9800000190734863 0.933487057685852
+number 97: 0.4000000059604645 0.46510419249534607
+number 101: 0.9200000166893005 0.912623405456543
+number 103: 0.15000000596046448 0.5685970783233643
+number 104: 0.8999999761581421 0.8636411428451538
+number 105: 0.9750000238418579 0.9419238567352295
+number 107: 0.15000000596046448 0.8296605944633484
+number 110: 0.2750000059604645 0.8408734202384949
+number 111: 0.4000000059604645 0.6564561724662781
+number 112: 0.9900000095367432 0.8827868700027466
+number 113: 0.6790000200271606 0.6028199195861816
+number 114: 0.05000000074505806 0.30740296840667725
+number 116: 0.8199999928474426 0.7798820734024048
+number 117: 0.699999988079071 0.8087537288665771
+number 119: 0.4000000059604645 0.8636748790740967
+number 123: 0.800000011920929 0.6112695336341858
+number 124: 0.3100000023841858 0.3267941176891327
+number 125: 0.30000001192092896 0.8900579810142517
+number 126: 0.949999988079071 0.8302782773971558
+number 127: 0.9800000190734863 0.957926332950592
+number 128: 0.949999988079071 0.5661091208457947
+number 129: 0.5 0.9249880313873291
+number 130: 0.23999999463558197 0.39252611994743347
+number 131: 0.6399999856948853 0.9029739499092102
+number 133: 0.699999988079071 0.861266016960144
+number 134: 0.8500000238418579 0.8074812889099121
+number 136: 0.9800000190734863 0.9130710363388062
+number 137: 0.30000001192092896 0.5633233785629272
+number 138: 0.5 0.5529046654701233
+number 139: 0.949999988079071 0.9388942718505859
+number 141: 0.5 0.4840514063835144
+number 143: 0.9599999785423279 0.8911422491073608
+number 144: 0.17499999701976776 0.8104974627494812
+number 145: 0.7300000190734863 0.7724931240081787
+number 146: 0.36000001430511475 0.34564051032066345
+number 147: 0.9900000095367432 0.9272700548171997
+number 148: 0.9700000286102295 0.9425420165061951
+number 149: 0.800000011920929 0.9021866321563721
+number 150: 0.8899999856948853 0.8516169786453247
+number 152: 0.5 0.8212490081787109
+number 153: 0.75 0.9336555004119873
+number 154: 0.9599999785423279 0.9309070110321045
+number 155: 0.9800000190734863 0.9042620062828064
+number 156: 0.949999988079071 0.957146167755127
+number 159: 0.9800000190734863 0.8691750168800354
+number 161: 0.9700000286102295 0.9441990256309509
+number 162: 0.30000001192092896 0.874725878238678
+number 164: 0.9800000190734863 0.8971891403198242
+number 165: 0.3499999940395355 0.4788065254688263
+number 169: 0.9900000095367432 0.9177660346031189
+number 171: 0.9700000286102295 0.9128202199935913
+number 172: 0.9300000071525574 0.9127672910690308
+number 173: 0.9950000047683716 0.9375702738761902
+number 175: 0.29499998688697815 0.17119064927101135
+number 176: 0.9900000095367432 0.8716743588447571
+number 178: 0.9900000095367432 0.9331101775169373
+number 179: 0.8949999809265137 0.9306110739707947
+number 180: 0.75 0.9276232123374939
+number 184: 0.9900000095367432 0.8952476382255554
+number 185: 0.019999999552965164 0.1908029317855835
+number 186: 0.9900000095367432 0.9385910630226135
+number 187: 0.8199999928474426 0.762790858745575
+number 188: 0.9800000190734863 0.8323794007301331
+number 190: 0.9419999718666077 0.8530550599098206
+number 191: 0.8989999890327454 0.8611693978309631
+number 193: 0.2800000011920929 0.35287439823150635
+number 194: 0.9800000190734863 0.9042287468910217
+number 195: 0.9850000143051147 0.8690127730369568
+number 197: 0.4000000059604645 0.7390146255493164
+number 199: 0.8500000238418579 0.9240965843200684
+column: 2
+label: 2 
+number 0: 0.04314340278506279 0.08225484192371368
+number 1: 0.03423922508955002 0.05762917548418045
+number 2: 0.027389859780669212 0.03939732536673546
+number 3: 0.041088592261075974 0.03131876140832901
+number 4: 0.02567751705646515 0.06508621573448181
+number 5: 0.0037026924546808004 0.05070613697171211
+number 6: 0.13697972893714905 0.12940241396427155
+number 7: 0.08560948073863983 0.07891004532575607
+number 8: 0.082184799015522 0.0856957659125328
+number 9: 0.054787326604127884 0.06652875244617462
+number 10: 0.01026644092053175 0.026015905663371086
+number 11: 0.0037595422472804785 0.05363894999027252
+number 12: 0.01026644092053175 0.032071731984615326
+number 13: 0.04793795943260193 0.06457767635583878
+number 14: 0.020540492609143257 0.05775757133960724
+number 15: 1.0 0.6710682511329651
+number 16: 0.013691124506294727 0.05554961785674095
+number 17: 0.082184799015522 0.06970968097448349
+number 18: 0.013691124506294727 0.05305613577365875
+number 19: 0.01026644092053175 0.02711607702076435
+number 20: 0.10273289680480957 0.030907820910215378
+number 21: 0.17465125024318695 0.04494699090719223
+number 22: 0.23972024023532867 0.10068660974502563
+number 23: 0.2808164358139038 0.0709410086274147
+number 24: 0.2054734081029892 0.036004871129989624
+number 25: 0.0061568208038806915 0.05832036957144737
+number 26: 0.23972024023532867 0.15578003227710724
+number 27: 0.09725340455770493 0.05888752639293671
+number 28: 0.03423922508955002 0.06634234637022018
+number 29: 0.02328023873269558 0.06370720267295837
+number 30: 0.03971872106194496 0.0694509819149971
+number 31: 0.051362644881010056 0.12418336421251297
+number 32: 0.03834884613752365 0.0432082936167717
+number 33: 0.01095137745141983 0.0597514808177948
+number 34: 0.003417073981836438 0.06517720967531204
+number 35: 0.3325291574001312 0.05632726475596428
+number 38: 0.006841757334768772 0.035859473049640656
+number 39: 0.013691124506294727 0.03964145481586456
+number 40: 0.17122657597064972 0.0741819515824318
+number 41: 0.01711580902338028 0.04056162014603615
+number 42: 0.01026644092053175 0.055220551788806915
+number 43: 0.11643163114786148 0.07099368423223495
+number 45: 0.06848606467247009 0.07093892246484756
+number 46: 0.049992769956588745 0.04322630539536476
+number 47: 0.003417073981836438 0.03231557831168175
+number 48: 0.020540492609143257 0.055641092360019684
+number 49: 0.082184799015522 0.039632648229599
+number 50: 0.008896567858755589 0.035125941038131714
+number 51: 0.005129415541887283 0.03168467432260513
+number 52: 0.4657493531703949 0.6614618897438049
+number 53: 0.03423922508955002 0.049364034086465836
+number 54: 0.03423922508955002 0.06400397419929504
+number 55: 0.16095252335071564 0.06204214319586754
+number 56: 0.004444479010999203 0.0440959669649601
+number 57: 0.06506137549877167 0.042533766478300095
+number 58: 0.006841757334768772 0.026458410546183586
+number 59: 0.006990388967096806 0.04533876106142998
+number 61: 0.011978782713413239 0.033294230699539185
+number 62: 0.10273289680480957 0.05816531926393509
+number 63: 0.01026644092053175 0.09573037922382355
+number 64: 0.004786947276443243 0.036132700741291046
+number 65: 0.017458276823163033 0.054851680994033813
+number 66: 0.03081454336643219 0.0643843561410904
+number 67: 0.011636314913630486 0.06295948475599289
+number 68: 0.024992581456899643 0.07496754825115204
+number 69: 0.008554099127650261 0.0458945594727993
+number 70: 0.1301303654909134 0.03542210906744003
+number 71: 0.054787326604127884 0.035541266202926636
+number 72: 0.004102010745555162 0.034098707139492035
+number 73: 0.07191074639558792 0.05849948525428772
+number 74: 0.08766429126262665 0.03744659200310707
+number 75: 0.023965176194906235 0.027436500415205956
+number 76: 0.16437719762325287 0.044468656182289124
+number 77: 0.01711580902338028 0.03284332528710365
+number 78: 0.008554099127650261 0.05865098163485527
+number 79: 0.019170617684721947 0.04380372539162636
+number 80: 0.10273289680480957 0.0437186025083065
+number 81: 0.082184799015522 0.055842574685811996
+number 82: 0.1438291072845459 0.08439797163009644
+number 83: 0.7568474411964417 0.06161075457930565
+number 84: 0.04793795943260193 0.05382498726248741
+number 85: 0.013691124506294727 0.03623253479599953
+number 86: 0.07533542811870575 0.038414593786001205
+number 87: 0.019855555146932602 0.0885881558060646
+number 88: 0.01711580902338028 0.10707816481590271
+number 89: 0.020540492609143257 0.03770406171679497
+number 90: 0.01711580902338028 0.06159837171435356
+number 91: 0.0568421371281147 0.04862518236041069
+number 92: 0.028759732842445374 0.08537797629833221
+number 93: 0.06848606467247009 0.03918413445353508
+number 95: 0.020540492609143257 0.04368559271097183
+number 96: 0.04793795943260193 0.05695372819900513
+number 97: 0.18834999203681946 0.07012012600898743
+number 98: 0.0056999679654836655 0.040878187865018845
+number 99: 0.005197909194976091 0.044737089425325394
+number 100: 0.023965176194906235 0.033571213483810425
+number 102: 0.025335049256682396 0.05998755618929863
+number 103: 0.020198022946715355 0.027839718386530876
+number 104: 0.01711580902338028 0.03119249828159809
+number 106: 0.001134179881773889 0.21280047297477722
+number 107: 0.08903416246175766 0.0367862842977047
+number 108: 0.004273244645446539 0.13243599236011505
+number 109: 0.10958226770162582 0.17052610218524933
+number 110: 0.013691124506294727 0.028184950351715088
+number 111: 0.018828149884939194 0.04540777578949928
+number 113: 0.0698559358716011 0.03954789787530899
+number 114: 0.015574701130390167 0.06822770088911057
+number 115: 0.008143137209117413 0.027608364820480347
+number 116: 0.013691124506294727 0.0394650474190712
+number 117: 0.08903416246175766 0.03432312607765198
+number 118: 0.006841757334768772 0.10334137827157974
+number 119: 0.006841757334768772 0.04555940628051758
+number 120: 0.018828149884939194 0.045341771095991135
+number 121: 0.0021615850273519754 0.04383472353219986
+number 122: 0.019170617684721947 0.1316601186990738
+number 123: 0.012321251444518566 0.03203696385025978
+number 124: 0.04793795943260193 0.07561511546373367
+number 125: 0.08903416246175766 0.04650639742612839
+number 127: 0.006271205376833677 0.05974823981523514
+number 128: 0.04965030401945114 0.034790314733982086
+number 129: 0.07533542811870575 0.038940560072660446
+number 130: 0.01026644092053175 0.09089815616607666
+number 131: 0.03834884613752365 0.048670221120119095
+number 132: 0.01026644092053175 0.03302201256155968
+number 133: 0.012435635551810265 0.035833295434713364
+number 134: 0.013006187975406647 0.4595014154911041
+number 135: 0.06780112534761429 0.047053366899490356
+number 136: 0.006841757334768772 0.03848828002810478
+number 137: 0.02225283347070217 0.06495606899261475
+number 138: 0.04793795943260193 0.03141921013593674
+number 140: 0.008896567858755589 0.0606934018433094
+number 141: 0.009124651551246643 0.03409244120121002
+number 142: 6.77327043376863E-4 0.054236531257629395
+number 143: 0.037663910537958145 0.06025926396250725
+number 144: 0.01711580902338028 0.04994930326938629
+number 145: 0.03903378173708916 0.03348161652684212
+number 146: 0.041088592261075974 0.04182954505085945
+number 147: 0.10341783612966537 0.07796608656644821
+number 148: 0.041088592261075974 0.04585103318095207
+number 149: 0.051362644881010056 0.05068960785865784
+number 151: 0.051362644881010056 0.08871441334486008
+number 152: 0.018828149884939194 0.036346931010484695
+number 153: 0.27396708726882935 0.057114627212285995
+number 154: 0.10273289680480957 0.053479816764593124
+number 155: 0.03971872106194496 0.03847888484597206
+number 156: 0.03081454336643219 0.06494084000587463
+number 157: 0.09588353335857391 0.08185447007417679
+number 158: 0.02321174554526806 0.0262603722512722
+number 160: 0.04793795943260193 0.09726650267839432
+number 161: 0.05828050523996353 0.04644283279776573
+number 162: 0.01711580902338028 0.047217581421136856
+number 163: 0.09588353335857391 0.04088888317346573
+number 164: 0.05410239100456238 0.05252983421087265
+number 165: 0.01026644092053175 0.029271265491843224
+number 166: 0.037663910537958145 0.045643601566553116
+number 167: 0.06300656497478485 0.03113919124007225
+number 168: 6.77327043376863E-4 0.06280885636806488
+number 169: 0.06163669377565384 0.0797731876373291
+number 170: 0.04793795943260193 0.05681304633617401
+number 171: 0.008554099127650261 0.0571015439927578
+number 172: 0.06163669377565384 0.05712549760937691
+number 173: 0.01095137745141983 0.06035488098859787
+number 174: 0.013691124506294727 0.037775926291942596
+number 175: 0.02465011179447174 0.11908852308988571
+number 177: 0.204788476228714 0.07496999204158783
+number 178: 0.04793795943260193 0.04525713250041008
+number 179: 0.056157201528549194 0.05515144392848015
+number 180: 0.09588353335857391 0.05545594170689583
+number 181: 0.011408230289816856 0.10242655873298645
+number 182: 0.011408230289816856 0.05766349658370018
+number 183: 0.1438291072845459 0.0566197894513607
+number 184: 0.11643163114786148 0.04454480856657028
+number 185: 0.006841757334768772 0.05365116149187088
+number 186: 0.06848606467247009 0.05750902742147446
+number 187: 0.0814998596906662 0.05187893658876419
+number 189: 2.2067976533435285E-4 0.05833630636334419
+number 190: 0.002846521558240056 0.039262618869543076
+number 191: 0.005357499700039625 0.032744258642196655
+number 192: 2.2067976533435285E-4 0.041825149208307266
+number 193: 0.0024581626057624817 0.09477131813764572
+number 195: 0.01711580902338028 0.042453132569789886
+number 196: 0.020540492609143257 0.04192184656858444
+number 197: 0.023965176194906235 0.023885933682322502
+number 198: 0.013691124506294727 0.054380837827920914
+number 199: 0.06163669377565384 0.05178947374224663
+column: 3
+label: 3 
+number 1: 0.014229507185518742 0.032359566539525986
+number 3: 0.007705950643867254 0.056542832404375076
+number 10: 0.0673353299498558 0.06872592121362686
+number 11: 0.008725256659090519 0.03523392975330353
+number 12: 0.003628728212788701 0.03178192302584648
+number 13: 0.0071962978690862656 0.023094696924090385
+number 16: 0.03828512132167816 0.04173146188259125
+number 17: 0.005855910945683718 0.018736932426691055
+number 18: 0.03828512132167816 0.039754293859004974
+number 19: 0.0673353299498558 0.07890500128269196
+number 26: 0.004189345985651016 0.04907945543527603
+number 28: 0.01840865984559059 0.06022133305668831
+number 29: 0.3665015399456024 0.36104896664619446
+number 36: 0.03430982679128647 0.050430260598659515
+number 37: 0.0025074919685721397 0.06285373866558075
+number 38: 0.09179866313934326 0.08121830224990845
+number 40: 0.03216928616166115 0.06110641732811928
+number 44: 0.0056673395447432995 0.025614092126488686
+number 46: 0.010458076372742653 0.02173275500535965
+number 48: 0.015197847038507462 0.05441035330295563
+number 50: 0.005565408617258072 0.024590477347373962
+number 52: 0.949544370174408 0.9249100685119629
+number 53: 0.01779707707464695 0.0436084121465683
+number 62: 0.01993761770427227 0.029427794739603996
+number 63: 0.4205247461795807 0.43995970487594604
+number 67: 0.00923490896821022 0.017821375280618668
+number 74: 0.09689519554376602 0.10376720130443573
+number 75: 0.09536623954772949 0.09476868063211441
+number 78: 0.006686645094305277 0.03010553866624832
+number 83: 0.14837013185024261 0.1552218645811081
+number 84: 0.16671763360500336 0.17208880186080933
+number 95: 0.255397230386734 0.2027314454317093
+number 103: 0.04134303703904152 0.02806806191802025
+number 107: 0.016879701986908913 0.023363778367638588
+number 118: 0.09026970714330673 0.1321728378534317
+number 119: 0.19729679822921753 0.18930859863758087
+number 128: 0.0034452530089765787 0.01622592657804489
+number 130: 0.4205247461795807 0.41715672612190247
+number 133: 0.05051678791642189 0.046328116208314896
+number 136: 0.014331437647342682 0.028248876333236694
+number 137: 0.028601717203855515 0.03149433434009552
+number 142: 0.009448963217437267 0.015321770682930946
+number 146: 0.03828512132167816 0.04943256452679634
+number 147: 0.30840110778808594 0.2193751186132431
+number 148: 0.1269647181034088 0.12870898842811584
+number 149: 0.2645709812641144 0.09183545410633087
+number 150: 0.04236234351992607 0.05631430819630623
+number 156: 0.10453999042510986 0.12046986818313599
+number 158: 0.027123723179101944 0.03680998459458351
+number 161: 0.1208488792181015 0.10692666471004486
+number 162: 0.07192220538854599 0.0882674977183342
+number 165: 0.033698245882987976 0.036214448511600494
+number 167: 0.40625447034835815 0.1171717643737793
+number 169: 0.0025074919685721397 0.02297087386250496
+number 170: 0.04338165000081062 0.04199017584323883
+number 171: 0.006686645094305277 0.028303541243076324
+number 172: 0.40625447034835815 0.255344033241272
+number 182: 0.004770350642502308 0.022568149492144585
+number 186: 0.03420789912343025 0.04487021639943123
+number 187: 0.08364421874284744 0.10518751293420792
+number 188: 0.008725256659090519 0.028046488761901855
+number 193: 0.01846981793642044 0.06178128719329834
+number 197: 0.05969053879380226 0.030112793669104576
+column: 0
+label: 0 
+number 3: 0.6499930024147034 0.6372034549713135
+number 6: 0.049980998039245605 0.1445857137441635
+number 9: 0.44998899102211 0.4613286852836609
+number 10: 0.49998998641967773 0.5089613199234009
+number 12: 0.27998560667037964 0.3655765652656555
+number 13: 0.8249964714050293 0.8815585374832153
+number 14: 0.1499830037355423 0.2095244973897934
+number 16: 0.6499930024147034 0.6407514810562134
+number 18: 0.1299826055765152 0.14192695915699005
+number 19: 0.3299866020679474 0.34439119696617126
+number 20: 0.25998520851135254 0.22109369933605194
+number 21: 0.6399927735328674 0.6916266083717346
+number 24: 0.9799996018409729 0.9321890473365784
+number 41: 0.2899858057498932 0.06231800839304924
+number 45: 0.1499830037355423 0.30508267879486084
+number 50: 0.09598191827535629 0.15782707929611206
+number 54: 0.4299885928630829 0.4019685685634613
+number 63: 0.9199984073638916 0.846774160861969
+number 64: 0.04698093980550766 0.11313147097826004
+number 66: 0.009980199858546257 0.21415182948112488
+number 68: 0.39998799562454224 0.418714314699173
+number 76: 0.5999919772148132 0.5736314058303833
+number 85: 0.16498330235481262 0.1710549294948578
+number 91: 0.799996018409729 0.779093861579895
+number 98: 0.799996018409729 0.7792601585388184
+number 102: 0.19498389959335327 0.11197347193956375
+number 108: 0.5999919772148132 0.5934988856315613
+number 111: 0.17998360097408295 0.15019211173057556
+number 115: 0.4899897873401642 0.5454193949699402
+number 119: 0.049980998039245605 0.23332233726978302
+number 123: 0.16498330235481262 0.175597682595253
+number 125: 0.7349947094917297 0.7304432988166809
+number 132: 0.6399927735328674 0.5966478586196899
+number 133: 0.1499830037355423 0.17472809553146362
+number 134: 0.31998640298843384 0.33902788162231445
+number 140: 0.569991409778595 0.555763840675354
+number 142: 0.5999919772148132 0.5912172794342041
+number 145: 0.7599952220916748 0.7227886319160461
+number 148: 0.13998280465602875 0.198381245136261
+number 149: 0.799996018409729 0.7120537757873535
+number 151: 1.0 0.7997907996177673
+number 155: 0.799996018409729 0.7989689707756042
+number 156: 0.16498330235481262 0.29981857538223267
+number 159: 0.39998799562454224 0.42828139662742615
+number 161: 0.3699873983860016 0.3116118907928467
+number 165: 0.3699873983860016 0.36441096663475037
+number 166: 0.3179863691329956 0.2735642194747925
+number 167: 0.9599992036819458 0.9385958313941956
+number 172: 0.6499930024147034 0.634731113910675
+number 173: 0.799996018409729 0.833584189414978
+number 179: 0.29998600482940674 0.3232322931289673
+number 180: 0.31998640298843384 0.30020299553871155
+number 182: 0.799996018409729 0.7174537181854248
+number 187: 0.5449908971786499 0.42975914478302
+number 191: 0.39998799562454224 0.38603079319000244
+number 192: 0.3299866020679474 0.32808130979537964
+number 199: 0.3299866020679474 0.27399352192878723
+column: 1
+label: 1 
+number 1: 0.949999988079071 0.9430597424507141
+number 2: 0.9300000071525574 0.9124661684036255
+number 3: 0.30000001192092896 0.8714469075202942
+number 6: 0.9900000095367432 0.9214115142822266
+number 7: 0.9900000095367432 0.9641446471214294
+number 10: 0.9750000238418579 0.9463918209075928
+number 13: 0.9800000190734863 0.857449471950531
+number 14: 0.9900000095367432 0.9564872980117798
+number 15: 0.6000000238418579 0.5504962801933289
+number 16: 0.3400000035762787 0.5309484004974365
+number 17: 0.9990000128746033 0.9237878322601318
+number 18: 0.9800000190734863 0.9211525321006775
+number 20: 0.9900000095367432 0.9409641623497009
+number 22: 0.824999988079071 0.9354395866394043
+number 23: 0.75 0.9131142497062683
+number 24: 0.3199999928474426 0.3267941176891327
+number 27: 0.949999988079071 0.9320211410522461
+number 30: 0.9399999976158142 0.8237260580062866
+number 33: 0.9200000166893005 0.8708217740058899
+number 37: 0.9399999976158142 0.9281708002090454
+number 38: 0.9750000238418579 0.8788439631462097
+number 39: 0.9800000190734863 0.8598304986953735
+number 40: 0.9750000238418579 0.9424208998680115
+number 41: 0.7099999785423279 0.6596231460571289
+number 42: 0.3050000071525574 0.37319716811180115
+number 43: 1.0 0.7516217231750488
+number 46: 0.4000000059604645 0.42117634415626526
+number 47: 0.20000000298023224 0.8486996293067932
+number 48: 0.9629999995231628 0.9180698394775391
+number 53: 0.550000011920929 0.5376096963882446
+number 54: 0.949999988079071 0.9567428827285767
+number 55: 0.949999988079071 0.9562274813652039
+number 56: 0.8999999761581421 0.8977500796318054
+number 62: 0.9990000128746033 0.9447534084320068
+number 63: 0.949999988079071 0.9132744073867798
+number 65: 0.8619999885559082 0.9215584993362427
+number 67: 0.8999999761581421 0.9093085527420044
+number 69: 0.8999999761581421 0.9438440203666687
+number 70: 0.4000000059604645 0.3408198356628418
+number 71: 0.949999988079071 0.955918550491333
+number 72: 0.20000000298023224 0.6854616403579712
+number 74: 0.05000000074505806 0.18769584596157074
+number 75: 0.9700000286102295 0.9111047387123108
+number 76: 0.9200000166893005 0.9477541446685791
+number 77: 0.949999988079071 0.9620549082756042
+number 78: 0.6800000071525574 0.6705642342567444
+number 79: 0.009999999776482582 0.10087285190820694
+number 80: 0.9300000071525574 0.8573096990585327
+number 82: 0.5649999976158142 0.7564733624458313
+number 83: 0.9900000095367432 0.8552538752555847
+number 84: 0.949999988079071 0.9354889392852783
+number 85: 0.949999988079071 0.9249107241630554
+number 86: 0.9300000071525574 0.8748195767402649
+number 89: 0.949999988079071 0.9481947422027588
+number 90: 0.9900000095367432 0.9638625979423523
+number 91: 0.699999988079071 0.8875060677528381
+number 93: 0.9200000166893005 0.8714584112167358
+number 94: 0.9900000095367432 0.8736308813095093
+number 97: 0.4399999976158142 0.4437158703804016
+number 102: 0.949999988079071 0.9270178079605103
+number 104: 0.9399999976158142 0.8685411214828491
+number 105: 0.8700000047683716 0.8971918225288391
+number 107: 0.949999988079071 0.9598726034164429
+number 108: 0.10000000149011612 0.5052391290664673
+number 110: 0.9950000047683716 0.9555444121360779
+number 111: 0.9900000095367432 0.9292743802070618
+number 112: 0.8199999928474426 0.778736412525177
+number 115: 0.9919999837875366 0.9099904894828796
+number 116: 0.9900000095367432 0.9513190984725952
+number 117: 0.9700000286102295 0.9373930096626282
+number 118: 0.9800000190734863 0.7015659809112549
+number 119: 0.014999999664723873 0.14973084628582
+number 120: 0.5540000200271606 0.839935839176178
+number 121: 0.03999999910593033 0.19581153988838196
+number 122: 0.10000000149011612 0.1242838203907013
+number 123: 0.800000011920929 0.7686411738395691
+number 125: 0.44999998807907104 0.5501560568809509
+number 126: 0.9800000190734863 0.8519787788391113
+number 128: 0.9900000095367432 0.8801666498184204
+number 131: 0.8999999761581421 0.9442816376686096
+number 132: 0.9900000095367432 0.933882474899292
+number 133: 0.9800000190734863 0.9031909108161926
+number 134: 0.20000000298023224 0.7507791519165039
+number 135: 0.9599999785423279 0.8321213126182556
+number 139: 0.20000000298023224 0.10041289031505585
+number 141: 0.9900000095367432 0.9452124238014221
+number 142: 0.6499999761581421 0.7475619316101074
+number 144: 0.8999999761581421 0.885469913482666
+number 145: 0.6200000047683716 0.8714751601219177
+number 149: 0.30000001192092896 0.44058749079704285
+number 151: 0.20000000298023224 0.8448777794837952
+number 152: 0.9449999928474426 0.8474570512771606
+number 153: 0.9399999976158142 0.8087592124938965
+number 155: 0.30000001192092896 0.46185562014579773
+number 157: 0.9950000047683716 0.9284756779670715
+number 158: 0.9890000224113464 0.8204630613327026
+number 161: 0.949999988079071 0.8694978952407837
+number 162: 0.9399999976158142 0.9403690099716187
+number 163: 0.9900000095367432 0.9223028421401978
+number 166: 0.9900000095367432 0.9290823340415955
+number 167: 0.20000000298023224 0.2514781653881073
+number 168: 0.9950000047683716 0.9589999914169312
+number 170: 0.9950000047683716 0.9632313847541809
+number 171: 0.824999988079071 0.873576819896698
+number 172: 0.9900000095367432 0.9239544868469238
+number 173: 0.9350000023841858 0.5808443427085876
+number 174: 0.925000011920929 0.9562134146690369
+number 175: 0.8949999809265137 0.9115634560585022
+number 176: 0.9700000286102295 0.7023590803146362
+number 177: 0.9900000095367432 0.920907199382782
+number 180: 0.9700000286102295 0.8794238567352295
+number 181: 0.10000000149011612 0.5111711621284485
+number 186: 0.5540000200271606 0.839935839176178
+number 187: 0.1550000011920929 0.20691633224487305
+number 188: 0.10000000149011612 0.6911396384239197
+number 191: 0.699999988079071 0.8962910175323486
+number 193: 0.9900000095367432 0.9599891304969788
+number 194: 0.9729999899864197 0.9394453167915344
+number 195: 0.5 0.6032404899597168
+number 196: 0.875 0.9175869226455688
+number 197: 0.9900000095367432 0.8960555791854858
+number 198: 0.30000001192092896 0.8514944911003113
+number 199: 0.9800000190734863 0.8657553791999817
+column: 2
+label: 2 
+number 0: 0.24656960368156433 0.071735680103302
+number 1: 0.04793795943260193 0.05458782985806465
+number 2: 0.05341745540499687 0.04695633798837662
+number 3: 0.08903416246175766 0.044351380318403244
+number 4: 0.10273289680480957 0.09285466372966766
+number 5: 0.10444524139165878 0.06693055480718613
+number 6: 0.06506137549877167 0.09390303492546082
+number 7: 0.02088296040892601 0.07760560512542725
+number 8: 0.10273289680480957 0.106283038854599
+number 9: 0.10273289680480957 0.07555502653121948
+number 10: 0.2191721349954605 0.08650539070367813
+number 11: 0.023965176194906235 0.09765996038913727
+number 12: 0.1575278341770172 0.06471528112888336
+number 13: 0.082184799015522 0.04428563266992569
+number 14: 0.09656846523284912 0.08963044732809067
+number 15: 0.8150671124458313 0.05816531926393509
+number 16: 0.00752669433131814 0.03141062706708908
+number 17: 0.2294461876153946 0.06957950443029404
+number 18: 0.04793795943260193 0.11340544372797012
+number 19: 0.027389859780669212 0.054709769785404205
+number 20: 0.08903416246175766 0.09026160836219788
+number 21: 0.05828050523996353 0.04070383682847023
+number 22: 0.04793795943260193 0.05487942323088646
+number 23: 0.017458276823163033 0.03641499578952789
+number 24: 0.06163669377565384 0.07561511546373367
+number 25: 0.008873964659869671 0.0912543460726738
+number 26: 0.013691124506294727 0.05560209974646568
+number 27: 0.01848568208515644 0.03590424358844757
+number 28: 0.015289082191884518 0.04503272473812103
+number 29: 0.03423922508955002 0.034893378615379333
+number 30: 0.013691124506294727 0.02916928380727768
+number 31: 0.01711580902338028 0.025460373610258102
+number 32: 0.001134179881773889 0.039755240082740784
+number 33: 0.011465080082416534 0.03636077418923378
+number 34: 5.631481180898845E-4 0.038733478635549545
+number 35: 0.030243990942835808 0.06048131734132767
+number 36: 0.013691124506294727 0.08018387854099274
+number 37: 0.028759732842445374 0.0351354144513607
+number 38: 0.17396631836891174 0.04854049161076546
+number 39: 0.06848606467247009 0.043259114027023315
+number 40: 0.9534242749214172 0.0668601468205452
+number 41: 0.3424607515335083 0.6893846392631531
+number 42: 0.03423922508955002 0.03887827321887016
+number 43: 0.03423922508955002 0.14499762654304504
+number 44: 0.03937625139951706 0.07040299475193024
+number 45: 0.1191713809967041 0.11711081117391586
+number 46: 0.009410270489752293 0.08915707468986511
+number 47: 0.011978782713413239 0.04156547784805298
+number 48: 0.16095252335071564 0.05892101675271988
+number 49: 0.16437719762325287 0.054107580333948135
+number 50: 0.13697972893714905 0.0935310497879982
+number 51: 0.051362644881010056 0.07996736466884613
+number 52: 0.018828149884939194 0.037593573331832886
+number 53: 0.09588353335857391 0.0733419880270958
+number 54: 0.24656960368156433 0.06327669322490692
+number 55: 0.04793795943260193 0.09775454550981522
+number 56: 0.1917746663093567 0.07250005751848221
+number 57: 0.027389859780669212 0.06523669511079788
+number 58: 0.01095137745141983 0.041964758187532425
+number 59: 0.06848606467247009 0.053172189742326736
+number 60: 0.01608840376138687 0.0492427684366703
+number 61: 0.054787326604127884 0.06673134118318558
+number 62: 0.037663910537958145 0.06263012439012527
+number 64: 0.06506137549877167 0.24468624591827393
+number 65: 0.08492454141378403 0.03711008280515671
+number 66: 0.15067847073078156 0.10318001359701157
+number 67: 0.013691124506294727 0.03837953880429268
+number 68: 0.06848606467247009 0.08866976201534271
+number 69: 0.2054734081029892 0.08389410376548767
+number 70: 0.054787326604127884 0.06871692091226578
+number 71: 0.04793795943260193 0.08442240208387375
+number 72: 0.005928737111389637 0.02915814518928528
+number 73: 0.001134179881773889 0.03282761201262474
+number 74: 0.03423922508955002 0.05641291290521622
+number 75: 0.12670567631721497 0.05045856907963753
+number 77: 0.04793795943260193 0.05768602713942528
+number 78: 0.010038357228040695 0.028701387345790863
+number 79: 0.0034855676349252462 0.08172855526208878
+number 80: 0.016430871561169624 0.0362490639090538
+number 81: 0.016876081004738808 0.04483262822031975
+number 82: 0.004444479010999203 0.03224263712763786
+number 83: 0.06300656497478485 0.04365343973040581
+number 84: 0.1541031450033188 0.08450634777545929
+number 85: 0.03663650527596474 0.08899793773889542
+number 86: 0.01711580902338028 0.036023929715156555
+number 87: 0.023965176194906235 0.12900619208812714
+number 88: 0.005129415541887283 0.07772668451070786
+number 89: 0.04793795943260193 0.050680261105298996
+number 90: 0.13697972893714905 0.17011462152004242
+number 91: 0.11643163114786148 0.05140160396695137
+number 92: 0.013691124506294727 0.029487954452633858
+number 93: 0.08766429126262665 0.035530056804418564
+number 95: 2.0930981554556638E-4 0.19571518898010254
+number 96: 0.10273289680480957 0.042599283158779144
+number 97: 0.06506137549877167 0.04163916036486626
+number 98: 0.06848606467247009 0.07852264493703842
+number 99: 0.0045588635839521885 0.03791630268096924
+number 100: 0.013691124506294727 0.033791981637477875
+number 101: 0.17122657597064972 0.03460295498371124
+number 102: 0.054787326604127884 0.14115513861179352
+number 103: 0.13697972893714905 0.05758966878056526
+number 104: 0.00786916259676218 0.038334235548973083
+number 105: 0.019170617684721947 0.04909307882189751
+number 106: 0.00318899005651474 0.03445211425423622
+number 107: 0.04793795943260193 0.05779502913355827
+number 108: 0.02567751705646515 0.0323018915951252
+number 109: 0.03081454336643219 0.04248188063502312
+number 110: 1.0656930680852383E-4 0.08403150737285614
+number 111: 0.23972024023532867 0.10068660974502563
+number 112: 0.012321251444518566 0.03563963249325752
+number 113: 0.01095137745141983 0.07525815069675446
+number 114: 0.054787326604127884 0.0506792850792408
+number 115: 0.0445132777094841 0.04078933596611023
+number 116: 0.013691124506294727 0.049874018877744675
+number 117: 0.041088592261075974 0.04365197569131851
+number 118: 0.041088592261075974 0.04139658063650131
+number 119: 0.019855555146932602 0.0736050009727478
+number 120: 0.01711580902338028 0.0574287548661232
+number 121: 0.06848606467247009 0.07873307168483734
+number 122: 0.06506137549877167 0.14113786816596985
+number 123: 0.0025609030853956938 0.10668110102415085
+number 124: 4.7184605500660837E-4 0.08690553158521652
+number 125: 0.03081454336643219 0.024436455219984055
+number 127: 0.024307643994688988 0.05362580716609955
+number 128: 0.023965176194906235 0.0461418442428112
+number 129: 0.07704777270555496 0.03810526430606842
+number 130: 0.03423922508955002 0.06648056209087372
+number 131: 0.082184799015522 0.4829561412334442
+number 132: 0.02807479538023472 0.044725097715854645
+number 134: 0.027389859780669212 0.06788446009159088
+number 135: 0.015060998499393463 0.04464736953377724
+number 136: 0.006841757334768772 0.03988584131002426
+number 137: 0.037663910537958145 0.06446384638547897
+number 138: 0.020540492609143257 0.03902164101600647
+number 139: 0.013691124506294727 0.09208858013153076
+number 140: 0.01026644092053175 0.04614518955349922
+number 141: 0.013691124506294727 0.0502595491707325
+number 142: 0.03423922508955002 0.033051010221242905
+number 143: 0.005266403313726187 0.043978314846754074
+number 144: 0.008896567858755589 0.04701361805200577
+number 145: 0.04793795943260193 0.03118770755827427
+number 146: 0.014547295868396759 0.02249806560575962
+number 147: 0.024992581456899643 0.07496754825115204
+number 148: 0.01095137745141983 0.05160108581185341
+number 149: 0.07602036744356155 0.03319096192717552
+number 150: 0.03423922508955002 0.05582546815276146
+number 151: 0.1438291072845459 0.04345947131514549
+number 152: 0.09930821508169174 0.031599536538124084
+number 153: 0.013691124506294727 0.028596706688404083
+number 154: 9.054110269062221E-4 0.08785396814346313
+number 155: 0.07602036744356155 0.02932938002049923
+number 156: 0.10273289680480957 0.10292453318834305
+number 157: 0.01095137745141983 0.057547058910131454
+number 158: 0.09588353335857391 0.048272620886564255
+number 159: 0.041088592261075974 0.04026246815919876
+number 160: 0.19862404465675354 0.04088132828474045
+number 162: 0.22191189229488373 0.056443654000759125
+number 163: 0.3904063105583191 0.04514633119106293
+number 164: 0.015403466299176216 0.04859691113233566
+number 165: 0.22602151334285736 0.047361914068460464
+number 167: 0.07191074639558792 0.08994198590517044
+number 168: 0.1917746663093567 0.08968847990036011
+number 169: 0.012389744631946087 0.09341217577457428
+number 170: 0.24999429285526276 0.10871542990207672
+number 171: 0.00786916259676218 0.036094605922698975
+number 172: 0.07259568572044373 0.0364212691783905
+number 173: 0.04793795943260193 0.04748951643705368
+number 174: 0.027389859780669212 0.07728615403175354
+number 176: 0.019170617684721947 0.03345808386802673
+number 177: 0.082184799015522 0.040114790201187134
+number 178: 0.020540492609143257 0.09292691946029663
+number 179: 0.03834884613752365 0.13824287056922913
+number 180: 0.09108897298574448 0.04288328438997269
+number 181: 0.013006187975406647 0.04662764072418213
+number 182: 0.23972024023532867 0.05646943673491478
+number 183: 0.17139780521392822 0.0919208750128746
+number 184: 0.001134179881773889 0.05320188030600548
+number 185: 0.01026644092053175 0.06530706584453583
+number 186: 0.01711580902338028 0.0574287548661232
+number 187: 0.019855555146932602 0.05558249354362488
+number 188: 0.013006187975406647 0.030781472101807594
+number 189: 0.041088592261075974 0.03386218845844269
+number 190: 0.0017047321889549494 0.0648362934589386
+number 191: 0.013691124506294727 0.03602609038352966
+number 192: 0.027389859780669212 0.08212080597877502
+number 193: 0.06506137549877167 0.07172606140375137
+number 194: 0.03423922508955002 0.06313931196928024
+number 195: 0.010723293758928776 0.05481714382767677
+number 196: 0.082184799015522 0.07034649699926376
+number 198: 0.01711580902338028 0.0452364981174469
+number 199: 0.07533542811870575 0.05050346627831459
+column: 3
+label: 3 
+number 7: 0.011859620921313763 0.027649858966469765
+number 10: 0.5183780789375305 0.4663544297218323
+number 12: 0.24673312902450562 0.23293261229991913
+number 13: 0.026053452864289284 0.08170753717422485
+number 14: 0.30432388186454773 0.1525963395833969
+number 15: 0.026053452864289284 0.029427794739603996
+number 20: 0.0071962978690862656 0.04172438755631447
+number 21: 0.1208488792181015 0.12214144319295883
+number 22: 0.16671763360500336 0.13730397820472717
+number 25: 0.004648033529520035 0.05093821510672569
+number 26: 0.016864411532878876 0.030827689915895462
+number 30: 0.05867123231291771 0.036767683923244476
+number 33: 0.01993761770427227 0.022761700674891472
+number 36: 0.010305180214345455 0.03205801919102669
+number 40: 0.0545940101146698 0.07350414991378784
+number 41: 0.8496524095535278 0.7355174422264099
+number 50: 0.1998450607061386 0.21138402819633484
+number 53: 0.008725256659090519 0.031464602798223495
+number 57: 0.03726581484079361 0.04847116768360138
+number 60: 0.10250137746334076 0.11034291982650757
+number 64: 0.5336676836013794 0.5487340092658997
+number 65: 0.03614457696676254 0.05478106066584587
+number 66: 0.5642468333244324 0.4279351830482483
+number 67: 0.030946118757128716 0.030869487673044205
+number 69: 0.6101155877113342 0.46383777260780334
+number 70: 0.013821784406900406 0.027575518935918808
+number 82: 0.016879701986908913 0.026443645358085632
+number 86: 0.035227201879024506 0.02953564189374447
+number 91: 0.1911809742450714 0.16014695167541504
+number 93: 0.09689519554376602 0.09653554111719131
+number 94: 0.0056673395447432995 0.02014770545065403
+number 99: 0.13282571732997894 0.101142019033432
+number 105: 0.008725256659090519 0.03723682090640068
+number 112: 0.036042649298906326 0.0321091003715992
+number 115: 0.02401484176516533 0.028996385633945465
+number 116: 0.03828512132167816 0.04014423117041588
+number 117: 0.1269647181034088 0.12072253227233887
+number 119: 0.021160785108804703 0.04827294871211052
+number 125: 0.0780380368232727 0.043354593217372894
+number 131: 0.834362804889679 0.8426053524017334
+number 132: 0.003373901592567563 0.03356115147471428
+number 133: 0.08160561323165894 0.11339031159877777
+number 134: 0.27374473214149475 0.30865347385406494
+number 140: 0.013821784406900406 0.019311269745230675
+number 141: 0.03828512132167816 0.04584481567144394
+number 143: 0.004648033529520035 0.027577437460422516
+number 144: 0.04491060599684715 0.051222048699855804
+number 148: 0.0032719711307436228 0.021726369857788086
+number 149: 0.10250137746334076 0.11800890415906906
+number 151: 0.21105742454528809 0.20648552477359772
+number 153: 0.05867123231291771 0.03500160202383995
+number 155: 0.10250137746334076 0.09448321163654327
+number 158: 0.007400158792734146 0.01831873506307602
+number 163: 0.052555400878190994 0.04873349517583847
+number 166: 0.009489735588431358 0.029066942632198334
+number 172: 0.059180885553359985 0.0581875704228878
+number 173: 0.02401484176516533 0.025204287841916084
+number 176: 0.037571605294942856 0.025292154401540756
+number 177: 0.1784396469593048 0.13744130730628967
+number 180: 0.02376001514494419 0.026839841157197952
+number 181: 0.02911136858165264 0.034959644079208374
+number 182: 0.36548224091529846 0.34989693760871887
+number 191: 0.04949748143553734 0.0641801506280899
+number 197: 0.004138380754739046 0.036486491560935974
+number 198: 0.07192220538854599 0.08135613799095154
+column: 0
+label: 0 
+number 6: 0.7299945950508118 0.843492329120636
+number 24: 0.7749955058097839 0.8829312324523926
+number 28: 0.3699873983860016 0.36707621812820435
+number 31: 0.13998280465602875 0.15197032690048218
+number 35: 0.7499949932098389 0.8248786330223083
+number 38: 0.49998998641967773 0.5023289322853088
+number 39: 0.6299926042556763 0.6238027811050415
+number 46: 1.0 0.8604637980461121
+number 47: 0.8999980092048645 0.8928201794624329
+number 50: 0.0699813961982727 0.17571109533309937
+number 51: 0.9099981784820557 0.8763704299926758
+number 55: 0.569991409778595 0.5703848600387573
+column: 1
+label: 1 
+number 0: 0.9900000095367432 0.9727652668952942
+number 4: 0.30000001192092896 0.5811425447463989
+number 6: 0.6800000071525574 0.6801709532737732
+number 7: 0.08100000023841858 0.15579119324684143
+number 8: 0.9900000095367432 0.9507829546928406
+number 9: 0.9990000128746033 0.9461929798126221
+number 10: 0.9900000095367432 0.9805853962898254
+number 11: 0.9990000128746033 0.9384135007858276
+number 12: 0.9850000143051147 0.8677893280982971
+number 13: 0.9100000262260437 0.8088326454162598
+number 14: 0.0 0.7417813539505005
+number 15: 0.9800000190734863 0.9454157948493958
+number 16: 0.949999988079071 0.9370547533035278
+number 17: 0.9900000095367432 0.958358645439148
+number 18: 0.9850000143051147 0.9366158843040466
+number 19: 0.6299999952316284 0.64264976978302
+number 20: 0.8399999737739563 0.8160655498504639
+number 21: 0.9900000095367432 0.9633943438529968
+number 22: 0.9399999976158142 0.7832563519477844
+number 26: 0.2199999988079071 0.23337620496749878
+number 27: 0.9399999976158142 0.9281708002090454
+number 28: 0.5 0.5242561101913452
+number 30: 0.4000000059604645 0.842858076095581
+number 31: 0.9900000095367432 0.9327260851860046
+number 33: 0.9599999785423279 0.9058310389518738
+number 35: 0.9800000190734863 0.8999420404434204
+number 36: 0.949999988079071 0.9259908199310303
+number 37: 0.12999999523162842 0.20751740038394928
+number 38: 0.9800000190734863 0.9453534483909607
+number 39: 0.6000000238418579 0.5999115109443665
+number 41: 0.9900000095367432 0.9637231826782227
+number 43: 0.9900000095367432 0.9737277626991272
+number 44: 0.8999999761581421 0.9189161062240601
+number 46: 0.8500000238418579 0.8348016738891602
+number 49: 0.699999988079071 0.9212964773178101
+number 50: 0.8500000238418579 0.8264057636260986
+number 51: 0.800000011920929 0.6636412143707275
+number 52: 0.9800000190734863 0.957926332950592
+number 53: 0.9700000286102295 0.9193770885467529
+number 56: 0.2150000035762787 0.8309745788574219
+number 59: 0.9900000095367432 0.8922015428543091
+number 60: 0.9900000095367432 0.9479466080665588
+number 62: 0.9900000095367432 0.8957605957984924
+number 63: 0.9900000095367432 0.9139954447746277
+column: 2
+label: 2 
+number 0: 0.082184799015522 0.07831312716007233
+number 1: 0.017800744622945786 0.06880077719688416
+number 2: 0.029102200642228127 0.07252305001020432
+number 3: 0.041088592261075974 0.03857533261179924
+number 4: 0.020540492609143257 0.03347485885024071
+number 5: 0.06437644362449646 0.03607986494898796
+number 6: 0.051362644881010056 0.030520323663949966
+number 7: 0.006841757334768772 0.06856198608875275
+number 8: 0.17807593941688538 0.07299375534057617
+number 10: 0.3047892451286316 0.15079697966575623
+number 12: 0.03971872106194496 0.043860193341970444
+number 13: 0.12328100204467773 0.21280771493911743
+number 14: 0.008610948920249939 0.050598423928022385
+number 16: 0.1541031450033188 0.06571929156780243
+number 17: 0.10273289680480957 0.06636248528957367
+number 18: 0.05958188325166702 0.03870990872383118
+number 19: 0.002732137218117714 0.031172379851341248
+number 20: 0.056157201528549194 0.0665273666381836
+number 21: 0.054855819791555405 0.05799135938286781
+number 22: 0.05102017521858215 0.10662553459405899
+number 23: 0.005540377926081419 0.03738827630877495
+number 24: 0.054787326604127884 0.05440043658018112
+number 25: 0.1917746663093567 0.03874434530735016
+number 27: 0.028759732842445374 0.0351354144513607
+number 28: 0.009124651551246643 0.034663159400224686
+number 29: 0.01711580902338028 0.05973925441503525
+number 30: 0.10273289680480957 0.047920115292072296
+number 31: 0.12328100204467773 0.15383782982826233
+number 32: 0.0045588635839521885 0.04377711936831474
+number 33: 0.027389859780669212 0.042430661618709564
+number 34: 0.005129415541887283 0.04123996943235397
+number 35: 0.4520506262779236 0.04696119204163551
+number 36: 0.01848568208515644 0.03430428355932236
+number 37: 0.06088326498866081 0.03671490401029587
+number 38: 0.03423922508955002 0.052239976823329926
+number 39: 0.002846521558240056 0.04934883117675781
+number 40: 6.77327043376863E-4 0.05801553279161453
+number 41: 0.10958226770162582 0.12083109468221664
+number 42: 0.011293846182525158 0.03561319783329964
+number 43: 0.03423922508955002 0.08646596968173981
+number 44: 0.008554099127650261 0.05368778854608536
+number 45: 0.051362644881010056 0.09087146073579788
+number 46: 0.2191721349954605 0.043936874717473984
+number 47: 0.01711580902338028 0.055480245500802994
+number 48: 0.00815478153526783 0.04535670951008797
+number 49: 0.0011910295579582453 0.06623245775699615
+number 50: 0.09245884418487549 0.09617555141448975
+number 51: 0.082184799015522 0.041790276765823364
+number 52: 0.006271205376833677 0.05974823981523514
+number 53: 0.013691124506294727 0.03312717378139496
+number 54: 0.00752669433131814 0.06546267122030258
+number 55: 0.01026644092053175 0.04583144932985306
+number 57: 0.01254933513700962 0.17255353927612305
+number 58: 0.015403466299176216 0.03083726018667221
+number 61: 0.013006187975406647 0.04791779816150665
+number 62: 0.01026644092053175 0.0734047219157219
+column: 3
+label: 3 
+number 0: 0.09026970714330673 0.11223527044057846
+number 5: 0.04949748143553734 0.050268322229385376
+number 7: 0.007094367407262325 0.037499263882637024
+number 8: 0.22685666382312775 0.06342833489179611
+number 20: 0.010254214517772198 0.013115369714796543
+number 23: 0.008623326197266579 0.018893882632255554
+number 30: 0.02528897300362587 0.03632652014493942
+number 32: 0.009999388828873634 0.019206896424293518
+number 33: 0.05204574763774872 0.04921210557222366
+number 37: 0.03216928616166115 0.04062940552830696
+number 38: 0.007705950643867254 0.02380511909723282
+number 39: 0.021466577425599098 0.020980743691325188
+number 40: 0.009448963217437267 0.016347862780094147
+number 41: 0.02401484176516533 0.05118584260344505
+number 45: 0.03216928616166115 0.0557699091732502
+number 46: 0.04949748143553734 0.036721885204315186
+number 48: 0.04745887219905853 0.0649603009223938
+number 49: 0.00923490896821022 0.041927583515644073
+number 50: 0.013821784406900406 0.03298940137028694
+number 51: 0.03599168360233307 0.03368273377418518
+number 54: 0.20698019862174988 0.2025212049484253
+number 55: 0.013821784406900406 0.019913695752620697
+number 57: 0.016879701986908913 0.12346182763576508
+number 59: 0.3134976327419281 0.32016807794570923
+number 60: 0.6218376159667969 0.6171590089797974
+================== MAE ==================
+0.0717
+0.1116
+0.0558
+0.0244
+================== MAEarruaccys ==================
+0.7219
+0.6607
+0.8657
+0.9460
+-------------------- validation set ----------------------- 
+column: 0
+label: 0 
+number 0: 0.8999980092048645 0.5294905304908752
+number 12: 0.29998600482940674 0.5431228280067444
+number 16: 0.5999919772148132 0.6402608752250671
+number 17: 0.059981200844049454 0.18327596783638
+number 23: 0.029980599880218506 0.355195015668869
+number 30: 0.3699873983860016 0.09108974039554596
+number 32: 0.39998799562454224 0.2828737795352936
+number 37: 0.006980139762163162 0.7639420628547668
+number 40: 0.8499969840049744 0.6501520872116089
+number 41: 0.02498050034046173 0.1821661740541458
+number 44: 0.49998998641967773 0.5558292865753174
+number 45: 0.8999980092048645 0.8009126782417297
+number 51: 0.969999372959137 0.38745975494384766
+number 54: 0.6299926042556763 0.7198859453201294
+number 56: 0.6999940276145935 0.5875680446624756
+number 57: 0.8499969840049744 0.7760419845581055
+number 59: 0.9299985766410828 0.5458188056945801
+number 60: 0.019980398938059807 0.684756875038147
+number 62: 1.0 0.4841306805610657
+number 63: 0.5999919772148132 0.42648038268089294
+number 64: 0.39998799562454224 0.8293184041976929
+number 65: 0.3699873983860016 0.5263044834136963
+number 68: 0.569991409778595 0.2563273012638092
+number 75: 0.9399988055229187 0.8891861438751221
+number 76: 0.1499830037355423 0.1849188506603241
+number 77: 0.27998560667037964 0.518677294254303
+number 78: 0.009980199858546257 0.6886387467384338
+number 79: 0.799996018409729 0.6843712329864502
+number 81: 0.5899918079376221 0.5056042671203613
+number 83: 0.6199923753738403 0.44143542647361755
+number 84: 0.9499989748001099 0.46423646807670593
+number 85: 0.3499870002269745 0.15890100598335266
+number 87: 0.049980998039245605 0.5177391767501831
+number 88: 0.8999980092048645 0.2609644830226898
+number 89: 0.44998899102211 0.2822975814342499
+number 90: 0.5499910116195679 0.8376206755638123
+number 91: 0.6399927735328674 0.8341041803359985
+number 93: 0.769995391368866 0.2105625420808792
+number 94: 0.4249885082244873 0.6348937153816223
+number 95: 0.1499830037355423 0.5398730039596558
+number 99: 0.5999919772148132 0.6959591507911682
+number 100: 0.39998799562454224 0.7830555438995361
+number 101: 0.49998998641967773 0.5793114900588989
+number 102: 0.49998998641967773 0.6754733920097351
+number 104: 0.5999919772148132 0.31202515959739685
+number 105: 0.799996018409729 0.6285974383354187
+number 106: 0.8999980092048645 0.37588927149772644
+number 107: 0.45998919010162354 0.7394793033599854
+number 109: 0.31998640298843384 0.35196438431739807
+number 110: 0.019980398938059807 0.6933431029319763
+number 111: 0.799996018409729 0.7798259258270264
+number 112: 0.39998799562454224 0.5214093923568726
+number 114: 0.49998998641967773 0.5341537594795227
+number 115: 0.8899977803230286 0.5603591799736023
+number 116: 0.6999940276145935 0.38213396072387695
+number 117: 0.4299885928630829 0.4882534444332123
+number 118: 0.37998759746551514 0.4132024347782135
+number 119: 0.3699873983860016 0.4263727366924286
+number 120: 0.1099821999669075 0.6971613764762878
+number 122: 0.7399948239326477 0.8413007259368896
+number 123: 0.6499930024147034 0.6631866097450256
+number 124: 0.9199984073638916 0.7345695495605469
+number 128: 0.8499969840049744 0.2976187467575073
+number 129: 1.0 0.6301514506340027
+number 130: 0.31998640298843384 0.8363038897514343
+number 131: 0.01018020324409008 0.6170167922973633
+number 132: 0.9499989748001099 0.7244518399238586
+number 134: 0.22498449683189392 0.626173198223114
+number 135: 1.0 0.707190215587616
+number 136: 0.5999919772148132 0.3951614797115326
+number 137: 0.8999980092048645 0.8588060736656189
+number 138: 0.009980199858546257 0.18978986144065857
+number 139: 0.8499969840049744 0.851226806640625
+number 140: 0.5999919772148132 0.7528321146965027
+number 142: 0.5999919772148132 0.6039059162139893
+number 143: 0.799996018409729 0.7273581027984619
+number 144: 0.0759815201163292 0.6546761989593506
+number 148: 0.2099841982126236 0.23758560419082642
+number 151: 1.0 0.8605313897132874
+number 153: 0.49998998641967773 0.6985936164855957
+number 156: 0.9199984073638916 0.44893234968185425
+number 157: 0.8749974966049194 0.7838796377182007
+number 159: 0.7499949932098389 0.4970209300518036
+number 161: 0.799996018409729 0.5718365907669067
+number 166: 0.5999919772148132 0.5347444415092468
+number 168: 0.2299845963716507 0.6588426232337952
+number 169: 0.1699834018945694 0.8521649837493896
+number 170: 0.9399988055229187 0.7853638529777527
+number 171: 0.769995391368866 0.8107503056526184
+number 172: 0.5499910116195679 0.44025710225105286
+number 173: 0.7849956750869751 0.6749875545501709
+number 174: 0.3299866020679474 0.2554336190223694
+number 177: 0.8949978947639465 0.8595109581947327
+number 181: 0.7199944257736206 0.8236662149429321
+number 182: 0.8999980092048645 0.629052996635437
+number 183: 0.1499830037355423 0.47886353731155396
+number 184: 0.6899937987327576 0.6966714859008789
+number 186: 1.0 0.43262338638305664
+number 187: 0.8999980092048645 0.9271837472915649
+number 189: 0.6999940276145935 0.4672202169895172
+number 192: 0.6399927735328674 0.6219130158424377
+number 193: 0.9899997711181641 0.4609987437725067
+number 195: 0.1499830037355423 0.31514087319374084
+number 196: 0.5999919772148132 0.5517781972885132
+number 197: 0.059981200844049454 0.5125464200973511
+number 198: 0.23998479545116425 0.8201234340667725
+column: 1
+label: 1 
+number 5: 0.05000000074505806 0.9275301694869995
+number 6: 0.9700000286102295 0.831443727016449
+number 9: 0.0 0.6282716393470764
+number 13: 0.2750000059604645 0.5275440216064453
+number 15: 0.75 0.9323177337646484
+number 18: 0.550000011920929 0.8077489137649536
+number 21: 0.8999999761581421 0.8758339285850525
+number 22: 0.9900000095367432 0.8747016191482544
+number 24: 0.8999999761581421 0.5966867804527283
+number 26: 0.8799999952316284 0.7110300064086914
+number 27: 0.6499999761581421 0.4972299337387085
+number 31: 0.9900000095367432 0.9097412824630737
+number 33: 0.009999999776482582 0.7661382555961609
+number 34: 0.9800000190734863 0.9319928884506226
+number 35: 0.44999998807907104 0.933338463306427
+number 37: 0.7799999713897705 0.3756760060787201
+number 38: 0.9200000166893005 0.7915693521499634
+number 41: 0.7200000286102295 0.9299339652061462
+number 43: 0.8999999761581421 0.7989650964736938
+number 44: 0.1899999976158142 0.6563097834587097
+number 45: 0.9700000286102295 0.9271783232688904
+number 46: 0.4000000059604645 0.8181500434875488
+number 47: 0.8999999761581421 0.8902348279953003
+number 48: 0.30000001192092896 0.8633785843849182
+number 49: 0.20000000298023224 0.8440325856208801
+number 51: 0.15000000596046448 0.6686853766441345
+number 52: 0.9900000095367432 0.9459441304206848
+number 53: 0.9980000257492065 0.7958407998085022
+number 55: 0.25 0.8088238835334778
+number 57: 0.699999988079071 0.7063463926315308
+number 58: 0.6000000238418579 0.9146392345428467
+number 59: 0.996999979019165 0.9108920693397522
+number 60: 0.10000000149011612 0.6045605540275574
+number 62: 0.7699999809265137 0.8792077302932739
+number 63: 0.5 0.46966785192489624
+number 64: 0.029999999329447746 0.5239779353141785
+number 65: 0.0 0.8051806092262268
+number 66: 0.10000000149011612 0.6809504628181458
+number 67: 0.5199999809265137 0.4611350893974304
+number 68: 0.6499999761581421 0.8239657878875732
+number 69: 0.7599999904632568 0.8113456964492798
+number 70: 0.8500000238418579 0.8074396848678589
+number 71: 0.9700000286102295 0.7881826758384705
+number 72: 0.8799999952316284 0.8484046459197998
+number 73: 0.8899999856948853 0.9106661677360535
+number 74: 0.20000000298023224 0.6899372935295105
+number 76: 0.9800000190734863 0.9045851826667786
+number 77: 0.7300000190734863 0.863303005695343
+number 79: 0.25 0.32038846611976624
+number 80: 0.9300000071525574 0.8757158517837524
+number 81: 0.03999999910593033 0.6110451221466064
+number 85: 0.949999988079071 0.9419835209846497
+number 87: 0.014999999664723873 0.28555428981781006
+number 88: 0.9800000190734863 0.9353665709495544
+number 89: 0.6499999761581421 0.5586786270141602
+number 91: 0.9900000095367432 0.680000364780426
+number 93: 0.9750000238418579 0.9606824517250061
+number 94: 0.17499999701976776 0.3093368411064148
+number 95: 0.20999999344348907 0.33307576179504395
+number 96: 0.8700000047683716 0.9143680334091187
+number 97: 0.8799999952316284 0.9594460725784302
+number 98: 0.9350000023841858 0.8624276518821716
+number 99: 0.10000000149011612 0.5647983551025391
+number 100: 0.25999999046325684 0.8717262744903564
+number 101: 0.8600000143051147 0.9173570275306702
+number 102: 0.9800000190734863 0.9022059440612793
+number 103: 0.5799999833106995 0.8353911638259888
+number 104: 0.9900000095367432 0.9199079871177673
+number 105: 0.30000001192092896 0.9015207290649414
+number 106: 0.9649999737739563 0.9328715801239014
+number 109: 0.20000000298023224 0.7824712991714478
+number 110: 0.949999988079071 0.924225389957428
+number 111: 0.699999988079071 0.9005456566810608
+number 112: 0.9599999785423279 0.8977357745170593
+number 113: 0.699999988079071 0.8181073665618896
+number 114: 0.15000000596046448 0.6089357733726501
+number 115: 0.5 0.8972418308258057
+number 116: 0.9449999928474426 0.9630883932113647
+number 117: 0.949999988079071 0.9449242949485779
+number 118: 0.949999988079071 0.7334001064300537
+number 119: 0.5 0.5893922448158264
+number 121: 0.8999999761581421 0.879387378692627
+number 122: 0.4000000059604645 0.6574445962905884
+number 123: 0.17499999701976776 0.4776691496372223
+number 124: 0.75 0.7968084216117859
+number 125: 0.9800000190734863 0.9550123810768127
+number 126: 0.6000000238418579 0.9111908674240112
+number 127: 0.44999998807907104 0.6628880500793457
+number 128: 0.17499999701976776 0.8724795579910278
+number 129: 0.05999999865889549 0.35162878036499023
+number 131: 0.8100000023841858 0.9203330874443054
+number 132: 0.996999979019165 0.885219395160675
+number 133: 0.9750000238418579 0.8954933881759644
+number 134: 0.20999999344348907 0.30000734329223633
+number 135: 0.9900000095367432 0.9338079690933228
+number 136: 0.014999999664723873 0.19045743346214294
+number 137: 0.9300000071525574 0.8745829463005066
+number 138: 0.5600000023841858 0.5056567788124084
+number 139: 0.0 0.48131030797958374
+number 141: 0.10000000149011612 0.6277326941490173
+number 142: 0.6499999761581421 0.7811033725738525
+number 143: 0.5600000023841858 0.8463796973228455
+number 145: 0.8999999761581421 0.3890755772590637
+number 148: 0.6499999761581421 0.5595489740371704
+number 149: 0.9100000262260437 0.9213004112243652
+number 150: 0.9800000190734863 0.9004021883010864
+number 151: 0.9700000286102295 0.9109179377555847
+number 153: 0.9700000286102295 0.9310227632522583
+number 154: 0.9599999785423279 0.9588955640792847
+number 155: 0.550000011920929 0.8733938932418823
+number 156: 0.824999988079071 0.9415310025215149
+number 157: 0.12999999523162842 0.8380386233329773
+number 160: 0.9850000143051147 0.9329398274421692
+number 161: 0.30000001192092896 0.7846710085868835
+number 162: 0.9980000257492065 0.9579572081565857
+number 163: 0.3499999940395355 0.643700897693634
+number 165: 0.9900000095367432 0.8943591117858887
+number 166: 0.949999988079071 0.9647894501686096
+number 167: 0.8450000286102295 0.9548009634017944
+number 168: 0.9990000128746033 0.8960348963737488
+number 169: 0.7300000190734863 0.7152740955352783
+number 170: 0.949999988079071 0.6479845643043518
+number 171: 0.9800000190734863 0.9148269295692444
+number 172: 0.800000011920929 0.7386243343353271
+number 173: 0.9800000190734863 0.9584247469902039
+number 174: 0.6499999761581421 0.8911182284355164
+number 175: 0.9750000238418579 0.551392138004303
+number 177: 0.7799999713897705 0.777353823184967
+number 178: 0.574999988079071 0.8428027629852295
+number 180: 0.7950000166893005 0.7005427479743958
+number 181: 0.9990000128746033 0.9275352954864502
+number 182: 0.1599999964237213 0.7477632761001587
+number 183: 0.949999988079071 0.9537177681922913
+number 184: 0.9800000190734863 0.8751488327980042
+number 185: 0.949999988079071 0.9566401243209839
+number 186: 0.5 0.5014479756355286
+number 187: 0.5 0.4726957380771637
+number 188: 0.7599999904632568 0.6411795616149902
+number 189: 0.9900000095367432 0.48743656277656555
+number 191: 0.2809999883174896 0.3389677405357361
+number 192: 0.9900000095367432 0.9423640370368958
+number 193: 0.9980000257492065 0.926977813243866
+number 195: 0.17499999701976776 0.8014336228370667
+number 196: 0.9900000095367432 0.9391467571258545
+number 197: 0.9300000071525574 0.885154664516449
+number 198: 0.9800000190734863 0.8512312173843384
+number 199: 0.8799999952316284 0.8425864577293396
+column: 2
+label: 2 
+number 1: 0.10273289680480957 0.0759238451719284
+number 2: 0.06163669377565384 0.03938809037208557
+number 3: 0.0017047321889549494 0.06204236298799515
+number 4: 0.013691124506294727 0.06835205107927322
+number 7: 0.006841757334768772 0.03552933782339096
+number 10: 0.9863012433052063 0.058566559106111526
+number 11: 0.013691124506294727 0.032392196357250214
+number 14: 0.01711580902338028 0.027136830613017082
+number 19: 0.3698582053184509 0.04279085621237755
+number 20: 0.0045588635839521885 0.07907617837190628
+number 21: 0.054787326604127884 0.041158657521009445
+number 23: 0.01711580902338028 0.06296946853399277
+number 24: 0.9863012433052063 0.02886115573346615
+number 25: 0.0025040532927960157 0.040496569126844406
+number 28: 0.06506137549877167 0.08707241714000702
+number 29: 0.23287087678909302 0.03879391402006149
+number 30: 0.4657493531703949 0.6573142409324646
+number 32: 0.03903378173708916 0.07085850834846497
+number 34: 0.041088592261075974 0.041550587862730026
+number 36: 0.01026644092053175 0.06262137740850449
+number 39: 0.19519935548305511 0.05165604501962662
+number 40: 0.03081454336643219 0.05249294638633728
+number 41: 0.9041088819503784 0.08718647807836533
+number 42: 0.13697972893714905 0.04801502451300621
+number 43: 0.013691124506294727 0.1253034770488739
+number 45: 0.008554099127650261 0.05865098163485527
+number 49: 0.01095137745141983 0.07581485062837601
+number 50: 0.08560948073863983 0.05043834075331688
+number 51: 0.042458467185497284 0.054502516984939575
+number 52: 0.09245884418487549 0.04923764988780022
+number 55: 0.01711580902338028 0.03425966203212738
+number 56: 0.06163669377565384 0.06439884752035141
+number 57: 0.3082139194011688 0.03529774025082588
+number 58: 0.012321251444518566 0.07247115671634674
+number 60: 0.026019984856247902 0.03089110367000103
+number 61: 0.24656960368156433 0.039491571485996246
+number 63: 0.0445132777094841 0.045408863574266434
+number 65: 0.03903378173708916 0.05976852402091026
+number 66: 0.041088592261075974 0.04071419686079025
+number 68: 0.06848606467247009 0.13119593262672424
+number 69: 0.3082139194011688 0.044273845851421356
+number 72: 0.082184799015522 0.040224190801382065
+number 73: 0.022937770932912827 0.05072459951043129
+number 74: 0.16437719762325287 0.03590359166264534
+number 78: 0.008896567858755589 0.028432661667466164
+number 80: 0.10958226770162582 0.09084213525056839
+number 81: 0.051225658506155014 0.0427435077726841
+number 82: 0.3424607515335083 0.03366442769765854
+number 83: 0.082184799015522 0.06083919107913971
+number 84: 0.6232848167419434 0.04602309688925743
+number 85: 0.05889694765210152 0.08741655200719833
+number 86: 0.041088592261075974 0.06906859576702118
+number 87: 0.019855555146932602 0.047704365104436874
+number 89: 0.023965176194906235 0.050193361937999725
+number 90: 0.042458467185497284 0.04591549560427666
+number 92: 0.1301303654909134 0.12276225537061691
+number 93: 0.27396708726882935 0.09499425441026688
+number 94: 0.020540492609143257 0.03988010808825493
+number 95: 0.019855555146932602 0.05948429927229881
+number 96: 0.16095252335071564 0.045972470194101334
+number 97: 0.34931012988090515 0.1013241708278656
+number 98: 0.36095404624938965 0.10033564269542694
+number 99: 0.02567751705646515 0.030387690290808678
+number 100: 0.023965176194906235 0.0355813205242157
+number 101: 0.06848606467247009 0.03579641133546829
+number 103: 0.03081454336643219 0.04733339324593544
+number 104: 0.07533542811870575 0.07172241061925888
+number 105: 0.037663910537958145 0.04052715376019478
+number 106: 0.041088592261075974 0.05822055786848068
+number 107: 0.19862404465675354 0.047268081456422806
+number 108: 0.013006187975406647 0.2762998342514038
+number 109: 0.027389859780669212 0.07005146145820618
+number 110: 0.16437719762325287 0.04021814092993736
+number 111: 0.11643163114786148 0.05429904907941818
+number 112: 0.027389859780669212 0.03689746558666229
+number 113: 0.023965176194906235 0.47052109241485596
+number 114: 0.020198022946715355 0.0274786539375782
+number 115: 0.12328100204467773 0.03586002439260483
+number 117: 0.24656960368156433 0.0643472895026207
+number 118: 0.018828149884939194 0.06986427307128906
+number 119: 0.009124651551246643 0.032334551215171814
+number 120: 0.1815006136894226 0.07746420800685883
+number 122: 0.020540492609143257 0.02375362627208233
+number 123: 0.013691124506294727 0.03508368879556656
+number 124: 0.01574593409895897 0.03713010996580124
+number 125: 3.062968607991934E-4 0.05834072083234787
+number 128: 0.023965176194906235 0.05744253844022751
+number 129: 0.019170617684721947 0.05128273740410805
+number 130: 0.2671177089214325 0.058029308915138245
+number 131: 0.03321181982755661 0.03643426671624184
+number 132: 0.054787326604127884 0.03628256916999817
+number 133: 0.023965176194906235 0.039050932973623276
+number 134: 0.027389859780669212 0.03274209797382355
+number 136: 0.027937809005379677 0.05087309703230858
+number 137: 0.016430871561169624 0.04029100388288498
+number 138: 0.011636314913630486 0.07870364934206009
+number 139: 0.013691124506294727 0.05567069351673126
+number 140: 0.328762024641037 0.0482633113861084
+number 141: 0.013006187975406647 0.035080790519714355
+number 142: 0.03423922508955002 0.03398517519235611
+number 143: 0.20204871892929077 0.043722182512283325
+number 144: 0.020540492609143257 0.0337907038629055
+number 146: 0.17807593941688538 0.03651982173323631
+number 147: 3.348587197251618E-4 0.15936648845672607
+number 148: 0.011636314913630486 0.0646636113524437
+number 149: 0.0945136547088623 0.038429226726293564
+number 150: 0.029102200642228127 0.03334220126271248
+number 151: 0.03081454336643219 0.07169152796268463
+number 152: 0.09691093862056732 0.055896174162626266
+number 153: 0.051362644881010056 0.042023006826639175
+number 154: 0.9698627591133118 0.06946725398302078
+number 155: 0.0010197954252362251 0.03623757138848305
+number 156: 0.04793795943260193 0.05749576911330223
+number 157: 0.04793795943260193 0.033017661422491074
+number 158: 0.013691124506294727 0.06327249109745026
+number 159: 0.082184799015522 0.2563649117946625
+number 161: 0.07191074639558792 0.03758670389652252
+number 162: 0.2294461876153946 0.06954552233219147
+number 163: 0.01711580902338028 0.031213758513331413
+number 164: 0.10958226770162582 0.04315648600459099
+number 166: 0.1575278341770172 0.07866594940423965
+number 167: 0.3424607515335083 0.07812296599149704
+number 168: 0.4438313841819763 0.05291946977376938
+number 169: 6.316417711786926E-4 0.042174823582172394
+number 170: 0.04793795943260193 0.04825460910797119
+number 171: 0.006841757334768772 0.049978241324424744
+number 172: 0.003417073981836438 0.03512513265013695
+number 173: 0.03423922508955002 0.10927850753068924
+number 174: 0.09862327575683594 0.05445589870214462
+number 175: 5.060929106548429E-4 0.04127959907054901
+number 176: 0.01181919313967228 0.12890808284282684
+number 177: 0.013691124506294727 0.030676061287522316
+number 178: 0.04588314890861511 0.032002441585063934
+number 179: 0.029102200642228127 0.09657113254070282
+number 180: 0.05273251608014107 0.02734493464231491
+number 181: 0.33561137318611145 0.05706796795129776
+number 182: 0.020540492609143257 0.028485137969255447
+number 183: 0.03081454336643219 0.06333845853805542
+number 184: 0.12328100204467773 0.06159869581460953
+number 185: 0.04793795943260193 0.07846832275390625
+number 186: 0.04793795943260193 0.031938791275024414
+number 187: 0.09280131757259369 0.050595443695783615
+number 188: 0.01026644092053175 0.026237890124320984
+number 189: 0.0045588635839521885 0.08248000591993332
+number 190: 0.013691124506294727 0.05640529468655586
+number 191: 0.01026644092053175 0.03335503116250038
+number 192: 0.02807479538023472 0.046682920306921005
+number 193: 0.023965176194906235 0.044179800897836685
+number 194: 0.006362301763147116 0.07669015228748322
+number 195: 0.01711580902338028 0.038638606667518616
+number 196: 0.04793795943260193 0.05161003768444061
+number 197: 0.03423922508955002 0.03055332414805889
+number 198: 0.020540492609143257 0.040782514959573746
+number 199: 0.005129415541887283 0.030210500583052635
+column: 3
+label: 3 
+number 5: 0.0031190752051770687 0.08369095623493195
+number 8: 0.006227957550436258 0.05004226043820381
+number 11: 0.001681854366324842 0.01990821212530136
+number 16: 0.2023933231830597 0.09003285318613052
+number 17: 0.15142804384231567 0.12491881102323532
+number 21: 0.0028132835868746042 0.030038144439458847
+number 27: 0.004953825380653143 0.03359677270054817
+number 28: 6.115833821240813E-5 0.034261927008628845
+number 30: 0.949544370174408 0.9169652462005615
+number 33: 0.006686645094305277 0.09224060922861099
+number 34: 0.0015901167644187808 0.08898916095495224
+number 36: 0.028346890583634377 0.07803769409656525
+number 37: 0.012802478857338428 0.4551467299461365
+number 41: 0.9770656228065491 0.18025104701519012
+number 43: 6.115833821240813E-5 0.027651457116007805
+number 45: 0.006686645094305277 0.03010553866624832
+number 48: 0.007705950643867254 0.029973229393363
+number 49: 0.008878151886165142 0.01890946738421917
+number 52: 0.0224858820438385 0.051988907158374786
+number 53: 0.23297250270843506 0.09450532495975494
+number 54: 0.23042424023151398 0.01868933066725731
+number 59: 0.6101155877113342 0.16336020827293396
+number 62: 0.6406947374343872 0.02766341157257557
+number 63: 0.004036450292915106 0.02292148396372795
+number 64: 0.0038835546001791954 0.05265011638402939
+number 65: 0.06789594888687134 0.041862402111291885
+number 67: 0.0780380368232727 0.15650023519992828
+number 68: 0.08721178770065308 0.5368606448173523
+number 70: 0.013821784406900406 0.03220954164862633
+number 72: 0.04949748143553734 0.023473432287573814
+number 75: 0.10861720889806747 0.07586384564638138
+number 76: 0.08160561323165894 0.1081036627292633
+number 80: 0.09791450202465057 0.06005195155739784
+number 81: 0.010519234463572502 0.018941348418593407
+number 83: 0.05306505039334297 0.01944378949701786
+number 84: 0.04623570293188095 0.026414750143885612
+number 85: 0.25233930349349976 0.12720365822315216
+number 87: 0.021160785108804703 0.03545335307717323
+number 88: 0.30432388186454773 0.09478244185447693
+number 101: 0.09638553857803345 0.06270639598369598
+number 103: 0.007705950643867254 0.10461821407079697
+number 104: 0.006686645094305277 0.029146382585167885
+number 105: 0.13308054208755493 0.060218993574380875
+number 106: 0.006686645094305277 0.03799895942211151
+number 109: 0.27374473214149475 0.32210832834243774
+number 110: 0.6865634918212891 0.0876220315694809
+number 111: 0.1911809742450714 0.17052780091762543
+number 112: 0.05204574763774872 0.04718123376369476
+number 114: 0.04134303703904152 0.02843145653605461
+number 116: 0.992355227470398 0.46735671162605286
+number 120: 0.044655781239271164 0.03727586194872856
+number 122: 0.04287199676036835 0.06942958384752274
+number 124: 0.010152284055948257 0.026508070528507233
+number 128: 0.05969053879380226 0.05244576185941696
+number 129: 0.01495321374386549 0.03630783036351204
+number 132: 0.034360792487859726 0.04211904853582382
+number 134: 0.6865634918212891 0.054777100682258606
+number 135: 0.21462500095367432 0.06256367266178131
+number 136: 0.020029356703162193 0.031805578619241714
+number 138: 0.004953825380653143 0.03939905762672424
+number 140: 0.7120461463928223 0.06591950356960297
+number 143: 0.36548224091529846 0.2617954611778259
+number 147: 0.09026970714330673 0.11202138662338257
+number 148: 0.00923490896821022 0.017198892310261726
+number 150: 0.13613846898078918 0.051303986459970474
+number 156: 0.16671763360500336 0.14771346747875214
+number 157: 0.2023933231830597 0.057273153215646744
+number 165: 0.1208488792181015 0.15613767504692078
+number 168: 0.016879701986908913 0.031030869111418724
+number 170: 0.013821784406900406 0.019456511363387108
+number 171: 0.007349193561822176 0.05249999091029167
+number 173: 0.024524493142962456 0.362102210521698
+number 176: 0.0034860253799706697 0.07464408129453659
+number 179: 0.006686645094305277 0.09045983105897903
+number 182: 0.13613846898078918 0.03355169668793678
+number 183: 0.10453999042510986 0.13152439892292023
+number 187: 0.06580637395381927 0.09165549278259277
+number 189: 0.05204574763774872 0.06979384273290634
+number 192: 0.003373901592567563 0.03452287241816521
+number 193: 0.007502089720219374 0.06536664813756943
+number 194: 0.004953825380653143 0.10271098464727402
+number 196: 0.04440095275640488 0.05971400439739227
+number 198: 0.00923490896821022 0.03425798565149307
+number 199: 0.019020242616534233 0.02321600168943405
+column: 0
+label: 0 
+number 0: 0.8999980092048645 0.5342395901679993
+number 1: 0.07998160272836685 0.7650888562202454
+number 5: 0.49998998641967773 0.5646852850914001
+number 6: 0.7099941968917847 0.8749659061431885
+number 7: 0.6499930024147034 0.3966570496559143
+number 10: 0.35998719930648804 0.8804673552513123
+number 13: 0.29998600482940674 0.6518470048904419
+number 14: 0.2499849945306778 0.8118095993995667
+number 15: 0.39998799562454224 0.33622094988822937
+number 16: 0.1699834018945694 0.47162365913391113
+number 19: 0.7499949932098389 0.5956759452819824
+column: 1
+label: 1 
+number 0: 0.6499999761581421 0.8545346856117249
+number 1: 0.8299999833106995 0.5116768479347229
+number 2: 0.4000000059604645 0.7048447132110596
+number 4: 0.9950000047683716 0.9323590993881226
+number 5: 0.10999999940395355 0.7613193392753601
+number 6: 0.6499999761581421 0.6085448265075684
+number 7: 0.9990000128746033 0.9469215869903564
+number 9: 0.949999988079071 0.8772798776626587
+number 10: 0.9700000286102295 0.8942570090293884
+number 11: 0.18000000715255737 0.8212490081787109
+number 12: 0.7200000286102295 0.8331393003463745
+number 13: 0.9800000190734863 0.8467333912849426
+number 14: 0.9300000071525574 0.8933764100074768
+number 15: 0.6399999856948853 0.9105346202850342
+number 16: 0.5 0.8255968689918518
+number 17: 0.7300000190734863 0.8117784261703491
+number 19: 0.20000000298023224 0.9391543865203857
+column: 2
+label: 2 
+number 0: 0.06848606467247009 0.060259491205215454
+number 1: 0.03834884613752365 0.055790241807699203
+number 2: 0.4315025210380554 0.041752882301807404
+number 3: 0.17122657597064972 0.05689089000225067
+number 4: 0.8219164609909058 0.04754638671875
+number 5: 0.0445132777094841 0.031700171530246735
+number 6: 0.04793795943260193 0.03301260620355606
+number 7: 0.018828149884939194 0.10113410651683807
+number 8: 0.0019903506617993116 0.24971166253089905
+number 9: 0.11300694942474365 0.03063111938536167
+number 10: 0.020540492609143257 0.055470261722803116
+number 11: 0.020540492609143257 0.036346931010484695
+number 12: 0.16437719762325287 0.036550380289554596
+number 13: 0.05821201205253601 0.03208199143409729
+number 14: 0.11985631287097931 0.05061938613653183
+number 15: 0.082184799015522 0.07818468660116196
+number 16: 0.527393639087677 0.04460500180721283
+number 17: 0.05547226592898369 0.039888497442007065
+number 18: 0.05821201205253601 0.04902784898877144
+number 19: 0.04314340278506279 0.05389171093702316
+column: 3
+label: 3 
+number 0: 0.09026970714330673 0.22065114974975586
+number 2: 0.04287199676036835 0.07453104108572006
+number 3: 0.10097241401672363 0.2691921293735504
+number 4: 0.2941308319568634 0.1556241810321808
+number 7: 0.0031190752051770687 0.049471236765384674
+number 8: 0.0031190752051770687 0.1376131772994995
+number 10: 0.04837624728679657 0.06195233017206192
+number 13: 0.05714227631688118 0.04150984808802605
+number 17: 0.17589138448238373 0.06138751655817032
+number 19: 0.0780380368232727 0.22395305335521698
+================== MAE ==================
+0.2832
+0.2211
+0.1098
+0.1004
+================== MAEarruaccys ==================
+0.2371
+0.4420
+0.7331
+0.5869
+-------------------- testing set ----------------------- 
+column: 0
+label: 0 
+number 4: 0.39998799562454224 0.6065014004707336
+number 5: 0.6599931716918945 0.7453684210777283
+number 12: 0.969999372959137 0.423759788274765
+number 19: 0.8499969840049744 0.7126381397247314
+number 21: 0.009980199858546257 0.4814993143081665
+number 33: 0.02498050034046173 0.5667300820350647
+number 41: 0.8999980092048645 0.8388820886611938
+number 42: 0.569991409778595 0.6765373945236206
+number 49: 0.29998600482940674 0.7848823070526123
+number 50: 0.0011800236534327269 0.6618064641952515
+number 53: 0.3699873983860016 0.0951509177684784
+number 54: 0.45998919010162354 0.8905075788497925
+number 58: 0.4299885928630829 0.4659198224544525
+number 59: 0.0 0.5503501296043396
+number 65: 0.9799996018409729 0.5996668934822083
+number 66: 0.6999940276145935 0.7206456661224365
+number 67: 0.13998280465602875 0.646739661693573
+number 68: 0.19998399913311005 0.8009664416313171
+number 80: 0.17498350143432617 0.38095709681510925
+number 82: 0.019980398938059807 0.43840491771698
+number 88: 0.969999372959137 0.7026411294937134
+number 90: 0.13998280465602875 0.6247164607048035
+number 91: 0.9099981784820557 0.7680068016052246
+number 93: 0.5499910116195679 0.8218987584114075
+number 97: 0.27998560667037964 0.30988022685050964
+number 102: 0.5099902153015137 0.7017672061920166
+number 106: 0.0699813961982727 0.28957465291023254
+number 109: 0.7099941968917847 0.7631117105484009
+number 112: 0.5499910116195679 0.6783605813980103
+number 114: 0.35998719930648804 0.3772784471511841
+number 115: 0.49998998641967773 0.4525129795074463
+number 120: 0.5199903845787048 0.550260603427887
+number 122: 0.02498050034046173 0.18758419156074524
+number 125: 0.06498129665851593 0.23771986365318298
+number 127: 1.0 0.6193126440048218
+number 128: 0.039980798959732056 0.3915576934814453
+number 130: 0.2499849945306778 0.8034387826919556
+number 131: 0.29998600482940674 0.6600881218910217
+number 133: 0.8699973821640015 0.8455921411514282
+number 136: 0.39998799562454224 0.7675701379776001
+number 141: 0.8999980092048645 0.7966213822364807
+number 142: 0.1699834018945694 0.5790921449661255
+number 144: 0.3499870002269745 0.8009126782417297
+number 148: 0.005980119574815035 0.7085884213447571
+number 150: 0.8499969840049744 0.6583662629127502
+number 153: 0.3699873983860016 0.09108974039554596
+number 157: 0.6499930024147034 0.6488946676254272
+number 158: 0.2499849945306778 0.8435243964195251
+number 159: 0.3249864876270294 0.4326595366001129
+number 163: 0.29998600482940674 0.5322231650352478
+number 166: 0.8299965858459473 0.4347606599330902
+number 168: 0.6399927735328674 0.2657313942909241
+number 169: 0.49998998641967773 0.3374670445919037
+number 170: 0.19998399913311005 0.4079212248325348
+number 172: 0.8199964165687561 0.5061299204826355
+number 175: 0.799996018409729 0.7350252270698547
+number 178: 0.5999919772148132 0.45509037375450134
+number 179: 0.29998600482940674 0.7650015354156494
+number 182: 0.06498129665851593 0.4976169764995575
+number 188: 0.8999980092048645 0.8247754573822021
+number 189: 0.4299885928630829 0.8720608353614807
+number 192: 0.1099821999669075 0.587597131729126
+number 196: 0.5299906134605408 0.7655272483825684
+number 197: 0.8999980092048645 0.23927395045757294
+number 198: 0.2299845963716507 0.7198830842971802
+number 199: 1.0 0.4229261875152588
+column: 1
+label: 1 
+number 2: 0.9700000286102295 0.8959367871284485
+number 5: 0.8999999761581421 0.43258801102638245
+number 7: 0.10000000149011612 0.9290645122528076
+number 8: 0.9800000190734863 0.8995155096054077
+number 9: 0.0 0.6686853766441345
+number 14: 0.9900000095367432 0.9304531216621399
+number 16: 0.33000001311302185 0.8857545256614685
+number 17: 0.0 0.6163041591644287
+number 18: 0.9300000071525574 0.8013885021209717
+number 20: 0.5400000214576721 0.3311708867549896
+number 22: 0.9549999833106995 0.8471842408180237
+number 24: 0.05000000074505806 0.8067893385887146
+number 25: 0.550000011920929 0.7250628471374512
+number 26: 0.8999999761581421 0.8202504515647888
+number 28: 0.6200000047683716 0.9012649059295654
+number 30: 0.9200000166893005 0.8719764351844788
+number 31: 0.23999999463558197 0.35827261209487915
+number 32: 0.8100000023841858 0.6991490125656128
+number 33: 0.49000000953674316 0.9353294372558594
+number 36: 0.27300000190734863 0.7797134518623352
+number 37: 0.27000001072883606 0.8993315100669861
+number 38: 0.7799999713897705 0.6956235766410828
+number 39: 0.009999999776482582 0.6775244474411011
+number 40: 0.800000011920929 0.7378385663032532
+number 41: 0.9700000286102295 0.915315568447113
+number 44: 0.009999999776482582 0.9621015787124634
+number 46: 0.1550000011920929 0.7799193263053894
+number 47: 0.949999988079071 0.7549884915351868
+number 48: 0.699999988079071 0.9218000173568726
+number 50: 0.5 0.865933895111084
+number 51: 0.9399999976158142 0.8980611562728882
+number 53: 0.5099999904632568 0.6197908520698547
+number 54: 0.949999988079071 0.8116905093193054
+number 55: 0.949999988079071 0.9270811080932617
+number 58: 0.7749999761581421 0.9327622652053833
+number 62: 0.9599999785423279 0.9297935962677002
+number 63: 0.800000011920929 0.824184775352478
+number 64: 0.8190000057220459 0.8736018538475037
+number 65: 0.9900000095367432 0.8955076336860657
+number 67: 0.9800000190734863 0.8823345899581909
+number 68: 0.8799999952316284 0.7799893617630005
+number 69: 0.20000000298023224 0.8353247046470642
+number 70: 0.9900000095367432 0.9678070545196533
+number 71: 0.800000011920929 0.7845363020896912
+number 72: 0.27000001072883606 0.9160043001174927
+number 74: 0.25 0.7911878824234009
+number 75: 0.9800000190734863 0.9048489928245544
+number 76: 0.550000011920929 0.35953769087791443
+number 79: 0.8500000238418579 0.8784908652305603
+number 83: 0.009999999776482582 0.8086702823638916
+number 84: 0.6899999976158142 0.8316729664802551
+number 87: 0.8700000047683716 0.9130417704582214
+number 90: 0.9800000190734863 0.8938330411911011
+number 92: 0.9700000286102295 0.8362385034561157
+number 93: 0.23999999463558197 0.4488939046859741
+number 94: 0.8999999761581421 0.8974133133888245
+number 95: 0.45500001311302185 0.8313254714012146
+number 96: 0.4099999964237213 0.9053869247436523
+number 99: 0.9300000071525574 0.9721813797950745
+number 100: 0.4000000059604645 0.7282524704933167
+number 101: 0.9900000095367432 0.8826916217803955
+number 102: 0.9900000095367432 0.9304844737052917
+number 104: 0.9900000095367432 0.9413715600967407
+number 105: 0.7400000095367432 0.8873821496963501
+number 106: 0.9980000257492065 0.9483067989349365
+number 107: 0.8999999761581421 0.7792686223983765
+number 108: 0.6000000238418579 0.2932526469230652
+number 111: 0.5699999928474426 0.7911431789398193
+number 112: 0.9980000257492065 0.8971525430679321
+number 113: 0.8299999833106995 0.855593740940094
+number 114: 0.699999988079071 0.9512670636177063
+number 115: 0.11999999731779099 0.8030568957328796
+number 116: 0.4000000059604645 0.7881593108177185
+number 117: 0.054999999701976776 0.7682482004165649
+number 118: 0.15000000596046448 0.7109092473983765
+number 120: 0.9900000095367432 0.9061329364776611
+number 121: 0.8999999761581421 0.8115379214286804
+number 122: 0.7200000286102295 0.9230865240097046
+number 125: 0.3449999988079071 0.9257001876831055
+number 126: 0.949999988079071 0.9532431364059448
+number 127: 0.6549999713897705 0.799622654914856
+number 128: 0.9800000190734863 0.9136692881584167
+number 129: 0.2809999883174896 0.3128199577331543
+number 131: 0.9800000190734863 0.8025845885276794
+number 132: 0.20000000298023224 0.5835875868797302
+number 133: 0.3799999952316284 0.5417055487632751
+number 134: 0.9150000214576721 0.799752950668335
+number 135: 0.30000001192092896 0.7404707670211792
+number 136: 0.05999999865889549 0.8718400001525879
+number 137: 0.8999999761581421 0.8271133303642273
+number 138: 0.2750000059604645 0.5275440216064453
+number 139: 0.699999988079071 0.8722901940345764
+number 142: 0.1550000011920929 0.5717816352844238
+number 143: 0.6000000238418579 0.6688190698623657
+number 144: 0.949999988079071 0.9271783232688904
+number 146: 0.550000011920929 0.9220820069313049
+number 147: 0.8999999761581421 0.8139700889587402
+number 148: 0.9520000219345093 0.6496303677558899
+number 150: 0.699999988079071 0.6936481595039368
+number 151: 0.5 0.9419727325439453
+number 153: 0.5099999904632568 0.6524468064308167
+number 154: 0.041999999433755875 0.8107002973556519
+number 156: 0.10000000149011612 0.332825630903244
+number 157: 0.9800000190734863 0.9311625957489014
+number 158: 0.7250000238418579 0.8630508184432983
+number 161: 0.8399999737739563 0.8933727145195007
+number 163: 0.3499999940395355 0.47940605878829956
+number 164: 0.8700000047683716 0.6901602745056152
+number 166: 0.5 0.34714266657829285
+number 168: 0.8600000143051147 0.9268221259117126
+number 169: 0.8500000238418579 0.932400643825531
+number 170: 0.8500000238418579 0.8882610201835632
+number 171: 0.9700000286102295 0.9552979469299316
+number 172: 0.699999988079071 0.8933727145195007
+number 173: 0.46000000834465027 0.7041269540786743
+number 174: 0.9700000286102295 0.7236560583114624
+number 176: 0.800000011920929 0.773967981338501
+number 177: 0.9100000262260437 0.9038227796554565
+number 178: 0.75 0.9423952698707581
+number 180: 0.9900000095367432 0.9633514285087585
+number 181: 0.9800000190734863 0.6625576615333557
+number 182: 0.9700000286102295 0.9501193165779114
+number 184: 0.2150000035762787 0.852851927280426
+number 185: 0.8399999737739563 0.8790922164916992
+number 186: 0.4000000059604645 0.9322130680084229
+number 187: 0.5799999833106995 0.9380306005477905
+number 188: 0.9200000166893005 0.7584824562072754
+number 189: 0.9100000262260437 0.65962153673172
+number 190: 0.5199999809265137 0.3551850914955139
+number 192: 0.800000011920929 0.7659234404563904
+number 195: 0.6200000047683716 0.9023011326789856
+number 196: 0.7850000262260437 0.9181613922119141
+number 197: 0.15000000596046448 0.8795279860496521
+number 198: 0.7599999904632568 0.8420705795288086
+number 199: 0.44999998807907104 0.8566164970397949
+column: 2
+label: 2 
+number 0: 0.006328055169433355 0.028750313445925713
+number 2: 0.07396555691957474 0.037373729050159454
+number 3: 0.006841757334768772 0.04441426694393158
+number 7: 0.009239035658538342 0.048799920827150345
+number 8: 0.08903416246175766 0.037232402712106705
+number 10: 0.9863012433052063 0.026736777275800705
+number 11: 0.010129453614354134 0.09917720407247543
+number 14: 0.17122657597064972 0.04148203507065773
+number 15: 0.002846521558240056 0.056620437651872635
+number 17: 0.013691124506294727 0.08001517504453659
+number 20: 0.1917746663093567 0.19065052270889282
+number 22: 0.7191759347915649 0.09052914381027222
+number 24: 0.24656960368156433 0.03751023858785629
+number 25: 0.041088592261075974 0.04127723351120949
+number 26: 0.13697972893714905 0.05939881131052971
+number 27: 0.0017047321889549494 0.02246473915874958
+number 30: 0.41095441579818726 0.05384647473692894
+number 31: 0.01026644092053175 0.09573037922382355
+number 32: 0.023965176194906235 0.04747328534722328
+number 33: 0.16437719762325287 0.049140702933073044
+number 34: 0.24656960368156433 0.3428081274032593
+number 35: 0.0017047321889549494 0.023998815566301346
+number 36: 0.03081454336643219 0.023663409054279327
+number 37: 0.2441723346710205 0.0401538610458374
+number 38: 0.5136949419975281 0.0406140461564064
+number 39: 0.013120572082698345 0.03032143972814083
+number 40: 0.020540492609143257 0.02421567030251026
+number 41: 0.008554099127650261 0.05412568897008896
+number 43: 0.9863012433052063 0.05131424590945244
+number 45: 0.328762024641037 0.10415340960025787
+number 47: 0.07533542811870575 0.026994097977876663
+number 48: 0.07533542811870575 0.06936323642730713
+number 50: 0.015060998499393463 0.028468959033489227
+number 51: 0.1301303654909134 0.10935064405202866
+number 53: 0.4657493531703949 0.6614618897438049
+number 54: 0.301364541053772 0.04365163668990135
+number 55: 0.1541031450033188 0.08455172926187515
+number 57: 0.8184917569160461 0.05497492104768753
+number 58: 0.09588353335857391 0.07654933631420135
+number 59: 0.36300885677337646 0.18998923897743225
+number 60: 0.01711580902338028 0.027136830613017082
+number 61: 0.002275284379720688 0.040496569126844406
+number 62: 0.4794480800628662 0.04161931946873665
+number 63: 0.23972024023532867 0.03985206410288811
+number 64: 0.11095213890075684 0.0362979881465435
+number 65: 0.7191759347915649 0.06939756125211716
+number 67: 0.09588353335857391 0.04430532082915306
+number 68: 0.1301303654909134 0.04470381513237953
+number 69: 0.03423922508955002 0.062240488827228546
+number 70: 0.17807593941688538 0.06803224235773087
+number 71: 0.03081454336643219 0.044521600008010864
+number 72: 0.2441723346710205 0.04348573833703995
+number 73: 0.005471884272992611 0.03753940388560295
+number 74: 0.6986278295516968 0.04079403728246689
+number 75: 0.23972024023532867 0.04795924574136734
+number 77: 0.041088592261075974 0.18550650775432587
+number 78: 0.16437719762325287 0.28719329833984375
+number 79: 0.12670567631721497 0.04189611226320267
+number 81: 0.037663910537958145 0.09128298610448837
+number 82: 0.013691124506294727 0.03687451034784317
+number 83: 0.0017047321889549494 0.02716100960969925
+number 84: 0.07636283338069916 0.05606095492839813
+number 85: 0.037663910537958145 0.11067020148038864
+number 86: 0.08012998849153519 0.1301601231098175
+number 89: 0.01026644092053175 0.05724535509943962
+number 90: 0.09588353335857391 0.046725258231163025
+number 91: 0.328762024641037 0.06907925009727478
+number 92: 0.003417073981836438 0.03193381801247597
+number 93: 0.13697972893714905 0.03615199774503708
+number 94: 0.13697972893714905 0.06686807423830032
+number 95: 0.09245884418487549 0.051430072635412216
+number 96: 0.4520506262779236 0.057110391557216644
+number 97: 0.1575278341770172 0.07038519531488419
+number 99: 0.24793948233127594 0.0997723713517189
+number 100: 0.041088592261075974 0.05021022632718086
+number 101: 0.020540492609143257 0.04303038865327835
+number 102: 0.082184799015522 0.06706786155700684
+number 103: 0.0020472004543989897 0.02700677700340748
+number 104: 0.7568474411964417 0.04491410776972771
+number 105: 0.2054734081029892 0.06016312539577484
+number 106: 0.27191227674484253 0.06380618363618851
+number 108: 0.054787326604127884 0.058249976485967636
+number 109: 0.2568436563014984 0.025155924260616302
+number 110: 0.9486297369003296 0.05311194807291031
+number 111: 0.27396708726882935 0.035377778112888336
+number 112: 0.1438291072845459 0.05103054642677307
+number 113: 0.082184799015522 0.04438016936182976
+number 114: 0.12328100204467773 0.08329596370458603
+number 115: 0.03423922508955002 0.044592831283807755
+number 116: 0.09245884418487549 0.0351935476064682
+number 117: 0.01711580902338028 0.08854538947343826
+number 118: 0.17807593941688538 0.039046432822942734
+number 119: 0.041088592261075974 0.06244448944926262
+number 120: 0.1815006136894226 0.040264733135700226
+number 121: 0.08560948073863983 0.0787995383143425
+number 122: 0.9041088819503784 0.0848979651927948
+number 123: 2.3780317860655487E-4 0.03163209930062294
+number 124: 0.3424607515335083 0.03426752984523773
+number 125: 0.08903416246175766 0.061012160032987595
+number 126: 0.23972024023532867 0.06570985168218613
+number 127: 0.11300694942474365 0.04910861700773239
+number 129: 0.01026644092053175 0.033127207309007645
+number 130: 0.11643163114786148 0.03883414715528488
+number 131: 0.05821201205253601 0.029478583484888077
+number 132: 0.013691124506294727 0.03695046529173851
+number 133: 0.08492454141378403 0.03863869607448578
+number 134: 0.05821201205253601 0.02387150004506111
+number 135: 0.023965176194906235 0.02540920116007328
+number 137: 0.08560948073863983 0.07364153861999512
+number 139: 0.06848606467247009 0.05216116085648537
+number 140: 0.006841757334768772 0.09510893374681473
+number 142: 0.03458169475197792 0.14720214903354645
+number 143: 0.004444479010999203 0.03171923756599426
+number 145: 0.16437719762325287 0.2546893060207367
+number 147: 0.13697972893714905 0.06573239713907242
+number 148: 0.23972024023532867 0.11659996211528778
+number 149: 0.032869353890419006 0.07281016558408737
+number 150: 0.3082139194011688 0.036014772951602936
+number 152: 0.011408230289816856 0.14836940169334412
+number 153: 0.4657493531703949 0.6573142409324646
+number 154: 0.05821201205253601 0.03148837760090828
+number 157: 0.15067847073078156 0.04359092563390732
+number 160: 0.01026644092053175 0.10378851741552353
+number 161: 0.04793795943260193 0.039716366678476334
+number 162: 0.0 0.23949873447418213
+number 163: 0.020540492609143257 0.03366116061806679
+number 164: 0.6575316190719604 0.07419934123754501
+number 165: 0.36300885677337646 0.0995364785194397
+number 166: 0.010540415532886982 0.052643727511167526
+number 167: 0.013006187975406647 0.3077789545059204
+number 168: 0.04793795943260193 0.057651590555906296
+number 169: 0.2054734081029892 0.09467335045337677
+number 170: 0.3082139194011688 0.04026425629854202
+number 172: 0.12328100204467773 0.039716366678476334
+number 173: 0.020540492609143257 0.022740438580513
+number 174: 0.06848606467247009 0.02898632176220417
+number 175: 0.23972024023532867 0.055754102766513824
+number 176: 0.0034855676349252462 0.03250640630722046
+number 177: 0.05341745540499687 0.057672448456287384
+number 178: 0.1438291072845459 0.05628035590052605
+number 179: 0.1301303654909134 0.03293357416987419
+number 180: 0.13697972893714905 0.16486097872257233
+number 181: 0.041088592261075974 0.060186032205820084
+number 183: 0.016430871561169624 0.03722921758890152
+number 185: 0.014376061037182808 0.04288589954376221
+number 186: 0.13697972893714905 0.04600056633353233
+number 188: 0.082184799015522 0.030623404309153557
+number 189: 0.28766581416130066 0.04325955733656883
+number 191: 0.0015903477324172854 0.03236538916826248
+number 192: 0.12328100204467773 0.0286251250654459
+number 193: 0.014376061037182808 0.04871039837598801
+number 194: 0.082184799015522 0.12686266005039215
+number 195: 0.27396708726882935 0.052809957414865494
+number 196: 0.1068425178527832 0.0419180728495121
+number 197: 0.054787326604127884 0.0807967334985733
+number 198: 0.10958226770162582 0.03769883140921593
+number 199: 0.5479417443275452 0.14633218944072723
+column: 3
+label: 3 
+number 1: 0.19474853575229645 0.04821601137518883
+number 6: 0.005157686769962311 0.07899834215641022
+number 13: 0.006176992319524288 0.018994566053152084
+number 15: 0.004648033529520035 0.11743631958961487
+number 17: 0.004902860149741173 0.024341750890016556
+number 23: 0.005463478155434132 0.03268734738230705
+number 29: 0.001692047342658043 0.10193794220685959
+number 31: 0.4205247461795807 0.43995970487594604
+number 32: 0.006737610325217247 0.024865660816431046
+number 37: 1.0 0.029133016243577003
+number 41: 0.006686645094305277 0.037570770829916
+number 49: 0.5642468333244324 0.20343254506587982
+number 51: 0.0031190752051770687 0.0415215939283371
+number 52: 0.004648033529520035 0.09362608939409256
+number 53: 0.949544370174408 0.9249100685119629
+number 54: 0.40931236743927 0.1287718415260315
+number 56: 0.0022017001174390316 0.03469868749380112
+number 62: 0.36548224091529846 0.09682392328977585
+number 64: 0.0208040289580822 0.03032485581934452
+number 65: 0.2278759777545929 0.16864648461341858
+number 67: 0.19270992279052734 0.024099450558423996
+number 68: 0.06682568043470383 0.020779253914952278
+number 69: 0.18200722336769104 0.060552261769771576
+number 70: 0.14556704461574554 0.06310045719146729
+number 71: 7.237070240080357E-4 0.01722240261733532
+number 72: 1.0 0.03458065167069435
+number 75: 0.9026563167572021 0.06845133006572723
+number 77: 0.0022526655811816454 0.06061169505119324
+number 79: 0.0 0.05751366913318634
+number 90: 0.19270992279052734 0.02232264168560505
+number 97: 0.24673312902450562 0.2205924391746521
+number 98: 0.22277943789958954 0.05562964826822281
+number 99: 0.1167716532945633 0.15355083346366882
+number 100: 0.3349030613899231 0.20169612765312195
+number 102: 0.0739608183503151 0.047988858073949814
+number 103: 0.004342242144048214 0.03422023728489876
+number 104: 0.14837013185024261 0.1216580718755722
+number 106: 0.5787719488143921 0.05859491974115372
+number 108: 0.013821784406900406 0.028429735451936722
+number 112: 0.40421584248542786 0.037800971418619156
+number 114: 0.09409210085868835 0.18718452751636505
+number 116: 0.3501926362514496 0.10795614868402481
+number 117: 0.010763867758214474 0.04304548352956772
+number 118: 0.1269647181034088 0.018959376960992813
+number 122: 0.9770656228065491 0.1970527619123459
+number 125: 0.03165963292121887 0.05236978828907013
+number 126: 0.5081850290298462 0.18588796257972717
+number 128: 0.35528919100761414 0.06569813191890717
+number 130: 0.03828512132167816 0.03192562237381935
+number 131: 0.05714227631688118 0.03362005949020386
+number 132: 0.007705950643867254 0.016110945492982864
+number 133: 0.0994434580206871 0.04459591209888458
+number 134: 0.0015901167644187808 0.026678811758756638
+number 143: 0.016879701986908913 0.025168972089886665
+number 148: 0.04440095275640488 0.5483778119087219
+number 151: 0.07039324939250946 0.15054970979690552
+number 152: 0.006666258908808231 0.1323402225971222
+number 153: 0.949544370174408 0.9169652462005615
+number 154: 0.7905327081680298 0.03906254470348358
+number 155: 0.023301327601075172 0.060305479913949966
+number 161: 0.07498012483119965 0.0557984821498394
+number 163: 0.10555928945541382 0.03057795763015747
+number 166: 0.02483028545975685 0.041100095957517624
+number 171: 0.012802478857338428 0.06532561033964157
+number 173: 0.012292826548218727 0.029349997639656067
+number 175: 0.36548224091529846 0.3430391252040863
+number 177: 0.1269647181034088 0.14855968952178955
+number 179: 0.1208488792181015 0.06312599778175354
+number 183: 0.012955375015735626 0.06442372500896454
+number 185: 0.006498073693364859 0.06018220633268356
+number 189: 0.9016370177268982 0.033613476902246475
+number 190: 0.0780380368232727 0.05096689984202385
+number 192: 0.30585286021232605 0.048345018178224564
+number 193: 0.006482783704996109 0.03560939058661461
+number 194: 0.0015391515335068107 0.08099117130041122
+number 195: 0.25233930349349976 0.07017163187265396
+number 196: 0.7630114555358887 0.04314407333731651
+number 197: 0.2533586025238037 0.21745391190052032
+number 198: 0.097404845058918 0.027428440749645233
+number 199: 0.30432388186454773 0.46695950627326965
+column: 0
+label: 0 
+number 0: 0.8999980092048645 0.7469977736473083
+number 4: 0.9799996018409729 0.38005247712135315
+number 6: 0.7499949932098389 0.7115594148635864
+number 8: 0.799996018409729 0.6647058725357056
+number 10: 0.9499989748001099 0.8619336485862732
+number 14: 0.039980798959732056 0.46622347831726074
+number 19: 0.35998719930648804 0.3847203254699707
+column: 1
+label: 1 
+number 0: 0.9300000071525574 0.9259294867515564
+number 1: 0.800000011920929 0.9304230809211731
+number 2: 0.9599999785423279 0.7534165978431702
+number 3: 0.8299999833106995 0.9438811540603638
+number 4: 0.949999988079071 0.9597530364990234
+number 6: 0.800000011920929 0.7008515000343323
+number 8: 0.30000001192092896 0.39713403582572937
+number 9: 0.6499999761581421 0.8728640079498291
+number 10: 0.996999979019165 0.5776965618133545
+number 12: 0.6000000238418579 0.5340550541877747
+number 13: 0.9300000071525574 0.9040343761444092
+number 15: 0.03999999910593033 0.33235159516334534
+number 17: 0.6700000166893005 0.7857176065444946
+number 18: 0.25 0.7068606615066528
+column: 2
+label: 2 
+number 0: 0.016430871561169624 0.03846023976802826
+number 1: 0.06163669377565384 0.04556942358613014
+number 2: 0.2842411398887634 0.025920135900378227
+number 3: 0.041088592261075974 0.05785025283694267
+number 4: 0.12328100204467773 0.08206672966480255
+number 6: 0.1917746663093567 0.0742051899433136
+number 7: 0.013006187975406647 0.3319956064224243
+number 8: 0.07602036744356155 0.028031732887029648
+number 9: 0.013691124506294727 0.03340113162994385
+number 10: 0.41095441579818726 0.04669806361198425
+number 11: 0.1061575785279274 0.034152552485466
+number 12: 0.3082139194011688 0.04516725242137909
+number 13: 0.12328100204467773 0.05529986321926117
+number 14: 0.10958226770162582 0.061619002372026443
+number 15: 0.03903378173708916 0.05859996750950813
+number 16: 0.328762024641037 0.03957919776439667
+number 17: 0.082184799015522 0.17222250998020172
+number 18: 0.023965176194906235 0.10681584477424622
+column: 3
+label: 3 
+number 1: 0.48779889941215515 0.10728839039802551
+number 3: 0.30432388186454773 0.101312555372715
+number 5: 0.05612296983599663 0.03960629552602768
+number 8: 0.10250137746334076 0.05407540127635002
+number 9: 0.014841089956462383 0.06405717134475708
+number 11: 0.010458076372742653 0.04130394384264946
+number 12: 0.03553299605846405 0.040163200348615646
+number 14: 0.7120461463928223 0.13800017535686493
+number 16: 0.5010498762130737 0.1226523295044899
+number 17: 0.16671763360500336 0.4827858507633209
+number 19: 0.04287199676036835 0.1358981430530548
+================== MAE ==================
+0.2510
+0.1973
+0.1272
+0.1767
+================== MAEarruaccys ==================
+0.3143
+0.4023
+0.6635
+0.5892
+
+============================================================================================================================================
+VertexName (VertexType)                 nIn,nOut       TotalParams    ParamsShape                    Vertex Inputs
+============================================================================================================================================
+input (InputVertex)                     -,-            -              -                              -
+L1 (DenseLayer)                         1024,1000      1025000        b:{1,1000}, W:{1024,1000}      [input]
+L2 (DenseLayer)                         1000,900       900900         b:{1,900}, W:{1000,900}        [L1]
+L3 (DenseLayer)                         900,800        720800         b:{1,800}, W:{900,800}         [L2]
+L4 (DenseLayer)                         800,700        560700         b:{1,700}, W:{800,700}         [L3]
+M1 (DenseLayer)                         700,600        420600         b:{1,600}, W:{700,600}         [L4]
+M2 (DenseLayer)                         600,500        300500         b:{1,500}, W:{600,500}         [M1]
+M3 (DenseLayer)                         500,400        200400         b:{1,400}, W:{500,400}         [M2]
+M4 (DenseLayer)                         400,300        120300         b:{1,300}, W:{400,300}         [M3]
+M5 (DenseLayer)                         300,200        60200          b:{1,200}, W:{300,200}         [M4]
+MOUT (DenseLayer)                       200,100        20100          b:{1,100}, W:{200,100}         [M5]
+Bioavailability (OutputLayer)           100,1          101            b:{1,1}, W:{100,1}             [MOUT]
+BloodProteinBinding (OutputLayer)       100,1          101            b:{1,1}, W:{100,1}             [MOUT]
+HalfLife (OutputLayer)                  100,1          101            b:{1,1}, W:{100,1}             [MOUT]
+VolumeofDistribution (OutputLayer)      100,1          101            b:{1,1}, W:{100,1}             [MOUT]
+--------------------------------------------------------------------------------------------------------------------------------------------
+            Total Parameters:  4329904
+        Trainable Parameters:  4329904
+           Frozen Parameters:  0
+============================================================================================================================================
+
+learning rate:0.1
+total epoch: 20
+beta1: 0.5
+beta2: 0.999
+lambda :0.01
