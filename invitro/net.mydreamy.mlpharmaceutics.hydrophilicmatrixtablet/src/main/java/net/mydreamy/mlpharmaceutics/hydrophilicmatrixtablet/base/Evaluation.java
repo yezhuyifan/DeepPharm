@@ -14,8 +14,11 @@ public class Evaluation {
 	
 	public static void f2(INDArray lablesTest, INDArray PredictionTest)
 	{
+		
+		
+		
         int size = lablesTest.size(0);
-        
+              
         INDArray allf2 = Nd4j.zeros(size);
         double correctnum = 0;
         
@@ -24,8 +27,10 @@ public class Evaluation {
         	INDArray labelrow = lablesTest.getRow(i);
         	INDArray perdictrow = PredictionTest.getRow(i);
         	INDArray subrow = labelrow.sub(perdictrow);
+
         	INDArray subrow100 = subrow.mul(100);
-        	double meanerror = Transforms.pow(subrow100, 2).mean(0).getDouble(0);
+        	double meanerror = Transforms.pow(subrow100, 2).mean(1).getDouble(0);
+        	
         	//log.info("mean error: " + String.valueOf(meanerror));
         	
         	double f2 = Math.log10(Math.pow((meanerror + 1), -0.5)*100)*50;

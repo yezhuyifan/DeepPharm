@@ -75,8 +75,10 @@ public class Prediction {
 	          
 	        INDArray PredictionTest = bestModel.output(featuresTest);
 	        
+	        
 	        if (print == true) {
-		        log.info("label value: \n" + lablesTest.toString());
+	      
+		        log.info("label value: \n" + lablesTest);
 		        log.info("prediction value: \n" + PredictionTest.toString());	        	
 	        }
 
